@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import 'package:hyper_mart_app/core/theming/text_styles.dart';
 
 class CustomLogo extends StatelessWidget {
-  const CustomLogo({
-    super.key,
-  });
+  const CustomLogo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
+    return RichText(
+      text: TextSpan(
         children: [
           TextSpan(
             text: "Hyper",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              color: Color(0xffFDAA5D),
-            ),
+            style: TextStyles.bold18.copyWith(color: ColorsManager.orange),
           ),
           TextSpan(
             text: "Mart",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              color: Color(0xff4AB7B6),
-            ),
+            style: TextStyles.bold18.copyWith(color: ColorsManager.turquoise),
           ),
         ],
       ),
