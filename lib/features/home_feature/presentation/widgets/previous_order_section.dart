@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
+import 'package:hyper_mart_app/features/home_feature/presentation/widgets/last_order_card.dart';
 
 class PreviousOrderSection extends StatelessWidget {
   const PreviousOrderSection({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,14 +13,9 @@ class PreviousOrderSection extends StatelessWidget {
           child: Text("Previous order", style: TextStyles.bold16),
         ),
         SizedBox(height: 20),
-        Container(
-          height: 100,
-          decoration: BoxDecoration(
-            color: ColorsManager.turquoise,
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
+        LastOrderCard(),
       ],
     );
   }
 }
+

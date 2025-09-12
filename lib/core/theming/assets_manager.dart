@@ -11,4 +11,19 @@ class AssetsManager {
   static const String appliancesIcon = 'assets/svgs/appliances.svg';
   static const String fashionIcon = 'assets/svgs/fashion.svg';
   static const String furnitureIcon = 'assets/svgs/furniture.svg';
+  static const String item1 = 'assets/images/item1.png';
+  static const String item2 = 'assets/images/item2.png';
+  static const String item3 = 'assets/images/item3.png';
+  static const String strawberryImage = 'assets/images/strawberry.png';
+  static const String chipsImage = 'assets/images/chips.png';
+  static const String chairImage = 'assets/images/chair.png';
+  static const String washingMachineImage = 'assets/images/washing_machine.png';
+  static const String heartOutlineIcon = 'assets/svgs/heart_outline.svg';
+  static const String heartFullIcon = 'assets/svgs/heart_full.svg';
+  static const String starIcon = 'assets/svgs/star.svg';
+  static const String homeIcon = 'assets/svgs/home.svg';
+  static const String allProductsIcon = 'assets/svgs/all_products.svg';
+  static const String favouriteIcon = 'assets/svgs/favourite.svg';
+  static const String profileIcon = 'assets/svgs/profile.svg';
+  static const String cartIcon = 'assets/svgs/cart.svg';
 }
