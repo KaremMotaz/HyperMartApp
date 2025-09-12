@@ -6,6 +6,10 @@ abstract class TextStyles {
     fontSize: 22,
     fontWeight: FontWeightHelper.extraBold,
   );
+  static const TextStyle extraBold18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.extraBold,
+  );
   static const TextStyle bold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.bold,
@@ -17,6 +21,10 @@ abstract class TextStyles {
   static const TextStyle medium16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightHelper.medium,
+  );
+  static const TextStyle regular16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeightHelper.regular,
   );
   static const TextStyle bold14 = TextStyle(
     fontSize: 14,

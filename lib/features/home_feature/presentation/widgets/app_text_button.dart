@@ -14,12 +14,14 @@ class AppTextButton extends StatelessWidget {
     this.verticalPadding,
     this.buttonWidth,
     this.buttonHeight,
+    this.borderColor,
   });
   final String buttonText;
   final TextStyle? textStyle;
   final VoidCallback onPressed;
   final double? borderRadius;
   final Color? backgroundColor;
+  final Color? borderColor;
   final double? horizontalPadding;
   final double? verticalPadding;
   final double? buttonWidth;
@@ -35,6 +37,9 @@ class AppTextButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius ?? 12),
           ),
         ),
+        side: WidgetStatePropertyAll<BorderSide>(
+          BorderSide(color: borderColor ?? ColorsManager.white, width: 1),
+        ),
         backgroundColor: WidgetStatePropertyAll<Color>(
           backgroundColor ?? ColorsManager.turquoise,
         ),
@@ -44,10 +49,14 @@ class AppTextButton extends StatelessWidget {
             vertical: verticalPadding ?? 14,
           ),
         ),
-        fixedSize: WidgetStatePropertyAll(
-          Size(buttonWidth ?? double.maxFinite, buttonHeight ?? 55),
+        minimumSize: WidgetStatePropertyAll(
+          Size(buttonWidth ?? 0, buttonHeight ?? 55),
         ),
+        maximumSize: buttonWidth != null
+            ? WidgetStatePropertyAll(Size(buttonWidth!, buttonHeight ?? 55))
+            : null,
       ),
+
       child: Text(
         buttonText,
         style: textStyle ?? TextStyles.semiBold15.copyWith(color: Colors.white),
