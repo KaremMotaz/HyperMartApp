@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/brand_item.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/section_header.dart';
+import '../../../../core/theming/assets_manager.dart';
+import 'brand_item.dart';
+import 'section_header.dart';
 
 class TopBrandsSection extends StatelessWidget {
   const TopBrandsSection({super.key});

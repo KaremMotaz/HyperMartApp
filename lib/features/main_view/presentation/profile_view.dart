@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import '../widgets/home_view_body.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: HomeViewBody(),
+      body: Center(child: Text("Profile")),
     );
   }
 }

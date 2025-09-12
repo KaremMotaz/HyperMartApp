@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 class BrandItem extends StatelessWidget {
   const BrandItem({super.key, required this.brandItem});

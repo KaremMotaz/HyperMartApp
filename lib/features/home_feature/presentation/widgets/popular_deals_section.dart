@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/data/models/product_model.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/product_card.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/section_header.dart';
+import '../../data/models/product_model.dart';
+import 'product_card.dart';
+import 'section_header.dart';
 
 class PopularDealsSection extends StatelessWidget {
   const PopularDealsSection({super.key});

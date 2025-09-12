@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/views/home_view.dart';
+import 'features/main_view/main_view.dart';
 
 class HyperMartApp extends StatelessWidget {
   const HyperMartApp({super.key});
@@ -8,7 +8,7 @@ class HyperMartApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeView(),
+      home: const MainView(),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/brand_deal_card.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/section_header.dart';
+import '../../../../core/theming/assets_manager.dart';
+import 'brand_deal_card.dart';
+import 'section_header.dart';
 
 class ExclusiveBeautyDealsSection extends StatelessWidget {
   const ExclusiveBeautyDealsSection({super.key});
@@ -21,7 +21,7 @@ class ExclusiveBeautyDealsSection extends StatelessWidget {
         SectionHeader(title: 'Exclusive Beauty Deals', onTap: () {}),
         SizedBox(height: 20),
         SizedBox(
-          height: 300,
+          height: 310,
           child: GridView.builder(
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

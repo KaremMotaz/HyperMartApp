@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/categories_section.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/custom_appbar.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/custom_text_field.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/exclusive_beauty_deals_section.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/location_widget.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/popular_deals_section.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/previous_order_section.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/top_brands_section.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/week_offers.dart';
+import 'categories_section.dart';
+import 'custom_appbar.dart';
+import 'custom_text_field.dart';
+import 'exclusive_beauty_deals_section.dart';
+import 'location_widget.dart';
+import 'popular_deals_section.dart';
+import 'previous_order_section.dart';
+import 'top_brands_section.dart';
+import 'week_offers.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

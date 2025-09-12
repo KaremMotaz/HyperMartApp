@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/home_feature/data/models/product_model.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/discount_widget.dart';
+import '../../../../core/theming/assets_manager.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../data/models/product_model.dart';
+import 'app_text_button.dart';
+import 'discount_widget.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/data/models/category_model.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/category_item.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/section_header.dart';
+import '../../data/models/category_model.dart';
+import 'category_item.dart';
+import 'section_header.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({super.key});

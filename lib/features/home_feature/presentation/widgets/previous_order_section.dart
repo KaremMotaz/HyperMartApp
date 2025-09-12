@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/last_order_card.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'last_order_card.dart';
 
 class PreviousOrderSection extends StatelessWidget {
   const PreviousOrderSection({super.key});

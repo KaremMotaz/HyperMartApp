@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/home_feature/data/models/order_model.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../data/models/order_model.dart';
 
 class OrderContentWidget extends StatelessWidget {
   const OrderContentWidget({super.key, required this.lastOrder});
