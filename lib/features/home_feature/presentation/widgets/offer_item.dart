@@ -11,8 +11,8 @@ class OfferItem extends StatelessWidget {
       borderRadius: BorderRadius.circular(16),
       child: Stack(
         children: [
-          Image.asset(AssetsManager.weekOfferImage),
-          Image.asset(AssetsManager.maskOfferImage),
+          Image.asset(AssetsManager.weekOfferImage, fit: BoxFit.fill),
+          Image.asset(AssetsManager.maskOfferImage, fit: BoxFit.fill),
           Positioned(
             bottom: 44,
             left: 22,
