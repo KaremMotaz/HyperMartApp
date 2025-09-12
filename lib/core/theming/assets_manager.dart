@@ -26,4 +26,14 @@ class AssetsManager {
   static const String favouriteIcon = 'assets/svgs/favourite.svg';
   static const String profileIcon = 'assets/svgs/profile.svg';
   static const String cartIcon = 'assets/svgs/cart.svg';
+  static const String brand1Image = 'assets/images/brand1.png';
+  static const String brand2Image = 'assets/images/brand2.png';
+  static const String brand3Image = 'assets/images/brand3.png';
+  static const String brand4Image = 'assets/images/brand4.png';
+  static const String brandDeal1Image = 'assets/images/brand_deal1.png';
+  static const String brandDeal2Image = 'assets/images/brand_deal2.png';
+  static const String brandDeal3Image = 'assets/images/brand_deal3.png';
+  static const String brandDeal4Image = 'assets/images/brand_deal4.png';
+  static const String brandDeal5Image = 'assets/images/brand_deal5.png';
+  static const String brandDeal6Image = 'assets/images/brand_deal6.png';
 }
