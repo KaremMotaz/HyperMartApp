@@ -105,7 +105,7 @@ class ProductCard extends StatelessWidget {
                           Text(
                             "$numberOfItems",
                             style: TextStyles.bold16.copyWith(
-                              color: ColorsManager.turquoise,
+                              color: Colors.black,
                             ),
                           ),
                           AppTextButton(

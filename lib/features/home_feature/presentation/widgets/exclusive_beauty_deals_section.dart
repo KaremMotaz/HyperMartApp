@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/assets_manager.dart';
+import 'package:hyper_mart_app/features/home_feature/data/models/beauty_deals_model.dart';
 import 'brand_deal_card.dart';
 import 'section_header.dart';
 
@@ -8,14 +8,7 @@ class ExclusiveBeautyDealsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> brandDealItems = [
-      AssetsManager.brandDeal1Image,
-      AssetsManager.brandDeal2Image,
-      AssetsManager.brandDeal3Image,
-      AssetsManager.brandDeal4Image,
-      AssetsManager.brandDeal5Image,
-      AssetsManager.brandDeal6Image,
-    ];
+    final List<BeautyDealsModel> beautyDeals = BeautyDealsModel.beautyDeals;
     return Column(
       children: [
         SectionHeader(title: 'Exclusive Beauty Deals', onTap: () {}),
@@ -32,7 +25,7 @@ class ExclusiveBeautyDealsSection extends StatelessWidget {
             ),
             itemCount: 6,
             itemBuilder: (context, index) =>
-                BrandDealCard(brandDealItem: brandDealItems[index]),
+                BrandDealCard(beautyDeal: beautyDeals[index]),
           ),
         ),
       ],

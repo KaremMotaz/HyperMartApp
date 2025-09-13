@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_mart_app/features/home_feature/data/models/beauty_deals_model.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class BrandDealCard extends StatelessWidget {
-  const BrandDealCard({super.key, required this.brandDealItem});
-  final String brandDealItem;
+  const BrandDealCard({super.key, required this.beautyDeal});
+  final BeautyDealsModel beautyDeal;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -12,12 +13,13 @@ class BrandDealCard extends StatelessWidget {
       children: [
         Positioned(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+            width: 120,
+            padding: EdgeInsets.only(left: 13, right: 13, bottom: 30, top: 8),
             decoration: BoxDecoration(
               color: ColorsManager.grey,
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Column(children: [Image.asset(brandDealItem, height: 50)]),
+            child: Image.asset(beautyDeal.image, height: 50),
           ),
         ),
         Positioned(
@@ -25,7 +27,7 @@ class BrandDealCard extends StatelessWidget {
           left: 0,
           right: 0,
           child: CircleAvatar(
-            radius: 35,
+            radius: 30,
             backgroundColor: ColorsManager.turquoise,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,11 +35,11 @@ class BrandDealCard extends StatelessWidget {
               children: [
                 Text(
                   "Up to",
-                  style: TextStyles.bold14.copyWith(color: ColorsManager.white),
+                  style: TextStyles.bold12.copyWith(color: ColorsManager.white),
                 ),
                 Text(
-                  "5% OFF",
-                  style: TextStyles.bold14.copyWith(color: ColorsManager.white),
+                  "${beautyDeal.discount}% OFF",
+                  style: TextStyles.bold12.copyWith(color: ColorsManager.white),
                 ),
               ],
             ),

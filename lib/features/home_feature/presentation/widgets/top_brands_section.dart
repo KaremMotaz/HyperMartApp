@@ -20,7 +20,7 @@ class TopBrandsSection extends StatelessWidget {
         SectionHeader(title: 'Top Brands', onTap: () {}),
         SizedBox(height: 20),
         SizedBox(
-          height: 50,
+          height: 70,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: brandItems.length,

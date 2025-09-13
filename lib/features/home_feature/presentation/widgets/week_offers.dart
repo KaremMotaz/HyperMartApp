@@ -27,13 +27,13 @@ class _WeekOffersState extends State<WeekOffers> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
+    return AspectRatio(
+      aspectRatio: 2.5,
       child: PageView.builder(
         controller: _pageController,
         itemCount: 3,
         itemBuilder: (context, index) {
-          double scale = 1.0 - ((_currentPage - index).abs() * 0.15);
+          double scale = 1.0 - ((_currentPage - index).abs() * 0.17);
           scale = scale.clamp(0.3, 1);
           return Transform.scale(scale: scale, child: OfferItem());
         },
