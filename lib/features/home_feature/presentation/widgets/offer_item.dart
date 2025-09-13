@@ -14,13 +14,13 @@ class OfferItem extends StatelessWidget {
           Image.asset(AssetsManager.weekOfferImage, fit: BoxFit.fill),
           Image.asset(AssetsManager.maskOfferImage, fit: BoxFit.fill),
           Positioned(
-            bottom: 28,
-            left: 12,
+            bottom: 55,
+            left: 22,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Happy Weekend", style: TextStyles.medium10),
-                Text("25% OFF", style: TextStyles.extraBold20),
+                Text("Happy Weekend", style: TextStyles.medium12),
+                Text("25% OFF", style: TextStyles.extraBold22),
                 Text("*for All Menus", style: TextStyles.light10),
               ],
             ),

@@ -36,11 +36,14 @@ class LastOrderCard extends StatelessWidget {
               children: [
                 Text(
                   "Delivered",
-                  style: TextStyles.bold16.copyWith(
+                  style: TextStyles.bold10.copyWith(
                     color: ColorsManager.turquoise,
                   ),
                 ),
-                Text(lastOrder.date, style: TextStyles.regular12),
+                Text(
+                  lastOrder.date,
+                  style: TextStyles.regular10.copyWith(fontFamily: "Lato"),
+                ),
                 SizedBox(height: 8),
                 OrderContentWidget(lastOrder: lastOrder),
                 SizedBox(height: 8),
@@ -51,7 +54,7 @@ class LastOrderCard extends StatelessWidget {
                       children: [
                         Text(
                           "Order ID : #${lastOrder.id}",
-                          style: TextStyles.bold14,
+                          style: TextStyles.bold10,
                         ),
                         SizedBox(height: 10),
                         Text(
@@ -65,7 +68,10 @@ class LastOrderCard extends StatelessWidget {
                       buttonText: "Order Again",
                       onPressed: () {},
                       buttonWidth: 110,
-                      buttonHeight: 50,
+                      buttonHeight: 45,
+                      textStyle: TextStyles.bold12.copyWith(
+                        color: ColorsManager.white,
+                      ),
                     ),
                   ],
                 ),

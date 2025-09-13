@@ -25,7 +25,7 @@ class OfferContainer extends StatelessWidget {
             child: Text(
               "Order Again & Get Flat 10% OFF",
               textAlign: TextAlign.center,
-              style: TextStyles.bold14.copyWith(color: ColorsManager.white),
+              style: TextStyles.bold12.copyWith(color: ColorsManager.white),
             ),
           ),
         ),

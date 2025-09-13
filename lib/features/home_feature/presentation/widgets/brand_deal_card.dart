@@ -35,11 +35,17 @@ class BrandDealCard extends StatelessWidget {
               children: [
                 Text(
                   "Up to",
-                  style: TextStyles.bold12.copyWith(color: ColorsManager.white),
+                  style: TextStyles.bold10.copyWith(
+                    color: ColorsManager.white,
+                    fontFamily: "DM_Sans",
+                  ),
                 ),
                 Text(
                   "${beautyDeal.discount}% OFF",
-                  style: TextStyles.bold12.copyWith(color: ColorsManager.white),
+                  style: TextStyles.bold10.copyWith(
+                    color: ColorsManager.white,
+                    fontFamily: "DM_Sans",
+                  ),
                 ),
               ],
             ),

@@ -58,7 +58,9 @@ class ProductCard extends StatelessWidget {
               SizedBox(height: 18),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(product.title, style: TextStyles.medium14),
+                child: Text(product.title, style: TextStyles.regular14,
+                overflow: TextOverflow.ellipsis,
+                ),
               ),
               SizedBox(height: 9),
               Padding(
@@ -66,12 +68,12 @@ class ProductCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("₹ ${product.price}", style: TextStyles.bold16),
+                    Text("₹ ${product.price}", style: TextStyles.medium14),
                     Row(
                       children: [
                         Text(
                           "${product.rating}",
-                          style: TextStyles.bold16.copyWith(
+                          style: TextStyles.extraBold12.copyWith(
                             color: ColorsManager.orange,
                           ),
                         ),
@@ -104,7 +106,7 @@ class ProductCard extends StatelessWidget {
                           ),
                           Text(
                             "$numberOfItems",
-                            style: TextStyles.bold16.copyWith(
+                            style: TextStyles.bold14.copyWith(
                               color: Colors.black,
                             ),
                           ),

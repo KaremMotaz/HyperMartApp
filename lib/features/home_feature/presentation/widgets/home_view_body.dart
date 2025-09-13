@@ -15,32 +15,43 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 27),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 10),
-              CustomAppbar(),
-              SizedBox(height: 20),
-              LocationWidget(),
-              SizedBox(height: 20),
-              CustomTextField(),
-              SizedBox(height: 20),
-              WeekOffers(),
-              SizedBox(height: 20),
-              CategoriesSection(),
-              SizedBox(height: 20),
-              PreviousOrderSection(),
-              SizedBox(height: 20),
-              PopularDealsSection(),
-              SizedBox(height: 20),
-              TopBrandsSection(),
-              SizedBox(height: 20),
-              ExclusiveBeautyDealsSection(),
-              SizedBox(height: 20),
-            ],
-          ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 27),
+              child: Column(
+                children: [
+                  SizedBox(height: 10),
+                  CustomAppbar(),
+                  SizedBox(height: 20),
+                  LocationWidget(),
+                  SizedBox(height: 20),
+                  CustomTextField(),
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
+            WeekOffers(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 27),
+              child: Column(
+                children: [
+                  SizedBox(height: 20),
+                  CategoriesSection(),
+                  SizedBox(height: 20),
+                  PreviousOrderSection(),
+                  SizedBox(height: 20),
+                  PopularDealsSection(),
+                  SizedBox(height: 20),
+                  TopBrandsSection(),
+                  SizedBox(height: 20),
+                  ExclusiveBeautyDealsSection(),
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

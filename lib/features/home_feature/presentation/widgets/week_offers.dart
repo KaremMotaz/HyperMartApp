@@ -10,7 +10,7 @@ class WeekOffers extends StatefulWidget {
 
 class _WeekOffersState extends State<WeekOffers> {
   final PageController _pageController = PageController(
-    viewportFraction: 0.75,
+    viewportFraction: 0.85,
     initialPage: 1,
   );
   double _currentPage = 1.0;
@@ -28,14 +28,17 @@ class _WeekOffersState extends State<WeekOffers> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.5,
+      aspectRatio: 2.2,
       child: PageView.builder(
         controller: _pageController,
         itemCount: 3,
         itemBuilder: (context, index) {
-          double scale = 1.0 - ((_currentPage - index).abs() * 0.17);
-          scale = scale.clamp(0.3, 1);
-          return Transform.scale(scale: scale, child: OfferItem());
+          double scale = 1.0 - ((_currentPage - index).abs() * 0.2);
+          scale = scale.clamp(0.9, 1);
+          return Transform.scale(
+            scale: scale,
+            child: OfferItem(),
+          );
         },
       ),
     );

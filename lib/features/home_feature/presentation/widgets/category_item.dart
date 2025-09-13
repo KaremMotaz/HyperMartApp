@@ -28,7 +28,10 @@ class CategoryItem extends StatelessWidget {
           SizedBox(height: 15),
           Text(
             category.title,
-            style: TextStyles.medium12.copyWith(color: ColorsManager.white),
+            style: TextStyles.medium12.copyWith(
+              color: ColorsManager.white,
+              fontFamily: "DM_Sans",
+            ),
           ),
           SizedBox(height: 13),
         ],

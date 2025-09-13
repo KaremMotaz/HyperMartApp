@@ -25,13 +25,13 @@ class LocationWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Bengaluru",style: TextStyles.regular10,),
+            Text("Bengaluru", style: TextStyles.regular10),
             SizedBox(height: 5),
-            Text("BTM Layout, 500628",style: TextStyles.regular12,),
+            Text("BTM Layout, 500628", style: TextStyles.regular12),
           ],
         ),
         Spacer(),
-        SvgPicture.asset(AssetsManager.arrowRightIcon)
+        SvgPicture.asset(AssetsManager.arrowRightIcon),
       ],
     );
   }

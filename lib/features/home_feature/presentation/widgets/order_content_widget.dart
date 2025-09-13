@@ -36,11 +36,11 @@ class OrderContentWidget extends StatelessWidget {
             children: [
               Text(
                 "+${lastOrder.items.length - 3}",
-                style: TextStyles.medium16,
+                style: TextStyles.medium12,
               ),
               Text(
                 "More",
-                style: TextStyles.medium16,
+                style: TextStyles.medium12,
               ),
             ],
           ),
