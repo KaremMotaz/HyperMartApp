@@ -11,6 +11,10 @@ abstract class TextStyles {
     fontSize: 20,
     fontWeight: FontWeightHelper.extraBold,
   );
+  static const TextStyle bold20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeightHelper.bold,
+  );
   static const TextStyle extraBold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.extraBold,
@@ -25,19 +29,25 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.bold,
     fontFamily: "DM_Sans",
   );
+  static const TextStyle semiBold16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: "DM_Sans",
+  );
   static const TextStyle medium16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightHelper.medium,
+  );
+  static const TextStyle regular16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeightHelper.regular,
   );
   static const TextStyle regular14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.regular,
     fontFamily: "DM_Sans",
   );
-  static const TextStyle regular16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeightHelper.regular,
-  );
+
   static const TextStyle bold14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.bold,
@@ -51,6 +61,11 @@ abstract class TextStyles {
     fontSize: 14,
     fontWeight: FontWeightHelper.medium,
     fontFamily: "DM_Sans",
+  );
+  static const TextStyle regular13 = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: "Lato",
   );
   static const TextStyle medium12 = TextStyle(
     fontSize: 12,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../theming/colors_manager.dart';
+import '../theming/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({

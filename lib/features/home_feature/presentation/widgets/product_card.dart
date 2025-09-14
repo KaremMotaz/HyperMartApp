@@ -4,7 +4,7 @@ import '../../../../core/theming/assets_manager.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../data/models/product_model.dart';
-import 'app_text_button.dart';
+import '../../../../core/widgets/app_text_button.dart';
 import 'discount_widget.dart';
 
 class ProductCard extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../data/models/order_model.dart';
-import 'app_text_button.dart';
+import '../../../../core/widgets/app_text_button.dart';
 import 'offer_container.dart';
 import 'order_content_widget.dart';
 

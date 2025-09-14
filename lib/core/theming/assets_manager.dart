@@ -1,4 +1,7 @@
 class AssetsManager {
+  static const String emailNotification =
+      'assets/images/email_notification.png';
+  static const String forgotPassword = 'assets/images/Forgot_password.png';
   static const String arrowDownIcon = 'assets/svgs/arrow_down.svg';
   static const String arrowRightIcon = 'assets/svgs/arrow_right.svg';
   static const String locationIcon = 'assets/svgs/location.svg';
