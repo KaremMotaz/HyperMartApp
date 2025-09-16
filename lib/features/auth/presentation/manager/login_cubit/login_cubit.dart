@@ -1,7 +1,10 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/core/errors/failure.dart';
+import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
 import '../../../domain/auth_repo.dart';
-import '../../../domain/user_entity.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -9,21 +12,20 @@ class LoginCubit extends Cubit<LoginState> {
 
   final AuthRepo authRepo;
 
-  Future<void> signinWithEmailAndPassword({
-    required TextEditingController passwordController,
-    required TextEditingController emailController,
+  Future<void> loginWithEmailAndPassword({
+    required LoginRequestBody loginRequestBody,
   }) async {
     emit(LoginLoadingState());
-    final result = await authRepo.signinWithEmailAndPassword(
-      password: passwordController.text,
-      email: emailController.text,
-    );
+
+    final Either<Failure, LoginResponse> result = await authRepo
+        .loginWithEmailAndPassword(body: loginRequestBody);
+
     result.fold(
       (failure) {
         emit(LoginFailureState(message: failure.message));
       },
-      (userEntity) {
-        emit(LoginSuccessState(userEntity: userEntity));
+      (unit) {
+        emit(LoginSuccessState());
       },
     );
   }

@@ -5,8 +5,8 @@ import '../theming/text_styles.dart';
 class AppTextButton extends StatelessWidget {
   const AppTextButton({
     super.key,
-    required this.buttonText,
     required this.onPressed,
+    this.buttonText,
     this.textStyle,
     this.borderRadius,
     this.backgroundColor,
@@ -15,8 +15,9 @@ class AppTextButton extends StatelessWidget {
     this.buttonWidth,
     this.buttonHeight,
     this.borderColor,
+    this.child,
   });
-  final String buttonText;
+  final String? buttonText;
   final TextStyle? textStyle;
   final VoidCallback onPressed;
   final double? borderRadius;
@@ -26,6 +27,7 @@ class AppTextButton extends StatelessWidget {
   final double? verticalPadding;
   final double? buttonWidth;
   final double? buttonHeight;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +59,14 @@ class AppTextButton extends StatelessWidget {
             : null,
       ),
 
-      child: Text(
-        buttonText,
-        style: textStyle ?? TextStyles.semiBold15.copyWith(color: Colors.white),
-      ),
+      child:
+          child ??
+          Text(
+            buttonText ?? "",
+            style:
+                textStyle ??
+                TextStyles.semiBold15.copyWith(color: Colors.white),
+          ),
     );
   }
 }
