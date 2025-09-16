@@ -11,5 +11,7 @@ final class LoginSuccessState extends LoginState {}
 
 final class LoginFailureState extends LoginState {
   final String message;
-  LoginFailureState({required this.message});
+  final List<String> details;
+
+  LoginFailureState({required this.message, required this.details});
 }

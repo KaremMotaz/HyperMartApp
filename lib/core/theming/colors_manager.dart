@@ -11,4 +11,5 @@ class ColorsManager {
   static const Color grey = Color(0xffeff1f3);
   static const Color darkgrey = Color(0xffd8d8d8);
   static const Color brandGrey = Color(0xffDCDCDC);
+  static const Color formFieldGrey = Color(0x69CECACA);
 }

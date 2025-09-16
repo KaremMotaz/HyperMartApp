@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:hyper_mart_app/core/helpers/backend_endpoint.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
+import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
 import 'package:retrofit/retrofit.dart';
 part 'auth_service.g.dart';
 
@@ -11,4 +12,7 @@ abstract class AuthService {
 
   @POST(BackendEndpoint.login)
   Future<LoginResponse> login({@Body() required LoginRequestBody body});
+
+  @POST(BackendEndpoint.register)
+  Future<void> register({@Body() required RegisterRequestBody body});
 }

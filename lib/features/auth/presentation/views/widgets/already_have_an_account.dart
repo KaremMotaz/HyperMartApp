@@ -15,7 +15,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
       TextSpan(
         children: [
           const TextSpan(
-            text: " تمتلك حساباً؟ ",
+            text: "Already have an account?",
             style: TextStyles.medium16,
           ),
           const TextSpan(
@@ -26,7 +26,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
               ..onTap = () {
                 GoRouter.of(context).push(Routes.signInView);
               },
-            text: "تسجيل الدخول",
+            text: "Login",
             style: TextStyles.medium16.copyWith(
               color: ColorsManager.mainBlue,
             ),

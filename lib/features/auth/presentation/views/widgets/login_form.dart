@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/helpers/app_regex.dart';
 import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
@@ -10,9 +11,7 @@ import 'package:hyper_mart_app/features/auth/presentation/manager/login_cubit/lo
 import '../../../../../core/widgets/app_text_form_field.dart';
 
 class LoginForm extends StatefulWidget {
-  final LoginState state;
-
-  const LoginForm({super.key, required this.state});
+  const LoginForm({super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -41,17 +40,18 @@ class _LoginFormState extends State<LoginForm> {
             textInputType: TextInputType.emailAddress,
             hintText: "Email",
             controller: emailController,
-            backgroundColor: ColorsManager.lighterGray,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return "Please enter your email";
+              }
+              if (!AppRegex.isEmailValid(value)) {
+                return "Please enter a valid email";
               }
             },
           ),
           const SizedBox(height: 18),
           AppTextFormField(
             hintText: "Password",
-            backgroundColor: ColorsManager.lighterGray,
             isObscureText: isPasswordObscureText,
             controller: passwordController,
             suffixIcon: IconButton(
@@ -68,6 +68,21 @@ class _LoginFormState extends State<LoginForm> {
               if (value == null || value.isEmpty) {
                 return "Please enter your password";
               }
+
+              if (!AppRegex.hasMinLength(value)) {
+                return "Password must be at least 8 characters.";
+              }
+              if (!AppRegex.hasUpperCase(value)) {
+                return "Password must contain at least one uppercase letter.";
+              }
+              if (!AppRegex.hasNumber(value)) {
+                return "Password must contain at least one digit.";
+              }
+              if (!AppRegex.hasSpecialCharacter(value)) {
+                return "Password must contain at least one special character.";
+              }
+
+              return null;
             },
           ),
           const SizedBox(height: 5),
@@ -86,25 +101,36 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           const SizedBox(height: 25),
-          AppTextButton(
-            textStyle: TextStyles.semiBold16.copyWith(color: Colors.white),
-            backgroundColor: ColorsManager.mainBlue,
-            buttonWidth: double.infinity,
-            onPressed: () {
-              validateThenSignin(context);
-              emailController.clear();
-              passwordController.clear();
-            },
-            child: widget.state is LoginLoadingState
-                ? SizedBox(
-                    width: 15,
-                    height: 15,
-                    child: const CircularProgressIndicator(color: Colors.white),
-                  )
-                : Text(
-                    "Login",
-                    style: TextStyles.semiBold15.copyWith(color: Colors.white),
+          BlocBuilder<LoginCubit, LoginState>(
+            builder: (context, state) {
+              return IgnorePointer(
+                ignoring: state is LoginLoadingState,
+                child: AppTextButton(
+                  textStyle: TextStyles.semiBold16.copyWith(
+                    color: Colors.white,
                   ),
+                  backgroundColor: ColorsManager.mainBlue,
+                  buttonWidth: double.infinity,
+                  onPressed: () {
+                    validateThenSignin(context);
+                  },
+                  child: state is LoginLoadingState
+                      ? SizedBox(
+                          width: 21,
+                          height: 21,
+                          child: const CircularProgressIndicator(
+                            color: Colors.white,
+                          ),
+                        )
+                      : Text(
+                          "Login",
+                          style: TextStyles.bold18.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                ),
+              );
+            },
           ),
         ],
       ),
