@@ -20,17 +20,18 @@ class OTPVerificationViewBody extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               "Verify your email",
-              style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
+              style: TextStyles.bold22.copyWith(color: ColorsManager.mainBlue),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 20),
           const Align(
             alignment: AlignmentDirectional.centerStart,
             child: Text(
-              "Enter the 5-digit code we sent to your email address.",
-              style: TextStyles.regular14,
+              "Enter the 6-digit code we sent to your email.",
+              style: TextStyles.regular18,
             ),
           ),
+          const SizedBox(height: 30),
           PinInputForm(userEmail: userEmail),
         ],
       ),

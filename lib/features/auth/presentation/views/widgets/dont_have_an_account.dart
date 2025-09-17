@@ -22,7 +22,7 @@ class DontHaveAnAccount extends StatelessWidget {
           TextSpan(
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                GoRouter.of(context).push(Routes.signUpView);
+                GoRouter.of(context).push(Routes.registerView);
               },
             text: "Create an Account",
             style: TextStyles.medium16.copyWith(

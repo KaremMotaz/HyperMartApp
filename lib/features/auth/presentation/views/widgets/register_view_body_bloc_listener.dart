@@ -16,7 +16,9 @@ class RegisterViewBodyBlocListener extends StatelessWidget {
       listener: (context, state) {
         if (state is RegisterSuccessState) {
           successSnackBar(context: context, message: "Register Success");
-          GoRouter.of(context).pushReplacement(Routes.otpVerificationView);
+          GoRouter.of(
+            context,
+          ).pushReplacement(Routes.otpVerificationView, extra: state.email);
         }
         if (state is RegisterFailureState) {
           showDialog(

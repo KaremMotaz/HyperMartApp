@@ -34,9 +34,9 @@ class AppTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: ColorsManager.mainBlue,
       keyboardType: textInputType ?? TextInputType.name,
       controller: controller,
-
       decoration: InputDecoration(
         prefixIconConstraints: const BoxConstraints(
           minWidth: 50,
@@ -46,7 +46,7 @@ class AppTextFormField extends StatelessWidget {
           minWidth: 30,
           minHeight: 30,
         ),
-        
+
         isDense: true,
         contentPadding:
             contentPadding ??
@@ -67,7 +67,7 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: textStyle ?? TextStyles.medium14,
+      style: textStyle ?? TextStyles.medium16,
       validator: (value) {
         return validator(value);
       },

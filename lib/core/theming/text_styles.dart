@@ -7,6 +7,11 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.extraBold,
     fontFamily: "Lato",
   );
+  static const TextStyle bold22 = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: "Lato",
+  );
   static const TextStyle extraBold20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeightHelper.extraBold,
@@ -23,6 +28,11 @@ abstract class TextStyles {
     fontSize: 18,
     fontWeight: FontWeightHelper.bold,
     fontFamily: "DM_Sans",
+  );
+  static const TextStyle regular18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: "Lato",
   );
   static const TextStyle bold16 = TextStyle(
     fontSize: 16,

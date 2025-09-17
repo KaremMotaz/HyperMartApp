@@ -11,7 +11,6 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final AuthRepo authRepo;
 
-
   Future<void> registerWithEmailAndPassword({
     required RegisterRequestBody registerRequestBody,
   }) async {
@@ -28,7 +27,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         );
       },
       (unit) async {
-        emit(RegisterSuccessState());
+        emit(RegisterSuccessState(email: registerRequestBody.email));
       },
     );
   }

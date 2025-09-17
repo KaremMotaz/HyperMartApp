@@ -24,7 +24,7 @@ class ApiErrorModel extends Failure {
 
     return ApiErrorModel(
       code: statusCode.toString(),
-      message: json['message'],
+      message: json['message'] ?? 'An error occurred',
       details: errorsList,
     );
   }

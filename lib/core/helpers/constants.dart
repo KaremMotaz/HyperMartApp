@@ -1,3 +1,4 @@
-const String kUserData = "userData";
+const String kAccessToken = "accessToken";
+const String kRefreshToken = "refreshToken";
 
 

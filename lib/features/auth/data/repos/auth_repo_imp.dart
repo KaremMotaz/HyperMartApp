@@ -2,8 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hyper_mart_app/core/errors/auth_failure.dart';
 import 'package:hyper_mart_app/core/errors/failure.dart';
+import 'package:hyper_mart_app/core/helpers/constants.dart';
 import 'package:hyper_mart_app/core/networking/api_error_model.dart';
 import 'package:hyper_mart_app/core/services/auth_service.dart';
+import 'package:hyper_mart_app/core/services/cache_helper.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
 import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
@@ -21,6 +23,14 @@ class AuthRepoImp extends AuthRepo {
   }) async {
     try {
       final LoginResponse response = await authService.login(body: body);
+      await CacheHelper.setSecureData(
+        key: kAccessToken,
+        value: response.accessToken,
+      );
+      await CacheHelper.setSecureData(
+        key: kRefreshToken,
+        value: response.refreshToken,
+      );
       return right(response);
     } on DioException catch (e) {
       return left(

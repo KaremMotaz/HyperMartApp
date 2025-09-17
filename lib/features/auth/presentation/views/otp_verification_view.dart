@@ -8,7 +8,8 @@ import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
 import 'widgets/otp_view_body_bloc_listener.dart';
 
 class OtpVerificationView extends StatelessWidget {
-  const OtpVerificationView({super.key});
+  const OtpVerificationView({super.key, required this.userEmail});
+  final String userEmail;
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +17,13 @@ class OtpVerificationView extends StatelessWidget {
       create: (context) => VerifyEmailCubit(authRepo: getIt.get<AuthRepo>()),
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: const Text('OTP Verification'),
           leading: Navigator.of(context).canPop()
               ? const CustomAppBarPopIcon()
               : null,
         ),
-        body: const SafeArea(child: OtpViewBodyBlocListener()),
+        body: SafeArea(child: OtpViewBodyBlocListener(userEmail: userEmail)),
       ),
     );
   }

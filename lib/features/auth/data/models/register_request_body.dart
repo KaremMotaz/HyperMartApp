@@ -14,8 +14,8 @@ class RegisterRequestBody {
   Map<String, dynamic> toJson() {
     return {
       'email': email,
-      'first_name': firstName,
-      'last_name': lastName,
+      'firstName': firstName,
+      'lastName': lastName,
       'password': password,
     };
   }

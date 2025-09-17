@@ -10,13 +10,13 @@ abstract class AppRouter {
     return GoRouter(
       routes: [
         GoRoute(
-          path: "/",
+          path: Routes.loginView,
           builder: (context, state) {
             return const LoginView();
           },
         ),
         GoRoute(
-          path: Routes.signUpView,
+          path: Routes.registerView,
           builder: (context, state) {
             return const RegisterView();
           },
@@ -24,7 +24,8 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.otpVerificationView,
           builder: (context, state) {
-            return const OtpVerificationView();
+            final String userEmail = state.extra as String;
+            return OtpVerificationView(userEmail: userEmail);
           },
         ),
         GoRoute(

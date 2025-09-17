@@ -1,5 +1,6 @@
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
+import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
 import 'package:hyper_mart_app/features/auth/presentation/manager/verify_email_cubit/verify_email_cubit.dart';
 import '../../../../../core/widgets/app_text_button.dart';
@@ -31,7 +32,7 @@ class _PinInputFormState extends State<PinInputForm> {
       child: Column(
         children: [
           Pinput(
-            length: 5,
+            length: 6,
             controller: pinController,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             preFilledWidget: Padding(
@@ -39,7 +40,7 @@ class _PinInputFormState extends State<PinInputForm> {
               child: Text(
                 '*',
                 style: TextStyles.bold20.copyWith(
-                  color: ColorsManager.lightGrey,
+                  color: ColorsManager.mainBlue,
                 ),
               ),
             ),
@@ -49,18 +50,22 @@ class _PinInputFormState extends State<PinInputForm> {
                 child: Center(
                   child: Text(
                     errorText ?? '',
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyles.regular14.copyWith(
+                      color: ColorsManager.red,
+                    ),
                   ),
                 ),
               );
             },
             defaultPinTheme: PinTheme(
-              width: 56,
-              height: 56,
-              textStyle: TextStyles.bold20,
+              width: 54,
+              height: 54,
+              textStyle: TextStyles.bold20.copyWith(
+                color: ColorsManager.mainBlue,
+              ),
               decoration: BoxDecoration(
                 color: ColorsManager.white,
-                border: Border.all(color: ColorsManager.lightGrey),
+                border: Border.all(color: ColorsManager.mainBlue, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
@@ -72,18 +77,33 @@ class _PinInputFormState extends State<PinInputForm> {
             },
           ),
           SizedBox(height: 150),
-          AppTextButton(
-            buttonWidth: double.infinity,
-            textStyle: TextStyles.bold20,
-            onPressed: () async {
-              if (formKey.currentState!.validate()) {
-                context.read<VerifyEmailCubit>().verifyEmail(
-                  verifyEmailRequestBody: VerifyEmailRequestBody(
-                    email: widget.userEmail,
-                    otp: pinController.text,
-                  ),
-                );
-              }
+          BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
+            builder: (context, state) {
+              return IgnorePointer(
+                ignoring: state is VerifyEmailLoadingState,
+                child: AppTextButton(
+                  buttonWidth: double.infinity,
+                  backgroundColor: ColorsManager.mainBlue,
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
+                      context.read<VerifyEmailCubit>().verifyEmail(
+                        verifyEmailRequestBody: VerifyEmailRequestBody(
+                          email: widget.userEmail,
+                          otp: pinController.text,
+                        ),
+                      );
+                    }
+                  },
+                  child: state is VerifyEmailLoadingState
+                      ? CustomCircularProgressIndicator()
+                      : Text(
+                          "Next",
+                          style: TextStyles.bold18.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                ),
+              );
             },
           ),
         ],

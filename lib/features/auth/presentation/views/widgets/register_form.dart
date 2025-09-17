@@ -14,6 +14,7 @@ import 'password_validations.dart';
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
 
+
   @override
   State<RegisterForm> createState() => _RegisterFormState();
 }

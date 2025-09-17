@@ -16,7 +16,7 @@ class LoginViewBodyBlocListener extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginSuccessState) {
           successSnackBar(context: context, message: "Login Success");
-          GoRouter.of(context).pushReplacement(Routes.mainView);
+          GoRouter.of(context).go(Routes.mainView);
         }
         if (state is LoginFailureState) {
           showDialog(
