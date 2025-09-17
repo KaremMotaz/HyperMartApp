@@ -1,15 +1,16 @@
-class ApiErrorModel {
-  final int? statusCode;
-  final String? message;
-  final List<String> errors;
+import 'package:hyper_mart_app/core/errors/failure.dart';
 
+class ApiErrorModel extends Failure {
   ApiErrorModel({
-    required this.message,
-    required this.statusCode,
-    required this.errors,
+    required super.message,
+    required super.code,
+    required super.details,
   });
 
-  factory ApiErrorModel.fromJson(Map<String, dynamic> json) {
+  factory ApiErrorModel.fromJson({
+    required Map<String, dynamic> json,
+    required int? statusCode,
+  }) {
     final allErrors = json['errors'] as Map<String, dynamic>?;
     final List<String> errorsList = [];
     if (allErrors != null) {
@@ -22,9 +23,9 @@ class ApiErrorModel {
     }
 
     return ApiErrorModel(
-      statusCode: json['statusCode'] ?? 0,
-      message: json['message'] ?? '',
-      errors: errorsList,
+      code: statusCode.toString(),
+      message: json['message'],
+      details: errorsList,
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:hyper_mart_app/core/services/auth_service.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
 import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
 import 'package:hyper_mart_app/features/auth/domain/auth_repo.dart';
 
 class AuthRepoImp extends AuthRepo {
@@ -22,15 +23,16 @@ class AuthRepoImp extends AuthRepo {
       final LoginResponse response = await authService.login(body: body);
       return right(response);
     } on DioException catch (e) {
-      final apiError = ApiErrorModel.fromJson(e.response?.data ?? {});
       return left(
-        AuthFailure(
-          message: apiError.message ?? "Unexpected error",
-          details: apiError.errors,
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
         ),
       );
     } catch (e) {
-      return left(AuthFailure(message: e.toString()));
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
     }
   }
 
@@ -42,15 +44,37 @@ class AuthRepoImp extends AuthRepo {
       await authService.register(body: body);
       return right(unit);
     } on DioException catch (e) {
-      final apiError = ApiErrorModel.fromJson(e.response?.data ?? {});
       return left(
-        AuthFailure(
-          message: apiError.message ?? "Unexpected error",
-          details: apiError.errors,
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
         ),
       );
     } catch (e) {
-      return left(AuthFailure(message: e.toString()));
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> verifyEmail({
+    required VerifyEmailRequestBody body,
+  }) async {
+    try {
+      await authService.verifyEmail(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
     }
   }
 

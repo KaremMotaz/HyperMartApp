@@ -3,6 +3,7 @@ import 'package:hyper_mart_app/core/helpers/backend_endpoint.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
 import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
 import 'package:retrofit/retrofit.dart';
 part 'auth_service.g.dart';
 
@@ -15,4 +16,7 @@ abstract class AuthService {
 
   @POST(BackendEndpoint.register)
   Future<void> register({@Body() required RegisterRequestBody body});
+
+  @POST(BackendEndpoint.verifyEmail)
+  Future<void> verifyEmail({@Body() required VerifyEmailRequestBody body});
 }

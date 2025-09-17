@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
+import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
 import 'package:hyper_mart_app/features/auth/presentation/manager/register_cubit/register_cubit.dart';
 
@@ -130,13 +131,26 @@ class _RegisterFormState extends State<RegisterForm> {
             hasMinLength: hasMinLength,
           ),
           const SizedBox(height: 25),
-          AppTextButton(
-            buttonText: "Create New Account",
-            buttonWidth: double.infinity,
-            backgroundColor: ColorsManager.mainBlue,
-            textStyle: TextStyles.semiBold16.copyWith(color: Colors.white),
-            onPressed: () {
-              validateThenRegister(context);
+          BlocBuilder<RegisterCubit, RegisterState>(
+            builder: (context, state) {
+              return IgnorePointer(
+                ignoring: state is RegisterLoadingState,
+                child: AppTextButton(
+                  buttonWidth: double.infinity,
+                  backgroundColor: ColorsManager.mainBlue,
+                  onPressed: () {
+                    validateThenRegister(context);
+                  },
+                  child: state is RegisterLoadingState
+                      ? CustomCircularProgressIndicator()
+                      : Text(
+                          "Register",
+                          style: TextStyles.bold18.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                ),
+              );
             },
           ),
         ],
@@ -171,3 +185,5 @@ class _RegisterFormState extends State<RegisterForm> {
     }
   }
 }
+
+

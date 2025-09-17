@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
 import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
 import '../../../core/errors/failure.dart';
 
 abstract class AuthRepo {
@@ -10,6 +11,9 @@ abstract class AuthRepo {
   });
   Future<Either<Failure, Unit>> registerWithEmailAndPassword({
     required RegisterRequestBody body,
+  });
+  Future<Either<Failure, Unit>> verifyEmail({
+    required VerifyEmailRequestBody body,
   });
 
   Future<Either<Failure, Unit>> logOut();

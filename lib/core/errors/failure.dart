@@ -1,5 +1,5 @@
 abstract class Failure {
-  final String code;
+  final String? code;
   final String message;
   final List<String> details;
 

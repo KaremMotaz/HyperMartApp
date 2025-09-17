@@ -6,6 +6,7 @@ import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
+import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
 import 'package:hyper_mart_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -106,22 +107,13 @@ class _LoginFormState extends State<LoginForm> {
               return IgnorePointer(
                 ignoring: state is LoginLoadingState,
                 child: AppTextButton(
-                  textStyle: TextStyles.semiBold16.copyWith(
-                    color: Colors.white,
-                  ),
                   backgroundColor: ColorsManager.mainBlue,
                   buttonWidth: double.infinity,
                   onPressed: () {
                     validateThenSignin(context);
                   },
                   child: state is LoginLoadingState
-                      ? SizedBox(
-                          width: 21,
-                          height: 21,
-                          child: const CircularProgressIndicator(
-                            color: Colors.white,
-                          ),
-                        )
+                      ? CustomCircularProgressIndicator()
                       : Text(
                           "Login",
                           style: TextStyles.bold18.copyWith(
