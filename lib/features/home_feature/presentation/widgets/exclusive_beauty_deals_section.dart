@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/data/models/beauty_deals_model.dart';
+import '../../data/models/beauty_deals_model.dart';
 import 'brand_deal_card.dart';
 import 'section_header.dart';
 

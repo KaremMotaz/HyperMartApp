@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/features/auth/presentation/views/widgets/pin_input_form.dart';
+import '../../../../../core/theming/assets_manager.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import 'pin_input_form.dart';
 import '../../../../../core/theming/text_styles.dart';
 
 class OTPVerificationViewBody extends StatelessWidget {

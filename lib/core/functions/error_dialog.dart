@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
+import '../theming/colors_manager.dart';
+import '../theming/text_styles.dart';
 
 class ErrorDialog extends StatelessWidget {
   final String title;

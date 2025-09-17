@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
+import 'colors_manager.dart';
+import 'text_styles.dart';
 
 abstract class ThemeManager {
   static ThemeData getAppTheme() {

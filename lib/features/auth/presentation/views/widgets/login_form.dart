@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/helpers/app_regex.dart';
-import 'package:hyper_mart_app/core/routing/routes.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
+import '../../../../../core/helpers/app_regex.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/widgets/app_text_button.dart';
+import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../../../data/models/login_request_body.dart';
+import '../../manager/login_cubit/login_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 
 class LoginForm extends StatefulWidget {

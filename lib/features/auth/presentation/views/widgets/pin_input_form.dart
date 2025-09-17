@@ -1,8 +1,8 @@
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/verify_email_cubit/verify_email_cubit.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../../../data/models/verify_email_request_body.dart';
+import '../../manager/verify_email_cubit/verify_email_cubit.dart';
 import '../../../../../core/widgets/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

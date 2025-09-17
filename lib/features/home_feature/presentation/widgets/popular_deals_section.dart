@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../data/models/product_model.dart';
 import 'product_card.dart';
 import 'section_header.dart';

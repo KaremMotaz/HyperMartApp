@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 

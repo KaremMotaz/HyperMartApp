@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../../../../core/theming/colors_manager.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/text_styles.dart';
 

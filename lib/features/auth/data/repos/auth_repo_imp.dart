@@ -1,16 +1,21 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:hyper_mart_app/core/errors/auth_failure.dart';
-import 'package:hyper_mart_app/core/errors/failure.dart';
-import 'package:hyper_mart_app/core/helpers/constants.dart';
-import 'package:hyper_mart_app/core/networking/api_error_model.dart';
-import 'package:hyper_mart_app/core/services/auth_service.dart';
-import 'package:hyper_mart_app/core/services/cache_helper.dart';
-import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
-import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
-import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
-import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
-import 'package:hyper_mart_app/features/auth/domain/auth_repo.dart';
+import '../../../../core/errors/auth_failure.dart';
+import '../../../../core/errors/failure.dart';
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/services/auth_service.dart';
+import '../../../../core/services/cache_helper.dart';
+import '../models/change_password_request_body.dart';
+import '../models/forgot_password_request_body.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
+import '../models/refresh_token_request_body.dart';
+import '../models/refresh_token_response.dart';
+import '../models/register_request_body.dart';
+import '../models/reset_password_request_body.dart';
+import '../models/verify_email_request_body.dart';
+import '../../domain/auth_repo.dart';
 
 class AuthRepoImp extends AuthRepo {
   final AuthService authService;
@@ -89,7 +94,115 @@ class AuthRepoImp extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, Unit>> logOut() {
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> logOut() async {
+    try {
+      await authService.logout();
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> changePassword({
+    required ChangePasswordRequestBody body,
+  }) async {
+    try {
+      await authService.changePassword(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> forgotPassword({
+    required ForgotPasswordRequestBody body,
+  }) async {
+    try {
+      await authService.forgotPassword(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> resetPassword({
+    required ResetPasswordRequestBody body,
+  }) async {
+    try {
+      await authService.resetPassword(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, RefreshTokenResponse>> refreshToken({
+    required RefreshTokenRequestBody body,
+  }) async {
+    try {
+      final RefreshTokenResponse response = await authService.refreshToken(
+        body: body,
+      );
+      await CacheHelper.setSecureData(
+        key: kAccessToken,
+        value: response.accessToken,
+      );
+      await CacheHelper.setSecureData(
+        key: kRefreshToken,
+        value: response.refreshToken,
+      );
+      return right(response);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
   }
 }

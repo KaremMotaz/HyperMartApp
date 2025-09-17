@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/core/errors/failure.dart';
+import '../errors/failure.dart';
 
 class ApiErrorModel extends Failure {
   ApiErrorModel({

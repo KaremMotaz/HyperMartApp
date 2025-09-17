@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
+import '../../../data/models/register_request_body.dart';
 import '../../../../../core/errors/failure.dart';
 import '../../../domain/auth_repo.dart';
 part 'register_state.dart';

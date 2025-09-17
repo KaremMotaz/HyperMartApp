@@ -11,5 +11,7 @@ final class LogOutSuccessState extends LogOutState {}
 
 final class LogOutFailureState extends LogOutState {
   final String message;
-  LogOutFailureState({required this.message});
+  final List<String> details;
+
+  LogOutFailureState({required this.message, required this.details});
 }

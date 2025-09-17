@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/services/get_it_service.dart';
-import 'package:hyper_mart_app/features/auth/domain/auth_repo.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/verify_email_cubit/verify_email_cubit.dart';
+import '../../../../core/services/get_it_service.dart';
+import '../../domain/auth_repo.dart';
+import '../manager/verify_email_cubit/verify_email_cubit.dart';
 
 import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
 import 'widgets/otp_view_body_bloc_listener.dart';

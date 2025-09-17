@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/register_cubit/register_cubit.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/widgets/app_text_button.dart';
+import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../../../data/models/register_request_body.dart';
+import '../../manager/register_cubit/register_cubit.dart';
 
 import '../../../../../core/helpers/app_regex.dart';
 import '../../../../../core/theming/text_styles.dart';

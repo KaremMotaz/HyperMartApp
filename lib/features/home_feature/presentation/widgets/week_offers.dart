@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home_feature/presentation/widgets/offer_item.dart';
+import 'offer_item.dart';
 
 class WeekOffers extends StatefulWidget {
   const WeekOffers({super.key});

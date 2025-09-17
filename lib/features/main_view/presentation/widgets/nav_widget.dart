@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/theming/colors_manager.dart';
 
 class NavWidget extends StatelessWidget {

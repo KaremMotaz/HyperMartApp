@@ -1,8 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:hyper_mart_app/features/auth/data/models/login_request_body.dart';
-import 'package:hyper_mart_app/features/auth/data/models/login_response.dart';
-import 'package:hyper_mart_app/features/auth/data/models/register_request_body.dart';
-import 'package:hyper_mart_app/features/auth/data/models/verify_email_request_body.dart';
+import '../data/models/change_password_request_body.dart';
+import '../data/models/forgot_password_request_body.dart';
+import '../data/models/login_request_body.dart';
+import '../data/models/login_response.dart';
+import '../data/models/refresh_token_request_body.dart';
+import '../data/models/refresh_token_response.dart';
+import '../data/models/register_request_body.dart';
+import '../data/models/reset_password_request_body.dart';
+import '../data/models/verify_email_request_body.dart';
 import '../../../core/errors/failure.dart';
 
 abstract class AuthRepo {
@@ -16,11 +21,19 @@ abstract class AuthRepo {
     required VerifyEmailRequestBody body,
   });
 
+  Future<Either<Failure, RefreshTokenResponse>> refreshToken({
+    required RefreshTokenRequestBody body,
+  });
+
+  Future<Either<Failure, Unit>> changePassword({
+    required ChangePasswordRequestBody body,
+  });
+  Future<Either<Failure, Unit>> forgotPassword({
+    required ForgotPasswordRequestBody body,
+  });
+  Future<Either<Failure, Unit>> resetPassword({
+    required ResetPasswordRequestBody body,
+  });
+
   Future<Either<Failure, Unit>> logOut();
-  // Future<Either<Failure, UserEntity>> addUserData({
-  //   required UserEntity userEntity,
-  // });
-  // Future saveUserData({required UserEntity userEntity});
-  // Future<UserEntity> getUserData({required String uid});
-  // Future<Either<Failure, bool>> checkIfDataExists({required String documentId});
 }

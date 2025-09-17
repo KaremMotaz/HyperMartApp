@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../../../../core/theming/colors_manager.dart';
 import '../../../../../core/theming/text_styles.dart';
 import 'dont_have_an_account.dart';
 import 'login_form.dart';

@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
+import '../../../../core/theming/assets_manager.dart';
 
 class BeautyDealsModel {
   final String image;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_manager.dart';
 import 'brand_item.dart';
 import 'section_header.dart';
