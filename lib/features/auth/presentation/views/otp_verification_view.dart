@@ -5,7 +5,7 @@ import '../../domain/auth_repo.dart';
 import '../manager/verify_email_cubit/verify_email_cubit.dart';
 
 import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
-import 'widgets/otp_view_body_bloc_listener.dart';
+import '../widgets/otp_view_body_bloc_listener.dart';
 
 class OtpVerificationView extends StatelessWidget {
   const OtpVerificationView({super.key, required this.userEmail});

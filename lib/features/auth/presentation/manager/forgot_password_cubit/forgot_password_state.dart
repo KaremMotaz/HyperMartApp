@@ -13,11 +13,11 @@ final class ForgotPasswordLoadingState extends ForgotPasswordState {}
 
 final class ForgotPasswordSuccessState extends ForgotPasswordState {}
 
-final class ForgotPasswordErrorState extends ForgotPasswordState {
+final class ForgotPasswordFailureState extends ForgotPasswordState {
   final String message;
   final List<String> details;
 
-  const ForgotPasswordErrorState({
+  const ForgotPasswordFailureState({
     required this.message,
     required this.details,
   });

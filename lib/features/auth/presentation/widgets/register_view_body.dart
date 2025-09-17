@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
-import 'dont_have_an_account.dart';
-import 'login_form.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'already_have_an_account.dart';
+import 'register_form.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatelessWidget {
+  const RegisterViewBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,13 +16,16 @@ class LoginViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Welcome Back!",
+              "Create New Account",
               style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
             ),
-            const SizedBox(height: 32),
-            LoginForm(),
+            const SizedBox(height: 36),
+            RegisterForm(),
             const SizedBox(height: 25),
-            const DontHaveAnAccount(),
+            const Align(
+              alignment: AlignmentDirectional.center,
+              child: AlreadyHaveAnAccount(),
+            ),
           ],
         ),
       ),

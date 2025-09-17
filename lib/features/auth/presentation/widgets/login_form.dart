@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/helpers/app_regex.dart';
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
-import '../../../../../core/widgets/app_text_button.dart';
-import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
-import '../../../data/models/login_request_body.dart';
-import '../../manager/login_cubit/login_cubit.dart';
-import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
+import '../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../../data/models/login_request_body.dart';
+import '../manager/login_cubit/login_cubit.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -110,7 +110,7 @@ class _LoginFormState extends State<LoginForm> {
                   backgroundColor: ColorsManager.mainBlue,
                   buttonWidth: double.infinity,
                   onPressed: () {
-                    validateThenSignin(context);
+                    validateThenLogin(context);
                   },
                   child: state is LoginLoadingState
                       ? CustomCircularProgressIndicator()
@@ -129,7 +129,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  void validateThenSignin(BuildContext context) {
+  void validateThenLogin(BuildContext context) {
     if (formKey.currentState!.validate()) {
       context.read<LoginCubit>().loginWithEmailAndPassword(
         loginRequestBody: LoginRequestBody(

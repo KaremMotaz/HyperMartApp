@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
 import '../../domain/auth_repo.dart';
 import '../manager/register_cubit/register_cubit.dart';
-import 'widgets/register_view_body_bloc_listener.dart';
+import '../widgets/register_view_body_bloc_listener.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

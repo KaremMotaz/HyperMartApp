@@ -25,7 +25,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     result.fold(
       (failure) {
         emit(
-          ForgotPasswordErrorState(
+          ForgotPasswordFailureState(
             message: failure.message,
             details: failure.details,
           ),
@@ -49,7 +49,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     result.fold(
       (failure) {
         emit(
-          ForgotPasswordErrorState(
+          ForgotPasswordFailureState(
             message: failure.message,
             details: failure.details,
           ),

@@ -1,9 +1,9 @@
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
-import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
-import '../../../data/models/verify_email_request_body.dart';
-import '../../manager/verify_email_cubit/verify_email_cubit.dart';
-import '../../../../../core/widgets/app_text_button.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../../data/models/verify_email_request_body.dart';
+import '../manager/verify_email_cubit/verify_email_cubit.dart';
+import '../../../../core/widgets/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pinput/pinput.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/text_styles.dart';
 
 class PasswordValidations extends StatelessWidget {
   const PasswordValidations({
