@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/resend_otp_cubit/resend_otp_cubit.dart';
+import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
+import '../manager/resend_otp_cubit/resend_otp_cubit.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 

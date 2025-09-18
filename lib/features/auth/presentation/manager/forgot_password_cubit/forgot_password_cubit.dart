@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/features/auth/data/models/validate_otp_request_body.dart';
+import '../../../data/models/validate_otp_request_body.dart';
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/forgot_password_request_body.dart';
 import '../../../data/models/reset_password_request_body.dart';

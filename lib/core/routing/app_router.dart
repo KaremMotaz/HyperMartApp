@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/services/get_it_service.dart';
-import 'package:hyper_mart_app/features/auth/domain/auth_repo.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/views/forgot_password_otp_view.dart';
-import 'package:hyper_mart_app/features/auth/presentation/views/forgot_password_view.dart';
-import 'package:hyper_mart_app/features/auth/presentation/views/reset_password_view.dart';
+import '../services/get_it_service.dart';
+import '../../features/auth/domain/auth_repo.dart';
+import '../../features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
+import '../../features/auth/presentation/views/forgot_password_otp_view.dart';
+import '../../features/auth/presentation/views/forgot_password_view.dart';
+import '../../features/auth/presentation/views/reset_password_view.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/otp_verification_view.dart';

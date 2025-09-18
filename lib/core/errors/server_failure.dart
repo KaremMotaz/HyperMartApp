@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+
 import 'failure.dart';
 
 class ServerFailure extends Failure {

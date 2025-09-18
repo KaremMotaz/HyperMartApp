@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
-import 'package:hyper_mart_app/core/functions/error_dialog.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/resend_otp_cubit/resend_otp_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/custom_pinput.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/resend_otp_email_widget.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
+import '../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
+import '../manager/resend_otp_cubit/resend_otp_cubit.dart';
+import 'custom_pinput.dart';
+import 'resend_otp_email_widget.dart';
 
 class ForgotPasswordOTPForm extends StatefulWidget {
   const ForgotPasswordOTPForm({super.key});

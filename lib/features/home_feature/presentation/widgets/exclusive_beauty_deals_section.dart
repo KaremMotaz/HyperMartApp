@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../data/models/beauty_deals_model.dart';
 import 'brand_deal_card.dart';
 import 'section_header.dart';

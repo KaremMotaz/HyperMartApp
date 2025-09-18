@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/verify_email_request_body.dart';
 import '../../../domain/auth_repo.dart';
+
 part 'verify_email_state.dart';
 
 class VerifyEmailCubit extends Cubit<VerifyEmailState> {

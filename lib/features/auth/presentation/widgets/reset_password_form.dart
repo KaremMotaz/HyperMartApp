@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/helpers/app_regex.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_form_field.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/widgets/custom_circular_progress_indicator.dart';
+import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
 
 class ResetPasswordForm extends StatefulWidget {
   const ResetPasswordForm({super.key});

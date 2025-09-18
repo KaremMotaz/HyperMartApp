@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_otp_form.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
+import 'forgot_password_otp_form.dart';
 
 class ForgotPasswordOTPViewBody extends StatelessWidget {
   const ForgotPasswordOTPViewBody({super.key});

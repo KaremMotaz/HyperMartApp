@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:hyper_mart_app/features/auth/data/models/resend_otp_request_body.dart';
-import 'package:hyper_mart_app/features/auth/data/models/user_data.dart';
-import 'package:hyper_mart_app/features/auth/data/models/validate_otp_request_body.dart';
+import '../../features/auth/data/models/resend_otp_request_body.dart';
+import '../../features/auth/data/models/user_data.dart';
+import '../../features/auth/data/models/validate_otp_request_body.dart';
 import '../helpers/backend_endpoint.dart';
 import '../../features/auth/data/models/change_password_request_body.dart';
 import '../../features/auth/data/models/forgot_password_request_body.dart';

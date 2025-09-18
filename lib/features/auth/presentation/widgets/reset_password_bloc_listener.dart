@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
-import 'package:hyper_mart_app/core/functions/error_dialog.dart';
-import 'package:hyper_mart_app/core/routing/routes.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/reset_password_view_body.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../../core/routing/routes.dart';
+import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
+import 'reset_password_view_body.dart';
 
 class ResetPasswordBlocListener extends StatelessWidget {
   const ResetPasswordBlocListener({super.key});

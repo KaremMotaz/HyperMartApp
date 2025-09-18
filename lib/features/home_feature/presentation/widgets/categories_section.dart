@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../data/models/category_model.dart';
 import 'category_item.dart';
 import 'section_header.dart';

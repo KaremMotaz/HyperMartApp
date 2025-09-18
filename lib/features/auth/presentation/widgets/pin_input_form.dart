@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/features/auth/presentation/widgets/custom_pinput.dart';
+import 'custom_pinput.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/custom_circular_progress_indicator.dart';
