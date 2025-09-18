@@ -95,7 +95,7 @@ class _LoginFormState extends State<LoginForm> {
               },
               child: Text(
                 "Forgot Password?",
-                style: TextStyles.regular13.copyWith(
+                style: TextStyles.regular16.copyWith(
                   color: ColorsManager.mainBlue,
                 ),
               ),

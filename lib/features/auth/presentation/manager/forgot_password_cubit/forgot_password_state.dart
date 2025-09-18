@@ -11,13 +11,11 @@ final class ForgotPasswordInitialState extends ForgotPasswordState {}
 
 final class ForgotPasswordLoadingState extends ForgotPasswordState {}
 
-class ForgotPasswordSendOtpSuccessState extends ForgotPasswordState {}
+final class ForgotPasswordSendOtpSuccessState extends ForgotPasswordState {}
 
-class ForgotPasswordVerifyOtpSuccessState extends ForgotPasswordState {}
+final class ForgotPasswordVerifyOtpSuccessState extends ForgotPasswordState {}
 
-class ForgotPasswordResendOtpSuccessState extends ForgotPasswordState {}
-
-class ForgotPasswordResetSuccessState extends ForgotPasswordState {}
+final class ForgotPasswordResetSuccessState extends ForgotPasswordState {}
 
 final class ForgotPasswordFailureState extends ForgotPasswordState {
   final String message;

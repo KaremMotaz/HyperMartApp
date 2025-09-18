@@ -36,33 +36,26 @@ abstract class AppRouter {
             return OtpVerificationView(userEmail: userEmail);
           },
         ),
-        GoRoute(
-          path: Routes.forgotPasswordView,
-          builder: (context, state) {
+        ShellRoute(
+          builder: (context, state, child) {
             return BlocProvider(
               create: (context) =>
                   ForgotPasswordCubit(authRepo: getIt.get<AuthRepo>()),
-              child: const ForgotPasswordView(),
+              child: child,
             );
           },
           routes: [
             GoRoute(
+              path: Routes.forgotPasswordView,
+              builder: (context, state) => const ForgotPasswordView(),
+            ),
+            GoRoute(
               path: Routes.forgotPasswordOtpView,
-              builder: (context, state) {
-                return BlocProvider.value(
-                  value: context.read<ForgotPasswordCubit>(),
-                  child: const ForgotPasswordOtpView(),
-                );
-              },
+              builder: (context, state) => const ForgotPasswordOtpView(),
             ),
             GoRoute(
               path: Routes.resetPasswordView,
-              builder: (context, state) {
-                return BlocProvider.value(
-                  value: context.read<ForgotPasswordCubit>(),
-                  child: const ResetPasswordView(),
-                );
-              },
+              builder: (context, state) => const ResetPasswordView(),
             ),
           ],
         ),

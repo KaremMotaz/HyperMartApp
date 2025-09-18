@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
+import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_otp_form.dart';
 
 class ForgotPasswordOTPViewBody extends StatelessWidget {
@@ -8,20 +10,38 @@ class ForgotPasswordOTPViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String email =
+        BlocProvider.of<ForgotPasswordCubit>(context).email ?? "";
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 18),
+            const SizedBox(height: 20),
             const Text('Check your email', style: TextStyles.semiBold20),
             const SizedBox(height: 12),
             Text(
-              'We sent a reset link to contact@dscode...com\nenter 6 digit code that mentioned in the email',
+              'We sent a reset link to your email :',
               style: TextStyles.semiBold15.copyWith(
                 color: ColorsManager.darkergrey,
+              ),
+            ),
+            const SizedBox(height: 6),
+            Center(
+              child: Text(
+                email,
+                style: TextStyles.semiBold15.copyWith(
+                  color: ColorsManager.darkergrey,
+                ),
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              'Enter 6 digit code that mentioned in the email',
+              style: TextStyles.semiBold15.copyWith(
+                color: ColorsManager.mainBlue,
               ),
             ),
             const SizedBox(height: 30),

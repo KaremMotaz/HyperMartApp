@@ -35,6 +35,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
     return Form(
       key: formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text('Password', style: TextStyles.semiBold16),
           const SizedBox(height: 8),

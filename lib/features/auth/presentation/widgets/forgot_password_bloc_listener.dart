@@ -19,7 +19,7 @@ class ForgotPasswordBlocListener extends StatelessWidget {
             context: context,
             message: "OTP has been sent to your email",
           );
-          GoRouter.of(context).go(Routes.forgotPasswordOtpView);
+          GoRouter.of(context).pushReplacement(Routes.forgotPasswordOtpView);
         }
         if (state is ForgotPasswordFailureState) {
           showDialog(
