@@ -1,6 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/features/auth/data/models/resend_otp_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/validate_otp_request_body.dart';
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/forgot_password_request_body.dart';
 import '../../../data/models/reset_password_request_body.dart';
@@ -12,6 +14,8 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     : super(ForgotPasswordInitialState());
 
   final AuthRepo authRepo;
+  String? email;
+  String? otp;
 
   Future<void> forgotPassword({
     required ForgotPasswordRequestBody forgotPasswordRequestBody,
@@ -32,18 +36,17 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
         );
       },
       (unit) {
-        emit(ForgotPasswordSuccessState());
+        email = forgotPasswordRequestBody.email;
+        emit(ForgotPasswordSendOtpSuccessState());
       },
     );
   }
 
-  Future<void> resetPassword({
-    required ResetPasswordRequestBody resetPasswordRequestBody,
-  }) async {
+  Future<void> validateOtp({required String otp}) async {
     emit(ForgotPasswordLoadingState());
 
-    final Either<Failure, Unit> result = await authRepo.resetPassword(
-      body: resetPasswordRequestBody,
+    final Either<Failure, Unit> result = await authRepo.validateOtp(
+      body: ValidateOTPRequestBody(email: email!, otp: otp),
     );
 
     result.fold(
@@ -56,7 +59,56 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
         );
       },
       (unit) {
-        emit(ForgotPasswordSuccessState());
+        this.otp = otp;
+        emit(ForgotPasswordVerifyOtpSuccessState());
+      },
+    );
+  }
+
+  Future<void> resendOtp() async {
+    emit(ForgotPasswordLoadingState());
+
+    final Either<Failure, Unit> result = await authRepo.resendOtp(
+      body: ResendOtpRequestBody(email: email!),
+    );
+
+    result.fold(
+      (failure) {
+        emit(
+          ForgotPasswordFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (unit) {
+        emit(ForgotPasswordResendOtpSuccessState());
+      },
+    );
+  }
+
+  Future<void> resetPassword({required String newPassword}) async {
+    emit(ForgotPasswordLoadingState());
+
+    final Either<Failure, Unit> result = await authRepo.resetPassword(
+      body: ResetPasswordRequestBody(
+        email: email!,
+        otp: otp!,
+        newPassword: newPassword,
+      ),
+    );
+
+    result.fold(
+      (failure) {
+        emit(
+          ForgotPasswordFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (unit) {
+        emit(ForgotPasswordResetSuccessState());
       },
     );
   }

@@ -7,5 +7,8 @@ class BackendEndpoint {
   static const changePassword = "auth/change-password";
   static const forgotPassword = "auth/forgot-password";
   static const resetPassword = "auth/reset-password";
+  static const validateOtp = "auth/validate-otp";
+  static const resendOtp = "auth/resend-otp";
   static const refreshToken = "auth/refresh-token";
+  static const getUserData = "auth/me";
 }

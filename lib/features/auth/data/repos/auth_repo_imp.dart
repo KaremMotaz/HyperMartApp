@@ -1,5 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:hyper_mart_app/features/auth/data/models/resend_otp_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/user_data.dart';
+import 'package:hyper_mart_app/features/auth/data/models/validate_otp_request_body.dart';
 import '../../../../core/errors/auth_failure.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/helpers/constants.dart';
@@ -191,6 +194,67 @@ class AuthRepoImp extends AuthRepo {
         key: kRefreshToken,
         value: response.refreshToken,
       );
+      return right(response);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> resendOtp({
+    required ResendOtpRequestBody body,
+  }) async {
+    try {
+      await authService.resendOtp(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> validateOtp({
+    required ValidateOTPRequestBody body,
+  }) async {
+    try {
+      await authService.validateOtp(body: body);
+      return right(unit);
+    } on DioException catch (e) {
+      return left(
+        ApiErrorModel.fromJson(
+          json: e.response?.data ?? {},
+          statusCode: e.response?.statusCode,
+        ),
+      );
+    } catch (e) {
+      return left(
+        AuthFailure(message: "Something went wrong. Please try again."),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserData>> getUserData() async {
+    try {
+      final UserData response = await authService.getUserData();
       return right(response);
     } on DioException catch (e) {
       return left(

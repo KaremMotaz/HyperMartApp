@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_form.dart';
+import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_otp_form.dart';
 
-class ForgotPasswordViewBody extends StatelessWidget {
-  const ForgotPasswordViewBody({super.key});
+class ForgotPasswordOTPViewBody extends StatelessWidget {
+  const ForgotPasswordOTPViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +16,16 @@ class ForgotPasswordViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 18),
-            const Text('Forgot password', style: TextStyles.semiBold20),
+            const Text('Check your email', style: TextStyles.semiBold20),
             const SizedBox(height: 12),
             Text(
-              'Please enter your email to reset the password',
+              'We sent a reset link to contact@dscode...com\nenter 6 digit code that mentioned in the email',
               style: TextStyles.semiBold15.copyWith(
                 color: ColorsManager.darkergrey,
               ),
             ),
             const SizedBox(height: 30),
-            const Text('Your Email', style: TextStyles.semiBold16),
-            const SizedBox(height: 8),
-            const ForgotPasswordForm(),
+            const ForgotPasswordOTPForm(),
           ],
         ),
       ),

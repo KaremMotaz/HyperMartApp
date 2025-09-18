@@ -5,23 +5,22 @@ import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
 import 'package:hyper_mart_app/core/functions/error_dialog.dart';
 import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_view_body.dart';
+import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_otp_view_body.dart';
 
-class ForgotPasswordBlocListener extends StatelessWidget {
-  const ForgotPasswordBlocListener({super.key});
+class ForgotPasswordOTPBlocListener extends StatelessWidget {
+  const ForgotPasswordOTPBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
-        if (state is ForgotPasswordSendOtpSuccessState) {
+        if (state is ForgotPasswordVerifyOtpSuccessState) {
           successSnackBar(
             context: context,
-            message: "OTP has been sent to your email",
+            message: "Successfully verified OTP",
           );
-          GoRouter.of(context).go(Routes.forgotPasswordOtpView);
-        }
-        if (state is ForgotPasswordFailureState) {
+          GoRouter.of(context).pushReplacement(Routes.resetPasswordView);
+        } else if (state is ForgotPasswordFailureState) {
           showDialog(
             context: context,
             builder: (context) {
@@ -30,7 +29,7 @@ class ForgotPasswordBlocListener extends StatelessWidget {
           );
         }
       },
-      child: const ForgotPasswordViewBody(),
+      child: const ForgotPasswordOTPViewBody(),
     );
   }
 }

@@ -1,6 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/services/get_it_service.dart';
+import 'package:hyper_mart_app/features/auth/domain/auth_repo.dart';
+import 'package:hyper_mart_app/features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:hyper_mart_app/features/auth/presentation/views/forgot_password_otp_view.dart';
 import 'package:hyper_mart_app/features/auth/presentation/views/forgot_password_view.dart';
+import 'package:hyper_mart_app/features/auth/presentation/views/reset_password_view.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/otp_verification_view.dart';
@@ -34,14 +39,32 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.forgotPasswordView,
           builder: (context, state) {
-            return const ForgotPasswordView();
+            return BlocProvider(
+              create: (context) =>
+                  ForgotPasswordCubit(authRepo: getIt.get<AuthRepo>()),
+              child: const ForgotPasswordView(),
+            );
           },
-        ),
-        GoRoute(
-          path: Routes.forgotPasswordOtpView,
-          builder: (context, state) {
-            return const ForgotPasswordOtpView();
-          },
+          routes: [
+            GoRoute(
+              path: Routes.forgotPasswordOtpView,
+              builder: (context, state) {
+                return BlocProvider.value(
+                  value: context.read<ForgotPasswordCubit>(),
+                  child: const ForgotPasswordOtpView(),
+                );
+              },
+            ),
+            GoRoute(
+              path: Routes.resetPasswordView,
+              builder: (context, state) {
+                return BlocProvider.value(
+                  value: context.read<ForgotPasswordCubit>(),
+                  child: const ResetPasswordView(),
+                );
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: Routes.mainView,

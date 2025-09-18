@@ -1,4 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:hyper_mart_app/features/auth/data/models/resend_otp_request_body.dart';
+import 'package:hyper_mart_app/features/auth/data/models/user_data.dart';
+import 'package:hyper_mart_app/features/auth/data/models/validate_otp_request_body.dart';
 import '../data/models/change_password_request_body.dart';
 import '../data/models/forgot_password_request_body.dart';
 import '../data/models/login_request_body.dart';
@@ -34,6 +37,11 @@ abstract class AuthRepo {
   Future<Either<Failure, Unit>> resetPassword({
     required ResetPasswordRequestBody body,
   });
+  Future<Either<Failure, Unit>> resendOtp({required ResendOtpRequestBody body});
+  Future<Either<Failure, Unit>> validateOtp({
+    required ValidateOTPRequestBody body,
+  });
 
   Future<Either<Failure, Unit>> logOut();
+  Future<Either<Failure, UserData>> getUserData();
 }

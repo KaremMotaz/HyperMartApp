@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/widgets/custom_app_bar_pop_icon.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/forgot_password_bloc_listener.dart';
+import 'package:hyper_mart_app/features/auth/presentation/widgets/reset_password_bloc_listener.dart';
 
-class ForgotPasswordView extends StatelessWidget {
-  const ForgotPasswordView({super.key});
+class ResetPasswordView extends StatelessWidget {
+  const ResetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Forgot Password'),
+        title: const Text('Reset Password'),
         leading: Navigator.of(context).canPop()
             ? const CustomAppBarPopIcon()
             : null,
       ),
-      body: const ForgotPasswordBlocListener(),
+      body: const ResetPasswordBlocListener(),
     );
   }
 }

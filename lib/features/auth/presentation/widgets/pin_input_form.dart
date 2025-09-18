@@ -1,3 +1,4 @@
+import 'package:hyper_mart_app/features/auth/presentation/widgets/custom_pinput.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/custom_circular_progress_indicator.dart';
@@ -6,7 +7,6 @@ import '../manager/verify_email_cubit/verify_email_cubit.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pinput/pinput.dart';
 
 class PinInputForm extends StatefulWidget {
   const PinInputForm({super.key, required this.userEmail});
@@ -18,10 +18,10 @@ class PinInputForm extends StatefulWidget {
 
 class _PinInputFormState extends State<PinInputForm> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController pinController = TextEditingController();
+  final TextEditingController otpController = TextEditingController();
   @override
   void dispose() {
-    pinController.dispose();
+    otpController.dispose();
     super.dispose();
   }
 
@@ -31,51 +31,7 @@ class _PinInputFormState extends State<PinInputForm> {
       key: formKey,
       child: Column(
         children: [
-          Pinput(
-            length: 6,
-            controller: pinController,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            preFilledWidget: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Text(
-                '*',
-                style: TextStyles.bold20.copyWith(
-                  color: ColorsManager.mainBlue,
-                ),
-              ),
-            ),
-            errorBuilder: (errorText, pin) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: Center(
-                  child: Text(
-                    errorText ?? '',
-                    style: TextStyles.regular14.copyWith(
-                      color: ColorsManager.red,
-                    ),
-                  ),
-                ),
-              );
-            },
-            defaultPinTheme: PinTheme(
-              width: 54,
-              height: 54,
-              textStyle: TextStyles.bold20.copyWith(
-                color: ColorsManager.mainBlue,
-              ),
-              decoration: BoxDecoration(
-                color: ColorsManager.white,
-                border: Border.all(color: ColorsManager.mainBlue, width: 2),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter your pin';
-              }
-              return null;
-            },
-          ),
+          CustomPinput(otpController: otpController),
           const SizedBox(height: 150),
           BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
             builder: (context, state) {
@@ -89,7 +45,7 @@ class _PinInputFormState extends State<PinInputForm> {
                       context.read<VerifyEmailCubit>().verifyEmail(
                         verifyEmailRequestBody: VerifyEmailRequestBody(
                           email: widget.userEmail,
-                          otp: pinController.text,
+                          otp: otpController.text,
                         ),
                       );
                     }
