@@ -20,7 +20,7 @@ class RegisterViewBody extends StatelessWidget {
               style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
             ),
             const SizedBox(height: 36),
-            RegisterForm(),
+            const RegisterForm(),
             const SizedBox(height: 25),
             const Align(
               alignment: AlignmentDirectional.center,

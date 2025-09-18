@@ -20,7 +20,7 @@ class ForgotPasswordView extends StatelessWidget {
               ? const CustomAppBarPopIcon()
               : null,
         ),
-        body: ForgotPasswordBlocListener(),
+        body: const ForgotPasswordBlocListener(),
       ),
     );
   }

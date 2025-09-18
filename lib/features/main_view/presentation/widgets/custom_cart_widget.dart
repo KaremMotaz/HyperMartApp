@@ -30,19 +30,19 @@ class CustomCartWidget extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: EdgeInsets.all(18),
+            padding: const EdgeInsets.all(18),
             child: Stack(
               alignment: Alignment.center,
               children: [
                 SvgPicture.asset(
                   AssetsManager.cartIcon,
-                  colorFilter: ColorFilter.mode(
+                  colorFilter: const ColorFilter.mode(
                     ColorsManager.white,
                     BlendMode.srcIn,
                   ),
                 ),
                 Transform.translate(
-                  offset: Offset(10, -8),
+                  offset: const Offset(10, -8),
                   child: Center(
                     child: Container(
                       width: 15,

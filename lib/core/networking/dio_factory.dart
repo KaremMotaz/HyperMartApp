@@ -7,9 +7,9 @@ class DioFactory {
   Dio get dio => _dio;
   DioFactory() : _dio = Dio() {
     _dio.options
-      ..connectTimeout = Duration(minutes: 1)
-      ..receiveTimeout = Duration(minutes: 1)
-      ..sendTimeout = Duration(minutes: 5);
+      ..connectTimeout = const Duration(minutes: 1)
+      ..receiveTimeout = const Duration(minutes: 1)
+      ..sendTimeout = const Duration(minutes: 5);
     _dio.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,

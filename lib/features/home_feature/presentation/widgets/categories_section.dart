@@ -12,7 +12,7 @@ class CategoriesSection extends StatelessWidget {
     return Column(
       children: [
         SectionHeader(title: 'Categories', onTap: () {}),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SizedBox(
           height: 100,
           child: ListView.separated(

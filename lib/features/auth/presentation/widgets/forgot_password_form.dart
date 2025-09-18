@@ -45,7 +45,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
               }
             },
           ),
-          SizedBox(height: 26),
+          const SizedBox(height: 26),
           BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
             builder: (context, state) {
               return IgnorePointer(
@@ -57,7 +57,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                     validateThenSendOTP(context);
                   },
                   child: state is ForgotPasswordLoadingState
-                      ? CustomCircularProgressIndicator()
+                      ? const CustomCircularProgressIndicator()
                       : Text(
                           "Reset Password",
                           style: TextStyles.bold18.copyWith(

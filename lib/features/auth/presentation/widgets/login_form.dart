@@ -113,7 +113,7 @@ class _LoginFormState extends State<LoginForm> {
                     validateThenLogin(context);
                   },
                   child: state is LoginLoadingState
-                      ? CustomCircularProgressIndicator()
+                      ? const CustomCircularProgressIndicator()
                       : Text(
                           "Login",
                           style: TextStyles.bold18.copyWith(

@@ -12,7 +12,7 @@ class ExclusiveBeautyDealsSection extends StatelessWidget {
     return Column(
       children: [
         SectionHeader(title: 'Exclusive Beauty Deals', onTap: () {}),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SizedBox(
           height: 310,
           child: GridView.builder(

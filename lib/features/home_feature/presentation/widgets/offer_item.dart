@@ -14,7 +14,7 @@ class OfferItem extends StatelessWidget {
         children: [
           Image.asset(AssetsManager.weekOfferImage, fit: BoxFit.fill),
           Image.asset(AssetsManager.maskOfferImage, fit: BoxFit.fill),
-          Positioned(
+          const Positioned(
             bottom: 55,
             left: 22,
             child: Column(

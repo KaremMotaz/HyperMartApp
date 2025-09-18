@@ -143,7 +143,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     validateThenRegister(context);
                   },
                   child: state is RegisterLoadingState
-                      ? CustomCircularProgressIndicator()
+                      ? const CustomCircularProgressIndicator()
                       : Text(
                           "Register",
                           style: TextStyles.bold18.copyWith(

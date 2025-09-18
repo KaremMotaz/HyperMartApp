@@ -19,7 +19,7 @@ class TopBrandsSection extends StatelessWidget {
     return Column(
       children: [
         SectionHeader(title: 'Top Brands', onTap: () {}),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SizedBox(
           height: 70,
           child: ListView.separated(

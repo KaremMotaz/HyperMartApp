@@ -17,13 +17,13 @@ class LocationWidget extends StatelessWidget {
           backgroundColor: ColorsManager.turquoise,
           child: SvgPicture.asset(
             AssetsManager.locationIcon,
-            colorFilter: ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
             width: 24,
             height: 24,
           ),
         ),
-        SizedBox(width: 10),
-        Column(
+        const SizedBox(width: 10),
+        const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Bengaluru", style: TextStyles.regular10),
@@ -31,7 +31,7 @@ class LocationWidget extends StatelessWidget {
             Text("BTM Layout, 500628", style: TextStyles.regular12),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         SvgPicture.asset(AssetsManager.arrowRightIcon),
       ],
     );

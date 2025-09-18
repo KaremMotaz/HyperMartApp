@@ -14,7 +14,7 @@ class BrandDealCard extends StatelessWidget {
         Positioned(
           child: Container(
             width: 120,
-            padding: EdgeInsets.only(left: 13, right: 13, bottom: 30, top: 8),
+            padding: const EdgeInsets.only(left: 13, right: 13, bottom: 30, top: 8),
             decoration: BoxDecoration(
               color: ColorsManager.grey,
               borderRadius: BorderRadius.circular(16),

@@ -30,7 +30,7 @@ class ForgotPasswordBlocListener extends StatelessWidget {
           );
         }
       },
-      child: ForgotPasswordViewBody(),
+      child: const ForgotPasswordViewBody(),
     );
   }
 }

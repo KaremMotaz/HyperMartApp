@@ -13,8 +13,8 @@ class SelectLanguageWidget extends StatelessWidget {
       onTap: () {},
       child: Row(
         children: [
-          Text("Eng",style: TextStyles.regular12,),
-          SizedBox(width: 5),
+          const Text("Eng",style: TextStyles.regular12,),
+          const SizedBox(width: 5),
           SvgPicture.asset(AssetsManager.arrowDownIcon),
         ],
       ),

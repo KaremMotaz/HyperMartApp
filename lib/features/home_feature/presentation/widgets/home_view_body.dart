@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'categories_section.dart';
 import 'custom_appbar.dart';
 import 'custom_text_field.dart';
@@ -15,12 +14,12 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 27),
+              padding: EdgeInsets.symmetric(horizontal: 27),
               child: Column(
                 children: [
                   SizedBox(height: 10),
@@ -35,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
             ),
             WeekOffers(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 27),
+              padding: EdgeInsets.symmetric(horizontal: 27),
               child: Column(
                 children: [
                   SizedBox(height: 20),

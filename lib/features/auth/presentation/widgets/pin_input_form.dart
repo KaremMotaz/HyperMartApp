@@ -76,7 +76,7 @@ class _PinInputFormState extends State<PinInputForm> {
               return null;
             },
           ),
-          SizedBox(height: 150),
+          const SizedBox(height: 150),
           BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
             builder: (context, state) {
               return IgnorePointer(
@@ -95,7 +95,7 @@ class _PinInputFormState extends State<PinInputForm> {
                     }
                   },
                   child: state is VerifyEmailLoadingState
-                      ? CustomCircularProgressIndicator()
+                      ? const CustomCircularProgressIndicator()
                       : Text(
                           "Next",
                           style: TextStyles.bold18.copyWith(

@@ -16,7 +16,7 @@ class CustomNotificationWidget extends StatelessWidget {
         backgroundColor: ColorsManager.lightGrey,
         child: SvgPicture.asset(
           AssetsManager.notificationIcon,
-          colorFilter: ColorFilter.mode(ColorsManager.red, BlendMode.srcIn),
+          colorFilter: const ColorFilter.mode(ColorsManager.red, BlendMode.srcIn),
           width: 22,
           height: 22,
         ),

@@ -19,7 +19,7 @@ class LoginViewBody extends StatelessWidget {
               style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
             ),
             const SizedBox(height: 32),
-            LoginForm(),
+            const LoginForm(),
             const SizedBox(height: 25),
             const DontHaveAnAccount(),
           ],

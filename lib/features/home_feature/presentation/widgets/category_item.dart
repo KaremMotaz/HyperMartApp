@@ -19,14 +19,14 @@ class CategoryItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           SvgPicture.asset(
             category.image,
             width: 33,
             height: 33,
-            colorFilter: ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Text(
             category.title,
             style: TextStyles.medium12.copyWith(
@@ -34,7 +34,7 @@ class CategoryItem extends StatelessWidget {
               fontFamily: "DM_Sans",
             ),
           ),
-          SizedBox(height: 13),
+          const SizedBox(height: 13),
         ],
       ),
     );

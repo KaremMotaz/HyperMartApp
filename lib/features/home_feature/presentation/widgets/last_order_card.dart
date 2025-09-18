@@ -18,7 +18,7 @@ class LastOrderCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorsManager.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: ColorsManager.lightGrey,
             offset: Offset(0, 4),
@@ -45,9 +45,9 @@ class LastOrderCard extends StatelessWidget {
                   lastOrder.date,
                   style: TextStyles.regular10.copyWith(fontFamily: "Lato"),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 OrderContentWidget(lastOrder: lastOrder),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Row(
                   children: [
                     Column(
@@ -57,14 +57,14 @@ class LastOrderCard extends StatelessWidget {
                           "Order ID : #${lastOrder.id}",
                           style: TextStyles.bold10,
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           "Final Total : ₹ ${lastOrder.price}",
                           style: TextStyles.bold16,
                         ),
                       ],
                     ),
-                    SizedBox(width: 18),
+                    const SizedBox(width: 18),
                     AppTextButton(
                       buttonText: "Order Again",
                       onPressed: () {},
@@ -79,7 +79,7 @@ class LastOrderCard extends StatelessWidget {
               ],
             ),
           ),
-          OfferContainer(),
+          const OfferContainer(),
         ],
       ),
     );

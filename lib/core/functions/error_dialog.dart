@@ -35,7 +35,7 @@ class ErrorDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
+          const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
           const SizedBox(height: 16),
           Text(title, style: TextStyles.bold20),
           const SizedBox(height: 12),
@@ -49,7 +49,7 @@ class ErrorDialog extends StatelessWidget {
           OutlinedButton(
             onPressed: () => Navigator.of(context).pop(),
             style: OutlinedButton.styleFrom(
-              side: BorderSide(color: ColorsManager.turquoise),
+              side: const BorderSide(color: ColorsManager.turquoise),
             ),
             child: Text(
               "Dismiss",

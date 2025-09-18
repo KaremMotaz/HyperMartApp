@@ -12,8 +12,8 @@ class DiscountWidget extends StatelessWidget {
       angle: 0.785398,
       child: Container(
         width: 130,
-        padding: EdgeInsets.symmetric(vertical: 5),
-        decoration: BoxDecoration(color: ColorsManager.red),
+        padding: const EdgeInsets.symmetric(vertical: 5),
+        decoration: const BoxDecoration(color: ColorsManager.red),
         child: Text(
           "5% OFF",
           textAlign: TextAlign.center,

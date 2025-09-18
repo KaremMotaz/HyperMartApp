@@ -52,7 +52,7 @@ class HomeNavBar extends StatelessWidget {
             ),
           ),
         ),
-        CustomCartWidget(),
+        const CustomCartWidget(),
       ],
     );
   }

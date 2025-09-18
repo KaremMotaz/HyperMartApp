@@ -12,7 +12,7 @@ class OrderContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15, top: 11, bottom: 11,right: 15),
+      padding: const EdgeInsets.only(left: 15, top: 11, bottom: 11,right: 15),
       decoration: BoxDecoration(
         color: ColorsManager.grey,
         borderRadius: BorderRadius.circular(16),
@@ -39,7 +39,7 @@ class OrderContentWidget extends StatelessWidget {
                 "+${lastOrder.items.length - 3}",
                 style: TextStyles.medium12,
               ),
-              Text(
+              const Text(
                 "More",
                 style: TextStyles.medium12,
               ),

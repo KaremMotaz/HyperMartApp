@@ -55,14 +55,14 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 18),
+              const SizedBox(height: 18),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(product.title, style: TextStyles.regular14,
                 overflow: TextOverflow.ellipsis,
                 ),
               ),
-              SizedBox(height: 9),
+              const SizedBox(height: 9),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
@@ -77,14 +77,14 @@ class ProductCard extends StatelessWidget {
                             color: ColorsManager.orange,
                           ),
                         ),
-                        SizedBox(width: 6),
+                        const SizedBox(width: 6),
                         SvgPicture.asset(AssetsManager.starIcon),
                       ],
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 18),
+              const SizedBox(height: 18),
               isAddedToCart
                   ? Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -142,8 +142,8 @@ class ProductCard extends StatelessWidget {
             ],
           ),
           product.isDiscountFound
-              ? Positioned(top: 15, right: -34, child: DiscountWidget())
-              : SizedBox.shrink(),
+              ? const Positioned(top: 15, right: -34, child: DiscountWidget())
+              : const SizedBox.shrink(),
         ],
       ),
     );

@@ -10,7 +10,7 @@ class OfferContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 40,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: ColorsManager.red,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(16),

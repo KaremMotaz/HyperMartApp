@@ -27,7 +27,7 @@ class LoginViewBodyBlocListener extends StatelessWidget {
           );
         }
       },
-      child: LoginViewBody(),
+      child: const LoginViewBody(),
     );
   }
 }

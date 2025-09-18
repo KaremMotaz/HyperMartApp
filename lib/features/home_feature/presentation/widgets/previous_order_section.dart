@@ -7,7 +7,7 @@ class PreviousOrderSection extends StatelessWidget {
   const PreviousOrderSection({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Align(
           alignment: AlignmentDirectional.centerStart,

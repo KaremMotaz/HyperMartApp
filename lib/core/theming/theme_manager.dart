@@ -8,10 +8,10 @@ abstract class ThemeManager {
     return ThemeData(
       scaffoldBackgroundColor: ColorsManager.white,
       appBarTheme: AppBarTheme(
-        color: ColorsManager.white,
+        backgroundColor: ColorsManager.white,
         centerTitle: true,
         titleTextStyle: TextStyles.bold22.copyWith(color: ColorsManager.black),
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: ColorsManager.black,
         ),
       ),

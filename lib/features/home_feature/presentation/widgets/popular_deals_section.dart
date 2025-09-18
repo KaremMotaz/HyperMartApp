@@ -13,7 +13,7 @@ class PopularDealsSection extends StatelessWidget {
     return Column(
       children: [
         SectionHeader(title: 'Popular Deals', onTap: () {}),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SizedBox(
           height: 690,
           child: GridView.builder(

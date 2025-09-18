@@ -37,7 +37,7 @@ class _WeekOffersState extends State<WeekOffers> {
           scale = scale.clamp(0.9, 1);
           return Transform.scale(
             scale: scale,
-            child: OfferItem(),
+            child: const OfferItem(),
           );
         },
       ),
