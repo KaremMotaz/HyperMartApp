@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
 import 'package:hyper_mart_app/features/auth/data/models/change_password_request_body.dart';
 import 'package:hyper_mart_app/features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../../../../core/widgets/app_text_button.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../../core/widgets/custom_circular_progress_indicator.dart';
 
 class ChangePasswordForm extends StatefulWidget {
   const ChangePasswordForm({super.key});
@@ -136,26 +134,11 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
             },
           ),
           const SizedBox(height: 40),
-          BlocBuilder<ChangePasswordCubit, ChangePasswordState>(
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: state is ChangePasswordLoadingState,
-                child: AppTextButton(
-                  backgroundColor: ColorsManager.mainBlue,
-                  buttonWidth: double.infinity,
-                  onPressed: () {
-                    validateThenChangePassword(context);
-                  },
-                  child: state is ChangePasswordLoadingState
-                      ? const CustomCircularProgressIndicator()
-                      : Text(
-                          "Change Password",
-                          style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                ),
-              );
+          BlocButton<ChangePasswordCubit, ChangePasswordState>(
+            label: "Change Password",
+            isLoading: (state) => state is ChangePasswordLoadingState,
+            onPressed: () {
+              validateThenChangePassword(context);
             },
           ),
         ],

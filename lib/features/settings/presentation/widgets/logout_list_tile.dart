@@ -21,11 +21,10 @@ class LogoutListTile extends StatelessWidget {
           GoRouter.of(context).pushReplacement(Routes.loginView);
         }
         if (state is LogOutFailureState) {
-          showDialog(
+          errorDialog(
             context: context,
-            builder: (context) {
-              return ErrorDialog(title: state.message, messages: state.details);
-            },
+            message: state.message,
+            details: state.details,
           );
         }
       },

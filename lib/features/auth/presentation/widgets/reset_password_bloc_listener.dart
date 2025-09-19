@@ -21,11 +21,10 @@ class ResetPasswordBlocListener extends StatelessWidget {
           );
           GoRouter.of(context).pushReplacement(Routes.loginView);
         } else if (state is ForgotPasswordFailureState) {
-          showDialog(
+          errorDialog(
             context: context,
-            builder: (context) {
-              return ErrorDialog(title: state.message, messages: state.details);
-            },
+            message: state.message,
+            details: state.details,
           );
         }
       },

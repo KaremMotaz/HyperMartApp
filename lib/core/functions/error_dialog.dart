@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
-
 import '../theming/colors_manager.dart';
 import '../theming/text_styles.dart';
 
-class ErrorDialog extends StatelessWidget {
-  final String title;
-  final List<String> messages;
+void errorDialog({
+  required BuildContext context,
+  required String message,
+  required List<String> details,
+}) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return ErrorDialog(message: message, details: details);
+    },
+  );
+}
 
-  const ErrorDialog({super.key, required this.title, required this.messages});
+class ErrorDialog extends StatelessWidget {
+  final String message;
+  final List<String> details;
+
+  const ErrorDialog({super.key, required this.message, required this.details});
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +50,11 @@ class ErrorDialog extends StatelessWidget {
         children: [
           const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
           const SizedBox(height: 16),
-          Text(title, style: TextStyles.bold20),
+          Text(message, style: TextStyles.bold20),
           const SizedBox(height: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: messages
+            children: details
                 .map((msg) => Text(msg, style: TextStyles.medium16))
                 .toList(),
           ),

@@ -14,14 +14,14 @@ final class VerifyEmailLoadingState extends VerifyEmailState {}
 final class VerifyEmailSuccessState extends VerifyEmailState {}
 
 final class VerifyEmailFailureState extends VerifyEmailState {
-  final String errorMessage;
+  final String message;
   final List<String> details;
 
   const VerifyEmailFailureState({
-    required this.errorMessage,
+    required this.message,
     this.details = const [],
   });
 
   @override
-  List<Object> get props => [errorMessage, details];
+  List<Object> get props => [message, details];
 }

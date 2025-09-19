@@ -22,11 +22,10 @@ class RegisterViewBodyBlocListener extends StatelessWidget {
           ).pushReplacement(Routes.otpVerificationView, extra: state.email);
         }
         if (state is RegisterFailureState) {
-          showDialog(
+          errorDialog(
             context: context,
-            builder: (context) {
-              return ErrorDialog(title: state.message, messages: state.details);
-            },
+            message: state.message,
+            details: state.details,
           );
         }
       },

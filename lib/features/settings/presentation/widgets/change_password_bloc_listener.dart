@@ -21,11 +21,10 @@ class ChangePasswordBlocListener extends StatelessWidget {
           GoRouter.of(context).pop();
         }
         if (state is ChangePasswordFailureState) {
-          showDialog(
+          errorDialog(
             context: context,
-            builder: (context) {
-              return ErrorDialog(title: state.message, messages: state.details);
-            },
+            message: state.message,
+            details: state.details,
           );
         }
       },

@@ -1,10 +1,7 @@
+import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
 import 'custom_pinput.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
-import '../../../../core/widgets/custom_circular_progress_indicator.dart';
 import '../../data/models/verify_email_request_body.dart';
 import '../manager/verify_email_cubit/verify_email_cubit.dart';
-import '../../../../core/widgets/app_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,37 +30,26 @@ class _PinInputFormState extends State<PinInputForm> {
         children: [
           CustomPinput(otpController: otpController),
           const SizedBox(height: 150),
-          BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: state is VerifyEmailLoadingState,
-                child: AppTextButton(
-                  buttonWidth: double.infinity,
-                  backgroundColor: ColorsManager.mainBlue,
-                  onPressed: () async {
-                    if (formKey.currentState!.validate()) {
-                      context.read<VerifyEmailCubit>().verifyEmail(
-                        verifyEmailRequestBody: VerifyEmailRequestBody(
-                          email: widget.userEmail,
-                          otp: otpController.text,
-                        ),
-                      );
-                    }
-                  },
-                  child: state is VerifyEmailLoadingState
-                      ? const CustomCircularProgressIndicator()
-                      : Text(
-                          "Next",
-                          style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                ),
-              );
+          BlocButton<VerifyEmailCubit, VerifyEmailState>(
+            label: "Next",
+            isLoading: (state) => state is VerifyEmailLoadingState,
+            onPressed: () {
+              validateThenVerifyEmail(context);
             },
           ),
         ],
       ),
     );
+  }
+
+  void validateThenVerifyEmail(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      context.read<VerifyEmailCubit>().verifyEmail(
+        verifyEmailRequestBody: VerifyEmailRequestBody(
+          email: widget.userEmail,
+          otp: otpController.text,
+        ),
+      );
+    }
   }
 }

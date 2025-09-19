@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../../../../core/widgets/app_text_button.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../../core/widgets/custom_circular_progress_indicator.dart';
 import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
 
 class ResetPasswordForm extends StatefulWidget {
@@ -117,26 +115,11 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
             },
           ),
           const SizedBox(height: 25),
-          BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: state is ForgotPasswordLoadingState,
-                child: AppTextButton(
-                  backgroundColor: ColorsManager.mainBlue,
-                  buttonWidth: double.infinity,
-                  onPressed: () {
-                    validateThenResetPassword(context);
-                  },
-                  child: state is ForgotPasswordLoadingState
-                      ? const CustomCircularProgressIndicator()
-                      : Text(
-                          "Reset Password",
-                          style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                ),
-              );
+          BlocButton<ForgotPasswordCubit, ForgotPasswordState>(
+            label: "Reset Password",
+            isLoading: (state) => state is ForgotPasswordLoadingState,
+            onPressed: () {
+              validateThenResetPassword(context);
             },
           ),
         ],

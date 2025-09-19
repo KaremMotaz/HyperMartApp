@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
 import '../../../../core/routing/routes.dart';
@@ -20,11 +19,10 @@ class LoginViewBodyBlocListener extends StatelessWidget {
           GoRouter.of(context).go(Routes.mainView);
         }
         if (state is LoginFailureState) {
-          showDialog(
+          errorDialog(
             context: context,
-            builder: (context) {
-              return ErrorDialog(title: state.message, messages: state.details);
-            },
+            message: state.message,
+            details: state.details,
           );
         }
       },

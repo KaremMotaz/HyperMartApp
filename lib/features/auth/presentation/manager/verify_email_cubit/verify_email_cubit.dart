@@ -23,7 +23,7 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
       (failure) {
         emit(
           VerifyEmailFailureState(
-            errorMessage: failure.message,
+            message: failure.message,
             details: failure.details,
           ),
         );

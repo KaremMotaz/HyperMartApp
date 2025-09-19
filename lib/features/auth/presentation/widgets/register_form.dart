@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/widgets/app_text_button.dart';
-import '../../../../core/widgets/custom_circular_progress_indicator.dart';
+import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
 import '../../data/models/register_request_body.dart';
 import '../manager/register_cubit/register_cubit.dart';
 
@@ -13,7 +11,6 @@ import 'password_validations.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
-
 
   @override
   State<RegisterForm> createState() => _RegisterFormState();
@@ -132,26 +129,11 @@ class _RegisterFormState extends State<RegisterForm> {
             hasMinLength: hasMinLength,
           ),
           const SizedBox(height: 25),
-          BlocBuilder<RegisterCubit, RegisterState>(
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: state is RegisterLoadingState,
-                child: AppTextButton(
-                  buttonWidth: double.infinity,
-                  backgroundColor: ColorsManager.mainBlue,
-                  onPressed: () {
-                    validateThenRegister(context);
-                  },
-                  child: state is RegisterLoadingState
-                      ? const CustomCircularProgressIndicator()
-                      : Text(
-                          "Register",
-                          style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                ),
-              );
+          BlocButton<RegisterCubit, RegisterState>(
+            label: "Register",
+            isLoading: (state) => state is RegisterLoadingState,
+            onPressed: () {
+              validateThenRegister(context);
             },
           ),
         ],
@@ -186,5 +168,3 @@ class _RegisterFormState extends State<RegisterForm> {
     }
   }
 }
-
-

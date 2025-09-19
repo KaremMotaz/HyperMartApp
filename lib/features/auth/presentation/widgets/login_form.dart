@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
 import 'package:hyper_mart_app/features/auth/presentation/widgets/remember_me_button.dart';
-
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../../../../core/widgets/app_text_button.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../../core/widgets/custom_circular_progress_indicator.dart';
 import '../../data/models/login_request_body.dart';
 import '../manager/login_cubit/login_cubit.dart';
 
@@ -113,26 +111,11 @@ class _LoginFormState extends State<LoginForm> {
             ],
           ),
           const SizedBox(height: 25),
-          BlocBuilder<LoginCubit, LoginState>(
-            builder: (context, state) {
-              return IgnorePointer(
-                ignoring: state is LoginLoadingState,
-                child: AppTextButton(
-                  backgroundColor: ColorsManager.mainBlue,
-                  buttonWidth: double.infinity,
-                  onPressed: () {
-                    validateThenLogin(context);
-                  },
-                  child: state is LoginLoadingState
-                      ? const CustomCircularProgressIndicator()
-                      : Text(
-                          "Login",
-                          style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                ),
-              );
+          BlocButton<LoginCubit, LoginState>(
+            label: "Login",
+            isLoading: (state) => state is LoginLoadingState,
+            onPressed: () {
+              validateThenLogin(context);
             },
           ),
         ],
