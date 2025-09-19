@@ -15,19 +15,20 @@ class DontHaveAnAccount extends StatelessWidget {
       textAlign: TextAlign.center,
       TextSpan(
         children: [
-          const TextSpan(text: "Don't have an account?", style: TextStyles.regular14),
-          const TextSpan(
-            text: " ",
+          TextSpan(
+            text: "Don't have an account?",
+            style: TextStyles.medium15.copyWith(
+              color: ColorsManager.darkergrey,
+            ),
           ),
+          const TextSpan(text: " "),
           TextSpan(
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 GoRouter.of(context).push(Routes.registerView);
               },
             text: "Create an Account",
-            style: TextStyles.medium16.copyWith(
-              color: ColorsManager.mainBlue,
-            ),
+            style: TextStyles.medium16.copyWith(color: ColorsManager.mainBlue),
           ),
         ],
       ),

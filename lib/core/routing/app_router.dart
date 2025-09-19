@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/helpers/constants.dart';
+import 'package:hyper_mart_app/core/services/cache_helper.dart';
 import '../services/get_it_service.dart';
 import '../../features/auth/domain/auth_repo.dart';
 import '../../features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
@@ -15,7 +17,10 @@ import 'routes.dart';
 
 abstract class AppRouter {
   static GoRouter createRouter() {
+    bool rememberMe = CacheHelper.getBool(key: kRememberMe);
+
     return GoRouter(
+      initialLocation: rememberMe ? Routes.mainView : Routes.loginView,
       routes: [
         GoRoute(
           path: Routes.loginView,

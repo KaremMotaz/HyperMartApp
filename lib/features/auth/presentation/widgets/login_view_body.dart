@@ -18,6 +18,10 @@ class LoginViewBody extends StatelessWidget {
               "Welcome Back!",
               style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
             ),
+            Text(
+              "Welcome back please enter your details",
+              style: TextStyles.medium15.copyWith(color: ColorsManager.darkergrey),
+            ),
             const SizedBox(height: 32),
             const LoginForm(),
             const SizedBox(height: 25),

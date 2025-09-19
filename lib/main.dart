@@ -4,9 +4,9 @@ import 'core/services/cache_helper.dart';
 import 'core/services/get_it_service.dart';
 import 'hyper_mart_app.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
-  CacheHelper.init();
+  await CacheHelper.init();
   runApp(const HyperMartApp());
 }

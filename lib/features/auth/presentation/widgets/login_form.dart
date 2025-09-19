@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/features/auth/presentation/widgets/remember_me_button.dart';
 
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/routing/routes.dart';
@@ -88,19 +89,28 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
           const SizedBox(height: 5),
-          Align(
-            alignment: AlignmentDirectional.centerEnd,
-            child: TextButton(
-              onPressed: () {
-                GoRouter.of(context).push(Routes.forgotPasswordView);
-              },
-              child: Text(
-                "Forgot Password?",
-                style: TextStyles.regular16.copyWith(
-                  color: ColorsManager.mainBlue,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 6),
+                child: RememberMeButton(),
+              ),
+              Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).push(Routes.forgotPasswordView);
+                  },
+                  child: Text(
+                    "Forgot Password?",
+                    style: TextStyles.medium15.copyWith(
+                      color: ColorsManager.mainBlue,
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
           const SizedBox(height: 25),
           BlocBuilder<LoginCubit, LoginState>(

@@ -72,6 +72,10 @@ abstract class TextStyles {
     fontSize: 15,
     fontWeight: FontWeightHelper.semiBold,
   );
+  static const TextStyle medium15 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeightHelper.medium,
+  );
   static const TextStyle medium14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.medium,
