@@ -65,19 +65,6 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
               if (value == null || value.isEmpty) {
                 return "Please enter your current password";
               }
-              if (!AppRegex.hasMinLength(value)) {
-                return "Password must be at least 8 characters.";
-              }
-              if (!AppRegex.hasUpperCase(value)) {
-                return "Password must contain at least one uppercase letter.";
-              }
-              if (!AppRegex.hasNumber(value)) {
-                return "Password must contain at least one digit.";
-              }
-              if (!AppRegex.hasSpecialCharacter(value)) {
-                return "Password must contain at least one special character.";
-              }
-
               return null;
             },
           ),
@@ -145,24 +132,10 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
               if (value != newPasswordController.text) {
                 return "Passwords do not match";
               }
-              if (!AppRegex.hasMinLength(value)) {
-                return "Password must be at least 8 characters.";
-              }
-              if (!AppRegex.hasUpperCase(value)) {
-                return "Password must contain at least one uppercase letter.";
-              }
-              if (!AppRegex.hasNumber(value)) {
-                return "Password must contain at least one digit.";
-              }
-              if (!AppRegex.hasSpecialCharacter(value)) {
-                return "Password must contain at least one special character.";
-              }
-
               return null;
             },
           ),
-          const SizedBox(height: 25),
-          const SizedBox(height: 26),
+          const SizedBox(height: 40),
           BlocBuilder<ChangePasswordCubit, ChangePasswordState>(
             builder: (context, state) {
               return IgnorePointer(
