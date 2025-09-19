@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:hyper_mart_app/features/settings/presentation/views/settings_view.dart';
 import '../../../home_feature/presentation/views/home_view.dart';
-import '../all_products_view.dart';
-import '../favourite_view.dart';
-import '../profile_view.dart';
+import '../views/all_products_view.dart';
+import '../views/favourite_view.dart';
 
 class MainPageView extends StatelessWidget {
   final PageController controller;
@@ -24,7 +23,7 @@ class MainPageView extends StatelessWidget {
         HomeView(),
         AllProductsView(),
         FavouriteView(),
-        ProfileView(),
+        SettingsView(),
       ],
     );
   }

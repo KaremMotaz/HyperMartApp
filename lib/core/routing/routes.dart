@@ -7,4 +7,5 @@ class Routes {
   static const String resetPasswordView = '/resetPasswordView';
   static const String otpVerificationView = '/otpVerificationView';
   static const String profileView = '/profileView';
+  static const String changePasswordView = '/changePasswordView';
 }
