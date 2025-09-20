@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../manager/login_cubit/login_cubit.dart';
 
 class RememberMeButton extends StatelessWidget {
   const RememberMeButton({super.key});
@@ -27,7 +27,7 @@ class RememberMeButton extends StatelessWidget {
                   color: isSelected
                       ? ColorsManager.mainBlue
                       : ColorsManager.white,
-                  border: Border.all(color: Colors.grey),
+                  border: Border.all(color: ColorsManager.mainGrey),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Icon(

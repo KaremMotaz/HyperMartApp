@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/user_avatar.dart';
+import 'user_avatar.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/text_styles.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/services/get_it_service.dart';
+import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
 import '../../domain/auth_repo.dart';
 import '../manager/verify_email_cubit/verify_email_cubit.dart';
-
-import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
 import '../widgets/otp_view_body_bloc_listener.dart';
 
 class OtpVerificationView extends StatelessWidget {
@@ -17,7 +17,6 @@ class OtpVerificationView extends StatelessWidget {
       create: (context) => VerifyEmailCubit(authRepo: getIt.get<AuthRepo>()),
       child: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
           title: const Text('OTP Verification'),
           leading: Navigator.of(context).canPop()
               ? const CustomAppBarPopIcon()

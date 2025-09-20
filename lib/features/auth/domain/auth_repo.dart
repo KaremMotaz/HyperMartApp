@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-import '../data/models/resend_otp_request_body.dart';
-import '../data/models/user_data.dart';
-import '../data/models/validate_otp_request_body.dart';
+
+import '../../../core/errors/failure.dart';
 import '../data/models/change_password_request_body.dart';
 import '../data/models/forgot_password_request_body.dart';
 import '../data/models/login_request_body.dart';
@@ -9,9 +8,11 @@ import '../data/models/login_response.dart';
 import '../data/models/refresh_token_request_body.dart';
 import '../data/models/refresh_token_response.dart';
 import '../data/models/register_request_body.dart';
+import '../data/models/resend_otp_request_body.dart';
 import '../data/models/reset_password_request_body.dart';
+import '../data/models/user_data.dart';
+import '../data/models/validate_otp_request_body.dart';
 import '../data/models/verify_email_request_body.dart';
-import '../../../core/errors/failure.dart';
 
 abstract class AuthRepo {
   Future<Either<Failure, LoginResponse>> loginWithEmailAndPassword({

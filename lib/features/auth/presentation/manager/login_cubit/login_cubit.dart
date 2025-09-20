@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/helpers/constants.dart';
-import 'package:hyper_mart_app/core/services/cache_helper.dart';
+import '../../../../../core/helpers/constants.dart';
+import '../../../../../core/services/cache_helper.dart';
 
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/login_request_body.dart';

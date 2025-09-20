@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/functions/show_confirm_dialog.dart';
-import 'package:hyper_mart_app/core/routing/routes.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/custom_settings_list_tile.dart';
+import '../../../../core/functions/show_confirm_dialog.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_manager.dart';
+import 'custom_settings_list_tile.dart';
 
 class ChangePasswordListTile extends StatelessWidget {
   const ChangePasswordListTile({super.key});

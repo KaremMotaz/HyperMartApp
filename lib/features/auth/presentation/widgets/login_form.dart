@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
-import 'package:hyper_mart_app/features/auth/presentation/widgets/remember_me_button.dart';
+import '../../../../core/widgets/bloc_button.dart';
+import 'remember_me_button.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors_manager.dart';

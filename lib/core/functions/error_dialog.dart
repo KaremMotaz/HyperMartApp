@@ -26,7 +26,7 @@ class ErrorDialog extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorsManager.transparent,
       child: _buildChild(context),
     );
   }
@@ -39,7 +39,7 @@ class ErrorDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha(100),
+            color: ColorsManager.black.withAlpha(100),
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),

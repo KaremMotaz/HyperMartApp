@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
-import 'package:hyper_mart_app/features/auth/data/models/change_password_request_body.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
+import '../../../../core/widgets/bloc_button.dart';
+import '../../../auth/data/models/change_password_request_body.dart';
+import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';

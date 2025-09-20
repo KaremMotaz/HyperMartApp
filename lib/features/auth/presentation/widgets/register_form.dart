@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
+import '../../../../core/widgets/bloc_button.dart';
 import '../../data/models/register_request_body.dart';
 import '../manager/register_cubit/register_cubit.dart';
 

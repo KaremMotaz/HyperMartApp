@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/widgets/custom_app_bar_pop_icon.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/change_password_bloc_listener.dart';
+import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
+import '../widgets/change_password_bloc_listener.dart';
 
 class ChangePasswordView extends StatelessWidget {
   const ChangePasswordView({super.key});

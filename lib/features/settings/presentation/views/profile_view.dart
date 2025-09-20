@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/widgets/custom_app_bar_pop_icon.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/profile_view_body.dart';
+import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
+import '../widgets/profile_view_body.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

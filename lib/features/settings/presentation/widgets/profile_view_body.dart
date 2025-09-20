@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/edit_profile_list_tile.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/profile_avatar.dart';
+import 'edit_profile_list_tile.dart';
+import 'profile_avatar.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});

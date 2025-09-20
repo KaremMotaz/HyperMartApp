@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../theming/colors_manager.dart';
 import '../theming/text_styles.dart';
 import '../widgets/app_text_button.dart';
 
@@ -17,7 +17,7 @@ showConfirmDialog({
     context: context,
     builder: (context) {
       return Dialog(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorsManager.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsetsDirectional.only(
@@ -74,7 +74,7 @@ showConfirmDialog({
                       buttonHeight: 40,
                       borderRadius: 12,
                       textStyle: TextStyles.semiBold16.copyWith(
-                        color: Colors.white,
+                        color: ColorsManager.white,
                         fontSize: 16,
                       ),
                       onPressed: onPressed,

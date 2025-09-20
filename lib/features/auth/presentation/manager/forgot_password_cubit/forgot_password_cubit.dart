@@ -1,12 +1,15 @@
 import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../data/models/validate_otp_request_body.dart';
+
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/forgot_password_request_body.dart';
 import '../../../data/models/reset_password_request_body.dart';
+import '../../../data/models/validate_otp_request_body.dart';
 import '../../../domain/auth_repo.dart';
+
 part 'forgot_password_state.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {

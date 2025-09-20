@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 class UserAvatar extends StatelessWidget {
   final String name;
@@ -19,9 +19,7 @@ class UserAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (imageUrl != null &&
-        imageUrl!.isNotEmpty &&
-        imageUrl != "null") {
+    if (imageUrl != null && imageUrl!.isNotEmpty && imageUrl != "null") {
       return CircleAvatar(
         backgroundColor: ColorsManager.lighterGray,
         radius: radius,
@@ -31,15 +29,12 @@ class UserAvatar extends StatelessWidget {
             fit: BoxFit.fill,
             width: radius! * 2,
             height: radius! * 2,
-            errorWidget: (context, url, error) =>
-                const Icon(Icons.error),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
       );
     }
-    final String initial = name.isNotEmpty
-        ? name[0].toUpperCase()
-        : "?";
+    final String initial = name.isNotEmpty ? name[0].toUpperCase() : "?";
 
     return CircleAvatar(
       radius: radius,
@@ -47,7 +42,7 @@ class UserAvatar extends StatelessWidget {
       child: Text(
         initial,
         style: TextStyle(
-          color: Colors.white,
+          color: ColorsManager.white,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
 import '../../../../core/theming/colors_manager.dart';
@@ -57,7 +58,7 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
                       : Text(
                           "Verify Code",
                           style: TextStyles.bold18.copyWith(
-                            color: Colors.white,
+                            color: ColorsManager.white,
                           ),
                         ),
                 ),

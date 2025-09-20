@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/user_avatar.dart';
+import '../../../../core/theming/colors_manager.dart';
+import 'user_avatar.dart';
 
 class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar({super.key});
@@ -17,10 +18,10 @@ class ProfileAvatar extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: ColorsManager.white,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.edit, color: Colors.grey, size: 20),
+              child: const Icon(Icons.edit, color: ColorsManager.mainGrey, size: 20),
             ),
           ),
         ),

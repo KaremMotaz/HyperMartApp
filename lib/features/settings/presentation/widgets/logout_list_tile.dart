@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
-import 'package:hyper_mart_app/core/functions/error_dialog.dart';
-import 'package:hyper_mart_app/core/functions/show_confirm_dialog.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/custom_settings_list_tile.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../../core/functions/show_confirm_dialog.dart';
+import '../../../../core/theming/colors_manager.dart';
+import 'custom_settings_list_tile.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../auth/presentation/manager/log_out_cubit/log_out_cubit.dart';
 

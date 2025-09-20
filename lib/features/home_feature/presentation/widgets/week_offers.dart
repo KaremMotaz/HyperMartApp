@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'offer_item.dart';
 
 class WeekOffers extends StatefulWidget {

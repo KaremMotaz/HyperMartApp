@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import '../theming/colors_manager.dart';
 
 import '../theming/text_styles.dart';
 
 void successSnackBar({required BuildContext context, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorsManager.transparent,
       elevation: 0,
       behavior: SnackBarBehavior.floating,
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: Colors.green,
+        color: ColorsManager.green,
         icon: Icons.check_circle,
-        titleWord: "نجاح",
+        titleWord: "Success",
         context: context,
       ),
     ),
@@ -23,32 +24,33 @@ void successSnackBar({required BuildContext context, required String message}) {
 void errorSnackBar({required BuildContext context, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorsManager.transparent,
       elevation: 0,
       behavior: SnackBarBehavior.floating,
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: Colors.red,
+        color: ColorsManager.darkRed,
         icon: Icons.cancel,
-        titleWord: "خطأ",
+        titleWord: "Error",
         context: context,
       ),
     ),
   );
 }
+
 void warningSnackBar({required BuildContext context, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorsManager.transparent,
       elevation: 0,
       behavior: SnackBarBehavior.floating,
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: Colors.yellow,
+        color: ColorsManager.yellow,
         icon: Icons.warning,
-        titleWord: "خد بالك",
+        titleWord: "Warning",
         context: context,
       ),
     ),
@@ -69,16 +71,16 @@ Widget customSnackbar({
       width: double.maxFinite,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: ColorsManager.white,
         border: Border(
-          bottom: const BorderSide(color: Colors.transparent),
+          bottom: const BorderSide(color: ColorsManager.transparent),
           left: isArabic
-              ? const BorderSide(color: Colors.transparent)
+              ? const BorderSide(color: ColorsManager.transparent)
               : BorderSide(color: color, width: 10),
           right: isArabic
               ? BorderSide(color: color, width: 10)
-              : const BorderSide(color: Colors.transparent),
-          top: const BorderSide(color: Colors.transparent),
+              : const BorderSide(color: ColorsManager.transparent),
+          top: const BorderSide(color: ColorsManager.transparent),
         ),
       ),
       child: Row(
@@ -93,13 +95,15 @@ Widget customSnackbar({
               children: [
                 Text(
                   titleWord,
-                  style: TextStyles.semiBold16.copyWith(color: Colors.black),
+                  style: TextStyles.semiBold16.copyWith(
+                    color: ColorsManager.black,
+                  ),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   message,
                   // overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(color: Colors.black),
+                  style: const TextStyle(color: ColorsManager.black),
                 ),
               ],
             ),

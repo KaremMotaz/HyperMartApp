@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/helpers/constants.dart';
-import 'package:hyper_mart_app/core/services/cache_helper.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
-import 'package:hyper_mart_app/features/settings/presentation/views/change_password_view.dart';
-import 'package:hyper_mart_app/features/settings/presentation/views/profile_view.dart';
+import '../helpers/constants.dart';
+import '../services/cache_helper.dart';
+import '../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
+import '../../features/settings/presentation/views/change_password_view.dart';
+import '../../features/settings/presentation/views/profile_view.dart';
 import '../services/get_it_service.dart';
 import '../../features/auth/domain/auth_repo.dart';
 import '../../features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';

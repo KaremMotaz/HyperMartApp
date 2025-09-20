@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/change_password_list_tile.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/logout_list_tile.dart';
+import 'change_password_list_tile.dart';
+import 'logout_list_tile.dart';
 
 import '../../../../core/theming/text_styles.dart';
 

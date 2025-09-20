@@ -66,7 +66,7 @@ class AppTextButton extends StatelessWidget {
             buttonText ?? "",
             style:
                 textStyle ??
-                TextStyles.semiBold15.copyWith(color: Colors.white),
+                TextStyles.semiBold15.copyWith(color: ColorsManager.white),
           ),
     );
   }

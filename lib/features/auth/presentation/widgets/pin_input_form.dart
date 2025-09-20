@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/core/widgets/bloc_button.dart';
+import '../../../../core/widgets/bloc_button.dart';
 import 'custom_pinput.dart';
 import '../../data/models/verify_email_request_body.dart';
 import '../manager/verify_email_cubit/verify_email_cubit.dart';

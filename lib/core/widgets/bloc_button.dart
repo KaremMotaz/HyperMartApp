@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
-import 'package:hyper_mart_app/core/theming/text_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
+import '../theming/colors_manager.dart';
+import '../theming/text_styles.dart';
+import 'app_text_button.dart';
+import 'custom_circular_progress_indicator.dart';
 
 class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
   final bool Function(S state)? isLoading;
@@ -32,7 +32,7 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
                 ? const CustomCircularProgressIndicator()
                 : Text(
                     label,
-                    style: TextStyles.bold18.copyWith(color: Colors.white),
+                    style: TextStyles.bold18.copyWith(color: ColorsManager.white),
                   ),
           ),
         );

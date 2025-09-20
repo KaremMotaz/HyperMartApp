@@ -16,7 +16,6 @@ class RegisterView extends StatelessWidget {
       create: (context) => RegisterCubit(getIt.get<AuthRepo>()),
       child: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
           title: const Text('Register'),
           leading: Navigator.of(context).canPop()
               ? const CustomAppBarPopIcon()

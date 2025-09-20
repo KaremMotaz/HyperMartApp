@@ -58,8 +58,12 @@ class AppTextFormField extends StatelessWidget {
         enabledBorder:
             enabledBorder ??
             buildOutLineInputBorder(borderColor: ColorsManager.lightGrey),
-        errorBorder: buildOutLineInputBorder(borderColor: Colors.red),
-        focusedErrorBorder: buildOutLineInputBorder(borderColor: Colors.red),
+        errorBorder: buildOutLineInputBorder(
+          borderColor: ColorsManager.darkRed,
+        ),
+        focusedErrorBorder: buildOutLineInputBorder(
+          borderColor: ColorsManager.darkRed,
+        ),
         hintStyle: TextStyles.regular16,
         hintText: hintText,
         suffixIcon: suffixIcon,

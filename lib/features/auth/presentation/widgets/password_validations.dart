@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 import '../../../../core/theming/text_styles.dart';
 
@@ -42,14 +43,14 @@ class PasswordValidations extends StatelessWidget {
       children: [
         Icon(
           Icons.check_circle,
-          color: hasValidated ? Colors.green : null,
+          color: hasValidated ? ColorsManager.green : null,
           size: 16,
         ),
         const SizedBox(width: 5),
         Text(
           text,
           style: TextStyles.regular14.copyWith(
-            color: hasValidated ? Colors.green : null,
+            color: hasValidated ? ColorsManager.green : null,
           ),
         ),
       ],

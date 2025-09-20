@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
-import 'package:hyper_mart_app/core/functions/error_dialog.dart';
-import 'package:hyper_mart_app/features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
-import 'package:hyper_mart_app/features/settings/presentation/widgets/change_password_view_body.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
+import 'change_password_view_body.dart';
 
 class ChangePasswordBlocListener extends StatelessWidget {
   const ChangePasswordBlocListener({super.key});

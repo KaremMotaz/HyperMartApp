@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/theming/assets_manager.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../../data/models/product_model.dart';
 import '../../../../core/widgets/app_text_button.dart';
+import '../../data/models/product_model.dart';
 import 'discount_widget.dart';
 
 class ProductCard extends StatelessWidget {
@@ -107,7 +108,7 @@ class ProductCard extends StatelessWidget {
                           Text(
                             "$numberOfItems",
                             style: TextStyles.bold14.copyWith(
-                              color: Colors.black,
+                              color: ColorsManager.black,
                             ),
                           ),
                           AppTextButton(

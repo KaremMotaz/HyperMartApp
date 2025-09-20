@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 import '../../../../core/theming/text_styles.dart';
 
@@ -24,7 +24,7 @@ class EditProfileListTile extends StatelessWidget {
       subtitle: subTitle,
       trailing: IconButton(
         onPressed: onTap,
-        icon: const Icon(Icons.edit, color: Colors.grey, size: 20),
+        icon: const Icon(Icons.edit, color: ColorsManager.mainGrey, size: 20),
       ),
       onTap: onTap,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
