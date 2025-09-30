@@ -1,17 +1,84 @@
-# hyper_mart_app
+# 📦 Hyper Mart App  
 
-A new Flutter project.
+A modern **Flutter e-commerce app** for online shopping.  
+Built with **Clean Architecture**, powered by API.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📖 About  
 
-A few resources to get you started if this is your first Flutter project:
+I developed a fully functional **E-commerce application** focused on delivering a seamless shopping experience.  
+The app provides product browsing, smart search, cart.  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# HyperMartApp
+## 🚀 Features  
+
+### 🔐 Authentication  
+- Sign-in / Sign-up  
+- Email Verification (OTP)  
+- Reset Password  
+- Logout  
+
+### 🛍️ Product Catalog & Search  
+- Categories → Subcategories → Products  
+- Smart search with filters (price, rating, discounts, shipping)  
+- Detailed product pages (multiple images, description, reviews, specifications, quantity/size options)  
+
+### 🛒 Cart & Checkout  
+- Add / update / remove products from cart  
+
+### ⭐ Ratings & Reviews  
+- Product ratings and customer reviews  
+- Average star aggregation  
+
+### ❤️ User Experience  
+- Wishlist & product comparison  
+- Push notifications (offers, order updates, abandoned cart reminders)  
+
+### ⚡ Performance
+- Optimized lazy-loading for fast product listing  
+
+---
+
+## 📱 Preview  
+
+### Cover App Preview
+![Cover App Preview](assets/hyper_mart_app_presentation/1.png)  
+
+### Welcome To Hyper Mart  
+![Welcome To Hyper Mart](assets/hyper_mart_app_presentation/2.png)  
+
+### Auth Screens  
+![Auth Screens](assets/hyper_mart_app_presentation/3.png)  
+
+### Home Screen  
+![Home Screen](assets/hyper_mart_app_presentation/4.png) 
+
+### Settings Screens 
+![Settings Screens](assets/hyper_mart_app_presentation/5.png)  
+
+### Profile Screen
+![Profile Screen](assets/hyper_mart_app_presentation/6.png)  
+
+### Contact Us  
+![Contact Us](assets/hyper_mart_app_presentation/7.png) 
+
+### Thank You  
+![Thank You](assets/hyper_mart_app_presentation/8.png) 
+
+---
+
+## 🛠️ Tech Stack  
+- **Flutter** (Clean Architecture + BLoC/Cubit)  
+- **API** (Authentication, Database)  
+- **Firebase** (FCM)
+---
+
+## 📩 Contact  
+
+If you’d like to collaborate or learn more:  
+📧 Email: [karemmotaz2929@gmail.com]  
+🌐 LinkedIn: [https://www.linkedin.com/in/karem-motaz-bb55a9213/]  
+
+---
