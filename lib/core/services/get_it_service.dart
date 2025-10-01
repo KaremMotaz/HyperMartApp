@@ -8,7 +8,11 @@ import 'auth_service.dart';
 final getIt = GetIt.instance;
 
 void setupGetIt() {
-  getIt.registerLazySingleton<Dio>(() => DioClient().dio);
+  // DioClient
+  getIt.registerLazySingleton<DioClient>(() => DioClient());
+
+  // Dio (لو محتاجينه مباشرة)
+  getIt.registerLazySingleton<Dio>(() => getIt<DioClient>().dio);
 
   // AuthService (Retrofit generated)
   getIt.registerLazySingleton<AuthService>(() => AuthService(getIt<Dio>()));

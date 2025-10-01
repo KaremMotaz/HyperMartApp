@@ -10,11 +10,13 @@ class DioClient {
   late final Dio dio;
 
   DioClient() {
-    BaseOptions(
-      baseUrl: BackendEndpoint.baseUrl,
-      connectTimeout: const Duration(minutes: 1),
-      receiveTimeout: const Duration(minutes: 1),
-      sendTimeout: const Duration(minutes: 5),
+    dio = Dio(
+      BaseOptions(
+        baseUrl: BackendEndpoint.baseUrl,
+        connectTimeout: const Duration(minutes: 1),
+        receiveTimeout: const Duration(minutes: 1),
+        sendTimeout: const Duration(minutes: 5),
+      ),
     );
 
     dio.interceptors.add(
