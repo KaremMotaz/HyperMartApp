@@ -27,6 +27,7 @@ class LogOutCubit extends Cubit<LogOutState> {
       },
       (unit) {
         CacheHelper.set(key: kRememberMe, value: false);
+        CacheHelper.setSecureData(key: kAccessToken, value: "");
         emit(LogOutSuccessState());
       },
     );

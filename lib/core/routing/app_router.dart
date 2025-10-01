@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../helpers/constants.dart';
-import '../services/cache_helper.dart';
 import '../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import '../../features/settings/presentation/views/change_password_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';
@@ -19,11 +17,9 @@ import '../../features/main_view/main_view.dart';
 import 'routes.dart';
 
 abstract class AppRouter {
-  static GoRouter createRouter() {
-    bool rememberMe = CacheHelper.getBool(key: kRememberMe);
-
+  static GoRouter createRouter({required bool checkIfLoggedInUser}) {
     return GoRouter(
-      initialLocation: rememberMe ? Routes.mainView : Routes.loginView,
+      initialLocation: checkIfLoggedInUser ? Routes.mainView : Routes.loginView,
       routes: [
         GoRoute(
           path: Routes.loginView,

@@ -1,7 +1,7 @@
 class RefreshTokenResponse {
-  final String accessToken;
-  final String expiresAtUtc;
-  final String refreshToken;
+  final String? accessToken;
+  final String? expiresAtUtc;
+  final String? refreshToken;
 
   RefreshTokenResponse({
     required this.accessToken,

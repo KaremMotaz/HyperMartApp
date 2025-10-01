@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/helpers/constants.dart';
-import '../../../../../core/services/cache_helper.dart';
-
+import 'package:hyper_mart_app/core/helpers/constants.dart';
+import 'package:hyper_mart_app/core/services/cache_helper.dart';
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/login_request_body.dart';
 import '../../../data/models/login_response.dart';
@@ -16,7 +15,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   final AuthRepo authRepo;
   bool isSelected = false;
-  
+
   void setRememberMe({required bool isSelected}) {
     this.isSelected = isSelected;
     emit(LoginInitialState());
@@ -36,7 +35,7 @@ class LoginCubit extends Cubit<LoginState> {
           LoginFailureState(message: failure.message, details: failure.details),
         );
       },
-      (unit) {
+      (loginResponse) {
         CacheHelper.set(key: kRememberMe, value: isSelected);
         emit(LoginSuccessState());
       },

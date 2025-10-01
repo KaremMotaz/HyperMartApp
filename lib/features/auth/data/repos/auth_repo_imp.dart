@@ -33,11 +33,11 @@ class AuthRepoImp extends AuthRepo {
       final LoginResponse response = await authService.login(body: body);
       await CacheHelper.setSecureData(
         key: kAccessToken,
-        value: response.accessToken,
+        value: response.accessToken ?? "",
       );
       await CacheHelper.setSecureData(
         key: kRefreshToken,
-        value: response.refreshToken,
+        value: response.refreshToken ?? "",
       );
       return right(response);
     } on DioException catch (e) {
@@ -188,11 +188,11 @@ class AuthRepoImp extends AuthRepo {
       );
       await CacheHelper.setSecureData(
         key: kAccessToken,
-        value: response.accessToken,
+        value: response.accessToken ?? "",
       );
       await CacheHelper.setSecureData(
         key: kRefreshToken,
-        value: response.refreshToken,
+        value: response.refreshToken ?? "",
       );
       return right(response);
     } on DioException catch (e) {
