@@ -1,28 +1,18 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import '../helpers/constants.dart';
-import '../services/cache_helper.dart';
+import 'package:hyper_mart_app/core/networking/api_interceptor.dart';
+import 'package:hyper_mart_app/core/services/get_it_service.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
   final Dio _dio;
   Dio get dio => _dio;
-  DioFactory() : _dio = Dio() {
+  DioFactory() : _dio = getIt.get<Dio>() {
     _dio.options
       ..connectTimeout = const Duration(minutes: 1)
       ..receiveTimeout = const Duration(minutes: 1)
       ..sendTimeout = const Duration(minutes: 5);
-    _dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) async {
-          final token = await CacheHelper.getSecureData(key: kAccessToken);
-          if (token != null) {
-            options.headers["Authorization"] = "Bearer $token";
-          }
-          handler.next(options);
-        },
-      ),
-    );
+    _dio.interceptors.add(ApiInterceptor(dio: dio));
     _dio.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,
