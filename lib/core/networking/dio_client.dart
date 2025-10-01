@@ -74,7 +74,7 @@ class DioClient {
     final refreshToken = await CacheHelper.getSecureData(key: kRefreshToken);
     if (refreshToken == null) return false;
     try {
-      final Response response = await dio.post(
+      final Response response = await Dio().post(
         BackendEndpoint.baseUrl + BackendEndpoint.refreshToken,
         data: RefreshTokenRequestBody(refreshToken: refreshToken).toJson(),
       );
