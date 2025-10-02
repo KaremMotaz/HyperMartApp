@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/functions/build_fade_transition_page.dart';
-import 'package:hyper_mart_app/features/app/splash_view.dart';
+import '../functions/build_fade_transition_page.dart';
+import '../../features/app/splash_view.dart';
 import '../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import '../../features/settings/presentation/views/change_password_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';

@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hyper_mart_app/core/helpers/backend_endpoint.dart';
-import 'package:hyper_mart_app/core/helpers/constants.dart';
-import 'package:hyper_mart_app/core/services/cache_helper.dart';
-import 'package:hyper_mart_app/features/auth/data/models/refresh_token_request_body.dart';
+import '../helpers/backend_endpoint.dart';
+import '../helpers/constants.dart';
+import '../services/cache_helper.dart';
+import '../../features/auth/data/models/refresh_token_request_body.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClient {

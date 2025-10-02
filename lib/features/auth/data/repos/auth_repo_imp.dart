@@ -1,12 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import '../../../../core/errors/error_handler.dart';
 import '../models/resend_otp_request_body.dart';
 import '../models/user_data.dart';
 import '../models/validate_otp_request_body.dart';
-import '../../../../core/errors/auth_failure.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/helpers/constants.dart';
-import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/services/auth_service.dart';
 import '../../../../core/services/cache_helper.dart';
 import '../models/change_password_request_body.dart';
@@ -41,16 +40,7 @@ class AuthRepoImp extends AuthRepo {
       );
       return right(response);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -62,16 +52,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.register(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -83,16 +64,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.verifyEmail(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -102,16 +74,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.logout();
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -123,16 +86,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.changePassword(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -144,16 +98,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.forgotPassword(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -165,16 +110,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.resetPassword(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -196,16 +132,7 @@ class AuthRepoImp extends AuthRepo {
       );
       return right(response);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -217,16 +144,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.resendOtp(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -238,16 +156,7 @@ class AuthRepoImp extends AuthRepo {
       await authService.validateOtp(body: body);
       return right(unit);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 
@@ -257,16 +166,7 @@ class AuthRepoImp extends AuthRepo {
       final UserData response = await authService.getUserData();
       return right(response);
     } on DioException catch (e) {
-      return left(
-        ApiErrorModel.fromJson(
-          json: e.response?.data ?? {},
-          statusCode: e.response?.statusCode,
-        ),
-      );
-    } catch (e) {
-      return left(
-        AuthFailure(message: "Something went wrong. Please try again."),
-      );
+      return left(ErrorHandler.handleDioError(e: e));
     }
   }
 }

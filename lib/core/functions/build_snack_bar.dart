@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../theming/colors_manager.dart';
 
+import '../theming/colors_manager.dart';
 import '../theming/text_styles.dart';
 
 void successSnackBar({required BuildContext context, required String message}) {

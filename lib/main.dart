@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/services/cache_helper.dart';
+import 'core/services/cache_helper.dart';
 import 'core/services/get_it_service.dart';
 import 'features/app/hyper_mart_app.dart';
 

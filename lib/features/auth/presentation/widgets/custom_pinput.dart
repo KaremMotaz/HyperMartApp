@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
+
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import 'package:pinput/pinput.dart';
 
 class CustomPinput extends StatelessWidget {
   const CustomPinput({super.key, required this.otpController});

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hyper_mart_app/core/networking/dio_client.dart';
+import '../networking/dio_client.dart';
 import '../../features/auth/data/repos/auth_repo_imp.dart';
 import '../../features/auth/domain/auth_repo.dart';
 import 'auth_service.dart';

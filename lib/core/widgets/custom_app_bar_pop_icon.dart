@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../theming/colors_manager.dart';
 
 class CustomAppBarPopIcon extends StatelessWidget {

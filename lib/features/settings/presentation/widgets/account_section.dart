@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'user_avatar.dart';
+
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/text_styles.dart';
+import 'user_avatar.dart';
 
 class AccountSection extends StatelessWidget {
   const AccountSection({super.key});

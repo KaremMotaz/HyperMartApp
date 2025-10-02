@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/core/theming/colors_manager.dart';
+import '../../core/theming/assets_manager.dart';
+import '../../core/theming/colors_manager.dart';
+import '../../core/theming/text_styles.dart';
+import '../../core/widgets/custom_circular_progress_indicator.dart';
 import '../../../../core/functions/check_if_logged_in_user.dart';
 import '../../../../core/routing/routes.dart';
 
@@ -56,30 +57,25 @@ class _SplashViewState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        alignment: Alignment.center,
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // logo
-              Image.asset(AssetsManager.logo, width: 120, height: 120),
-              // title
-              const Text(
-                "HyperMart",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: ColorsManager.mainBlue,
-                ),
+      body: FadeTransition(
+        opacity: _fadeAnimation,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // logo
+            Image.asset(AssetsManager.logo, width: 150, height: 150),
+            Text(
+              "HyperMart",
+              style: TextStyles.bold22.copyWith(
+                color: ColorsManager.mainBlue,
               ),
-              const SizedBox(height: 30),
-              // Loader بسيط تحت الشعار
-              const SpinKitThreeBounce(color: ColorsManager.mainBlue, size: 25),
-            ],
-          ),
+            ),
+            const SizedBox(height: 30),
+            // Loader
+            const CustomCircularProgressIndicator(
+              color: ColorsManager.mainBlue,
+            ),
+          ],
         ),
       ),
     );
