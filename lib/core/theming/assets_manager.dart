@@ -1,4 +1,6 @@
 class AssetsManager {
+  static const String logo =
+      'assets/logo/hypermart_logo.jpeg';
   static const String emailNotification =
       'assets/images/email_notification.png';
   static const String forgotPassword = 'assets/images/Forgot_password.png';

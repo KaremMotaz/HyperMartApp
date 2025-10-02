@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/functions/build_fade_transition_page.dart';
+import 'package:hyper_mart_app/features/app/splash_view.dart';
 import '../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import '../../features/settings/presentation/views/change_password_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';
@@ -17,14 +19,17 @@ import '../../features/main_view/main_view.dart';
 import 'routes.dart';
 
 abstract class AppRouter {
-  static GoRouter createRouter({required bool checkIfLoggedInUser}) {
+  static GoRouter createRouter() {    
     return GoRouter(
-      initialLocation: checkIfLoggedInUser ? Routes.mainView : Routes.loginView,
       routes: [
         GoRoute(
+          path: Routes.splashView,
+          builder: (context, state) => const SplashView(),
+        ),
+        GoRoute(
           path: Routes.loginView,
-          builder: (context, state) {
-            return const LoginView();
+          pageBuilder: (context, state) {
+            return buildFadeTransitionPage(child: const LoginView());
           },
         ),
         GoRoute(
@@ -65,8 +70,8 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.mainView,
-          builder: (context, state) {
-            return const MainView();
+          pageBuilder: (context, state) {
+            return buildFadeTransitionPage(child: const MainView());
           },
         ),
         GoRoute(

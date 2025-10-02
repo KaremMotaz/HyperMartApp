@@ -7,7 +7,7 @@ import 'auth_service.dart';
 
 final getIt = GetIt.instance;
 
-void setupGetIt() {
+Future<void> setupGetIt() async {
   // DioClient
   getIt.registerLazySingleton<DioClient>(() => DioClient());
 

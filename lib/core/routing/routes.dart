@@ -1,4 +1,5 @@
 class Routes {
+  static const String splashView = '/';
   static const String mainView = '/mainView';
   static const String loginView = '/loginView';
   static const String registerView = '/registerView';
