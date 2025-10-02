@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'change_password_request_body.g.dart';
+
+@JsonSerializable()
 class ChangePasswordRequestBody {
   final String currentPassword;
   final String newPassword;
@@ -10,10 +14,6 @@ class ChangePasswordRequestBody {
   });
 
   Map<String, dynamic> toJson() {
-    return {
-      'currentPassword': currentPassword,
-      'newPassword': newPassword,
-      'confirmNewPassword': confirmNewPassword,
-    };
+    return _$ChangePasswordRequestBodyToJson(this);
   }
 }

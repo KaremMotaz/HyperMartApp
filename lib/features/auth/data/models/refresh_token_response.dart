@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'refresh_token_response.g.dart';
+
+@JsonSerializable()
 class RefreshTokenResponse {
   final String? accessToken;
   final String? expiresAtUtc;
@@ -10,10 +14,6 @@ class RefreshTokenResponse {
   });
 
   factory RefreshTokenResponse.fromJson(Map<String, dynamic> json) {
-    return RefreshTokenResponse(
-      accessToken: json['accessToken'] as String,
-      expiresAtUtc: json['expiresAtUtc'] as String,
-      refreshToken: json['refreshToken'] as String,
-    );
+    return _$RefreshTokenResponseFromJson(json);
   }
 }

@@ -10,7 +10,7 @@ import '../data/models/refresh_token_response.dart';
 import '../data/models/register_request_body.dart';
 import '../data/models/resend_otp_request_body.dart';
 import '../data/models/reset_password_request_body.dart';
-import '../data/models/user_data.dart';
+import '../data/models/user_data_response.dart';
 import '../data/models/validate_otp_request_body.dart';
 import '../data/models/verify_email_request_body.dart';
 
@@ -44,5 +44,5 @@ abstract class AuthRepo {
   });
 
   Future<Either<Failure, Unit>> logOut();
-  Future<Either<Failure, UserData>> getUserData();
+  Future<Either<Failure, UserDataResponse>> getUserData();
 }

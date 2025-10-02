@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'register_request_body.g.dart';
+
+@JsonSerializable()
 class RegisterRequestBody {
   final String email;
   final String firstName;
@@ -12,11 +16,6 @@ class RegisterRequestBody {
   });
 
   Map<String, dynamic> toJson() {
-    return {
-      'email': email,
-      'firstName': firstName,
-      'lastName': lastName,
-      'password': password,
-    };
+    return _$RegisterRequestBodyToJson(this);
   }
 }

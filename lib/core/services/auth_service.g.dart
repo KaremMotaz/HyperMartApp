@@ -220,12 +220,12 @@ class _AuthService implements AuthService {
   }
 
   @override
-  Future<UserData> getUserData() async {
+  Future<UserDataResponse> getUserData() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<UserData>(
+    final _options = _setStreamType<UserDataResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -236,9 +236,9 @@ class _AuthService implements AuthService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UserData _value;
+    late UserDataResponse _value;
     try {
-      _value = UserData.fromJson(_result.data!);
+      _value = UserDataResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

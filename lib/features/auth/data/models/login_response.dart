@@ -1,5 +1,9 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'login_response.g.dart';
+
+@JsonSerializable()
 class LoginResponse {
-  final String? accessToken ;
+  final String? accessToken;
   final String? expiresAtUtc;
   final String? refreshToken;
 
@@ -10,10 +14,6 @@ class LoginResponse {
   });
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) {
-    return LoginResponse(
-      accessToken: json['accessToken'],
-      expiresAtUtc: json['expiresAtUtc'],
-      refreshToken: json['refreshToken'],
-    );
+    return _$LoginResponseFromJson(json);
   }
 }

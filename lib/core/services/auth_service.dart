@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import '../../features/auth/data/models/resend_otp_request_body.dart';
-import '../../features/auth/data/models/user_data.dart';
+import '../../features/auth/data/models/user_data_response.dart';
 import '../../features/auth/data/models/validate_otp_request_body.dart';
 import '../helpers/backend_endpoint.dart';
 import '../../features/auth/data/models/change_password_request_body.dart';
@@ -53,7 +53,7 @@ abstract class AuthService {
   Future<void> resetPassword({@Body() required ResetPasswordRequestBody body});
 
   @GET(BackendEndpoint.getUserData)
-  Future<UserData> getUserData();
+  Future<UserDataResponse> getUserData();
 
   @POST(BackendEndpoint.logout)
   Future<void> logout();

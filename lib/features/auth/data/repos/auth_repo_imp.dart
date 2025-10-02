@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/error_handler.dart';
 import '../models/resend_otp_request_body.dart';
-import '../models/user_data.dart';
+import '../models/user_data_response.dart';
 import '../models/validate_otp_request_body.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/helpers/constants.dart';
@@ -161,9 +161,9 @@ class AuthRepoImp extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserData>> getUserData() async {
+  Future<Either<Failure, UserDataResponse>> getUserData() async {
     try {
-      final UserData response = await authService.getUserData();
+      final UserDataResponse response = await authService.getUserData();
       return right(response);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));

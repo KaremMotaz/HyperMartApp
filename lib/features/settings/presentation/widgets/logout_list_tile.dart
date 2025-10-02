@@ -18,10 +18,12 @@ class LogoutListTile extends StatelessWidget {
     return BlocListener<LogOutCubit, LogOutState>(
       listener: (context, state) {
         if (state is LogOutSuccessState) {
-          successSnackBar(context: context, message: "Logged out successfully");
+          GoRouter.of(context).pop();
           GoRouter.of(context).pushReplacement(Routes.loginView);
+          successSnackBar(context: context, message: "Logged out successfully");
         }
         if (state is LogOutFailureState) {
+          GoRouter.of(context).pop();
           errorDialog(
             context: context,
             message: state.message,

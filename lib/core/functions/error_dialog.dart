@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../theming/colors_manager.dart';
 import '../theming/text_styles.dart';
 
@@ -46,6 +47,7 @@ class ErrorDialog extends StatelessWidget {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
@@ -60,7 +62,7 @@ class ErrorDialog extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           OutlinedButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => GoRouter.of(context).pop(),
             style: OutlinedButton.styleFrom(
               side: const BorderSide(color: ColorsManager.turquoise),
             ),
