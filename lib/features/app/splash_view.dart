@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/core/theming/assets_manager.dart';
 import 'package:hyper_mart_app/core/theming/colors_manager.dart';
 import '../../../../core/functions/check_if_logged_in_user.dart';
-import '../../../../core/services/cache_helper.dart';
 import '../../../../core/routing/routes.dart';
 
 class SplashView extends StatefulWidget {
@@ -31,11 +30,10 @@ class _SplashViewState extends State<SplashView>
 
     // Start the animation
     _controller.forward();
-    _initializeApp();
+    _checkIfLoggedInUser();
   }
 
-  Future<void> _initializeApp() async {
-    await CacheHelper.init();
+  Future<void> _checkIfLoggedInUser() async {
     final bool isLoggedInUser = await checkIfLoggedInUser();
 
     await Future.delayed(const Duration(milliseconds: 1500));
