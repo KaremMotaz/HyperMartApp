@@ -72,6 +72,8 @@ class AuthRepoImp extends AuthRepo {
   Future<Either<Failure, Unit>> logOut() async {
     try {
       await authService.logout();
+      await CacheHelper.set(key: kRememberMe, value: false);
+      await CacheHelper.setSecureData(key: kAccessToken, value: "");
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));

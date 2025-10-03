@@ -10,12 +10,24 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
   final bool Function(S state)? isLoading;
   final VoidCallback onPressed;
   final String label;
+  final Color? backgroundColor;
+  final TextStyle? textStyle;
+  final double? buttonHeight;
+  final double? buttonWidth;
+  final double? verticalPadding;
+  final double? borderRadius;
 
   const BlocButton({
     super.key,
     required this.onPressed,
     required this.label,
     required this.isLoading,
+    this.backgroundColor,
+    this.textStyle,
+    this.buttonHeight,
+    this.buttonWidth,
+    this.verticalPadding,
+    this.borderRadius,
   });
 
   @override
@@ -26,14 +38,19 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
         return IgnorePointer(
           ignoring: loading,
           child: AppTextButton(
-            backgroundColor: ColorsManager.mainBlue,
-            buttonWidth: double.infinity,
+            backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
+            buttonHeight: buttonHeight,
+            buttonWidth: buttonWidth ?? double.infinity,
             onPressed: onPressed,
+            verticalPadding: verticalPadding,
+            borderRadius: borderRadius,
             child: loading
                 ? const CustomCircularProgressIndicator()
                 : Text(
                     label,
-                    style: TextStyles.bold18.copyWith(color: ColorsManager.white),
+                    style:
+                        textStyle ??
+                        TextStyles.bold18.copyWith(color: ColorsManager.white),
                   ),
           ),
         );

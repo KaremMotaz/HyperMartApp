@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/theming/text_styles.dart';
 import 'change_password_list_tile.dart';
 import 'logout_list_tile.dart';

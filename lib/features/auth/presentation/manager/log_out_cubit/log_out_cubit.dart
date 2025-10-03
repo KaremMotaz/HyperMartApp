@@ -1,12 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../core/errors/failure.dart';
-import '../../../../../core/helpers/constants.dart';
-import '../../../../../core/services/cache_helper.dart';
 import '../../../domain/auth_repo.dart';
-
 part 'log_out_state.dart';
 
 class LogOutCubit extends Cubit<LogOutState> {
@@ -26,8 +22,6 @@ class LogOutCubit extends Cubit<LogOutState> {
         );
       },
       (unit) {
-        CacheHelper.set(key: kRememberMe, value: false);
-        CacheHelper.setSecureData(key: kAccessToken, value: "");
         emit(LogOutSuccessState());
       },
     );
