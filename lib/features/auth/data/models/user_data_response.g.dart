@@ -13,3 +13,4 @@ UserDataResponse _$UserDataResponseFromJson(Map<String, dynamic> json) =>
       fullName: json['fullName'] as String,
       profilePicture: json['profilePicture'] as String,
     );
+

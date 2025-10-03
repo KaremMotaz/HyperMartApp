@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_service.dart';
+part of 'auth_datasource.dart';
 
 // dart format off
 
@@ -10,8 +10,8 @@ part of 'auth_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
-class _AuthService implements AuthService {
-  _AuthService(this._dio, {this.baseUrl, this.errorLogger}) {
+class _AuthDatasource implements AuthDatasource {
+  _AuthDatasource(this._dio, {this.baseUrl, this.errorLogger}) {
     baseUrl ??= 'https://accessories-eshop.runasp.net/api/';
   }
 

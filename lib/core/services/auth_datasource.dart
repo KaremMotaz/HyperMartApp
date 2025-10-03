@@ -13,11 +13,11 @@ import '../../features/auth/data/models/register_request_body.dart';
 import '../../features/auth/data/models/reset_password_request_body.dart';
 import '../../features/auth/data/models/verify_email_request_body.dart';
 import 'package:retrofit/retrofit.dart';
-part 'auth_service.g.dart';
+part 'auth_datasource.g.dart';
 
 @RestApi(baseUrl: BackendEndpoint.baseUrl)
-abstract class AuthService {
-  factory AuthService(Dio dio) = _AuthService;
+abstract class AuthDatasource {
+  factory AuthDatasource(Dio dio) = _AuthDatasource;
 
   @POST(BackendEndpoint.login)
   Future<LoginResponse> login({@Body() required LoginRequestBody body});

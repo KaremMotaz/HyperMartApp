@@ -13,3 +13,4 @@ RefreshTokenResponse _$RefreshTokenResponseFromJson(
   expiresAtUtc: json['expiresAtUtc'] as String?,
   refreshToken: json['refreshToken'] as String?,
 );
+

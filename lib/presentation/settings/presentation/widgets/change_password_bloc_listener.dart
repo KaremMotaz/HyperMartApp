@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
-import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
+import '../../../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 import 'change_password_view_body.dart';
 
 class ChangePasswordBlocListener extends StatelessWidget {

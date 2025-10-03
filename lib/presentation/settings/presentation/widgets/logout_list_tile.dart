@@ -8,7 +8,7 @@ import '../../../../core/functions/error_dialog.dart';
 import '../../../../core/functions/custom_dialog.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/colors_manager.dart';
-import '../../../auth/presentation/manager/log_out_cubit/log_out_cubit.dart';
+import '../../../../features/auth/presentation/manager/log_out_cubit/log_out_cubit.dart';
 import 'custom_settings_list_tile.dart';
 
 class LogoutListTile extends StatelessWidget {

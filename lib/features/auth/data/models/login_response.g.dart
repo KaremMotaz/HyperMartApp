@@ -12,3 +12,4 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
       expiresAtUtc: json['expiresAtUtc'] as String?,
       refreshToken: json['refreshToken'] as String?,
     );
+

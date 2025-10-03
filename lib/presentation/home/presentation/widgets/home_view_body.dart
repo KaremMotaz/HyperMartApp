@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/core/services/get_it_service.dart';
+import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
+import 'package:hyper_mart_app/features/categories/manager/cubit/categories_cubit.dart';
 
 import 'categories_section.dart';
 import 'custom_appbar.dart';
@@ -15,11 +19,11 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 27),
               child: Column(
                 children: [
@@ -33,22 +37,27 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            WeekOffers(),
+            const WeekOffers(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 27),
+              padding: const EdgeInsets.symmetric(horizontal: 27),
               child: Column(
                 children: [
-                  SizedBox(height: 20),
-                  CategoriesSection(),
-                  SizedBox(height: 20),
-                  PreviousOrderSection(),
-                  SizedBox(height: 20),
-                  PopularDealsSection(),
-                  SizedBox(height: 20),
-                  TopBrandsSection(),
-                  SizedBox(height: 20),
-                  ExclusiveBeautyDealsSection(),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
+                  BlocProvider(
+                    create: (context) => CategoriesCubit(
+                      categoriesRepo: getIt.get<CategoriesRepo>(),
+                    )..getCategories(),
+                    child: const CategoriesSection(),
+                  ),
+                  const SizedBox(height: 20),
+                  const PreviousOrderSection(),
+                  const SizedBox(height: 20),
+                  const PopularDealsSection(),
+                  const SizedBox(height: 20),
+                  const TopBrandsSection(),
+                  const SizedBox(height: 20),
+                  const ExclusiveBeautyDealsSection(),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

@@ -1,34 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../../data/models/category_model.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({super.key, required this.category});
-  final CategoryModel category;
+  final Category category;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 91,
       decoration: BoxDecoration(
-        color: Color(category.colorCode),
+        color: const Color(0xff4AB7B6),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 20),
-          SvgPicture.asset(
-            category.image,
-            width: 33,
-            height: 33,
-            colorFilter: const ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
-          ),
+          Image.network(category.coverPictureUrl, fit: BoxFit.fill),
           const SizedBox(height: 15),
           Text(
-            category.title,
+            category.name,
+            overflow: TextOverflow.ellipsis,
             style: TextStyles.medium12.copyWith(
               color: ColorsManager.white,
               fontFamily: "DM_Sans",

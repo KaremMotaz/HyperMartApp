@@ -5,8 +5,8 @@ import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
-import '../../../auth/data/models/change_password_request_body.dart';
-import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
+import '../../../../features/auth/data/models/change_password_request_body.dart';
+import '../../../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
 
 class ChangePasswordForm extends StatefulWidget {
   const ChangePasswordForm({super.key});

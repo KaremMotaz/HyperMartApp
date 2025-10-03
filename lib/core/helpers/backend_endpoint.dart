@@ -11,4 +11,5 @@ class BackendEndpoint {
   static const resendOtp = "auth/resend-otp";
   static const refreshToken = "auth/refresh-token";
   static const getUserData = "auth/me";
+  static const getCategories = "categories";
 }

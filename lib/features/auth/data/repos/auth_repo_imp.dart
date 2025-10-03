@@ -6,7 +6,7 @@ import '../models/user_data_response.dart';
 import '../models/validate_otp_request_body.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/helpers/constants.dart';
-import '../../../../core/services/auth_service.dart';
+import '../../../../core/services/auth_datasource.dart';
 import '../../../../core/services/cache_helper.dart';
 import '../models/change_password_request_body.dart';
 import '../models/forgot_password_request_body.dart';
@@ -20,16 +20,16 @@ import '../models/verify_email_request_body.dart';
 import '../../domain/auth_repo.dart';
 
 class AuthRepoImp extends AuthRepo {
-  final AuthService authService;
+  final AuthDatasource authDatasource;
 
-  AuthRepoImp({required this.authService});
+  AuthRepoImp({required this.authDatasource});
 
   @override
   Future<Either<Failure, LoginResponse>> loginWithEmailAndPassword({
     required LoginRequestBody body,
   }) async {
     try {
-      final LoginResponse response = await authService.login(body: body);
+      final LoginResponse response = await authDatasource.login(body: body);
       await CacheHelper.setSecureData(
         key: kAccessToken,
         value: response.accessToken ?? "",
@@ -49,7 +49,7 @@ class AuthRepoImp extends AuthRepo {
     required RegisterRequestBody body,
   }) async {
     try {
-      await authService.register(body: body);
+      await authDatasource.register(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -61,7 +61,7 @@ class AuthRepoImp extends AuthRepo {
     required VerifyEmailRequestBody body,
   }) async {
     try {
-      await authService.verifyEmail(body: body);
+      await authDatasource.verifyEmail(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -71,7 +71,7 @@ class AuthRepoImp extends AuthRepo {
   @override
   Future<Either<Failure, Unit>> logOut() async {
     try {
-      await authService.logout();
+      await authDatasource.logout();
       await CacheHelper.set(key: kRememberMe, value: false);
       await CacheHelper.setSecureData(key: kAccessToken, value: "");
       return right(unit);
@@ -85,7 +85,7 @@ class AuthRepoImp extends AuthRepo {
     required ChangePasswordRequestBody body,
   }) async {
     try {
-      await authService.changePassword(body: body);
+      await authDatasource.changePassword(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -97,7 +97,7 @@ class AuthRepoImp extends AuthRepo {
     required ForgotPasswordRequestBody body,
   }) async {
     try {
-      await authService.forgotPassword(body: body);
+      await authDatasource.forgotPassword(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -109,7 +109,7 @@ class AuthRepoImp extends AuthRepo {
     required ResetPasswordRequestBody body,
   }) async {
     try {
-      await authService.resetPassword(body: body);
+      await authDatasource.resetPassword(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -121,7 +121,7 @@ class AuthRepoImp extends AuthRepo {
     required RefreshTokenRequestBody body,
   }) async {
     try {
-      final RefreshTokenResponse response = await authService.refreshToken(
+      final RefreshTokenResponse response = await authDatasource.refreshToken(
         body: body,
       );
       await CacheHelper.setSecureData(
@@ -143,7 +143,7 @@ class AuthRepoImp extends AuthRepo {
     required ResendOtpRequestBody body,
   }) async {
     try {
-      await authService.resendOtp(body: body);
+      await authDatasource.resendOtp(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -155,7 +155,7 @@ class AuthRepoImp extends AuthRepo {
     required ValidateOTPRequestBody body,
   }) async {
     try {
-      await authService.validateOtp(body: body);
+      await authDatasource.validateOtp(body: body);
       return right(unit);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
@@ -165,7 +165,7 @@ class AuthRepoImp extends AuthRepo {
   @override
   Future<Either<Failure, UserDataResponse>> getUserData() async {
     try {
-      final UserDataResponse response = await authService.getUserData();
+      final UserDataResponse response = await authDatasource.getUserData();
       return right(response);
     } on DioException catch (e) {
       return left(ErrorHandler.handleDioError(e: e));
