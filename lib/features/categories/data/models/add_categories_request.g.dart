@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'add_categories_model.dart';
+part of 'add_categories_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
 // ignore: unused_element
-AddCategoryModel _$AddCategoryModelFromJson(Map<String, dynamic> json) =>
-    AddCategoryModel(
+AddCategoryRequest _$AddCategoryRequestFromJson(Map<String, dynamic> json) =>
+    AddCategoryRequest(
       name: json['name'] as String,
       description: json['description'] as String,
       coverPictureUrl: json['coverPictureUrl'] as String,
     );
 
-Map<String, dynamic> _$AddCategoryModelToJson(AddCategoryModel instance) =>
+Map<String, dynamic> _$AddCategoryRequestToJson(AddCategoryRequest instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

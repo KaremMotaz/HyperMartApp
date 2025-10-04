@@ -13,6 +13,10 @@ final class CategoriesLoadingState extends CategoriesState {}
 
 final class DeleteCategoriesLoadingState extends CategoriesState {}
 
+final class UpdateCategoryLoadingState extends CategoriesState {}
+
+final class GetCategoryByIdLoadingState extends CategoriesState {}
+
 final class GetCategoriesSuccessState extends CategoriesState {
   final GetCategoriesModel categoriesResponse;
   const GetCategoriesSuccessState({required this.categoriesResponse});
@@ -20,7 +24,26 @@ final class GetCategoriesSuccessState extends CategoriesState {
   List<Object> get props => [categoriesResponse];
 }
 
-final class AddCategorySuccessState extends CategoriesState {}
+final class GetCategoryByIdSuccessState extends CategoriesState {
+  final GetCategoryByIdModel getCategoryByIdModel;
+  const GetCategoryByIdSuccessState({required this.getCategoryByIdModel});
+  @override
+  List<Object> get props => [getCategoryByIdModel];
+}
+
+final class UpdateCategorySuccessState extends CategoriesState {
+  final UpdateCategoryResponse updateCategoryResponse;
+  const UpdateCategorySuccessState({required this.updateCategoryResponse});
+  @override
+  List<Object> get props => [updateCategoryResponse];
+}
+
+final class AddCategorySuccessState extends CategoriesState {
+  final AddCategoryResponse addCategoryResponse;
+  const AddCategorySuccessState({required this.addCategoryResponse});
+  @override
+  List<Object> get props => [addCategoryResponse];
+}
 
 final class DeleteCategorySuccessState extends CategoriesState {}
 

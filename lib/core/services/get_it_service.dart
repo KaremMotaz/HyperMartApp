@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hyper_mart_app/features/categories/data/categories_datasource.dart';
-import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
-import 'package:hyper_mart_app/features/categories/data/categories_repo_imp.dart';
+import 'package:hyper_mart_app/features/categories/data/service/categories_datasource.dart';
+import 'package:hyper_mart_app/features/categories/data/repos/categories_repo.dart';
+import 'package:hyper_mart_app/features/categories/data/repos/categories_repo_imp.dart';
 import '../networking/dio_client.dart';
 import '../../features/auth/data/repos/auth_repo_imp.dart';
 import '../../features/auth/domain/auth_repo.dart';

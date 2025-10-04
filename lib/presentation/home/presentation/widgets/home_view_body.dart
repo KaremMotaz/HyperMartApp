@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/services/get_it_service.dart';
-import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
+import 'package:hyper_mart_app/features/categories/data/repos/categories_repo.dart';
 import 'package:hyper_mart_app/features/categories/manager/cubit/categories_cubit.dart';
 
 import 'categories_section.dart';

@@ -14,4 +14,6 @@ class BackendEndpoint {
   static const getCategories = "categories";
   static const addCategory = "categories";
   static const deleteCategory = "categories/{id}";
+  static const getCategoryById = "categories/{id}";
+  static const updateCategory = "categories/{id}";
 }

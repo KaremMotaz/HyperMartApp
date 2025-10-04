@@ -2,8 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/errors/failure.dart';
-import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
-import 'package:hyper_mart_app/features/categories/data/models/add_categories_model.dart';
+import 'package:hyper_mart_app/features/categories/data/models/add_category_response.dart';
+import 'package:hyper_mart_app/features/categories/data/models/get_category_by_id_model.dart';
+import 'package:hyper_mart_app/features/categories/data/models/update_category_request.dart';
+import 'package:hyper_mart_app/features/categories/data/models/update_category_response.dart';
+import 'package:hyper_mart_app/features/categories/data/repos/categories_repo.dart';
+import 'package:hyper_mart_app/features/categories/data/models/add_categories_request.dart';
 import 'package:hyper_mart_app/features/categories/data/models/get_categories_model.dart';
 part 'categories_state.dart';
 
@@ -33,12 +37,11 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     );
   }
 
-  Future<void> addCategory({required AddCategoryModel body}) async {
+  Future<void> addCategory({required AddCategoryRequest body}) async {
     emit(CategoriesLoadingState());
 
-    final Either<Failure, Unit> result = await categoriesRepo.addCategory(
-      body: body,
-    );
+    final Either<Failure, AddCategoryResponse> result = await categoriesRepo
+        .addCategory(body: body);
 
     result.fold(
       (failure) {
@@ -49,8 +52,8 @@ class CategoriesCubit extends Cubit<CategoriesState> {
           ),
         );
       },
-      (categoriesResponse) {
-        emit(AddCategorySuccessState());
+      (addCategoryResponse) {
+        emit(AddCategorySuccessState(addCategoryResponse: addCategoryResponse));
       },
     );
   }
@@ -71,8 +74,61 @@ class CategoriesCubit extends Cubit<CategoriesState> {
           ),
         );
       },
-      (categoriesResponse) {
+      (unit) {
         emit(DeleteCategorySuccessState());
+      },
+    );
+  }
+
+  Future<void> getCategoryById({required String id}) async {
+    emit(GetCategoryByIdLoadingState());
+
+    final Either<Failure, GetCategoryByIdModel> result = await categoriesRepo
+        .getCategoryById(id: id);
+
+    result.fold(
+      (failure) {
+        emit(
+          CategoriesFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (getCategoryByIdModel) {
+        emit(
+          GetCategoryByIdSuccessState(
+            getCategoryByIdModel: getCategoryByIdModel,
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> updateCategory({
+    required String id,
+    required UpdateCategoryRequest body,
+  }) async {
+    emit(UpdateCategoryLoadingState());
+
+    final Either<Failure, UpdateCategoryResponse> result = await categoriesRepo
+        .updateCategory(id: id, body: body);
+
+    result.fold(
+      (failure) {
+        emit(
+          CategoriesFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (updateCategoryResponse) {
+        emit(
+          UpdateCategorySuccessState(
+            updateCategoryResponse: updateCategoryResponse,
+          ),
+        );
       },
     );
   }
