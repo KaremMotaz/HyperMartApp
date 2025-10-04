@@ -1,6 +1,5 @@
 class AssetsManager {
-  static const String logo =
-      'assets/logo/hypermart_logo.jpeg';
+  static const String logo = 'assets/logo/hypermart_logo.jpeg';
   static const String emailNotification =
       'assets/images/email_notification.png';
   static const String forgotPassword = 'assets/images/Forgot_password.png';
@@ -41,4 +40,6 @@ class AssetsManager {
   static const String brandDeal4Image = 'assets/images/brand_deal4.png';
   static const String brandDeal5Image = 'assets/images/brand_deal5.png';
   static const String brandDeal6Image = 'assets/images/brand_deal6.png';
+  static const String dummyImage =
+      "http://edenchristianacademy.co.nz/wp-content/uploads/2013/11/dummy-image-square.jpg";
 }

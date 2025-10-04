@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_mart_app/core/widgets/error_body.dart';
+import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
 import 'package:hyper_mart_app/features/categories/manager/cubit/categories_cubit.dart';
-import 'package:hyper_mart_app/presentation/home/presentation/widgets/categories_list_view.dart';
-import 'section_header.dart';
+import 'package:hyper_mart_app/presentation/home/presentation/widgets/categories_success_view.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({super.key});
@@ -12,29 +13,16 @@ class CategoriesSection extends StatelessWidget {
     return BlocBuilder<CategoriesCubit, CategoriesState>(
       builder: (context, state) {
         if (state is CategoriesLoadingState) {
-          return const Center(child: CircularProgressIndicator());
+          return CategoriesSuccessView(
+            categories: Category.dummyCategories,
+            isLoading: true,
+          );
         }
         if (state is CategoriesFailureState) {
-          return Center(
-            child: Column(
-              children: [
-                Text(state.message),
-                ...state.details.map((detail) => Text(detail)),
-              ],
-            ),
-          );
+          return ErrorBody(message: state.message, details: state.details);
         } else if (state is CategoriesSuccessState) {
-          return Column(
-            children: [
-              SectionHeader(title: 'Categories', onTap: () {}),
-              const SizedBox(height: 20),
-              SizedBox(
-                height: 100,
-                child: CategoriesListView(
-                  categories: state.categoriesResponse.categories,
-                ),
-              ),
-            ],
+          return CategoriesSuccessView(
+            categories: state.categoriesResponse.categories,
           );
         }
         return const SizedBox.shrink();

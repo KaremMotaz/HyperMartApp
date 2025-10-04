@@ -22,4 +22,14 @@ class ColorsManager {
   static const Color mainGreyShade600 = Color(0xFF757575);
   static const Color transparent = Color(0x00FFFFFF);
   static const Color green = Color(0xff4CAF50);
+
+  static Color generateColorFromName({required int index}) {
+    final colors = [
+      const Color(0xff4AB7B6),
+      const Color(0xff4b9dcb),
+      const Color(0xffbb6e9c),
+      const Color(0xffa187d9),
+    ];
+    return colors[index % colors.length];
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:hyper_mart_app/core/theming/assets_manager.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'categories_response.g.dart';
 
@@ -29,4 +30,14 @@ class Category {
   factory Category.fromJson(Map<String, dynamic> json) {
     return _$CategoryFromJson(json);
   }
+
+  static List<Category> dummyCategories = List.generate(
+    4,
+    (index) => Category(
+      id: "",
+      name: "",
+      description: "",
+      coverPictureUrl: AssetsManager.dummyImage,
+    ),
+  );
 }

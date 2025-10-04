@@ -55,7 +55,7 @@ class ErrorDialog extends StatelessWidget {
           Text(message, style: TextStyles.bold20),
           const SizedBox(height: 12),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: details
                 .map((msg) => Text(msg, style: TextStyles.medium16))
                 .toList(),

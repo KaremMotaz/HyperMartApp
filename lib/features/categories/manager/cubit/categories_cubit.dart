@@ -1,12 +1,9 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/errors/failure.dart';
 import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
 import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
-
 part 'categories_state.dart';
 
 class CategoriesCubit extends Cubit<CategoriesState> {
@@ -29,7 +26,6 @@ class CategoriesCubit extends Cubit<CategoriesState> {
         );
       },
       (categoriesResponse) {
-        log(categoriesResponse.categories.toString());
         emit(CategoriesSuccessState(categoriesResponse: categoriesResponse));
       },
     );
