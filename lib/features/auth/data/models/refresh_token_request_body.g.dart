@@ -6,6 +6,13 @@ part of 'refresh_token_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: unused_element
+RefreshTokenRequestBody _$RefreshTokenRequestBodyFromJson(
+  Map<String, dynamic> json,
+) => RefreshTokenRequestBody(
+  refreshToken: json['refreshToken'] as String,
+  useCookies: json['useCookies'] as bool? ?? false,
+);
 
 Map<String, dynamic> _$RefreshTokenRequestBodyToJson(
   RefreshTokenRequestBody instance,

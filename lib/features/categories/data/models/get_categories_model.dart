@@ -1,15 +1,15 @@
 import 'package:hyper_mart_app/core/theming/assets_manager.dart';
 import 'package:json_annotation/json_annotation.dart';
-part 'categories_response.g.dart';
+part 'get_categories_model.g.dart';
 
 @JsonSerializable()
-class CategoriesResponse {
+class GetCategoriesModel {
   final List<Category> categories;
 
-  CategoriesResponse({required this.categories});
+  GetCategoriesModel({required this.categories});
 
-  factory CategoriesResponse.fromJson(Map<String, dynamic> json) {
-    return _$CategoriesResponseFromJson(json);
+  factory GetCategoriesModel.fromJson(Map<String, dynamic> json) {
+    return _$GetCategoriesModelFromJson(json);
   }
 }
 

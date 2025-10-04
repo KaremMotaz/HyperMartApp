@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/assets_manager.dart';
-import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
+import 'package:hyper_mart_app/core/widgets/universal_image.dart';
+import 'package:hyper_mart_app/features/categories/data/models/get_categories_model.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 
@@ -20,20 +20,19 @@ class CategoryItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 15),
-          CachedNetworkImage(
-            imageUrl: category.coverPictureUrl.isNotEmpty
+          const SizedBox(height: 20),
+          UniversalImage(
+            url: category.coverPictureUrl.isNotEmpty
                 ? category.coverPictureUrl
                 : AssetsManager.dummyImage,
-            width: 91,
-            height: 50,
-            placeholder: (context, url) =>
-                Container(width: 25, height: 25, color: Colors.grey[200]),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
+            width: 33,
+            height: 33,
           ),
           const SizedBox(height: 15),
           Text(
-            category.name,
+            (category.name.isNotEmpty)
+                ? '${category.name[0].toUpperCase()}${category.name.substring(1)}'
+                : '',
             overflow: TextOverflow.ellipsis,
             style: TextStyles.medium12.copyWith(
               color: ColorsManager.white,

@@ -3,17 +3,19 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/errors/failure.dart';
 import 'package:hyper_mart_app/features/categories/data/categories_repo.dart';
-import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
+import 'package:hyper_mart_app/features/categories/data/models/add_categories_model.dart';
+import 'package:hyper_mart_app/features/categories/data/models/get_categories_model.dart';
 part 'categories_state.dart';
 
 class CategoriesCubit extends Cubit<CategoriesState> {
   CategoriesCubit({required this.categoriesRepo})
-    : super(CategoriesLoadingState());
+    : super(CategoriesInitialState());
 
   final CategoriesRepo categoriesRepo;
 
   Future<void> getCategories() async {
-    final Either<Failure, CategoriesResponse> result = await categoriesRepo
+    emit(CategoriesLoadingState());
+    final Either<Failure, GetCategoriesModel> result = await categoriesRepo
         .getCategories();
 
     result.fold(
@@ -26,7 +28,51 @@ class CategoriesCubit extends Cubit<CategoriesState> {
         );
       },
       (categoriesResponse) {
-        emit(CategoriesSuccessState(categoriesResponse: categoriesResponse));
+        emit(GetCategoriesSuccessState(categoriesResponse: categoriesResponse));
+      },
+    );
+  }
+
+  Future<void> addCategory({required AddCategoryModel body}) async {
+    emit(CategoriesLoadingState());
+
+    final Either<Failure, Unit> result = await categoriesRepo.addCategory(
+      body: body,
+    );
+
+    result.fold(
+      (failure) {
+        emit(
+          CategoriesFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (categoriesResponse) {
+        emit(AddCategorySuccessState());
+      },
+    );
+  }
+
+  Future<void> deleteCategory({required String id}) async {
+    emit(DeleteCategoriesLoadingState());
+
+    final Either<Failure, Unit> result = await categoriesRepo.deleteCategory(
+      id: id,
+    );
+
+    result.fold(
+      (failure) {
+        emit(
+          CategoriesFailureState(
+            message: failure.message,
+            details: failure.details,
+          ),
+        );
+      },
+      (categoriesResponse) {
+        emit(DeleteCategorySuccessState());
       },
     );
   }

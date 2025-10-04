@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/widgets/error_body.dart';
-import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
+import 'package:hyper_mart_app/features/categories/data/models/get_categories_model.dart';
 import 'package:hyper_mart_app/features/categories/manager/cubit/categories_cubit.dart';
 import 'package:hyper_mart_app/presentation/home/presentation/widgets/categories_success_view.dart';
 
@@ -20,7 +20,7 @@ class CategoriesSection extends StatelessWidget {
         }
         if (state is CategoriesFailureState) {
           return ErrorBody(message: state.message, details: state.details);
-        } else if (state is CategoriesSuccessState) {
+        } else if (state is GetCategoriesSuccessState) {
           return CategoriesSuccessView(
             categories: state.categoriesResponse.categories,
           );

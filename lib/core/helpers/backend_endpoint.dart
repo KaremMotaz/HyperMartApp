@@ -12,4 +12,6 @@ class BackendEndpoint {
   static const refreshToken = "auth/refresh-token";
   static const getUserData = "auth/me";
   static const getCategories = "categories";
+  static const addCategory = "categories";
+  static const deleteCategory = "categories/{id}";
 }

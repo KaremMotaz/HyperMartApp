@@ -6,6 +6,13 @@ part of 'validate_otp_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: unused_element
+ValidateOTPRequestBody _$ValidateOTPRequestBodyFromJson(
+  Map<String, dynamic> json,
+) => ValidateOTPRequestBody(
+  email: json['email'] as String,
+  otp: json['otp'] as String,
+);
 
 Map<String, dynamic> _$ValidateOTPRequestBodyToJson(
   ValidateOTPRequestBody instance,

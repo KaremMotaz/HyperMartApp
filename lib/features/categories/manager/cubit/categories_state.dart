@@ -6,14 +6,23 @@ sealed class CategoriesState extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+final class CategoriesInitialState extends CategoriesState {}
+
 final class CategoriesLoadingState extends CategoriesState {}
 
-final class CategoriesSuccessState extends CategoriesState {
-  final CategoriesResponse categoriesResponse;
-  const CategoriesSuccessState({required this.categoriesResponse});
+final class DeleteCategoriesLoadingState extends CategoriesState {}
+
+final class GetCategoriesSuccessState extends CategoriesState {
+  final GetCategoriesModel categoriesResponse;
+  const GetCategoriesSuccessState({required this.categoriesResponse});
   @override
   List<Object> get props => [categoriesResponse];
 }
+
+final class AddCategorySuccessState extends CategoriesState {}
+
+final class DeleteCategorySuccessState extends CategoriesState {}
 
 final class CategoriesFailureState extends CategoriesState {
   final String message;

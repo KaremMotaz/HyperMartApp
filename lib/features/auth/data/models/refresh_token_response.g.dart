@@ -14,3 +14,11 @@ RefreshTokenResponse _$RefreshTokenResponseFromJson(
   refreshToken: json['refreshToken'] as String?,
 );
 
+// ignore: unused_element
+Map<String, dynamic> _$RefreshTokenResponseToJson(
+  RefreshTokenResponse instance,
+) => <String, dynamic>{
+  'accessToken': instance.accessToken,
+  'expiresAtUtc': instance.expiresAtUtc,
+  'refreshToken': instance.refreshToken,
+};

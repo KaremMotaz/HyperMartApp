@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/categories/data/models/categories_response.dart';
+import 'package:hyper_mart_app/features/categories/data/models/get_categories_model.dart';
 import 'package:hyper_mart_app/presentation/home/presentation/widgets/categories_list_view.dart';
 import 'package:hyper_mart_app/presentation/home/presentation/widgets/section_header.dart';
 

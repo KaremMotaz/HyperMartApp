@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'categories_response.dart';
+part of 'get_categories_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CategoriesResponse _$CategoriesResponseFromJson(Map<String, dynamic> json) =>
-    CategoriesResponse(
+GetCategoriesModel _$GetCategoriesModelFromJson(Map<String, dynamic> json) =>
+    GetCategoriesModel(
       categories: (json['categories'] as List<dynamic>)
           .map((e) => Category.fromJson(e as Map<String, dynamic>))
           .toList(),
