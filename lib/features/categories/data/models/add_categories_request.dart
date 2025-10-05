@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'add_categories_request.g.dart';
 
 @JsonSerializable()

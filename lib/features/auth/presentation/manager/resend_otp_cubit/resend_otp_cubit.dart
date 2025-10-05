@@ -3,11 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import '../../../data/repos/auth_repo.dart';
 
 import '../../../../../core/errors/failure.dart';
 import '../../../data/models/resend_otp_request_body.dart';
-import '../../../domain/auth_repo.dart';
-
 part 'resend_otp_state.dart';
 
 class ResendOtpCubit extends Cubit<ResendOtpState> {

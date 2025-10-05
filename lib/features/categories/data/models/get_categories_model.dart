@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/core/theming/assets_manager.dart';
+import '../../../../core/theming/assets_manager.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'get_categories_model.g.dart';
 

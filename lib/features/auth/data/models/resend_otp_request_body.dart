@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 part 'resend_otp_request_body.g.dart';
 
 @JsonSerializable()

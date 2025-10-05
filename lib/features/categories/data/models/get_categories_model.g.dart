@@ -13,9 +13,21 @@ GetCategoriesModel _$GetCategoriesModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
+// ignore: unused_element
+Map<String, dynamic> _$GetCategoriesModelToJson(GetCategoriesModel instance) =>
+    <String, dynamic>{'categories': instance.categories};
+
 Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
   id: json['id'] as String,
   name: json['name'] as String,
   description: json['description'] as String,
   coverPictureUrl: json['coverPictureUrl'] as String,
 );
+
+// ignore: unused_element
+Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'description': instance.description,
+  'coverPictureUrl': instance.coverPictureUrl,
+};

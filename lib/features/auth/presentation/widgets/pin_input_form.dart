@@ -1,9 +1,10 @@
-import '../../../../core/widgets/bloc_button.dart';
-import 'custom_pinput.dart';
-import '../../data/models/verify_email_request_body.dart';
-import '../manager/verify_email_cubit/verify_email_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/widgets/bloc_button.dart';
+import '../../data/models/verify_email_request_body.dart';
+import '../manager/verify_email_cubit/verify_email_cubit.dart';
+import 'custom_pinput.dart';
 
 class PinInputForm extends StatefulWidget {
   const PinInputForm({super.key, required this.userEmail});
