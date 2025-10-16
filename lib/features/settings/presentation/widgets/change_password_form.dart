@@ -137,7 +137,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
           const SizedBox(height: 40),
           BlocButton<ChangePasswordCubit, ChangePasswordState>(
             label: "Change Password",
-            isLoading: (state) => state is ChangePasswordLoadingState,
+            isLoading: (state) => state is ChangePasswordLoading,
             onPressed: () {
               validateThenChangePassword(context);
             },

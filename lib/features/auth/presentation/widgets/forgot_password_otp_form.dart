@@ -46,14 +46,14 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
           BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
             builder: (context, state) {
               return IgnorePointer(
-                ignoring: state is ForgotPasswordLoadingState,
+                ignoring: state is ForgotPasswordLoading,
                 child: AppTextButton(
                   backgroundColor: ColorsManager.mainBlue,
                   buttonWidth: double.infinity,
                   onPressed: () {
                     validateThenVerifyOTPCode(context);
                   },
-                  child: state is ForgotPasswordLoadingState
+                  child: state is ForgotPasswordLoading
                       ? const CustomCircularProgressIndicator()
                       : Text(
                           "Verify Code",
@@ -68,21 +68,20 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
           const SizedBox(height: 36),
           BlocConsumer<ResendOtpCubit, ResendOtpState>(
             listener: (context, state) {
-              if (state is ResendOtpSuccessState) {
-                successSnackBar(
-                  context: context,
-                  message: "Successfully Resend OTP",
-                );
-              } else if (state is ResendOtpFailureState) {
-                errorDialog(
-                  context: context,
-                  message: state.message,
-                  details: state.details,
-                );
-              }
+              state.whenOrNull(
+                resendOtpSuccess: (remainingSeconds) {
+                  successSnackBar(
+                    context: context,
+                    message: "Successfully Resend OTP",
+                  );
+                },
+                resendOtpFailure: (apiErrorModel) {
+                  errorDialog(context: context, apiErrorModel: apiErrorModel);
+                },
+              );
             },
             builder: (context, state) {
-              return state is ResendOtpTimerState
+              return state is ResendOtpTimer
                   ? Text(
                       "Resend in ${_formatTime(state.remainingSeconds)}",
                       style: TextStyles.semiBold15.copyWith(

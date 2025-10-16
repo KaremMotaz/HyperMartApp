@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../categories/data/models/get_categories_model.dart';
-import 'category_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import '../../../categories/data/models/get_categories_response.dart';
+import 'category_item.dart';
 
 class CategoriesListView extends StatelessWidget {
   const CategoriesListView({

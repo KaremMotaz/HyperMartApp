@@ -1,28 +1,25 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../../../core/networking/api_error_model.dart';
+import '../../../../../core/networking/api_result.dart';
 import '../../../data/repos/auth_repo.dart';
-import '../../../../../core/errors/failure.dart';
 part 'log_out_state.dart';
+part 'log_out_cubit.freezed.dart';
 
 class LogOutCubit extends Cubit<LogOutState> {
-  LogOutCubit({required this.authRepo}) : super(LogOutInitialState());
+  LogOutCubit({required this.authRepo})
+    : super(const LogOutState.logOutInitial());
   final AuthRepo authRepo;
 
   Future<void> logOut() async {
-    emit(LogOutLoadingState());
-    final Either<Failure, Unit> result = await authRepo.logOut();
-    result.fold(
-      (failure) {
-        emit(
-          LogOutFailureState(
-            message: failure.message,
-            details: failure.details,
-          ),
-        );
+    emit(const LogOutState.logOutLoading());
+    final ApiResult result = await authRepo.logOut();
+    result.when(
+      success: (unit) {
+        emit(const LogOutState.logOutSuccess());
       },
-      (unit) {
-        emit(LogOutSuccessState());
+      failure: (apiErrorModel) {
+        emit(LogOutState.logOutFailure(apiErrorModel: apiErrorModel));
       },
     );
   }

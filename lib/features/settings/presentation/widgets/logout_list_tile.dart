@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/functions/build_snack_bar.dart';
-import '../../../../core/services/get_it_service.dart';
-import '../../../auth/data/repos/auth_repo.dart';
 import '../../../../core/functions/error_dialog.dart';
-import '../../../../core/widgets/custom_dialog.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/widgets/custom_dialog.dart';
+import '../../../auth/data/repos/auth_repo.dart';
 import '../../../auth/presentation/manager/log_out_cubit/log_out_cubit.dart';
 import 'custom_settings_list_tile.dart';
 
@@ -28,22 +29,23 @@ class LogoutListTile extends StatelessWidget {
                 builder: (context) {
                   return BlocListener<LogOutCubit, LogOutState>(
                     listener: (context, state) {
-                      if (state is LogOutSuccessState) {
-                        successSnackBar(
-                          context: context,
-                          message: "Logged out successfully",
-                        );
-                        GoRouter.of(context).pop();
-                        GoRouter.of(context).go(Routes.loginView);
-                      }
-                      if (state is LogOutFailureState) {
-                        errorDialog(
-                          context: context,
-                          message: state.message,
-                          details: state.details,
-                        );
-                        GoRouter.of(context).pop();
-                      }
+                      state.whenOrNull(
+                        logOutSuccess: () {
+                          successSnackBar(
+                            context: context,
+                            message: "Logged out successfully",
+                          );
+                          GoRouter.of(context).pop();
+                          GoRouter.of(context).go(Routes.loginView);
+                        },
+                        logOutFailure: (apiErrorModel) {
+                          errorDialog(
+                            context: context,
+                            apiErrorModel: apiErrorModel,
+                          );
+                          GoRouter.of(context).pop();
+                        },
+                      );
                     },
                     child: CustomDialog<LogOutCubit, LogOutState>(
                       buttonText: "Log Out",
@@ -53,7 +55,7 @@ class LogoutListTile extends StatelessWidget {
                       onPressed: () async {
                         await context.read<LogOutCubit>().logOut();
                       },
-                      isLoading: (state) => state is LogOutLoadingState,
+                      isLoading: (state) => state is LogOutLoading,
                     ),
                   );
                 },

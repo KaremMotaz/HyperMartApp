@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../../categories/data/models/add_categories_request.dart';
@@ -35,7 +36,7 @@ class AllProductsView extends StatelessWidget {
                       );
                     },
                     label: "Add Category",
-                    isLoading: (state) => state is CategoriesLoadingState,
+                    isLoading: (state) => state is CategoriesLoading,
                   ),
                   const SizedBox(height: 20),
                   BlocButton<CategoriesCubit, CategoriesState>(
@@ -43,7 +44,7 @@ class AllProductsView extends StatelessWidget {
                       context.read<CategoriesCubit>().deleteCategory(id: "");
                     },
                     label: "Delete Category",
-                    isLoading: (state) => state is CategoriesLoadingState,
+                    isLoading: (state) => state is CategoriesLoading,
                   ),
                 ],
               ),

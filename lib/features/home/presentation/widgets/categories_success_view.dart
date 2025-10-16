@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../categories/data/models/get_categories_model.dart';
+import '../../../categories/data/models/get_categories_response.dart';
 import 'categories_list_view.dart';
 import 'section_header.dart';
 

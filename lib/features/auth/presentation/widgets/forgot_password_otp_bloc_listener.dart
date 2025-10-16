@@ -15,19 +15,18 @@ class ForgotPasswordOTPBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
-        if (state is ForgotPasswordVerifyOtpSuccessState) {
-          successSnackBar(
-            context: context,
-            message: "Successfully verified OTP",
-          );
-          GoRouter.of(context).pushReplacement(Routes.resetPasswordView);
-        } else if (state is ForgotPasswordFailureState) {
-          errorDialog(
-            context: context,
-            message: state.message,
-            details: state.details,
-          );
-        }
+        state.whenOrNull(
+          forgotPasswordVerifyOtpSuccess: () {
+            successSnackBar(
+              context: context,
+              message: "Successfully verified OTP",
+            );
+            GoRouter.of(context).pushReplacement(Routes.resetPasswordView);
+          },
+          forgotPasswordFailure: (apiErrorModel) {
+            errorDialog(context: context, apiErrorModel: apiErrorModel);
+          },
+        );
       },
       child: const ForgotPasswordOTPViewBody(),
     );

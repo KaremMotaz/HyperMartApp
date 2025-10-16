@@ -14,7 +14,7 @@ class ResendOTPEmailWidget extends StatelessWidget {
     final String email =
         BlocProvider.of<ForgotPasswordCubit>(context).email ?? "";
     return IgnorePointer(
-      ignoring: context.watch<ResendOtpCubit>().state is ResendOtpLoadingState,
+      ignoring: context.watch<ResendOtpCubit>().state is ResendOtpLoading,
       child: Text.rich(
         textAlign: TextAlign.center,
         TextSpan(
@@ -33,9 +33,7 @@ class ResendOTPEmailWidget extends StatelessWidget {
                 },
               text: "Resend email",
               style: TextStyles.semiBold15.copyWith(
-                color:
-                    context.watch<ResendOtpCubit>().state
-                        is ResendOtpLoadingState
+                color: context.watch<ResendOtpCubit>().state is ResendOtpLoading
                     ? ColorsManager.darkergrey
                     : ColorsManager.mainBlue,
               ),

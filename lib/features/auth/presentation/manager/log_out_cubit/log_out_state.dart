@@ -1,17 +1,11 @@
 part of 'log_out_cubit.dart';
 
-@immutable
-sealed class LogOutState {}
-
-final class LogOutInitialState extends LogOutState {}
-
-final class LogOutLoadingState extends LogOutState {}
-
-final class LogOutSuccessState extends LogOutState {}
-
-final class LogOutFailureState extends LogOutState {
-  final String message;
-  final List<String> details;
-
-  LogOutFailureState({required this.message, required this.details});
+@freezed
+class LogOutState with _$LogOutState {
+  const factory LogOutState.logOutInitial() = _LogOutInitial;
+  const factory LogOutState.logOutLoading() = LogOutLoading;
+  const factory LogOutState.logOutSuccess() = LogOutSuccess;
+  const factory LogOutState.logOutFailure({
+    required ApiErrorModel apiErrorModel,
+  }) = LogOutFailure;
 }

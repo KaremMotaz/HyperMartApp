@@ -14,20 +14,18 @@ class ChangePasswordBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ChangePasswordCubit, ChangePasswordState>(
       listener: (context, state) {
-        if (state is ChangePasswordSuccessState) {
-          successSnackBar(
-            context: context,
-            message: "Password changed successfully",
-          );
-          GoRouter.of(context).pop();
-        }
-        if (state is ChangePasswordFailureState) {
-          errorDialog(
-            context: context,
-            message: state.message,
-            details: state.details,
-          );
-        }
+        state.whenOrNull(
+          changePasswordSuccess: () {
+            GoRouter.of(context).pop();
+            successSnackBar(
+              context: context,
+              message: "Password changed successfully",
+            );
+          },
+          changePasswordFailure: (apiErrorModel) {
+            errorDialog(context: context, apiErrorModel: apiErrorModel);
+          },
+        );
       },
       child: const ChangePasswordViewBody(),
     );

@@ -1,42 +1,41 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../../../core/networking/api_error_model.dart';
+import '../../../../../core/networking/api_result.dart';
 import '../../../data/repos/auth_repo.dart';
 import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/services/cache_helper.dart';
-import '../../../../../core/errors/failure.dart';
 import '../../../data/models/login_request_body.dart';
 import '../../../data/models/login_response.dart';
 part 'login_state.dart';
+part 'login_cubit.freezed.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit({required this.authRepo}) : super(LoginInitialState());
+  LoginCubit({required this.authRepo}) : super(const LoginState.loginInitial());
 
   final AuthRepo authRepo;
   bool isSelected = false;
 
   void setRememberMe({required bool isSelected}) {
     this.isSelected = isSelected;
-    emit(LoginInitialState());
+    emit(const LoginState.loginInitial());
   }
 
   Future<void> loginWithEmailAndPassword({
     required LoginRequestBody loginRequestBody,
   }) async {
-    emit(LoginLoadingState());
+    emit(const LoginState.loginLoading());
 
-    final Either<Failure, LoginResponse> result = await authRepo
+    final ApiResult<LoginResponse> result = await authRepo
         .loginWithEmailAndPassword(body: loginRequestBody);
 
-    result.fold(
-      (failure) {
-        emit(
-          LoginFailureState(message: failure.message, details: failure.details),
-        );
-      },
-      (loginResponse) {
+    result.when(
+      success: (data) {
         CacheHelper.set(key: kRememberMe, value: isSelected);
-        emit(LoginSuccessState());
+        emit(const LoginState.loginSuccess());
+      },
+      failure: (apiErrorModel) {
+        emit(LoginState.loginFailure(apiErrorModel: apiErrorModel));
       },
     );
   }

@@ -6,7 +6,6 @@ part of 'update_category_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 UpdateCategoryRequest _$UpdateCategoryRequestFromJson(
   Map<String, dynamic> json,
 ) => UpdateCategoryRequest(

@@ -6,7 +6,6 @@ part of 'change_password_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 ChangePasswordRequestBody _$ChangePasswordRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => ChangePasswordRequestBody(

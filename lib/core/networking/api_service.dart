@@ -1,14 +1,6 @@
 import 'package:dio/dio.dart';
-import '../../features/categories/data/models/add_categories_request.dart';
-import '../../features/categories/data/models/add_category_response.dart';
-import '../../features/categories/data/models/get_categories_model.dart';
-import '../../features/categories/data/models/get_category_by_id_model.dart';
-import '../../features/categories/data/models/update_category_request.dart';
-import '../../features/categories/data/models/update_category_response.dart';
-import '../../features/auth/data/models/resend_otp_request_body.dart';
-import '../../features/auth/data/models/user_data_response.dart';
-import '../../features/auth/data/models/validate_otp_request_body.dart';
-import 'api_constants.dart';
+import 'package:retrofit/retrofit.dart';
+
 import '../../features/auth/data/models/change_password_request_body.dart';
 import '../../features/auth/data/models/forgot_password_request_body.dart';
 import '../../features/auth/data/models/login_request_body.dart';
@@ -16,9 +8,19 @@ import '../../features/auth/data/models/login_response.dart';
 import '../../features/auth/data/models/refresh_token_request_body.dart';
 import '../../features/auth/data/models/refresh_token_response.dart';
 import '../../features/auth/data/models/register_request_body.dart';
+import '../../features/auth/data/models/resend_otp_request_body.dart';
 import '../../features/auth/data/models/reset_password_request_body.dart';
+import '../../features/auth/data/models/user_data_response.dart';
+import '../../features/auth/data/models/validate_otp_request_body.dart';
 import '../../features/auth/data/models/verify_email_request_body.dart';
-import 'package:retrofit/retrofit.dart';
+import '../../features/categories/data/models/add_categories_request.dart';
+import '../../features/categories/data/models/add_category_response.dart';
+import '../../features/categories/data/models/get_categories_response.dart';
+import '../../features/categories/data/models/get_category_by_id_response.dart';
+import '../../features/categories/data/models/update_category_request.dart';
+import '../../features/categories/data/models/update_category_response.dart';
+import 'api_constants.dart';
+
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
@@ -65,7 +67,7 @@ abstract class ApiService {
   Future<void> logout();
 
   @GET(ApiConstants.getCategories)
-  Future<GetCategoriesModel> getCategories();
+  Future<GetCategoriesResponse> getCategories();
 
   @POST(ApiConstants.addCategory)
   Future<AddCategoryResponse> addCategory({
@@ -76,7 +78,7 @@ abstract class ApiService {
   Future<void> deleteCategory({@Path('id') required String id});
 
   @GET(ApiConstants.getCategoryById)
-  Future<GetCategoryByIdModel> getCategoryById({
+  Future<GetCategoryByIdResponse> getCategoryById({
     @Path('id') required String id,
   });
 

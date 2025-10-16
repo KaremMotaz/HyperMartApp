@@ -1,16 +1,16 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../../../core/networking/api_error_model.dart';
+import '../../../../../core/networking/api_result.dart';
 import '../../../data/repos/auth_repo.dart';
-
-import '../../../../../core/errors/failure.dart';
 import '../../../data/models/resend_otp_request_body.dart';
 part 'resend_otp_state.dart';
+part 'resend_otp_cubit.freezed.dart';
 
 class ResendOtpCubit extends Cubit<ResendOtpState> {
-  ResendOtpCubit({required this.authRepo}) : super(ResendOtpInitialState());
+  ResendOtpCubit({required this.authRepo})
+    : super(const ResendOtpState.resendOtpInitial());
 
   final AuthRepo authRepo;
 
@@ -18,40 +18,37 @@ class ResendOtpCubit extends Cubit<ResendOtpState> {
   int _remainingSeconds = 0;
 
   Future<void> resendOtp({required String email}) async {
-    emit(ResendOtpLoadingState());
+    emit(const ResendOtpState.resendOtpLoading());
 
-    final Either<Failure, Unit> result = await authRepo.resendOtp(
+    final ApiResult result = await authRepo.resendOtp(
       body: ResendOtpRequestBody(email: email),
     );
 
-    result.fold(
-      (failure) {
-        emit(
-          ResendOtpFailureState(
-            message: failure.message,
-            details: failure.details,
-          ),
-        );
-      },
-      (unit) {
-        emit(ResendOtpSuccessState());
+    result.when(
+      success: (unit) {
+        emit(const ResendOtpState.resendOtpSuccess(remainingSeconds: 60));
         _startTimer();
+      },
+      failure: (apiErrorModel) {
+        emit(ResendOtpState.resendOtpFailure(apiErrorModel: apiErrorModel));
       },
     );
   }
 
   void _startTimer() {
     _remainingSeconds = 600;
-    emit(ResendOtpTimerState(_remainingSeconds));
+    emit(ResendOtpState.resendOtpTimer(remainingSeconds: _remainingSeconds));
 
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_remainingSeconds == 0) {
         timer.cancel();
-        emit(ResendOtpAvailableState());
+        emit(const ResendOtpState.resendOtpAvailable());
       } else {
         _remainingSeconds--;
-        emit(ResendOtpTimerState(_remainingSeconds));
+        emit(
+          ResendOtpState.resendOtpTimer(remainingSeconds: _remainingSeconds),
+        );
       }
     });
   }

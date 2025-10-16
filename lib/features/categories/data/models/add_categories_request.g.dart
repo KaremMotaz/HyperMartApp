@@ -6,7 +6,6 @@ part of 'add_categories_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 AddCategoryRequest _$AddCategoryRequestFromJson(Map<String, dynamic> json) =>
     AddCategoryRequest(
       name: json['name'] as String,

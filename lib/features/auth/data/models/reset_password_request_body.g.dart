@@ -6,7 +6,6 @@ part of 'reset_password_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 ResetPasswordRequestBody _$ResetPasswordRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => ResetPasswordRequestBody(

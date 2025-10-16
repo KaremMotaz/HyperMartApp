@@ -118,7 +118,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
           const SizedBox(height: 25),
           BlocButton<ForgotPasswordCubit, ForgotPasswordState>(
             label: "Reset Password",
-            isLoading: (state) => state is ForgotPasswordLoadingState,
+            isLoading: (state) => state is ForgotPasswordLoading,
             onPressed: () {
               validateThenResetPassword(context);
             },

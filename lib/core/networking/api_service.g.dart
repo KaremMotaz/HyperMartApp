@@ -266,12 +266,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetCategoriesModel> getCategories() async {
+  Future<GetCategoriesResponse> getCategories() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GetCategoriesModel>(
+    final _options = _setStreamType<GetCategoriesResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -282,9 +282,9 @@ class _ApiService implements ApiService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GetCategoriesModel _value;
+    late GetCategoriesResponse _value;
     try {
-      _value = GetCategoriesModel.fromJson(_result.data!);
+      _value = GetCategoriesResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -342,12 +342,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<GetCategoryByIdModel> getCategoryById({required String id}) async {
+  Future<GetCategoryByIdResponse> getCategoryById({required String id}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GetCategoryByIdModel>(
+    final _options = _setStreamType<GetCategoryByIdResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -358,9 +358,9 @@ class _ApiService implements ApiService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GetCategoryByIdModel _value;
+    late GetCategoryByIdResponse _value;
     try {
-      _value = GetCategoryByIdModel.fromJson(_result.data!);
+      _value = GetCategoryByIdResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

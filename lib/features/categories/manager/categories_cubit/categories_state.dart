@@ -1,57 +1,37 @@
 part of 'categories_cubit.dart';
 
-sealed class CategoriesState extends Equatable {
-  const CategoriesState();
+@freezed
+class CategoriesState with _$CategoriesState {
+  const factory CategoriesState.categoriesInitial() = _CategoriesInitial;
+  const factory CategoriesState.categoriesLoading() = CategoriesLoading;
+  const factory CategoriesState.categoriesDeleteLoading() =
+      DeleteCategoriesLoading;
+  const factory CategoriesState.categoriesUpdateLoading() =
+      UpdateCategoryLoading;
+  const factory CategoriesState.categoriesGetByIdLoading() =
+      GetCategoryByIdLoading;
+  const factory CategoriesState.categoriesAddLoading() = AddCategoryLoading;
 
-  @override
-  List<Object> get props => [];
-}
+  const factory CategoriesState.categoriesGetSuccess({
+    required GetCategoriesResponse categoriesResponse,
+  }) = GetCategoriesSuccess;
 
-final class CategoriesInitialState extends CategoriesState {}
+  const factory CategoriesState.categoriesGetByIdSuccess({
+    required GetCategoryByIdResponse getCategoryByIdModel,
+  }) = GetCategoryByIdSuccessState;
 
-final class CategoriesLoadingState extends CategoriesState {}
+  const factory CategoriesState.categoriesUpdateSuccess({
+    required UpdateCategoryResponse updateCategoryResponse,
+  }) = UpdateCategorySuccess;
 
-final class DeleteCategoriesLoadingState extends CategoriesState {}
+  const factory CategoriesState.categoriesAddSuccess({
+    required AddCategoryResponse addCategoryResponse,
+  }) = AddCategorySuccess;
 
-final class UpdateCategoryLoadingState extends CategoriesState {}
+  const factory CategoriesState.categoriesDeleteSuccess() =
+      DeleteCategorySuccess;
 
-final class GetCategoryByIdLoadingState extends CategoriesState {}
-
-final class GetCategoriesSuccessState extends CategoriesState {
-  final GetCategoriesModel categoriesResponse;
-  const GetCategoriesSuccessState({required this.categoriesResponse});
-  @override
-  List<Object> get props => [categoriesResponse];
-}
-
-final class GetCategoryByIdSuccessState extends CategoriesState {
-  final GetCategoryByIdModel getCategoryByIdModel;
-  const GetCategoryByIdSuccessState({required this.getCategoryByIdModel});
-  @override
-  List<Object> get props => [getCategoryByIdModel];
-}
-
-final class UpdateCategorySuccessState extends CategoriesState {
-  final UpdateCategoryResponse updateCategoryResponse;
-  const UpdateCategorySuccessState({required this.updateCategoryResponse});
-  @override
-  List<Object> get props => [updateCategoryResponse];
-}
-
-final class AddCategorySuccessState extends CategoriesState {
-  final AddCategoryResponse addCategoryResponse;
-  const AddCategorySuccessState({required this.addCategoryResponse});
-  @override
-  List<Object> get props => [addCategoryResponse];
-}
-
-final class DeleteCategorySuccessState extends CategoriesState {}
-
-final class CategoriesFailureState extends CategoriesState {
-  final String message;
-  final List<String> details;
-
-  const CategoriesFailureState({required this.message, required this.details});
-  @override
-  List<Object> get props => [message, details];
+  const factory CategoriesState.categoriesFailure({
+    required ApiErrorModel apiErrorModel,
+  }) = CategoriesFailure;
 }

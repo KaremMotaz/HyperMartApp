@@ -1,15 +1,15 @@
 import '../../../../core/theming/assets_manager.dart';
 import 'package:json_annotation/json_annotation.dart';
-part 'get_categories_model.g.dart';
+part 'get_categories_response.g.dart';
 
 @JsonSerializable()
-class GetCategoriesModel {
+class GetCategoriesResponse {
   final List<Category> categories;
 
-  GetCategoriesModel({required this.categories});
+  GetCategoriesResponse({required this.categories});
 
-  factory GetCategoriesModel.fromJson(Map<String, dynamic> json) {
-    return _$GetCategoriesModelFromJson(json);
+  factory GetCategoriesResponse.fromJson(Map<String, dynamic> json) {
+    return _$GetCategoriesResponseFromJson(json);
   }
 }
 

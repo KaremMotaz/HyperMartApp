@@ -6,7 +6,6 @@ part of 'forgot_password_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 ForgotPasswordRequestBody _$ForgotPasswordRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => ForgotPasswordRequestBody(email: json['email'] as String);

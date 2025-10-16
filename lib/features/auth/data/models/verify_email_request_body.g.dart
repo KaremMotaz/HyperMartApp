@@ -6,7 +6,6 @@ part of 'verify_email_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 VerifyEmailRequestBody _$VerifyEmailRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => VerifyEmailRequestBody(

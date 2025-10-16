@@ -15,19 +15,18 @@ class ResetPasswordBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
-        if (state is ForgotPasswordResetSuccessState) {
-          successSnackBar(
-            context: context,
-            message: "Successfully reset password",
-          );
-          GoRouter.of(context).pushReplacement(Routes.loginView);
-        } else if (state is ForgotPasswordFailureState) {
-          errorDialog(
-            context: context,
-            message: state.message,
-            details: state.details,
-          );
-        }
+        state.whenOrNull(
+          forgotPasswordResetSuccess: () {
+            successSnackBar(
+              context: context,
+              message: "Successfully reset password",
+            );
+            GoRouter.of(context).pushReplacement(Routes.loginView);
+          },
+          forgotPasswordFailure: (apiErrorModel) {
+            errorDialog(context: context, apiErrorModel: apiErrorModel);
+          },
+        );
       },
       child: const ResetPasswordViewBody(),
     );

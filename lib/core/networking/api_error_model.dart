@@ -1,16 +1,10 @@
-import '../errors/failure.dart';
+class ApiErrorModel {
+  final String message;
+  final List<String>? details;
 
-class ApiErrorModel extends Failure {
-  ApiErrorModel({
-    required super.message,
-    required super.code,
-    required super.details,
-  });
+  ApiErrorModel({required this.message, this.details});
 
-  factory ApiErrorModel.fromJson({
-    required Map<String, dynamic> json,
-    required int? statusCode,
-  }) {
+  factory ApiErrorModel.fromJson({required Map<String, dynamic> json}) {
     final allErrors = json['errors'] as Map<String, dynamic>?;
     final List<String> errorsList = [];
     if (allErrors != null) {
@@ -23,7 +17,6 @@ class ApiErrorModel extends Failure {
     }
 
     return ApiErrorModel(
-      code: statusCode.toString(),
       message: json['message'] ?? 'An error occurred',
       details: errorsList,
     );

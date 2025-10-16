@@ -16,17 +16,15 @@ class OtpViewBodyBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<VerifyEmailCubit, VerifyEmailState>(
       listener: (context, state) {
-        if (state is VerifyEmailSuccessState) {
-          successSnackBar(context: context, message: "Verify Email Success");
-          GoRouter.of(context).pushReplacement(Routes.loginView);
-        }
-        if (state is VerifyEmailFailureState) {
-          errorDialog(
-            context: context,
-            message: state.message,
-            details: state.details,
-          );
-        }
+        state.whenOrNull(
+          verifyEmailSuccess: () {
+            successSnackBar(context: context, message: "Verify Email Success");
+            GoRouter.of(context).pushReplacement(Routes.loginView);
+          },
+          verifyEmailFailure: (apiErrorModel) {
+            errorDialog(context: context, apiErrorModel: apiErrorModel);
+          },
+        );
       },
       child: OTPVerificationViewBody(userEmail: userEmail),
     );

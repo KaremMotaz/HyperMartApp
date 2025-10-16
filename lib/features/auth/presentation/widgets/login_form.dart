@@ -114,7 +114,7 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(height: 25),
           BlocButton<LoginCubit, LoginState>(
             label: "Login",
-            isLoading: (state) => state is LoginLoadingState,
+            isLoading: (state) => state is LoginLoading,
             onPressed: () {
               validateThenLogin(context);
             },

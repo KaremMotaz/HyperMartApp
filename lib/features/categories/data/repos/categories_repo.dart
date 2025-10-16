@@ -1,12 +1,10 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
+import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
-import '../../../../core/errors/failure.dart';
 import '../models/add_category_response.dart';
 import '../models/add_categories_request.dart';
-import '../models/get_categories_model.dart';
-import '../models/get_category_by_id_model.dart';
+import '../models/get_categories_response.dart';
+import '../models/get_category_by_id_response.dart';
 import '../models/update_category_request.dart';
 import '../models/update_category_response.dart';
 
@@ -15,51 +13,51 @@ class CategoriesRepo {
 
   CategoriesRepo({required this.apiService});
 
-  Future<Either<Failure, GetCategoriesModel>> getCategories() async {
+  Future<ApiResult<GetCategoriesResponse>> getCategories() async {
     try {
-      final GetCategoriesModel response = await apiService.getCategories();
-      return right(response);
-    } on DioException catch (e) {
-      return left(ApiErrorHandler.handleDioError(e: e));
+      final GetCategoriesResponse response = await apiService.getCategories();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<Either<Failure, AddCategoryResponse>> addCategory({
+  Future<ApiResult<AddCategoryResponse>> addCategory({
     required AddCategoryRequest body,
   }) async {
     try {
       final AddCategoryResponse response = await apiService.addCategory(
         body: body,
       );
-      return right(response);
-    } on DioException catch (e) {
-      return left(ApiErrorHandler.handleDioError(e: e));
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<Either<Failure, Unit>> deleteCategory({required String id}) async {
+  Future<ApiResult<void>> deleteCategory({required String id}) async {
     try {
       await apiService.deleteCategory(id: id);
-      return right(unit);
-    } on DioException catch (e) {
-      return left(ApiErrorHandler.handleDioError(e: e));
+      return const ApiResult.success(null);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<Either<Failure, GetCategoryByIdModel>> getCategoryById({
+  Future<ApiResult<GetCategoryByIdResponse>> getCategoryById({
     required String id,
   }) async {
     try {
-      final GetCategoryByIdModel response = await apiService.getCategoryById(
+      final GetCategoryByIdResponse response = await apiService.getCategoryById(
         id: id,
       );
-      return right(response);
-    } on DioException catch (e) {
-      return left(ApiErrorHandler.handleDioError(e: e));
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<Either<Failure, UpdateCategoryResponse>> updateCategory({
+  Future<ApiResult<UpdateCategoryResponse>> updateCategory({
     required String id,
     required UpdateCategoryRequest body,
   }) async {
@@ -68,9 +66,9 @@ class CategoriesRepo {
         id: id,
         body: body,
       );
-      return right(response);
-    } on DioException catch (e) {
-      return left(ApiErrorHandler.handleDioError(e: e));
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 }

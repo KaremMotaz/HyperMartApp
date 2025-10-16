@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/widgets/custom_dialog.dart';
+
+import '../../../../core/routing/routes.dart';
 import '../../../../core/services/get_it_service.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/widgets/custom_dialog.dart';
 import '../../../auth/data/repos/auth_repo.dart';
 import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
 import 'custom_settings_list_tile.dart';
 
 class ChangePasswordListTile extends StatelessWidget {
@@ -33,7 +34,7 @@ class ChangePasswordListTile extends StatelessWidget {
                   GoRouter.of(context).go(Routes.changePasswordView);
                   GoRouter.of(context).pop();
                 },
-                isLoading: (state) => state is ChangePasswordLoadingState,
+                isLoading: (state) => state is ChangePasswordLoading,
               ),
             );
           },

@@ -6,7 +6,6 @@ part of 'register_request_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-// ignore: unused_element
 RegisterRequestBody _$RegisterRequestBodyFromJson(Map<String, dynamic> json) =>
     RegisterRequestBody(
       email: json['email'] as String,

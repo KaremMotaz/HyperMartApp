@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/widgets/universal_image.dart';
-import '../../../categories/data/models/get_categories_model.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/universal_image.dart';
+import '../../../categories/data/models/get_categories_response.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({super.key, required this.category, required this.index});

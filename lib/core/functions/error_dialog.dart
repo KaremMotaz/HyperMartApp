@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../networking/api_error_model.dart';
 
 import '../theming/colors_manager.dart';
 import '../theming/text_styles.dart';
 
 void errorDialog({
   required BuildContext context,
-  required String message,
-  required List<String> details,
+  required ApiErrorModel apiErrorModel,
 }) {
   showDialog(
     context: context,
     builder: (context) {
-      return ErrorDialog(message: message, details: details);
+      return ErrorDialog(apiErrorModel: apiErrorModel);
     },
   );
 }
 
 class ErrorDialog extends StatelessWidget {
-  final String message;
-  final List<String> details;
+  final ApiErrorModel apiErrorModel;
 
-  const ErrorDialog({super.key, required this.message, required this.details});
+  const ErrorDialog({super.key, required this.apiErrorModel});
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +52,11 @@ class ErrorDialog extends StatelessWidget {
         children: [
           const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
           const SizedBox(height: 16),
-          Text(message, style: TextStyles.bold20),
+          Text(apiErrorModel.message, style: TextStyles.bold20),
           const SizedBox(height: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: details
+            children: apiErrorModel.details!
                 .map((msg) => Text(msg, style: TextStyles.medium16))
                 .toList(),
           ),

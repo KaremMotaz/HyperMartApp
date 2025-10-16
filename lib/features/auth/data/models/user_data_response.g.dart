@@ -14,7 +14,6 @@ UserDataResponse _$UserDataResponseFromJson(Map<String, dynamic> json) =>
       profilePicture: json['profilePicture'] as String,
     );
 
-// ignore: unused_element
 Map<String, dynamic> _$UserDataResponseToJson(UserDataResponse instance) =>
     <String, dynamic>{
       'userId': instance.userId,

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../core/functions/check_if_logged_in_user.dart';
+import '../../../../core/routing/routes.dart';
 import '../../core/theming/assets_manager.dart';
 import '../../core/theming/colors_manager.dart';
 import '../../core/theming/text_styles.dart';
 import '../../core/widgets/custom_circular_progress_indicator.dart';
-import '../../../../core/functions/check_if_logged_in_user.dart';
-import '../../../../core/routing/routes.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

@@ -1,21 +1,12 @@
 part of 'register_cubit.dart';
 
-@immutable
-sealed class RegisterState {}
-
-final class RegisterInitialState extends RegisterState {}
-
-final class RegisterLoadingState extends RegisterState {}
-
-final class RegisterSuccessState extends RegisterState {
-  final String email;
-
-  RegisterSuccessState({required this.email});
-}
-
-final class RegisterFailureState extends RegisterState {
-  final String message;
-  final List<String> details;
-
-  RegisterFailureState({required this.message, required this.details});
+@freezed
+class RegisterState with _$RegisterState {
+  const factory RegisterState.registerInitial() = _RegisterInitial;
+  const factory RegisterState.registerLoading() = RegisterLoading;
+  const factory RegisterState.registerSuccess({required String email}) =
+      RegisterSuccess;
+  const factory RegisterState.registerFailure({
+    required ApiErrorModel apiErrorModel,
+  }) = RegisterFailure;
 }

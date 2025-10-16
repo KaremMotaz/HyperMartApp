@@ -15,19 +15,17 @@ class RegisterViewBodyBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (context, state) {
-        if (state is RegisterSuccessState) {
-          successSnackBar(context: context, message: "Register Success");
-          GoRouter.of(
-            context,
-          ).pushReplacement(Routes.otpVerificationView, extra: state.email);
-        }
-        if (state is RegisterFailureState) {
-          errorDialog(
-            context: context,
-            message: state.message,
-            details: state.details,
-          );
-        }
+        state.whenOrNull(
+          registerSuccess: (email) {
+            successSnackBar(context: context, message: "Register Success");
+            GoRouter.of(
+              context,
+            ).pushReplacement(Routes.otpVerificationView, extra: email);
+          },
+          registerFailure: (apiErrorModel) {
+            errorDialog(context: context, apiErrorModel: apiErrorModel);
+          },
+        );
       },
       child: const RegisterViewBody(),
     );

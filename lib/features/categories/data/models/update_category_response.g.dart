@@ -16,7 +16,6 @@ UpdateCategoryResponse _$UpdateCategoryResponseFromJson(
   message: json['message'] as String,
 );
 
-// ignore: unused_element
 Map<String, dynamic> _$UpdateCategoryResponseToJson(
   UpdateCategoryResponse instance,
 ) => <String, dynamic>{

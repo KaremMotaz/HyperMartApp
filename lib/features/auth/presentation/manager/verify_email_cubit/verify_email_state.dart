@@ -1,27 +1,11 @@
 part of 'verify_email_cubit.dart';
 
-sealed class VerifyEmailState extends Equatable {
-  const VerifyEmailState();
-
-  @override
-  List<Object> get props => [];
-}
-
-final class VerifyEmailInitialState extends VerifyEmailState {}
-
-final class VerifyEmailLoadingState extends VerifyEmailState {}
-
-final class VerifyEmailSuccessState extends VerifyEmailState {}
-
-final class VerifyEmailFailureState extends VerifyEmailState {
-  final String message;
-  final List<String> details;
-
-  const VerifyEmailFailureState({
-    required this.message,
-    this.details = const [],
-  });
-
-  @override
-  List<Object> get props => [message, details];
+@freezed
+class VerifyEmailState with _$VerifyEmailState {
+  const factory VerifyEmailState.verifyEmailInitial() = _VerifyEmailInitial;
+  const factory VerifyEmailState.verifyEmailLoading() = VerifyEmailLoading;
+  const factory VerifyEmailState.verifyEmailSuccess() = VerifyEmailSuccess;
+  const factory VerifyEmailState.verifyEmailFailure({
+    required ApiErrorModel apiErrorModel,
+  }) = VerifyEmailFailure;
 }

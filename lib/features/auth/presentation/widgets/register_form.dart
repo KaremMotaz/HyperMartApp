@@ -131,7 +131,7 @@ class _RegisterFormState extends State<RegisterForm> {
           const SizedBox(height: 25),
           BlocButton<RegisterCubit, RegisterState>(
             label: "Register",
-            isLoading: (state) => state is RegisterLoadingState,
+            isLoading: (state) => state is RegisterLoading,
             onPressed: () {
               validateThenRegister(context);
             },

@@ -15,7 +15,6 @@ AddCategoryResponse _$AddCategoryResponseFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String,
     );
 
-// ignore: unused_element
 Map<String, dynamic> _$AddCategoryResponseToJson(
   AddCategoryResponse instance,
 ) => <String, dynamic>{

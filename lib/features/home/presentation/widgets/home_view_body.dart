@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/services/get_it_service.dart';
 import '../../../categories/data/repos/categories_repo.dart';
 import '../../../categories/manager/categories_cubit/categories_cubit.dart';
-
 import 'categories_section.dart';
 import 'custom_appbar.dart';
 import 'custom_text_field.dart';

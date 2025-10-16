@@ -33,7 +33,7 @@ class _PinInputFormState extends State<PinInputForm> {
           const SizedBox(height: 150),
           BlocButton<VerifyEmailCubit, VerifyEmailState>(
             label: "Next",
-            isLoading: (state) => state is VerifyEmailLoadingState,
+            isLoading: (state) => state is VerifyEmailLoading,
             onPressed: () {
               validateThenVerifyEmail(context);
             },

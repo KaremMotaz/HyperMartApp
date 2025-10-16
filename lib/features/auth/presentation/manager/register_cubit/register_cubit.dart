@@ -1,34 +1,30 @@
-import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../../../core/networking/api_error_model.dart';
+import '../../../../../core/networking/api_result.dart';
 import '../../../data/repos/auth_repo.dart';
-
-import '../../../../../core/errors/failure.dart';
 import '../../../data/models/register_request_body.dart';
 part 'register_state.dart';
+part 'register_cubit.freezed.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit(this.authRepo) : super(RegisterInitialState());
+  RegisterCubit(this.authRepo) : super(const RegisterState.registerInitial());
 
   final AuthRepo authRepo;
 
   Future<void> registerWithEmailAndPassword({
     required RegisterRequestBody registerRequestBody,
   }) async {
-    emit(RegisterLoadingState());
-    final Either<Failure, Unit> result = await authRepo
-        .registerWithEmailAndPassword(body: registerRequestBody);
-    result.fold(
-      (failure) {
-        emit(
-          RegisterFailureState(
-            message: failure.message,
-            details: failure.details,
-          ),
-        );
+    emit(const RegisterState.registerLoading());
+    final ApiResult result = await authRepo.registerWithEmailAndPassword(
+      body: registerRequestBody,
+    );
+    result.when(
+      success: (data) {
+        emit(RegisterState.registerSuccess(email: registerRequestBody.email));
       },
-      (unit) async {
-        emit(RegisterSuccessState(email: registerRequestBody.email));
+      failure: (apiErrorModel) {
+        emit(RegisterState.registerFailure(apiErrorModel: apiErrorModel));
       },
     );
   }
