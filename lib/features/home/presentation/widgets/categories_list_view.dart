@@ -16,16 +16,19 @@ class CategoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Skeletonizer(
-      containersColor: Colors.grey[50],
-      enabled: isLoading,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
-        separatorBuilder: (context, index) => const SizedBox(width: 12),
-        itemBuilder: (context, index) {
-          return CategoryItem(category: categories[index], index: index);
-        },
+    return SizedBox(
+      height: 100,
+      child: Skeletonizer(
+        containersColor: Colors.grey[50],
+        enabled: isLoading,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: categories.length,
+          separatorBuilder: (context, index) => const SizedBox(width: 12),
+          itemBuilder: (context, index) {
+            return CategoryItem(category: categories[index], index: index);
+          },
+        ),
       ),
     );
   }
