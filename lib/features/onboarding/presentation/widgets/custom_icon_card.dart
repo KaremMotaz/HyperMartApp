@@ -5,24 +5,24 @@ class CustomIconCard extends StatelessWidget {
   const CustomIconCard({
     super.key,
     required this.iconPath,
-    required this.iconColor,
+    required this.color,
   });
 
   final String iconPath;
-  final Color iconColor;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(5),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(5)),
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
       ),
       child: SvgPicture.asset(
         iconPath,
-        width: 15,
-        colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
+        width: 40,
+        colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
       ),
     );
   }

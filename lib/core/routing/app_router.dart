@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../features/app/splash_view.dart';
 import '../../features/auth/data/repos/auth_repo.dart';
@@ -29,7 +30,7 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.onboardingView,
-          builder: (context, state) => const SplashView(),
+          builder: (context, state) => const OnboardingView(),
         ),
         GoRoute(
           path: Routes.loginView,

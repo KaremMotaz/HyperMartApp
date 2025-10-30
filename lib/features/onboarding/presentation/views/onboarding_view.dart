@@ -42,6 +42,14 @@ class _OnboardingViewState extends State<OnboardingView> {
       );
     }
   }
+  void goToBackPage() {
+    if (currentPageIndex < pages.length - 1) {
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
 
   void finishOnboarding(BuildContext context) {
     // CacheHelper.set(key: kHasSeenOnboarding, value: true);
@@ -58,12 +66,15 @@ class _OnboardingViewState extends State<OnboardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: OnboardingViewBody(
-        currentPageIndex: currentPageIndex,
-        pageController: _pageController,
-        pages: pages,
-        onNextPressed: goToNextPage,
-        onFinishPressed: () => finishOnboarding(context),
+      body: SafeArea(
+        child: OnboardingViewBody(
+          currentPageIndex: currentPageIndex,
+          pageController: _pageController,
+          pages: pages,
+          onNextPressed: goToNextPage,
+          onBackPressed: goToBackPage,
+          onFinishPressed: () => finishOnboarding(context),
+        ),
       ),
     );
   }

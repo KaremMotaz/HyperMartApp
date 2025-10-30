@@ -3,6 +3,14 @@ class AppAssets {
   static const String emailNotification =
       'assets/images/email_notification.png';
   static const String forgotPassword = 'assets/images/Forgot_password.png';
+  static const String onboarding1 = 'assets/images/onboarding1.jpg';
+  static const String onboarding2 = 'assets/images/onboarding2.jpg';
+  static const String onboarding3 = 'assets/images/onboarding3.jpg';
+  static const String onboarding4 = 'assets/images/onboarding4.jpg';
+  static const String onboardingIcon1 = 'assets/svgs/cart2.svg';
+  static const String onboardingIcon2 = 'assets/svgs/product.svg';
+  static const String onboardingIcon3 = 'assets/svgs/truck.svg';
+  static const String onboardingIcon4 = 'assets/svgs/sale.svg';
   static const String arrowDownIcon = 'assets/svgs/arrow_down.svg';
   static const String arrowRightIcon = 'assets/svgs/arrow_right.svg';
   static const String locationIcon = 'assets/svgs/location.svg';
