@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_assets.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/custom_dots_indicator.dart';
+import 'package:hyper_mart_app/features/onboarding/helper/get_active_color.dart';
+import 'package:hyper_mart_app/features/onboarding/presentation/widgets/custom_progress_dots.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/widgets/skip_button.dart';
 
@@ -36,7 +37,7 @@ class OnboardingAppBar extends StatelessWidget {
                 Image.asset(AppAssets.logo, width: 50),
                 Text(
                   "HyperMart",
-                  style: AppStyles.bold18.copyWith(color: AppColors.turquoise),
+                  style: AppStyles.bold18.copyWith(color: Colors.grey),
                 ),
               ],
             ),
@@ -48,15 +49,12 @@ class OnboardingAppBar extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 10),
-        SizedBox(
-          width: screenWidth,
-          child: CustomDotsIndicator(
-            pages: pages,
-            currentPageIndex: currentPageIndex,
-            unactivesize: Size(dotWidth, 5),
-            activesize: Size(dotWidth, 5),
-            spacing: spacing,
-          ),
+        CustomProgressDots(
+          pagesCount: pages.length,
+          currentPageIndex: currentPageIndex,
+          activeColor: getActiveColor(currentPageIndex: currentPageIndex),
+          inactiveColor: AppColors.lightGrey,
+          dotWidth: dotWidth,
         ),
       ],
     );

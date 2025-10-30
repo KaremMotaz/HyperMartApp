@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/helpers/constants.dart';
+import 'package:hyper_mart_app/core/services/cache_helper.dart';
 
 import '../../../../core/functions/check_if_logged_in_user.dart';
 import '../../../../core/routing/routes.dart';
@@ -35,12 +37,20 @@ class _SplashViewState extends State<SplashView>
     _checkIfLoggedInUser();
   }
 
+  checkIfHasSeenOnboarding() async {
+    CacheHelper.getBool(key: kHasSeenOnboarding);
+  }
+
   Future<void> _checkIfLoggedInUser() async {
     final bool isLoggedInUser = await checkIfLoggedInUser();
+    final bool hasSeenOnboarding = await checkIfHasSeenOnboarding() ?? false;
 
     await Future.delayed(const Duration(milliseconds: 1500));
 
     if (mounted) {
+      if (!hasSeenOnboarding) {
+        GoRouter.of(context).go(Routes.onboardingView);
+      }
       if (isLoggedInUser) {
         GoRouter.of(context).go(Routes.mainView);
       } else {

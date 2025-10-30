@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
 
 class OnboardingModel {
   final String title;
@@ -8,7 +7,7 @@ class OnboardingModel {
   final int currentPageIndex;
   final String image;
   final String icon;
-  final Color color;
+  final List<Color> colors;
 
   OnboardingModel({
     required this.title,
@@ -16,7 +15,7 @@ class OnboardingModel {
     required this.currentPageIndex,
     required this.image,
     required this.icon,
-    required this.color,
+    required this.colors,
   });
 
   static List<OnboardingModel> pages = [
@@ -27,7 +26,7 @@ class OnboardingModel {
       currentPageIndex: 0,
       image: AppAssets.onboarding1,
       icon: AppAssets.onboardingIcon1,
-      color: AppColors.turquoise,
+      colors: [const Color(0xff00b57f), const Color(0xff009d88)],
     ),
     OnboardingModel(
       title: "Fresh & Quality Products",
@@ -36,7 +35,7 @@ class OnboardingModel {
       currentPageIndex: 1,
       image: AppAssets.onboarding2,
       icon: AppAssets.onboardingIcon2,
-      color: AppColors.turquoise,
+      colors: [const Color(0xff00be58), const Color(0xff00a262)],
     ),
     OnboardingModel(
       title: "Fast Delivery",
@@ -45,7 +44,7 @@ class OnboardingModel {
       currentPageIndex: 2,
       image: AppAssets.onboarding3,
       icon: AppAssets.onboardingIcon3,
-      color: AppColors.turquoise,
+      colors: [const Color(0xff1b85f5), const Color(0xff0090c8)],
     ),
     OnboardingModel(
       title: "Exclusive Deals",
@@ -54,7 +53,7 @@ class OnboardingModel {
       currentPageIndex: 3,
       image: AppAssets.onboarding4,
       icon: AppAssets.onboardingIcon4,
-      color: AppColors.turquoise,
+      colors: [const Color(0xffba45e7), const Color(0xffdd1e90)],
     ),
   ];
 }

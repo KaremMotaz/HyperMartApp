@@ -26,11 +26,11 @@ class OnboardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    const spacing = 4.0;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    const double spacing = 4.0;
     const double viewPadding = 28;
-    final totalSpacing = spacing * (pages.length - 1);
-    final dotWidth =
+    final double totalSpacing = spacing * (pages.length - 1);
+    final double dotWidth =
         (screenWidth - totalSpacing - viewPadding * 2 - 20) / pages.length;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: viewPadding),

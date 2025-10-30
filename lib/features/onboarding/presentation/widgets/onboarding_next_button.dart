@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
+import 'package:hyper_mart_app/features/onboarding/helper/get_active_color.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
 
 class OnboardingNextButton extends StatelessWidget {
@@ -23,7 +23,7 @@ class OnboardingNextButton extends StatelessWidget {
     return Expanded(
       child: AppTextButton(
         borderColor: Colors.transparent,
-        backgroundColor: AppColors.turquoise,
+        backgroundColor: getActiveColor(currentPageIndex: currentPageIndex),
         borderRadius: 15,
         verticalPadding: 0,
         buttonHeight: 45,

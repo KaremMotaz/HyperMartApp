@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-// import '../../../../../core/helpers/constants.dart';
+import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/routing/routes.dart';
-// import '../../../../core/services/cache_helper.dart';
+import '../../../../core/services/cache_helper.dart';
 import '../../models/onboarding_model.dart';
 import '../widgets/onboarding_view_body.dart';
 import '../widgets/page_view_item.dart';
@@ -43,7 +42,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     }
   }
   void goToBackPage() {
-    if (currentPageIndex < pages.length - 1) {
+    if (currentPageIndex <= pages.length - 1) {
       _pageController.previousPage(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
@@ -52,7 +51,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   }
 
   void finishOnboarding(BuildContext context) {
-    // CacheHelper.set(key: kHasSeenOnboarding, value: true);
+    CacheHelper.set(key: kHasSeenOnboarding, value: true);
     GoRouter.of(context).pushReplacement(Routes.loginView);
   }
 

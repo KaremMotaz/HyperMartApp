@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/custom_icon_card.dart';
+import 'package:hyper_mart_app/features/onboarding/presentation/widgets/animated_icon_card.dart';
 
 import '../../../../core/theming/app_styles.dart';
 import '../../models/onboarding_model.dart';
@@ -17,7 +17,7 @@ class PageViewItem extends StatelessWidget {
         children: [
           const Spacer(),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20),
+            margin: const EdgeInsets.symmetric(horizontal: 30),
             height: 300,
             decoration: BoxDecoration(
               boxShadow: [
@@ -30,15 +30,12 @@ class PageViewItem extends StatelessWidget {
               ],
             ),
             child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(25)),
               child: Image.asset(onboardingModel.image, fit: BoxFit.fill),
             ),
           ),
           const SizedBox(height: 40),
-          CustomIconCard(
-            iconPath: onboardingModel.icon,
-            color: onboardingModel.color,
-          ),
+          AnimatedIconCard(onboardingModel: onboardingModel),
           const SizedBox(height: 20),
           Text(
             onboardingModel.title,

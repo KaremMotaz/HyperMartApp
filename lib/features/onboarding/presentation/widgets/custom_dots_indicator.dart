@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
+import 'package:hyper_mart_app/features/onboarding/helper/get_active_color.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
 
 class CustomDotsIndicator extends StatelessWidget {
@@ -27,7 +28,7 @@ class CustomDotsIndicator extends StatelessWidget {
       decorator: DotsDecorator(
         spacing: EdgeInsets.symmetric(horizontal: spacing),
         color: AppColors.lightGrey,
-        activeColor: AppColors.turquoise,
+        activeColor: getActiveColor(currentPageIndex: currentPageIndex),
         shape: const StadiumBorder(),
         size: unactivesize ?? const Size.square(9),
         activeSize: activesize ?? const Size(35, 9),
