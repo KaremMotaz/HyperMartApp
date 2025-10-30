@@ -12,7 +12,6 @@ class OnboardingViewBody extends StatelessWidget {
   final List<PageViewItem> pages;
   final VoidCallback onNextPressed;
   final VoidCallback onBackPressed;
-  final VoidCallback onFinishPressed;
 
   const OnboardingViewBody({
     super.key,
@@ -21,7 +20,6 @@ class OnboardingViewBody extends StatelessWidget {
     required this.pages,
     required this.onNextPressed,
     required this.onBackPressed,
-    required this.onFinishPressed,
   });
 
   @override
@@ -39,7 +37,6 @@ class OnboardingViewBody extends StatelessWidget {
           OnboardingAppBar(
             currentPageIndex: currentPageIndex,
             pages: pages,
-            onFinishPressed: onFinishPressed,
             screenWidth: screenWidth,
             dotWidth: dotWidth,
             spacing: spacing,
@@ -64,7 +61,6 @@ class OnboardingViewBody extends StatelessWidget {
                 currentPageIndex: currentPageIndex,
                 pages: pages,
                 onPressed: onNextPressed,
-                onFinishPressed: onFinishPressed,
               ),
             ],
           ),

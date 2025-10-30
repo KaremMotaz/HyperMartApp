@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
+import 'package:hyper_mart_app/features/onboarding/helper/on_finish_0nboarding.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
 
 class SkipButton extends StatelessWidget {
@@ -8,12 +9,10 @@ class SkipButton extends StatelessWidget {
     super.key,
     required this.currentPageIndex,
     required this.pages,
-    required this.onFinishPressed,
   });
 
   final int currentPageIndex;
   final List<PageViewItem> pages;
-  final VoidCallback onFinishPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,9 @@ class SkipButton extends StatelessWidget {
       maintainAnimation: true,
       maintainSize: true,
       child: AppTextButton(
-        onPressed: onFinishPressed,
+        onPressed: () {
+          onFinishOnboarding(context);
+        },
         borderColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         verticalPadding: 5,

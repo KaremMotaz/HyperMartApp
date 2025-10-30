@@ -12,7 +12,6 @@ class OnboardingAppBar extends StatelessWidget {
     super.key,
     required this.currentPageIndex,
     required this.pages,
-    required this.onFinishPressed,
     required this.screenWidth,
     required this.dotWidth,
     required this.spacing,
@@ -20,7 +19,6 @@ class OnboardingAppBar extends StatelessWidget {
 
   final int currentPageIndex;
   final List<PageViewItem> pages;
-  final VoidCallback onFinishPressed;
   final double screenWidth;
   final double dotWidth;
   final double spacing;
@@ -44,7 +42,6 @@ class OnboardingAppBar extends StatelessWidget {
             SkipButton(
               currentPageIndex: currentPageIndex,
               pages: pages,
-              onFinishPressed: onFinishPressed,
             ),
           ],
         ),

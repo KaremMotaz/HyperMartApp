@@ -34,14 +34,14 @@ class _SplashViewState extends State<SplashView>
 
     // Start the animation
     _controller.forward();
-    _checkIfLoggedInUser();
+    _getInitialRoute();
   }
 
-  checkIfHasSeenOnboarding() async {
-    CacheHelper.getBool(key: kHasSeenOnboarding);
+  checkIfHasSeenOnboarding() {
+    return CacheHelper.getBool(key: kHasSeenOnboarding);
   }
 
-  Future<void> _checkIfLoggedInUser() async {
+  Future<void> _getInitialRoute() async {
     final bool isLoggedInUser = await checkIfLoggedInUser();
     final bool hasSeenOnboarding = await checkIfHasSeenOnboarding() ?? false;
 
@@ -49,12 +49,12 @@ class _SplashViewState extends State<SplashView>
 
     if (mounted) {
       if (!hasSeenOnboarding) {
-        GoRouter.of(context).go(Routes.onboardingView);
+        return GoRouter.of(context).go(Routes.onboardingView);
       }
       if (isLoggedInUser) {
-        GoRouter.of(context).go(Routes.mainView);
+        return GoRouter.of(context).go(Routes.mainView);
       } else {
-        GoRouter.of(context).go(Routes.loginView);
+        return GoRouter.of(context).go(Routes.loginView);
       }
     }
   }
