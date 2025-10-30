@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../data/models/login_request_body.dart';
@@ -103,8 +103,8 @@ class _LoginFormState extends State<LoginForm> {
                   },
                   child: Text(
                     "Forgot Password?",
-                    style: TextStyles.medium15.copyWith(
-                      color: ColorsManager.mainBlue,
+                    style: AppStyles.medium15.copyWith(
+                      color: AppColors.mainBlue,
                     ),
                   ),
                 ),

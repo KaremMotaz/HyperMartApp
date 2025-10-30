@@ -1,4 +1,4 @@
-import '../../../../core/theming/assets_manager.dart';
+import '../../../../core/theming/app_assets.dart';
 
 class OrderModel {
   final String id;
@@ -21,14 +21,14 @@ class OrderModel {
     date: "On Wed, 27 Jul 2025",
     status: "Delivered",
     items: [
-      AssetsManager.item1,
-      AssetsManager.item2,
-      AssetsManager.item3,
-      AssetsManager.item1,
-      AssetsManager.item2,
-      AssetsManager.item3,
-      AssetsManager.item1,
-      AssetsManager.item2,
+      AppAssets.item1,
+      AppAssets.item2,
+      AppAssets.item3,
+      AppAssets.item1,
+      AppAssets.item2,
+      AppAssets.item3,
+      AppAssets.item1,
+      AppAssets.item2,
     ],
   );
 }

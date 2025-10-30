@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class DiscountWidget extends StatelessWidget {
   const DiscountWidget({super.key});
@@ -13,11 +13,11 @@ class DiscountWidget extends StatelessWidget {
       child: Container(
         width: 130,
         padding: const EdgeInsets.symmetric(vertical: 5),
-        decoration: const BoxDecoration(color: ColorsManager.red),
+        decoration: const BoxDecoration(color: AppColors.red),
         child: Text(
           "5% OFF",
           textAlign: TextAlign.center,
-          style: TextStyles.extraBold18.copyWith(color: ColorsManager.white),
+          style: AppStyles.extraBold18.copyWith(color: AppColors.white),
         ),
       ),
     );

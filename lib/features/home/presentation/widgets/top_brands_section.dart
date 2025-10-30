@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/assets_manager.dart';
+import '../../../../core/theming/app_assets.dart';
 import 'brand_item.dart';
 import 'section_header.dart';
 
@@ -10,10 +10,10 @@ class TopBrandsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> brandItems = [
-      AssetsManager.brand1Image,
-      AssetsManager.brand2Image,
-      AssetsManager.brand3Image,
-      AssetsManager.brand4Image,
+      AppAssets.brand1Image,
+      AppAssets.brand2Image,
+      AppAssets.brand3Image,
+      AppAssets.brand4Image,
     ];
 
     return Column(

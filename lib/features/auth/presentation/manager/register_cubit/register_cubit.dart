@@ -1,11 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/networking/api_result.dart';
-import '../../../data/repos/auth_repo.dart';
 import '../../../data/models/register_request_body.dart';
-part 'register_state.dart';
+import '../../../data/repos/auth_repo.dart';
+
 part 'register_cubit.freezed.dart';
+part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(this.authRepo) : super(const RegisterState.registerInitial());

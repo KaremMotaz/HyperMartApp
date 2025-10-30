@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../networking/api_error_model.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../networking/api_error_model.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 void errorDialog({
   required BuildContext context,
@@ -27,7 +27,7 @@ class ErrorDialog extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       elevation: 0,
-      backgroundColor: ColorsManager.transparent,
+      backgroundColor: AppColors.transparent,
       child: _buildChild(context),
     );
   }
@@ -36,11 +36,11 @@ class ErrorDialog extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: ColorsManager.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: ColorsManager.black.withAlpha(100),
+            color: AppColors.black.withAlpha(100),
             blurRadius: 15,
             offset: const Offset(0, 5),
           ),
@@ -50,27 +50,25 @@ class ErrorDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
+          const Icon(Icons.error_outline, color: AppColors.red, size: 48),
           const SizedBox(height: 16),
-          Text(apiErrorModel.message, style: TextStyles.bold20),
+          Text(apiErrorModel.message, style: AppStyles.bold20),
           const SizedBox(height: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: apiErrorModel.details!
-                .map((msg) => Text(msg, style: TextStyles.medium16))
+                .map((msg) => Text(msg, style: AppStyles.medium16))
                 .toList(),
           ),
           const SizedBox(height: 20),
           OutlinedButton(
             onPressed: () => GoRouter.of(context).pop(),
             style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: ColorsManager.turquoise),
+              side: const BorderSide(color: AppColors.turquoise),
             ),
             child: Text(
               "Dismiss",
-              style: TextStyles.medium16.copyWith(
-                color: ColorsManager.turquoise,
-              ),
+              style: AppStyles.medium16.copyWith(color: AppColors.turquoise),
             ),
           ),
         ],

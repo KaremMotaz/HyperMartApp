@@ -2,8 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
 import '../manager/resend_otp_cubit/resend_otp_cubit.dart';
 
@@ -21,9 +21,7 @@ class ResendOTPEmailWidget extends StatelessWidget {
           children: [
             TextSpan(
               text: "Haven’t got the email yet?",
-              style: TextStyles.semiBold15.copyWith(
-                color: ColorsManager.darkergrey,
-              ),
+              style: AppStyles.semiBold15.copyWith(color: AppColors.darkergrey),
             ),
             const TextSpan(text: " "),
             TextSpan(
@@ -32,10 +30,10 @@ class ResendOTPEmailWidget extends StatelessWidget {
                   context.read<ResendOtpCubit>().resendOtp(email: email);
                 },
               text: "Resend email",
-              style: TextStyles.semiBold15.copyWith(
+              style: AppStyles.semiBold15.copyWith(
                 color: context.watch<ResendOtpCubit>().state is ResendOtpLoading
-                    ? ColorsManager.darkergrey
-                    : ColorsManager.mainBlue,
+                    ? AppColors.darkergrey
+                    : AppColors.mainBlue,
               ),
             ),
           ],

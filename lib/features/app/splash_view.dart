@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/functions/check_if_logged_in_user.dart';
 import '../../../../core/routing/routes.dart';
-import '../../core/theming/assets_manager.dart';
-import '../../core/theming/colors_manager.dart';
-import '../../core/theming/text_styles.dart';
+import '../../core/theming/app_assets.dart';
+import '../../core/theming/app_colors.dart';
+import '../../core/theming/app_styles.dart';
 import '../../core/widgets/custom_circular_progress_indicator.dart';
 
 class SplashView extends StatefulWidget {
@@ -64,18 +64,14 @@ class _SplashViewState extends State<SplashView>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // logo
-            Image.asset(AssetsManager.logo, width: 150, height: 150),
+            Image.asset(AppAssets.logo, width: 150, height: 150),
             Text(
               "HyperMart",
-              style: TextStyles.bold22.copyWith(
-                color: ColorsManager.mainBlue,
-              ),
+              style: AppStyles.bold22.copyWith(color: AppColors.mainBlue),
             ),
             const SizedBox(height: 30),
             // Loader
-            const CustomCircularProgressIndicator(
-              color: ColorsManager.mainBlue,
-            ),
+            const CustomCircularProgressIndicator(color: AppColors.mainBlue),
           ],
         ),
       ),

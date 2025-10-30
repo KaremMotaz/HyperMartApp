@@ -6,7 +6,7 @@ import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../../../core/widgets/custom_dialog.dart';
 import '../../../auth/data/repos/auth_repo.dart';
 import '../../../auth/presentation/manager/log_out_cubit/log_out_cubit.dart';
@@ -17,7 +17,7 @@ class LogoutListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomSettingsListTile(
-      bgIconcolor: ColorsManager.lightRed,
+      bgIconcolor: AppColors.lightRed,
       title: "Log Out",
       onTap: () {
         showDialog(
@@ -51,7 +51,7 @@ class LogoutListTile extends StatelessWidget {
                       buttonText: "Log Out",
                       bodyContent: "Are you sure you want to log out?",
                       title: "Log Out?",
-                      buttonColor: ColorsManager.darkRed,
+                      buttonColor: AppColors.darkRed,
                       onPressed: () async {
                         await context.read<LogOutCubit>().logOut();
                       },
@@ -66,7 +66,7 @@ class LogoutListTile extends StatelessWidget {
       },
       trailing: const SizedBox.shrink(),
       icon: Icons.logout_rounded,
-      iconcolor: ColorsManager.red,
+      iconcolor: AppColors.red,
     );
   }
 }

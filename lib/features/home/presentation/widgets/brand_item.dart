@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class BrandItem extends StatelessWidget {
   const BrandItem({super.key, required this.brandItem});
@@ -10,7 +10,7 @@ class BrandItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: ColorsManager.brandGrey,
+        color: AppColors.brandGrey,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Image.asset(brandItem),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'last_order_card.dart';
 
 class PreviousOrderSection extends StatelessWidget {
@@ -11,7 +11,7 @@ class PreviousOrderSection extends StatelessWidget {
       children: [
         Align(
           alignment: AlignmentDirectional.centerStart,
-          child: Text("Previous order", style: TextStyles.bold16),
+          child: Text("Previous order", style: AppStyles.bold16),
         ),
         SizedBox(height: 20),
         LastOrderCard(),
@@ -19,4 +19,3 @@ class PreviousOrderSection extends StatelessWidget {
     );
   }
 }
-

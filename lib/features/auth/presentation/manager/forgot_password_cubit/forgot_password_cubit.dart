@@ -1,14 +1,17 @@
 import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/networking/api_result.dart';
-import '../../../data/repos/auth_repo.dart';
 import '../../../data/models/forgot_password_request_body.dart';
 import '../../../data/models/reset_password_request_body.dart';
 import '../../../data/models/validate_otp_request_body.dart';
-part 'forgot_password_state.dart';
+import '../../../data/repos/auth_repo.dart';
+
 part 'forgot_password_cubit.freezed.dart';
+part 'forgot_password_state.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   ForgotPasswordCubit({required this.authRepo})

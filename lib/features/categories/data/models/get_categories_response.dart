@@ -1,4 +1,4 @@
-import '../../../../core/theming/assets_manager.dart';
+import '../../../../core/theming/app_assets.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'get_categories_response.g.dart';
 
@@ -37,7 +37,7 @@ class Category {
       id: "",
       name: "",
       description: "",
-      coverPictureUrl: AssetsManager.dummyImage,
+      coverPictureUrl: AppAssets.dummyImage,
     ),
   );
 }

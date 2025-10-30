@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 import 'app_text_button.dart';
 import 'custom_circular_progress_indicator.dart';
 
@@ -38,7 +38,7 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
         return IgnorePointer(
           ignoring: loading,
           child: AppTextButton(
-            backgroundColor: backgroundColor ?? ColorsManager.mainBlue,
+            backgroundColor: backgroundColor ?? AppColors.mainBlue,
             buttonHeight: buttonHeight,
             buttonWidth: buttonWidth ?? double.infinity,
             onPressed: onPressed,
@@ -50,7 +50,7 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
                     label,
                     style:
                         textStyle ??
-                        TextStyles.bold18.copyWith(color: ColorsManager.white),
+                        AppStyles.bold18.copyWith(color: AppColors.white),
                   ),
           ),
         );

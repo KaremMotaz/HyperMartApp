@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'forgot_password_form.dart';
 
 class ForgotPasswordViewBody extends StatelessWidget {
@@ -17,16 +17,14 @@ class ForgotPasswordViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const Text('Forgot password', style: TextStyles.semiBold20),
+            const Text('Forgot password', style: AppStyles.semiBold20),
             const SizedBox(height: 12),
             Text(
               'Please enter your email to reset the password',
-              style: TextStyles.semiBold15.copyWith(
-                color: ColorsManager.darkergrey,
-              ),
+              style: AppStyles.semiBold15.copyWith(color: AppColors.darkergrey),
             ),
             const SizedBox(height: 30),
-            const Text('Your Email', style: TextStyles.semiBold16),
+            const Text('Your Email', style: AppStyles.semiBold16),
             const SizedBox(height: 8),
             const ForgotPasswordForm(),
           ],

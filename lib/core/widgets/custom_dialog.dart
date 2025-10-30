@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'bloc_button.dart';
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 import 'app_text_button.dart';
+import 'bloc_button.dart';
 
 class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
   const CustomDialog({
@@ -27,7 +28,7 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      backgroundColor: ColorsManager.white,
+      backgroundColor: AppColors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(
@@ -43,7 +44,7 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(title, style: TextStyles.bold20),
+                Text(title, style: AppStyles.bold20),
                 IconButton(
                   onPressed: () {
                     GoRouter.of(context).pop();
@@ -55,7 +56,7 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               bodyContent,
-              style: TextStyles.bold16.copyWith(fontFamily: "Lato"),
+              style: AppStyles.bold16.copyWith(fontFamily: "Lato"),
             ),
             const SizedBox(height: 20),
             Row(
@@ -67,8 +68,8 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
                     verticalPadding: 5,
                     buttonHeight: 40,
                     borderRadius: 12,
-                    textStyle: TextStyles.semiBold16.copyWith(
-                      color: ColorsManager.darkergrey,
+                    textStyle: AppStyles.semiBold16.copyWith(
+                      color: AppColors.darkergrey,
                       fontSize: 16,
                     ),
                     onPressed: () {
@@ -85,8 +86,8 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
                     verticalPadding: 5,
                     buttonHeight: 40,
                     borderRadius: 12,
-                    textStyle: TextStyles.semiBold16.copyWith(
-                      color: ColorsManager.white,
+                    textStyle: AppStyles.semiBold16.copyWith(
+                      color: AppColors.white,
                       fontSize: 16,
                     ),
                     onPressed: onPressed,

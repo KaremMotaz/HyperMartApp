@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../data/models/register_request_body.dart';
@@ -118,7 +118,7 @@ class _RegisterFormState extends State<RegisterForm> {
           const SizedBox(height: 24),
           const Align(
             alignment: AlignmentDirectional.centerStart,
-            child: Text("Password must contain:", style: TextStyles.regular14),
+            child: Text("Password must contain:", style: AppStyles.regular14),
           ),
           const SizedBox(height: 10),
           PasswordValidations(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class CustomPinput extends StatelessWidget {
   const CustomPinput({super.key, required this.otpController});
@@ -19,7 +19,7 @@ class CustomPinput extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10),
         child: Text(
           '*',
-          style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
+          style: AppStyles.bold20.copyWith(color: AppColors.mainBlue),
         ),
       ),
       errorBuilder: (errorText, pin) {
@@ -28,7 +28,7 @@ class CustomPinput extends StatelessWidget {
           child: Center(
             child: Text(
               errorText ?? '',
-              style: TextStyles.regular14.copyWith(color: ColorsManager.red),
+              style: AppStyles.regular14.copyWith(color: AppColors.red),
             ),
           ),
         );
@@ -36,10 +36,10 @@ class CustomPinput extends StatelessWidget {
       defaultPinTheme: PinTheme(
         width: 54,
         height: 54,
-        textStyle: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
+        textStyle: AppStyles.bold20.copyWith(color: AppColors.mainBlue),
         decoration: BoxDecoration(
-          color: ColorsManager.white,
-          border: Border.all(color: ColorsManager.mainBlue, width: 2),
+          color: AppColors.white,
+          border: Border.all(color: AppColors.mainBlue, width: 2),
           borderRadius: BorderRadius.circular(10),
         ),
       ),

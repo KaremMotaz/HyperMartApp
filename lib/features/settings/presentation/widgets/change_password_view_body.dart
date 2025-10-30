@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'change_password_form.dart';
 
 class ChangePasswordViewBody extends StatelessWidget {
@@ -16,13 +17,11 @@ class ChangePasswordViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const Text('Change password', style: TextStyles.semiBold20),
+            const Text('Change password', style: AppStyles.semiBold20),
             const SizedBox(height: 12),
             Text(
               'Please enter your current password',
-              style: TextStyles.semiBold15.copyWith(
-                color: ColorsManager.darkergrey,
-              ),
+              style: AppStyles.semiBold15.copyWith(color: AppColors.darkergrey),
             ),
             const SizedBox(height: 20),
             const ChangePasswordForm(),

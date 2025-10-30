@@ -1,28 +1,34 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/auth/data/repos/auth_repo.dart';
-import '../functions/build_fade_transition_page.dart';
+
 import '../../features/app/splash_view.dart';
+import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
-import '../../features/settings/presentation/views/change_password_view.dart';
-import '../../features/settings/presentation/views/profile_view.dart';
-import '../services/get_it_service.dart';
 import '../../features/auth/presentation/manager/forgot_password_cubit/forgot_password_cubit.dart';
 import '../../features/auth/presentation/views/forgot_password_otp_view.dart';
 import '../../features/auth/presentation/views/forgot_password_view.dart';
-import '../../features/auth/presentation/views/reset_password_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/otp_verification_view.dart';
 import '../../features/auth/presentation/views/register_view.dart';
+import '../../features/auth/presentation/views/reset_password_view.dart';
 import '../../features/main_view/main_view.dart';
+import '../../features/settings/presentation/views/change_password_view.dart';
+import '../../features/settings/presentation/views/profile_view.dart';
+import '../functions/build_fade_transition_page.dart';
+import '../services/get_it_service.dart';
 import 'routes.dart';
 
 abstract class AppRouter {
-  static GoRouter createRouter() {    
+  static GoRouter createRouter() {
     return GoRouter(
+      initialLocation: Routes.onboardingView,
       routes: [
         GoRoute(
           path: Routes.splashView,
+          builder: (context, state) => const SplashView(),
+        ),
+        GoRoute(
+          path: Routes.onboardingView,
           builder: (context, state) => const SplashView(),
         ),
         GoRoute(

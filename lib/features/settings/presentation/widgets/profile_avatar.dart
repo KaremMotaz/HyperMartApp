@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import 'user_avatar.dart';
 
 class ProfileAvatar extends StatelessWidget {
@@ -19,10 +19,14 @@ class ProfileAvatar extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: const BoxDecoration(
-                color: ColorsManager.white,
+                color: AppColors.white,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.edit, color: ColorsManager.mainGrey, size: 20),
+              child: const Icon(
+                Icons.edit,
+                color: AppColors.mainGrey,
+                size: 20,
+              ),
             ),
           ),
         ),

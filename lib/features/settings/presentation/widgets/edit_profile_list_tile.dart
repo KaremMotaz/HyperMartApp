@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class EditProfileListTile extends StatelessWidget {
   const EditProfileListTile({
@@ -19,12 +19,12 @@ class EditProfileListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: 35, color: ColorsManager.darkergrey),
-      title: Text(title, style: TextStyles.bold16.copyWith(fontFamily: "Lato")),
+      leading: Icon(icon, size: 35, color: AppColors.darkergrey),
+      title: Text(title, style: AppStyles.bold16.copyWith(fontFamily: "Lato")),
       subtitle: subTitle,
       trailing: IconButton(
         onPressed: onTap,
-        icon: const Icon(Icons.edit, color: ColorsManager.mainGrey, size: 20),
+        icon: const Icon(Icons.edit, color: AppColors.mainGrey, size: 20),
       ),
       onTap: onTap,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

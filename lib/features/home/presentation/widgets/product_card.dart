@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../../data/models/product_model.dart';
 import 'discount_widget.dart';
@@ -21,9 +21,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: ColorsManager.grey, width: 2),
+        border: Border.all(color: AppColors.grey, width: 2),
         borderRadius: BorderRadius.circular(16),
-        color: ColorsManager.white,
+        color: AppColors.white,
       ),
       clipBehavior: Clip.hardEdge,
       child: Stack(
@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: ColorsManager.grey,
+                  color: AppColors.grey,
                 ),
                 child: Column(
                   children: [
@@ -45,8 +45,8 @@ class ProductCard extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 11, top: 11),
                         child: SvgPicture.asset(
                           isLoved
-                              ? AssetsManager.heartFullIcon
-                              : AssetsManager.heartOutlineIcon,
+                              ? AppAssets.heartFullIcon
+                              : AppAssets.heartOutlineIcon,
                           width: 20,
                           height: 20,
                         ),
@@ -59,8 +59,10 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: 18),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(product.title, style: TextStyles.regular14,
-                overflow: TextOverflow.ellipsis,
+                child: Text(
+                  product.title,
+                  style: AppStyles.regular14,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(height: 9),
@@ -69,17 +71,17 @@ class ProductCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("₹ ${product.price}", style: TextStyles.medium14),
+                    Text("₹ ${product.price}", style: AppStyles.medium14),
                     Row(
                       children: [
                         Text(
                           "${product.rating}",
-                          style: TextStyles.extraBold12.copyWith(
-                            color: ColorsManager.orange,
+                          style: AppStyles.extraBold12.copyWith(
+                            color: AppColors.orange,
                           ),
                         ),
                         const SizedBox(width: 6),
-                        SvgPicture.asset(AssetsManager.starIcon),
+                        SvgPicture.asset(AppAssets.starIcon),
                       ],
                     ),
                   ],
@@ -99,16 +101,16 @@ class ProductCard extends StatelessWidget {
                             buttonHeight: 45,
                             horizontalPadding: 0,
                             verticalPadding: 0,
-                            backgroundColor: ColorsManager.red,
-                            borderColor: ColorsManager.red,
-                            textStyle: TextStyles.extraBold22.copyWith(
-                              color: ColorsManager.white,
+                            backgroundColor: AppColors.red,
+                            borderColor: AppColors.red,
+                            textStyle: AppStyles.extraBold22.copyWith(
+                              color: AppColors.white,
                             ),
                           ),
                           Text(
                             "$numberOfItems",
-                            style: TextStyles.bold14.copyWith(
-                              color: ColorsManager.black,
+                            style: AppStyles.bold14.copyWith(
+                              color: AppColors.black,
                             ),
                           ),
                           AppTextButton(
@@ -118,10 +120,10 @@ class ProductCard extends StatelessWidget {
                             buttonHeight: 45,
                             horizontalPadding: 0,
                             verticalPadding: 0,
-                            backgroundColor: ColorsManager.turquoise,
-                            borderColor: ColorsManager.turquoise,
-                            textStyle: TextStyles.extraBold22.copyWith(
-                              color: ColorsManager.white,
+                            backgroundColor: AppColors.turquoise,
+                            borderColor: AppColors.turquoise,
+                            textStyle: AppStyles.extraBold22.copyWith(
+                              color: AppColors.white,
                             ),
                           ),
                         ],
@@ -133,10 +135,10 @@ class ProductCard extends StatelessWidget {
                         buttonText: "Add to cart",
                         onPressed: () {},
                         buttonWidth: double.infinity,
-                        backgroundColor: ColorsManager.white,
-                        borderColor: ColorsManager.orange,
-                        textStyle: TextStyles.semiBold15.copyWith(
-                          color: ColorsManager.orange,
+                        backgroundColor: AppColors.white,
+                        borderColor: AppColors.orange,
+                        textStyle: AppStyles.semiBold15.copyWith(
+                          color: AppColors.orange,
                         ),
                       ),
                     ),

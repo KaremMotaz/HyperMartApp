@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../../auth/data/models/change_password_request_body.dart';
@@ -42,7 +42,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Current Password', style: TextStyles.semiBold16),
+          const Text('Current Password', style: AppStyles.semiBold16),
           const SizedBox(height: 8),
           AppTextFormField(
             hintText: "Enter your current password",
@@ -67,7 +67,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
               return null;
             },
           ),
-          const Text('New Password', style: TextStyles.semiBold16),
+          const Text('New Password', style: AppStyles.semiBold16),
           const SizedBox(height: 8),
           AppTextFormField(
             hintText: "Enter your new password",
@@ -106,7 +106,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
             },
           ),
           const SizedBox(height: 16),
-          const Text('Confirm New Password', style: TextStyles.semiBold16),
+          const Text('Confirm New Password', style: AppStyles.semiBold16),
           const SizedBox(height: 8),
           AppTextFormField(
             hintText: "Re-enter new password",

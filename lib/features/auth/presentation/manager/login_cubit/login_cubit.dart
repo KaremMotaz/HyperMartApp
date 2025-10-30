@@ -1,14 +1,16 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/networking/api_result.dart';
-import '../../../data/repos/auth_repo.dart';
-import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/services/cache_helper.dart';
 import '../../../data/models/login_request_body.dart';
 import '../../../data/models/login_response.dart';
-part 'login_state.dart';
+import '../../../data/repos/auth_repo.dart';
+
 part 'login_cubit.freezed.dart';
+part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit({required this.authRepo}) : super(const LoginState.loginInitial());

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class NavWidget extends StatelessWidget {
   const NavWidget({
@@ -21,7 +21,7 @@ class NavWidget extends StatelessWidget {
       icons[index],
       width: 24,
       colorFilter: ColorFilter.mode(
-        isSelected ? ColorsManager.orange : ColorsManager.darkgrey,
+        isSelected ? AppColors.orange : AppColors.darkgrey,
         BlendMode.srcIn,
       ),
     );

@@ -1,12 +1,15 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/networking/api_result.dart';
-import '../../../data/repos/auth_repo.dart';
 import '../../../data/models/resend_otp_request_body.dart';
-part 'resend_otp_state.dart';
+import '../../../data/repos/auth_repo.dart';
+
 part 'resend_otp_cubit.freezed.dart';
+part 'resend_otp_state.dart';
 
 class ResendOtpCubit extends Cubit<ResendOtpState> {
   ResendOtpCubit({required this.authRepo})

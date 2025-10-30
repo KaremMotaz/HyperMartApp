@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
@@ -36,7 +36,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Password', style: TextStyles.semiBold16),
+          const Text('Password', style: AppStyles.semiBold16),
           const SizedBox(height: 8),
           AppTextFormField(
             hintText: "Enter your new password",
@@ -74,7 +74,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
             },
           ),
           const SizedBox(height: 16),
-          const Text('Confirm Password', style: TextStyles.semiBold16),
+          const Text('Confirm Password', style: AppStyles.semiBold16),
           const SizedBox(height: 8),
           AppTextFormField(
             hintText: "Re-enter password",

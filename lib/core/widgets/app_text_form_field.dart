@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField({
@@ -35,7 +35,7 @@ class AppTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: ColorsManager.mainBlue,
+      cursorColor: AppColors.mainBlue,
       keyboardType: textInputType ?? TextInputType.name,
       controller: controller,
       decoration: InputDecoration(
@@ -54,25 +54,23 @@ class AppTextFormField extends StatelessWidget {
             const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
         focusedBorder:
             focusedBorder ??
-            buildOutLineInputBorder(borderColor: ColorsManager.lightGrey),
+            buildOutLineInputBorder(borderColor: AppColors.lightGrey),
         enabledBorder:
             enabledBorder ??
-            buildOutLineInputBorder(borderColor: ColorsManager.lightGrey),
-        errorBorder: buildOutLineInputBorder(
-          borderColor: ColorsManager.darkRed,
-        ),
+            buildOutLineInputBorder(borderColor: AppColors.lightGrey),
+        errorBorder: buildOutLineInputBorder(borderColor: AppColors.darkRed),
         focusedErrorBorder: buildOutLineInputBorder(
-          borderColor: ColorsManager.darkRed,
+          borderColor: AppColors.darkRed,
         ),
-        hintStyle: TextStyles.regular16,
+        hintStyle: AppStyles.regular16,
         hintText: hintText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
-        fillColor: backgroundColor ?? ColorsManager.formFieldGrey,
+        fillColor: backgroundColor ?? AppColors.formFieldGrey,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: textStyle ?? TextStyles.medium16,
+      style: textStyle ?? AppStyles.medium16,
       validator: (value) {
         return validator(value);
       },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../data/models/order_model.dart';
 
 class OrderContentWidget extends StatelessWidget {
@@ -12,9 +12,9 @@ class OrderContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 15, top: 11, bottom: 11,right: 15),
+      padding: const EdgeInsets.only(left: 15, top: 11, bottom: 11, right: 15),
       decoration: BoxDecoration(
-        color: ColorsManager.grey,
+        color: AppColors.grey,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
@@ -35,14 +35,8 @@ class OrderContentWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "+${lastOrder.items.length - 3}",
-                style: TextStyles.medium12,
-              ),
-              const Text(
-                "More",
-                style: TextStyles.medium12,
-              ),
+              Text("+${lastOrder.items.length - 3}", style: AppStyles.medium12),
+              const Text("More", style: AppStyles.medium12),
             ],
           ),
         ],

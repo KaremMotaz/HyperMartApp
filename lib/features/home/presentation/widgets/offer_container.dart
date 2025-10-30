@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class OfferContainer extends StatelessWidget {
   const OfferContainer({super.key});
@@ -11,7 +11,7 @@ class OfferContainer extends StatelessWidget {
     return Container(
       width: 40,
       decoration: const BoxDecoration(
-        color: ColorsManager.red,
+        color: AppColors.red,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(16),
           bottomRight: Radius.circular(16),
@@ -26,7 +26,7 @@ class OfferContainer extends StatelessWidget {
             child: Text(
               "Order Again & Get Flat 10% OFF",
               textAlign: TextAlign.center,
-              style: TextStyles.bold12.copyWith(color: ColorsManager.white),
+              style: AppStyles.bold12.copyWith(color: AppColors.white),
             ),
           ),
         ),

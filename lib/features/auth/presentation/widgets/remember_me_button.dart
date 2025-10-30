@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../manager/login_cubit/login_cubit.dart';
 
 class RememberMeButton extends StatelessWidget {
@@ -25,16 +25,14 @@ class RememberMeButton extends StatelessWidget {
                 width: 16,
                 height: 16,
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? ColorsManager.mainBlue
-                      : ColorsManager.white,
-                  border: Border.all(color: ColorsManager.mainGrey),
+                  color: isSelected ? AppColors.mainBlue : AppColors.white,
+                  border: Border.all(color: AppColors.mainGrey),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Icon(
                   size: 14,
                   isSelected ? Icons.check : null,
-                  color: ColorsManager.white,
+                  color: AppColors.white,
                 ),
               );
             },
@@ -43,7 +41,7 @@ class RememberMeButton extends StatelessWidget {
         const SizedBox(width: 8),
         Text(
           "Remember Me",
-          style: TextStyles.medium15.copyWith(color: ColorsManager.darkergrey),
+          style: AppStyles.medium15.copyWith(color: AppColors.darkergrey),
         ),
       ],
     );

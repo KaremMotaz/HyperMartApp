@@ -1,4 +1,4 @@
-import '../../../../core/theming/assets_manager.dart';
+import '../../../../core/theming/app_assets.dart';
 
 class ProductModel {
   final String image;
@@ -6,9 +6,9 @@ class ProductModel {
   final String price;
   final double rating;
   final String category;
-  final bool isDiscountFound ;
+  final bool isDiscountFound;
 
-  ProductModel( {
+  ProductModel({
     required this.image,
     required this.title,
     required this.price,
@@ -19,7 +19,7 @@ class ProductModel {
 
   static List<ProductModel> products = [
     ProductModel(
-      image: AssetsManager.strawberryImage,
+      image: AppAssets.strawberryImage,
       title: 'Strawberry',
       price: '10',
       rating: 4.5,
@@ -27,21 +27,21 @@ class ProductModel {
       isDiscountFound: true,
     ),
     ProductModel(
-      image: AssetsManager.chipsImage,
+      image: AppAssets.chipsImage,
       title: 'Fried Chips',
       price: '12',
       rating: 3.8,
       category: 'Groceries',
     ),
     ProductModel(
-      image: AssetsManager.chairImage,
+      image: AppAssets.chairImage,
       title: 'Moder Chair',
       price: '3599',
       rating: 4.1,
       category: 'Furniture',
     ),
     ProductModel(
-      image: AssetsManager.washingMachineImage,
+      image: AppAssets.washingMachineImage,
       title: 'LG washing machine',
       price: '45,999',
       rating: 3.6,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class CustomLogo extends StatelessWidget {
   const CustomLogo({super.key});
@@ -13,11 +13,11 @@ class CustomLogo extends StatelessWidget {
         children: [
           TextSpan(
             text: "Hyper",
-            style: TextStyles.bold18.copyWith(color: ColorsManager.orange),
+            style: AppStyles.bold18.copyWith(color: AppColors.orange),
           ),
           TextSpan(
             text: "Mart",
-            style: TextStyles.bold18.copyWith(color: ColorsManager.turquoise),
+            style: AppStyles.bold18.copyWith(color: AppColors.turquoise),
           ),
         ],
       ),

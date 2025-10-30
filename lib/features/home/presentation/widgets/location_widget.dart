@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class LocationWidget extends StatelessWidget {
   const LocationWidget({super.key});
@@ -14,10 +14,13 @@ class LocationWidget extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 25,
-          backgroundColor: ColorsManager.turquoise,
+          backgroundColor: AppColors.turquoise,
           child: SvgPicture.asset(
-            AssetsManager.locationIcon,
-            colorFilter: const ColorFilter.mode(ColorsManager.white, BlendMode.srcIn),
+            AppAssets.locationIcon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.white,
+              BlendMode.srcIn,
+            ),
             width: 24,
             height: 24,
           ),
@@ -26,13 +29,13 @@ class LocationWidget extends StatelessWidget {
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Bengaluru", style: TextStyles.regular10),
+            Text("Bengaluru", style: AppStyles.regular10),
             SizedBox(height: 5),
-            Text("BTM Layout, 500628", style: TextStyles.regular12),
+            Text("BTM Layout, 500628", style: AppStyles.regular12),
           ],
         ),
         const Spacer(),
-        SvgPicture.asset(AssetsManager.arrowRightIcon),
+        SvgPicture.asset(AppAssets.arrowRightIcon),
       ],
     );
   }

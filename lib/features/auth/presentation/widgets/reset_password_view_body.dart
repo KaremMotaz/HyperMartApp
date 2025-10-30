@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'reset_password_form.dart';
 
 class ResetPasswordViewBody extends StatelessWidget {
@@ -17,13 +17,11 @@ class ResetPasswordViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const Text('Set a new password', style: TextStyles.semiBold20),
+            const Text('Set a new password', style: AppStyles.semiBold20),
             const SizedBox(height: 12),
             Text(
               'Create a new password. Ensure it differs from previous ones for security',
-              style: TextStyles.semiBold15.copyWith(
-                color: ColorsManager.darkergrey,
-              ),
+              style: AppStyles.semiBold15.copyWith(color: AppColors.darkergrey),
             ),
             const SizedBox(height: 30),
             const ResetPasswordForm(),

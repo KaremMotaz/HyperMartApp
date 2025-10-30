@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../../../../core/widgets/custom_circular_progress_indicator.dart';
 import '../manager/forgot_password_cubit/forgot_password_cubit.dart';
@@ -48,7 +48,7 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
               return IgnorePointer(
                 ignoring: state is ForgotPasswordLoading,
                 child: AppTextButton(
-                  backgroundColor: ColorsManager.mainBlue,
+                  backgroundColor: AppColors.mainBlue,
                   buttonWidth: double.infinity,
                   onPressed: () {
                     validateThenVerifyOTPCode(context);
@@ -57,8 +57,8 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
                       ? const CustomCircularProgressIndicator()
                       : Text(
                           "Verify Code",
-                          style: TextStyles.bold18.copyWith(
-                            color: ColorsManager.white,
+                          style: AppStyles.bold18.copyWith(
+                            color: AppColors.white,
                           ),
                         ),
                 ),
@@ -84,8 +84,8 @@ class _ForgotPasswordOTPFormState extends State<ForgotPasswordOTPForm> {
               return state is ResendOtpTimer
                   ? Text(
                       "Resend in ${_formatTime(state.remainingSeconds)}",
-                      style: TextStyles.semiBold15.copyWith(
-                        color: ColorsManager.darkergrey,
+                      style: AppStyles.semiBold15.copyWith(
+                        color: AppColors.darkergrey,
                       ),
                     )
                   : const ResendOTPEmailWidget();

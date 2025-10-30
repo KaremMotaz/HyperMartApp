@@ -1,8 +1,8 @@
+import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
-import '../../../../core/networking/api_error_handler.dart';
-import '../models/add_category_response.dart';
 import '../models/add_categories_request.dart';
+import '../models/add_category_response.dart';
 import '../models/get_categories_response.dart';
 import '../models/get_category_by_id_response.dart';
 import '../models/update_category_request.dart';

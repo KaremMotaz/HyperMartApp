@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class AlreadyHaveAnAccount extends StatelessWidget {
   const AlreadyHaveAnAccount({super.key});
@@ -17,20 +17,16 @@ class AlreadyHaveAnAccount extends StatelessWidget {
         children: [
           const TextSpan(
             text: "Already have an account?",
-            style: TextStyles.medium16,
+            style: AppStyles.medium16,
           ),
-          const TextSpan(
-            text: " ",
-          ),
+          const TextSpan(text: " "),
           TextSpan(
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 GoRouter.of(context).push(Routes.loginView);
               },
             text: "Login",
-            style: TextStyles.medium16.copyWith(
-              color: ColorsManager.mainBlue,
-            ),
+            style: AppStyles.medium16.copyWith(color: AppColors.mainBlue),
           ),
         ],
       ),

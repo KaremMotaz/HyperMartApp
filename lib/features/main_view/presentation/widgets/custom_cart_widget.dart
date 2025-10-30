@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class CustomCartWidget extends StatelessWidget {
   const CustomCartWidget({super.key});
@@ -17,12 +17,12 @@ class CustomCartWidget extends StatelessWidget {
         onTap: () {},
         child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: ColorsManager.white, width: 5),
-            color: ColorsManager.orange,
+            border: Border.all(color: AppColors.white, width: 5),
+            color: AppColors.orange,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: ColorsManager.darkgrey.withAlpha(150),
+                color: AppColors.darkgrey.withAlpha(150),
                 spreadRadius: 2,
                 blurRadius: 3,
                 offset: const Offset(0, 3),
@@ -35,9 +35,9 @@ class CustomCartWidget extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 SvgPicture.asset(
-                  AssetsManager.cartIcon,
+                  AppAssets.cartIcon,
                   colorFilter: const ColorFilter.mode(
-                    ColorsManager.white,
+                    AppColors.white,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -48,11 +48,8 @@ class CustomCartWidget extends StatelessWidget {
                       width: 15,
                       height: 15,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: ColorsManager.white,
-                          width: 2,
-                        ),
-                        color: ColorsManager.red,
+                        border: Border.all(color: AppColors.white, width: 2),
+                        color: AppColors.red,
                         shape: BoxShape.circle,
                       ),
                     ),

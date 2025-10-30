@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class DontHaveAnAccount extends StatelessWidget {
   const DontHaveAnAccount({super.key});
@@ -17,9 +17,7 @@ class DontHaveAnAccount extends StatelessWidget {
         children: [
           TextSpan(
             text: "Don't have an account?",
-            style: TextStyles.medium15.copyWith(
-              color: ColorsManager.darkergrey,
-            ),
+            style: AppStyles.medium15.copyWith(color: AppColors.darkergrey),
           ),
           const TextSpan(text: " "),
           TextSpan(
@@ -28,7 +26,7 @@ class DontHaveAnAccount extends StatelessWidget {
                 GoRouter.of(context).push(Routes.registerView);
               },
             text: "Create an Account",
-            style: TextStyles.medium16.copyWith(color: ColorsManager.mainBlue),
+            style: AppStyles.medium16.copyWith(color: AppColors.mainBlue),
           ),
         ],
       ),

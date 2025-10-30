@@ -1,9 +1,6 @@
-import '../../../../core/networking/api_result.dart';
-import '../../../../core/networking/api_error_handler.dart';
-import '../models/resend_otp_request_body.dart';
-import '../models/user_data_response.dart';
-import '../models/validate_otp_request_body.dart';
 import '../../../../core/helpers/constants.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
 import '../../../../core/services/cache_helper.dart';
 import '../models/change_password_request_body.dart';
@@ -13,7 +10,10 @@ import '../models/login_response.dart';
 import '../models/refresh_token_request_body.dart';
 import '../models/refresh_token_response.dart';
 import '../models/register_request_body.dart';
+import '../models/resend_otp_request_body.dart';
 import '../models/reset_password_request_body.dart';
+import '../models/user_data_response.dart';
+import '../models/validate_otp_request_body.dart';
 import '../models/verify_email_request_body.dart';
 
 class AuthRepo {

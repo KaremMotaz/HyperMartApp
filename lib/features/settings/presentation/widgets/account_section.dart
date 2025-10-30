@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'user_avatar.dart';
 
 class AccountSection extends StatelessWidget {
@@ -13,7 +13,7 @@ class AccountSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("Account", style: TextStyles.bold20),
+        const Text("Account", style: AppStyles.bold20),
         const SizedBox(height: 10),
         GestureDetector(
           onTap: () {
@@ -26,7 +26,7 @@ class AccountSection extends StatelessWidget {
               fontSize: 24,
               radius: 24,
             ),
-            title: const Text("Karim Motaz", style: TextStyles.bold18),
+            title: const Text("Karim Motaz", style: AppStyles.bold18),
             subtitle: const Text("Customer"),
             trailing: const Icon(Icons.chevron_right_rounded),
             shape: RoundedRectangleBorder(

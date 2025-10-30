@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class CustomSettingsListTile extends StatelessWidget {
   const CustomSettingsListTile({
@@ -27,7 +27,7 @@ class CustomSettingsListTile extends StatelessWidget {
         decoration: BoxDecoration(color: bgIconcolor, shape: BoxShape.circle),
         child: Icon(icon, size: 18, color: iconcolor),
       ),
-      title: Text(title, style: TextStyles.bold18.copyWith(fontFamily: "Lato")),
+      title: Text(title, style: AppStyles.bold18.copyWith(fontFamily: "Lato")),
       trailing: trailing,
       onTap: onTap,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

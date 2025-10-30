@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'dont_have_an_account.dart';
 import 'login_form.dart';
 
@@ -17,11 +17,11 @@ class LoginViewBody extends StatelessWidget {
           children: [
             Text(
               "Welcome Back!",
-              style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
+              style: AppStyles.bold20.copyWith(color: AppColors.mainBlue),
             ),
             Text(
               "Welcome back please enter your details",
-              style: TextStyles.medium15.copyWith(color: ColorsManager.darkergrey),
+              style: AppStyles.medium15.copyWith(color: AppColors.darkergrey),
             ),
             const SizedBox(height: 32),
             const LoginForm(),

@@ -1,16 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
+import '../../data/models/add_categories_request.dart';
 import '../../data/models/add_category_response.dart';
+import '../../data/models/get_categories_response.dart';
 import '../../data/models/get_category_by_id_response.dart';
 import '../../data/models/update_category_request.dart';
 import '../../data/models/update_category_response.dart';
 import '../../data/repos/categories_repo.dart';
-import '../../data/models/add_categories_request.dart';
-import '../../data/models/get_categories_response.dart';
-part 'categories_state.dart';
+
 part 'categories_cubit.freezed.dart';
+part 'categories_state.dart';
 
 class CategoriesCubit extends Cubit<CategoriesState> {
   CategoriesCubit({required this.categoriesRepo})

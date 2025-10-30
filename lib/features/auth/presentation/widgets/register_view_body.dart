@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'already_have_an_account.dart';
 import 'register_form.dart';
 
@@ -18,7 +18,7 @@ class RegisterViewBody extends StatelessWidget {
           children: [
             Text(
               "Create New Account",
-              style: TextStyles.bold20.copyWith(color: ColorsManager.mainBlue),
+              style: AppStyles.bold20.copyWith(color: AppColors.mainBlue),
             ),
             const SizedBox(height: 36),
             const RegisterForm(),

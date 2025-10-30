@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'colors_manager.dart';
-import 'text_styles.dart';
+import 'app_colors.dart';
+import 'app_styles.dart';
 
 abstract class ThemeManager {
   static ThemeData getAppTheme() {
     return ThemeData(
-      scaffoldBackgroundColor: ColorsManager.white,
+      scaffoldBackgroundColor: AppColors.white,
       appBarTheme: AppBarTheme(
-        backgroundColor: ColorsManager.white,
+        backgroundColor: AppColors.white,
         centerTitle: true,
-        titleTextStyle: TextStyles.bold22.copyWith(color: ColorsManager.black),
+        titleTextStyle: AppStyles.bold22.copyWith(color: AppColors.black),
         systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: ColorsManager.black,
+          statusBarColor: AppColors.black,
         ),
       ),
     );

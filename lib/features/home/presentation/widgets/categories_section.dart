@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/categories_list_view.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/section_header.dart';
+import 'categories_list_view.dart';
+import 'section_header.dart';
 import '../../../../core/widgets/error_body.dart';
 import '../../../categories/data/models/get_categories_response.dart';
 import '../../../categories/manager/categories_cubit/categories_cubit.dart';

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../../../core/widgets/custom_dialog.dart';
 import '../../../auth/data/repos/auth_repo.dart';
 import '../../../auth/presentation/manager/change_password_cubit/change_password_cubit.dart';
@@ -16,7 +16,7 @@ class ChangePasswordListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomSettingsListTile(
-      bgIconcolor: ColorsManager.lightBlue,
+      bgIconcolor: AppColors.lightBlue,
       title: "Change Password",
       onTap: () {
         showDialog(
@@ -29,7 +29,7 @@ class ChangePasswordListTile extends StatelessWidget {
                 buttonText: "Submit",
                 bodyContent: "Are you sure you want to change your password?",
                 title: "Change Password?",
-                buttonColor: ColorsManager.mainBlue,
+                buttonColor: AppColors.mainBlue,
                 onPressed: () async {
                   GoRouter.of(context).go(Routes.changePasswordView);
                   GoRouter.of(context).pop();
@@ -42,7 +42,7 @@ class ChangePasswordListTile extends StatelessWidget {
       },
       trailing: const SizedBox.shrink(),
       icon: Icons.edit,
-      iconcolor: ColorsManager.mainBlue,
+      iconcolor: AppColors.mainBlue,
     );
   }
 }

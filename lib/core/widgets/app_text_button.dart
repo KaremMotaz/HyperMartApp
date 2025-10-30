@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 class AppTextButton extends StatelessWidget {
   const AppTextButton({
@@ -41,10 +41,10 @@ class AppTextButton extends StatelessWidget {
           ),
         ),
         side: WidgetStatePropertyAll<BorderSide>(
-          BorderSide(color: borderColor ?? ColorsManager.white, width: 1),
+          BorderSide(color: borderColor ?? AppColors.white, width: 1),
         ),
         backgroundColor: WidgetStatePropertyAll<Color>(
-          backgroundColor ?? ColorsManager.turquoise,
+          backgroundColor ?? AppColors.turquoise,
         ),
         padding: WidgetStatePropertyAll<EdgeInsets>(
           EdgeInsets.symmetric(
@@ -66,7 +66,7 @@ class AppTextButton extends StatelessWidget {
             buttonText ?? "",
             style:
                 textStyle ??
-                TextStyles.semiBold15.copyWith(color: ColorsManager.white),
+                AppStyles.semiBold15.copyWith(color: AppColors.white),
           ),
     );
   }

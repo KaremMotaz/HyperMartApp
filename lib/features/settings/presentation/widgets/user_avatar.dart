@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class UserAvatar extends StatelessWidget {
   final String name;
@@ -22,7 +22,7 @@ class UserAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     if (imageUrl != null && imageUrl!.isNotEmpty && imageUrl != "null") {
       return CircleAvatar(
-        backgroundColor: ColorsManager.lighterGray,
+        backgroundColor: AppColors.lighterGray,
         radius: radius,
         child: ClipOval(
           child: CachedNetworkImage(
@@ -43,7 +43,7 @@ class UserAvatar extends StatelessWidget {
       child: Text(
         initial,
         style: TextStyle(
-          color: ColorsManager.white,
+          color: AppColors.white,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
         ),

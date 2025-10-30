@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../../data/models/order_model.dart';
 import 'offer_container.dart';
@@ -16,11 +16,11 @@ class LastOrderCard extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: ColorsManager.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: const [
           BoxShadow(
-            color: ColorsManager.lightGrey,
+            color: AppColors.lightGrey,
             offset: Offset(0, 4),
             blurRadius: 8,
             spreadRadius: 2,
@@ -37,13 +37,11 @@ class LastOrderCard extends StatelessWidget {
               children: [
                 Text(
                   "Delivered",
-                  style: TextStyles.bold10.copyWith(
-                    color: ColorsManager.turquoise,
-                  ),
+                  style: AppStyles.bold10.copyWith(color: AppColors.turquoise),
                 ),
                 Text(
                   lastOrder.date,
-                  style: TextStyles.regular10.copyWith(fontFamily: "Lato"),
+                  style: AppStyles.regular10.copyWith(fontFamily: "Lato"),
                 ),
                 const SizedBox(height: 8),
                 OrderContentWidget(lastOrder: lastOrder),
@@ -55,12 +53,12 @@ class LastOrderCard extends StatelessWidget {
                       children: [
                         Text(
                           "Order ID : #${lastOrder.id}",
-                          style: TextStyles.bold10,
+                          style: AppStyles.bold10,
                         ),
                         const SizedBox(height: 10),
                         Text(
                           "Final Total : ₹ ${lastOrder.price}",
-                          style: TextStyles.bold16,
+                          style: AppStyles.bold16,
                         ),
                       ],
                     ),
@@ -70,8 +68,8 @@ class LastOrderCard extends StatelessWidget {
                       onPressed: () {},
                       buttonWidth: 110,
                       buttonHeight: 45,
-                      textStyle: TextStyles.bold12.copyWith(
-                        color: ColorsManager.white,
+                      textStyle: AppStyles.bold12.copyWith(
+                        color: AppColors.white,
                       ),
                     ),
                   ],

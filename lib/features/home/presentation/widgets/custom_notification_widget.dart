@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class CustomNotificationWidget extends StatelessWidget {
   const CustomNotificationWidget({super.key});
@@ -13,10 +13,10 @@ class CustomNotificationWidget extends StatelessWidget {
       onTap: () {},
       child: CircleAvatar(
         radius: 18,
-        backgroundColor: ColorsManager.lightGrey,
+        backgroundColor: AppColors.lightGrey,
         child: SvgPicture.asset(
-          AssetsManager.notificationIcon,
-          colorFilter: const ColorFilter.mode(ColorsManager.red, BlendMode.srcIn),
+          AppAssets.notificationIcon,
+          colorFilter: const ColorFilter.mode(AppColors.red, BlendMode.srcIn),
           width: 22,
           height: 22,
         ),

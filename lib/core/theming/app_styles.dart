@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'font_weight_helper.dart';
 
-abstract class TextStyles {
+abstract class AppStyles {
   static const TextStyle extraBold22 = TextStyle(
     fontSize: 22,
     fontWeight: FontWeightHelper.extraBold,
@@ -32,6 +32,11 @@ abstract class TextStyles {
   static const TextStyle bold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.bold,
+    fontFamily: "DM_Sans",
+  );
+  static const TextStyle medium18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.medium,
     fontFamily: "DM_Sans",
   );
   static const TextStyle regular18 = TextStyle(

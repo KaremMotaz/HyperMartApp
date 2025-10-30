@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/assets_manager.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/universal_image.dart';
 import '../../../categories/data/models/get_categories_response.dart';
 
@@ -15,7 +15,7 @@ class CategoryItem extends StatelessWidget {
     return Container(
       width: 91,
       decoration: BoxDecoration(
-        color: ColorsManager.generateColorFromName(index: index),
+        color: AppColors.generateColorFromName(index: index),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -25,7 +25,7 @@ class CategoryItem extends StatelessWidget {
           UniversalImage(
             url: category.coverPictureUrl.isNotEmpty
                 ? category.coverPictureUrl
-                : AssetsManager.dummyImage,
+                : AppAssets.dummyImage,
             width: 33,
             height: 33,
           ),
@@ -35,8 +35,8 @@ class CategoryItem extends StatelessWidget {
                 ? '${category.name[0].toUpperCase()}${category.name.substring(1)}'
                 : '',
             overflow: TextOverflow.ellipsis,
-            style: TextStyles.medium12.copyWith(
-              color: ColorsManager.white,
+            style: AppStyles.medium12.copyWith(
+              color: AppColors.white,
               fontFamily: "DM_Sans",
             ),
           ),

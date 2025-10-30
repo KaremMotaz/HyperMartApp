@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class PasswordValidations extends StatelessWidget {
   const PasswordValidations({
@@ -43,14 +43,14 @@ class PasswordValidations extends StatelessWidget {
       children: [
         Icon(
           Icons.check_circle,
-          color: hasValidated ? ColorsManager.green : null,
+          color: hasValidated ? AppColors.green : null,
           size: 16,
         ),
         const SizedBox(width: 5),
         Text(
           text,
-          style: TextStyles.regular14.copyWith(
-            color: hasValidated ? ColorsManager.green : null,
+          style: AppStyles.regular14.copyWith(
+            color: hasValidated ? AppColors.green : null,
           ),
         ),
       ],

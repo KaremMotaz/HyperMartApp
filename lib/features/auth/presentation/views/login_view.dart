@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../data/repos/auth_repo.dart';
+
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/custom_app_bar_pop_icon.dart';
+import '../../data/repos/auth_repo.dart';
 import '../manager/login_cubit/login_cubit.dart';
 import '../widgets/login_view_body_bloc_listener.dart';
 
