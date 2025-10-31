@@ -25,8 +25,8 @@ class CacheHelper {
     }
   }
 
-  static String getString({required String key}) {
-    return _prefs.getString(key) ?? "";
+  static String? getString({required String key}) {
+    return _prefs.getString(key);
   }
 
   static bool getBool({required String key}) {

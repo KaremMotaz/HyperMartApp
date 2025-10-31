@@ -22,13 +22,16 @@ class CategoryItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 20),
-          UniversalImage(
-            url: category.coverPictureUrl.isNotEmpty
-                ? category.coverPictureUrl
-                : AppAssets.dummyImage,
-            width: 33,
-            height: 33,
-            fit: BoxFit.cover,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: UniversalImage(
+              url: category.coverPictureUrl.isNotEmpty
+                  ? category.coverPictureUrl
+                  : AppAssets.dummyImage,
+              width: 33,
+              height: 33,
+              fit: BoxFit.contain,
+            ),
           ),
           const SizedBox(height: 15),
           Text(

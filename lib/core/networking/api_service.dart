@@ -13,14 +13,7 @@ import '../../features/auth/data/models/reset_password_request_body.dart';
 import '../../features/auth/data/models/user_data_response.dart';
 import '../../features/auth/data/models/validate_otp_request_body.dart';
 import '../../features/auth/data/models/verify_email_request_body.dart';
-import '../../features/categories/data/models/add_categories_request.dart';
-import '../../features/categories/data/models/add_category_response.dart';
-import '../../features/categories/data/models/get_categories_response.dart';
-import '../../features/categories/data/models/get_category_by_id_response.dart';
-import '../../features/categories/data/models/update_category_request.dart';
-import '../../features/categories/data/models/update_category_response.dart';
 import 'api_constants.dart';
-
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
@@ -65,26 +58,4 @@ abstract class ApiService {
 
   @POST(ApiConstants.logout)
   Future<void> logout();
-
-  @GET(ApiConstants.getCategories)
-  Future<GetCategoriesResponse> getCategories();
-
-  @POST(ApiConstants.addCategory)
-  Future<AddCategoryResponse> addCategory({
-    @Body() required AddCategoryRequest body,
-  });
-
-  @DELETE(ApiConstants.deleteCategory)
-  Future<void> deleteCategory({@Path('id') required String id});
-
-  @GET(ApiConstants.getCategoryById)
-  Future<GetCategoryByIdResponse> getCategoryById({
-    @Path('id') required String id,
-  });
-
-  @PUT(ApiConstants.updateCategory)
-  Future<UpdateCategoryResponse> updateCategory({
-    @Body() required UpdateCategoryRequest body,
-    @Path('id') required String id,
-  });
 }
