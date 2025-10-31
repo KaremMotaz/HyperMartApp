@@ -16,6 +16,7 @@ class CategoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final limitedCategories = categories.take(4).toList();
     return SizedBox(
       height: 100,
       child: Skeletonizer(
@@ -23,10 +24,13 @@ class CategoriesListView extends StatelessWidget {
         enabled: isLoading,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
-          itemCount: categories.length,
+          itemCount: limitedCategories.length,
           separatorBuilder: (context, index) => const SizedBox(width: 12),
           itemBuilder: (context, index) {
-            return CategoryItem(category: categories[index], index: index);
+            return CategoryItem(
+              category: limitedCategories[index],
+              index: index,
+            );
           },
         ),
       ),

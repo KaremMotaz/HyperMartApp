@@ -10,4 +10,5 @@ class Routes {
   static const String otpVerificationView = '/otpVerificationView';
   static const String profileView = '/profileView';
   static const String changePasswordView = '/changePasswordView';
+  static const String categoriesView = '/categoriesView';
 }

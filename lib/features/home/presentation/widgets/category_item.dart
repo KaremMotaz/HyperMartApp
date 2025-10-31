@@ -28,6 +28,7 @@ class CategoryItem extends StatelessWidget {
                 : AppAssets.dummyImage,
             width: 33,
             height: 33,
+            fit: BoxFit.cover,
           ),
           const SizedBox(height: 15),
           Text(
