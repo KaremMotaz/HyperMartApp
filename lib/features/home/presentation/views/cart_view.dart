@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_view_body.dart';
 import '../widgets/other/custom_appbar.dart';
 
@@ -8,13 +9,16 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: AppColors.grey,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.symmetric(vertical: 10),
           child: Column(
             children: [
-              CustomAppbar(title: "Cart"),
-              SizedBox(height: 20),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: CustomAppbar(title: "My Cart"),
+              ),
               CartViewBody(),
             ],
           ),

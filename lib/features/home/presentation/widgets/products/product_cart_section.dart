@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/quantity_button.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_controllers.dart';
 
 class ProductCartSection extends StatelessWidget {
   const ProductCartSection({
@@ -10,7 +10,7 @@ class ProductCartSection extends StatelessWidget {
     required this.numberOfItems,
     required this.isAddedToCart,
   });
-  
+
   final bool isAddedToCart;
   final int numberOfItems;
 
@@ -19,25 +19,7 @@ class ProductCartSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: isAddedToCart
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                QuantityButton(
-                  text: "-",
-                  color: AppColors.red,
-                  onPressed: () {},
-                ),
-                Text(
-                  "$numberOfItems",
-                  style: AppStyles.bold14.copyWith(color: AppColors.black),
-                ),
-                QuantityButton(
-                  text: "+",
-                  color: AppColors.turquoise,
-                  onPressed: () {},
-                ),
-              ],
-            )
+          ? CartControllers(numberOfItems: numberOfItems)
           : Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: AppTextButton(
