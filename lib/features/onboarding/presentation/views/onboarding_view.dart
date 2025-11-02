@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../models/onboarding_model.dart';
 import '../widgets/onboarding_view_body.dart';
 import '../widgets/page_view_item.dart';

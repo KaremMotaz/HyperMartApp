@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/features/onboarding/helper/get_active_color.dart';
-import 'package:hyper_mart_app/features/onboarding/helper/on_finish_0nboarding.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
+
+import '../../../../core/theming/app_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
+import '../../helper/get_active_color.dart';
+import '../../helper/on_finish_0nboarding.dart';
+import 'page_view_item.dart';
 
 class OnboardingNextButton extends StatelessWidget {
   const OnboardingNextButton({

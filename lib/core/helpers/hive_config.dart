@@ -1,5 +1,5 @@
-import 'package:hyper_mart_app/features/categories/data/models/category_adapter.dart';
-import 'package:hyper_mart_app/features/categories/data/models/get_categories_response_adapter.dart';
+import '../../features/home/data/models/categories/category_adapter.dart';
+import '../../features/home/data/models/categories/get_categories_response_adapter.dart';
 
 import '../helpers/constants.dart';
 import 'package:hive_flutter/hive_flutter.dart';

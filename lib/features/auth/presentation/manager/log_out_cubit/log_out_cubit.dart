@@ -1,10 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/networking/api_result.dart';
 import '../../../data/repos/auth_repo.dart';
-part 'log_out_state.dart';
+
 part 'log_out_cubit.freezed.dart';
+part 'log_out_state.dart';
 
 class LogOutCubit extends Cubit<LogOutState> {
   LogOutCubit({required this.authRepo})

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/onboarding/helper/get_active_color.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/custom_progress_dots.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/page_view_item.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/skip_button.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
+import '../../helper/get_active_color.dart';
+import 'custom_progress_dots.dart';
+import 'page_view_item.dart';
+import 'skip_button.dart';
 
 class OnboardingAppBar extends StatelessWidget {
   const OnboardingAppBar({

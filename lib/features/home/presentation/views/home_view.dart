@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/categories/presentation/widgets/categories_section.dart';
-import '../widgets/custom_appbar.dart';
-import '../widgets/custom_text_field.dart';
-import '../widgets/exclusive_beauty_deals_section.dart';
-import '../widgets/location_widget.dart';
-import '../widgets/popular_deals_section.dart';
-import '../widgets/previous_order_section.dart';
-import '../widgets/top_brands_section.dart';
-import '../widgets/week_offers.dart';
+
+import '../widgets/categories/categories_section.dart';
+import '../widgets/appbar/custom_appbar.dart';
+import '../widgets/other/custom_text_field.dart';
+import '../widgets/deals/exclusive_beauty_deals_section.dart';
+import '../widgets/other/location_widget.dart';
+import '../widgets/products/products_section.dart';
+import '../widgets/orders/previous_order_section.dart';
+import '../widgets/brands/top_brands_section.dart';
+import '../widgets/offers/week_offers.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -43,7 +44,7 @@ class HomeView extends StatelessWidget {
                     SizedBox(height: 20),
                     PreviousOrderSection(),
                     SizedBox(height: 20),
-                    PopularDealsSection(),
+                    ProductsSection(),
                     SizedBox(height: 20),
                     TopBrandsSection(),
                     SizedBox(height: 20),

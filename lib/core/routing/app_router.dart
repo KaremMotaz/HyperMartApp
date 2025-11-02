@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hyper_mart_app/features/categories/presentation/views/categories_view.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/views/onboarding_view.dart';
+import '../../features/home/presentation/views/categories_view.dart';
+import '../../features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../features/app/splash_view.dart';
 import '../../features/auth/data/repos/auth_repo.dart';

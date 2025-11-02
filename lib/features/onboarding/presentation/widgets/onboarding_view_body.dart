@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/custom_dots_indicator.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/onboarding_app_bar.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/onboarding_next_button.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/onboarding_back_button.dart';
+import 'custom_dots_indicator.dart';
+import 'onboarding_app_bar.dart';
+import 'onboarding_next_button.dart';
+import 'onboarding_back_button.dart';
 import '../widgets/page_view_item.dart';
 import 'onboarding_page_view.dart';
 

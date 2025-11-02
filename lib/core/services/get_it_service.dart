@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hyper_mart_app/core/services/local_cache_service.dart';
-import 'package:hyper_mart_app/features/categories/data/models/get_categories_response.dart';
-import 'package:hyper_mart_app/features/categories/data/services/categories_local_data_source.dart';
-import 'package:hyper_mart_app/features/categories/data/services/categories_service.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
-import '../../features/categories/data/repos/categories_repo.dart';
+import '../../features/home/data/models/categories/get_categories_response.dart';
+import '../../features/home/data/repo/categories_repo.dart';
+import '../../features/home/data/local_data_source/categories_local_data_source.dart';
+import '../../features/home/data/services/home_service.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
+import 'local_cache_service.dart';
 
 final getIt = GetIt.instance;
 
@@ -28,9 +28,7 @@ Future<void> setupGetIt() async {
   );
 
   // Categories
-  getIt.registerLazySingleton<CategoriesService>(
-    () => CategoriesService(getIt<Dio>()),
-  );
+  getIt.registerLazySingleton<HomeService>(() => HomeService(getIt<Dio>()));
   getIt.registerLazySingleton<LocalCacheService<GetCategoriesResponse>>(
     () => LocalCacheService<GetCategoriesResponse>(),
   );
@@ -41,7 +39,7 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<CategoriesRepo>(
     () => CategoriesRepo(
-      categoriesService: getIt<CategoriesService>(),
+      categoriesService: getIt<HomeService>(),
       categoriesLocalDataSource: getIt<CategoriesLocalDataSource>(),
     ),
   );

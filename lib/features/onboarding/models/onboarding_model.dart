@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
+
+import '../../../core/theming/app_assets.dart';
 
 class OnboardingModel {
   final String title;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hyper_mart_app/features/onboarding/models/onboarding_model.dart';
+
+import '../../models/onboarding_model.dart';
 
 class AnimatedIconCard extends StatefulWidget {
   const AnimatedIconCard({super.key, required this.onboardingModel});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/onboarding/presentation/widgets/animated_icon_card.dart';
 
 import '../../../../core/theming/app_styles.dart';
 import '../../models/onboarding_model.dart';
+import 'animated_icon_card.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({super.key, required this.onboardingModel});
