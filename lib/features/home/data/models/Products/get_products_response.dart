@@ -70,4 +70,26 @@ class ProductModel {
       _$ProductModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ProductModelToJson(this);
+
+  static List<ProductModel> dummyProducts = List.generate(
+    10,
+    (index) => ProductModel(
+      id: "",
+      productCode: "",
+      name: "",
+      description: "",
+      arabicName: "",
+      arabicDescription: "",
+      coverPictureUrl: "",
+      price: 0.0,
+      stock: 0,
+      weight: 0.0,
+      color: "",
+      rating: 0.0,
+      reviewsCount: 0,
+      discountPercentage: 0,
+      sellerId: "",
+      categories: ["", ""],
+    ),
+  );
 }

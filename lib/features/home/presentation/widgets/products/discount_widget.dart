@@ -4,7 +4,9 @@ import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 
 class DiscountWidget extends StatelessWidget {
-  const DiscountWidget({super.key});
+  const DiscountWidget({super.key, required this.discount});
+
+  final int discount;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class DiscountWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 5),
         decoration: const BoxDecoration(color: AppColors.red),
         child: Text(
-          "5% OFF",
+          "$discount% OFF",
           textAlign: TextAlign.center,
           style: AppStyles.extraBold18.copyWith(color: AppColors.white),
         ),

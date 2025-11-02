@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../../data/models/product_model.dart';
-import 'product_card.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/routing/routes.dart';
+import 'package:hyper_mart_app/core/services/get_it_service.dart';
+import 'package:hyper_mart_app/features/home/data/repo/get_products_repo.dart';
+import 'package:hyper_mart_app/features/home/manager/products_cubit/products_cubit.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/products/products_bloc_builder.dart';
 import '../other/section_header.dart';
 
 class ProductsSection extends StatelessWidget {
@@ -9,27 +13,22 @@ class ProductsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ProductModel> products = ProductModel.products;
-    return Column(
-      children: [
-        SectionHeader(title: 'Popular Deals', onTap: () {}),
-        const SizedBox(height: 20),
-        SizedBox(
-          height: 690,
-          child: GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              childAspectRatio: 0.48,
-            ),
-            itemCount: 4,
-            itemBuilder: (context, index) =>
-                ProductCard(product: products[index]),
+    return BlocProvider(
+      create: (context) =>
+          ProductsCubit(getProductsRepo: getIt.get<GetProductsRepo>())
+            ..getProducts(),
+      child: Column(
+        children: [
+          SectionHeader(
+            title: 'Popular Deals',
+            onTap: () {
+              context.push(Routes.productsView);
+            },
           ),
-        ),
-      ],
+          const SizedBox(height: 20),
+          const ProductsBlocBuilder(height: 690),
+        ],
+      ),
     );
   }
 }

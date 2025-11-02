@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_request_body.dart';
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
@@ -35,5 +37,10 @@ abstract class HomeService {
   Future<UpdateCategoryResponse> updateCategory({
     @Body() required UpdateCategoryRequest body,
     @Path('id') required String id,
+  });
+
+  @GET(ApiConstants.getProducts)
+  Future<GetProductsResponse> getProducts({
+    @Body() required GetProductsRequestBody body,
   });
 }

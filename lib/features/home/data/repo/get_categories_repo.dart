@@ -11,12 +11,12 @@ import '../models/categories/update_category_response.dart';
 import '../local_data_source/categories_local_data_source.dart';
 import '../services/home_service.dart';
 
-class CategoriesRepo {
-  final HomeService categoriesService;
+class GetCategoriesRepo {
+  final HomeService homeService;
   final CategoriesLocalDataSource categoriesLocalDataSource;
 
-  CategoriesRepo({
-    required this.categoriesService,
+  GetCategoriesRepo({
+    required this.homeService,
     required this.categoriesLocalDataSource,
   });
 
@@ -44,8 +44,7 @@ class CategoriesRepo {
       }
 
       //  No data in cache, fetch from remote
-      final GetCategoriesResponse response = await categoriesService
-          .getCategories();
+      final GetCategoriesResponse response = await homeService.getCategories();
 
       // Cache the data
       await categoriesLocalDataSource.cacheAllCategories(data: response);
@@ -66,7 +65,7 @@ class CategoriesRepo {
     required AddCategoryRequest body,
   }) async {
     try {
-      final AddCategoryResponse response = await categoriesService.addCategory(
+      final AddCategoryResponse response = await homeService.addCategory(
         body: body,
       );
       return ApiResult.success(response);
@@ -77,7 +76,7 @@ class CategoriesRepo {
 
   Future<ApiResult<void>> deleteCategory({required String id}) async {
     try {
-      await categoriesService.deleteCategory(id: id);
+      await homeService.deleteCategory(id: id);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
@@ -88,7 +87,7 @@ class CategoriesRepo {
     required String id,
   }) async {
     try {
-      final GetCategoryByIdResponse response = await categoriesService
+      final GetCategoryByIdResponse response = await homeService
           .getCategoryById(id: id);
       return ApiResult.success(response);
     } catch (error) {
@@ -101,8 +100,10 @@ class CategoriesRepo {
     required UpdateCategoryRequest body,
   }) async {
     try {
-      final UpdateCategoryResponse response = await categoriesService
-          .updateCategory(id: id, body: body);
+      final UpdateCategoryResponse response = await homeService.updateCategory(
+        id: id,
+        body: body,
+      );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

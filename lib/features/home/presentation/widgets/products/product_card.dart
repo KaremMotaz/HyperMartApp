@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hyper_mart_app/core/widgets/universal_image.dart';
 
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_text_button.dart';
-import '../../../data/models/product_model.dart';
+import '../../../data/models/Products/get_products_response.dart';
 import 'discount_widget.dart';
 
 class ProductCard extends StatelessWidget {
@@ -52,7 +53,11 @@ class ProductCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Image.asset(product.image, fit: BoxFit.fill, height: 130),
+                    UniversalImage(
+                      url: product.coverPictureUrl,
+                      fit: BoxFit.fill,
+                      height: 130,
+                    ),
                   ],
                 ),
               ),
@@ -60,7 +65,7 @@ class ProductCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  product.title,
+                  product.name,
                   style: AppStyles.regular14,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -144,8 +149,12 @@ class ProductCard extends StatelessWidget {
                     ),
             ],
           ),
-          product.isDiscountFound
-              ? const Positioned(top: 15, right: -34, child: DiscountWidget())
+          product.discountPercentage > 0
+              ? Positioned(
+                  top: 15,
+                  right: -34,
+                  child: DiscountWidget(discount: product.discountPercentage),
+                )
               : const SizedBox.shrink(),
         ],
       ),

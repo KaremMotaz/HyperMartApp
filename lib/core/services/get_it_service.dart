@@ -1,9 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hyper_mart_app/features/home/data/local_data_source/products_local_data_source.dart';
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import 'package:hyper_mart_app/features/home/data/repo/get_products_repo.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/home/data/models/categories/get_categories_response.dart';
-import '../../features/home/data/repo/categories_repo.dart';
+import '../../features/home/data/repo/get_categories_repo.dart';
 import '../../features/home/data/local_data_source/categories_local_data_source.dart';
 import '../../features/home/data/services/home_service.dart';
 import '../networking/api_service.dart';
@@ -27,8 +30,10 @@ Future<void> setupGetIt() async {
     () => AuthRepo(apiService: getIt<ApiService>()),
   );
 
-  // Categories
+  // HomeService
   getIt.registerLazySingleton<HomeService>(() => HomeService(getIt<Dio>()));
+
+  // Categories
   getIt.registerLazySingleton<LocalCacheService<GetCategoriesResponse>>(
     () => LocalCacheService<GetCategoriesResponse>(),
   );
@@ -37,10 +42,28 @@ Future<void> setupGetIt() async {
       cache: getIt<LocalCacheService<GetCategoriesResponse>>(),
     ),
   );
-  getIt.registerLazySingleton<CategoriesRepo>(
-    () => CategoriesRepo(
-      categoriesService: getIt<HomeService>(),
+  getIt.registerLazySingleton<GetCategoriesRepo>(
+    () => GetCategoriesRepo(
+      homeService: getIt<HomeService>(),
       categoriesLocalDataSource: getIt<CategoriesLocalDataSource>(),
+    ),
+  );
+
+  // Products
+  getIt.registerLazySingleton<LocalCacheService<GetProductsResponse>>(
+    () => LocalCacheService<GetProductsResponse>(),
+  );
+
+  getIt.registerLazySingleton<ProductsLocalDataSource>(
+    () => ProductsLocalDataSource(
+      cache: getIt<LocalCacheService<GetProductsResponse>>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<GetProductsRepo>(
+    () => GetProductsRepo(
+      homeService: getIt<HomeService>(),
+      productsLocalDataSource: getIt<ProductsLocalDataSource>(),
     ),
   );
 }

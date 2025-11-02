@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../manager/categories_cubit/categories_cubit.dart';
-import '../../data/repo/categories_repo.dart';
+import '../../data/repo/get_categories_repo.dart';
 import '../widgets/categories/all_categories_bloc_builder.dart';
 import '../widgets/categories/categories_appbar.dart';
 
@@ -21,9 +21,9 @@ class CategoriesView extends StatelessWidget {
               const CategoriesAppbar(),
               const SizedBox(height: 20),
               BlocProvider(
-                create: (context) =>
-                    CategoriesCubit(categoriesRepo: getIt.get<CategoriesRepo>())
-                      ..getCategories(),
+                create: (context) => CategoriesCubit(
+                  categoriesRepo: getIt.get<GetCategoriesRepo>(),
+                )..getCategories(),
                 child: const AllCategoriesBlocBuilder(),
               ),
             ],

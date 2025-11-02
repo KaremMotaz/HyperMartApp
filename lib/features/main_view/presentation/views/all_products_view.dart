@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../../home/manager/categories_cubit/categories_cubit.dart';
 import '../../../home/data/models/categories/add_categories_request.dart';
-import '../../../home/data/repo/categories_repo.dart';
+import '../../../home/data/repo/get_categories_repo.dart';
 
 class AllProductsView extends StatelessWidget {
   const AllProductsView({super.key});
@@ -15,7 +15,7 @@ class AllProductsView extends StatelessWidget {
     return Scaffold(
       body: BlocProvider(
         create: (context) =>
-            CategoriesCubit(categoriesRepo: getIt.get<CategoriesRepo>()),
+            CategoriesCubit(categoriesRepo: getIt.get<GetCategoriesRepo>()),
         child: Builder(
           builder: (context) {
             return Padding(

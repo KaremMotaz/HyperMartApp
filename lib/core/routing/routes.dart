@@ -12,5 +12,5 @@ class Routes {
   static const String profileView = '/profileView';
   static const String changePasswordView = '/changePasswordView';
   static const String categoriesView = '/categoriesView';
-  // static const String categoriesView = '/';
+  static const String productsView = '/productsView';
 }
