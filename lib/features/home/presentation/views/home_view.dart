@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../widgets/categories_section.dart';
+import 'package:hyper_mart_app/features/categories/presentation/widgets/categories_section.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_text_field.dart';
 import '../widgets/exclusive_beauty_deals_section.dart';
@@ -9,21 +8,18 @@ import '../widgets/popular_deals_section.dart';
 import '../widgets/previous_order_section.dart';
 import '../widgets/top_brands_section.dart';
 import '../widgets/week_offers.dart';
-import '../../../../core/services/get_it_service.dart';
-import '../../../categories/data/repos/categories_repo.dart';
-import '../../../categories/manager/categories_cubit/categories_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 27),
                 child: Column(
                   children: [
@@ -37,27 +33,22 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               ),
-              const WeekOffers(),
+              WeekOffers(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 27),
+                padding: EdgeInsets.symmetric(horizontal: 27),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
-                    BlocProvider(
-                      create: (context) => CategoriesCubit(
-                        categoriesRepo: getIt.get<CategoriesRepo>(),
-                      )..getCategories(),
-                      child: const CategoriesSection(),
-                    ),
-                    const SizedBox(height: 20),
-                    const PreviousOrderSection(),
-                    const SizedBox(height: 20),
-                    const PopularDealsSection(),
-                    const SizedBox(height: 20),
-                    const TopBrandsSection(),
-                    const SizedBox(height: 20),
-                    const ExclusiveBeautyDealsSection(),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
+                    CategoriesSection(),
+                    SizedBox(height: 20),
+                    PreviousOrderSection(),
+                    SizedBox(height: 20),
+                    PopularDealsSection(),
+                    SizedBox(height: 20),
+                    TopBrandsSection(),
+                    SizedBox(height: 20),
+                    ExclusiveBeautyDealsSection(),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),

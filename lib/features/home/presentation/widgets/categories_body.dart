@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'categories_list_view.dart';
 import 'section_header.dart';
 import '../../../../core/widgets/error_body.dart';
 import '../../../categories/data/models/get_categories_response.dart';
 import '../../../categories/manager/categories_cubit/categories_cubit.dart';
 
-class CategoriesSection extends StatelessWidget {
-  const CategoriesSection({super.key});
+class CategoriesBody extends StatelessWidget {
+  const CategoriesBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionHeader(title: 'Categories', onTap: () {}),
+        SectionHeader(
+          title: 'Categories',
+          onTap: () {
+            context.push(Routes.categoriesView);
+          },
+        ),
         const SizedBox(height: 20),
         BlocBuilder<CategoriesCubit, CategoriesState>(
           buildWhen: (previous, current) =>

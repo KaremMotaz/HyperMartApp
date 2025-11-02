@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hyper_mart_app/core/widgets/custom_circular_progress_indicator.dart';
 
 class UniversalImage extends StatelessWidget {
   final String url;
@@ -27,7 +28,7 @@ class UniversalImage extends StatelessWidget {
         height: height,
         fit: fit,
         placeholderBuilder: (context) =>
-            Container(width: 33, height: 33, color: Colors.grey[200]),
+            const CustomCircularProgressIndicator(),
       );
     } else {
       return CachedNetworkImage(

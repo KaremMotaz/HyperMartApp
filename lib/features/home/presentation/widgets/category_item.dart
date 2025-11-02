@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_mart_app/core/widgets/universal_image.dart';
 
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
-import '../../../../core/widgets/universal_image.dart';
 import '../../../categories/data/models/get_categories_response.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.category, required this.index});
+  const CategoryItem({
+    super.key,
+    required this.category,
+    required this.index,
+    this.style,
+  });
   final Category category;
   final int index;
+  final TextStyle? style;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,10 +45,12 @@ class CategoryItem extends StatelessWidget {
                 ? '${category.name[0].toUpperCase()}${category.name.substring(1)}'
                 : '',
             overflow: TextOverflow.ellipsis,
-            style: AppStyles.medium12.copyWith(
-              color: AppColors.white,
-              fontFamily: "DM_Sans",
-            ),
+            style:
+                style ??
+                AppStyles.medium12.copyWith(
+                  color: AppColors.white,
+                  fontFamily: "DM_Sans",
+                ),
           ),
           const SizedBox(height: 13),
         ],

@@ -9,7 +9,10 @@ class ErrorBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        children: [Text(message), ...details.map((detail) => Text(detail))],
+        children: [
+          Text(message),
+          ...details.map((detail) => Text(detail, textAlign: TextAlign.center)),
+        ],
       ),
     );
   }

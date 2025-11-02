@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/features/categories/presentation/views/categories_view.dart';
 import 'package:hyper_mart_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../features/app/splash_view.dart';
@@ -83,6 +84,12 @@ abstract class AppRouter {
           path: Routes.profileView,
           builder: (context, state) {
             return const ProfileView();
+          },
+        ),
+        GoRoute(
+          path: Routes.categoriesView,
+          builder: (context, state) {
+            return const CategoriesView();
           },
         ),
         GoRoute(
