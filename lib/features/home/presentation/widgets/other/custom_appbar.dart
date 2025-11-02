@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/theming/app_styles.dart';
 
-class CategoriesAppbar extends StatelessWidget {
-  const CategoriesAppbar({super.key});
+class CustomAppbar extends StatelessWidget {
+  const CustomAppbar({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class CategoriesAppbar extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        const Text('Categories', style: AppStyles.bold22),
+        Text(title, style: AppStyles.bold22),
         const Spacer(),
       ],
     );

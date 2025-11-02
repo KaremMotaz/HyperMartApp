@@ -16,7 +16,7 @@ class CategoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final limitedCategories = categories.take(4).toList();
+    final List<Category> limitedCategories = categories.take(4).toList();
     return SizedBox(
       height: 100,
       child: Skeletonizer(

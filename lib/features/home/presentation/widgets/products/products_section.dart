@@ -26,7 +26,7 @@ class ProductsSection extends StatelessWidget {
             },
           ),
           const SizedBox(height: 20),
-          const ProductsBlocBuilder(height: 690),
+          const ProductsBlocBuilder(),
         ],
       ),
     );

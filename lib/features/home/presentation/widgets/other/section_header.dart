@@ -12,12 +12,15 @@ class SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title, style: AppStyles.bold16),
-          SvgPicture.asset(AppAssets.arrowRightIcon),
-        ],
+      child: Container(
+        color: Colors.transparent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title, style: AppStyles.bold16),
+            SvgPicture.asset(AppAssets.arrowRightIcon),
+          ],
+        ),
       ),
     );
   }

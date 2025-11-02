@@ -1,3 +1,5 @@
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response_adapter.dart';
+
 import '../../features/home/data/models/categories/category_adapter.dart';
 import '../../features/home/data/models/categories/get_categories_response_adapter.dart';
 
@@ -11,6 +13,10 @@ class HiveConfig {
     // Categories
     Hive.registerAdapter(CategoryAdapter());
     Hive.registerAdapter(GetCategoriesResponseAdapter());
+    
+    // Products
+    Hive.registerAdapter(ProductModelAdapter());
+    Hive.registerAdapter(GetProductsResponseAdapter());
     await Hive.openBox(kCashedDataBox);
   }
 }

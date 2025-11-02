@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../manager/categories_cubit/categories_cubit.dart';
 import '../../data/repo/get_categories_repo.dart';
 import '../widgets/categories/all_categories_bloc_builder.dart';
-import '../widgets/categories/categories_appbar.dart';
+import '../widgets/other/custom_appbar.dart';
 
 class CategoriesView extends StatelessWidget {
   const CategoriesView({super.key});
@@ -18,7 +18,7 @@ class CategoriesView extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              const CategoriesAppbar(),
+              const CustomAppbar(title: "Categories"),
               const SizedBox(height: 20),
               BlocProvider(
                 create: (context) => CategoriesCubit(

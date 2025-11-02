@@ -5,8 +5,8 @@ import 'package:hyper_mart_app/features/home/manager/products_cubit/products_cub
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/products_grid_view.dart';
 import '../../../../../core/widgets/error_body.dart';
 
-class ProductsBlocBuilder extends StatelessWidget {
-  const ProductsBlocBuilder({super.key});
+class AllProductsBlocBuilder extends StatelessWidget {
+  const AllProductsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,25 +18,16 @@ class ProductsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           getProductsLoading: () {
-            return SizedBox(
-              height: 690,
+            return Expanded(
               child: ProductsGridView(
                 products: ProductModel.dummyProducts,
                 isLoading: true,
-                isFromHomeView: true,
               ),
             );
           },
           getProductsSuccess: (getProductsResponse) {
-            final List<ProductModel> limitedProducts = getProductsResponse.items
-                .take(4)
-                .toList();
-            return SizedBox(
-              height: 690,
-              child: ProductsGridView(
-                products: limitedProducts,
-                isFromHomeView: true,
-              ),
+            return Expanded(
+              child: ProductsGridView(products: getProductsResponse.items),
             );
           },
           getProductsFailure: (apiErrorModel) {

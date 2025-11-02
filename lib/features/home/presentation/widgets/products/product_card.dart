@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hyper_mart_app/core/widgets/universal_image.dart';
-
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
@@ -32,33 +30,36 @@ class ProductCard extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppColors.grey,
-                ),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 11, top: 11),
-                        child: SvgPicture.asset(
-                          isLoved
-                              ? AppAssets.heartFullIcon
-                              : AppAssets.heartOutlineIcon,
-                          width: 20,
-                          height: 20,
-                        ),
+              SizedBox(
+                height: 195,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: AppColors.grey,
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        product.coverPictureUrl.isNotEmpty
+                            ? product.coverPictureUrl
+                            : AppAssets.dummyImage,
+                        scale: 2,
+                      ),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 11, top: 11),
+                      child: SvgPicture.asset(
+                        isLoved
+                            ? AppAssets.heartFullIcon
+                            : AppAssets.heartOutlineIcon,
+                        width: 20,
+                        height: 20,
                       ),
                     ),
-                    UniversalImage(
-                      url: product.coverPictureUrl,
-                      fit: BoxFit.fill,
-                      height: 130,
-                    ),
-                  ],
+                  ),
                 ),
               ),
               const SizedBox(height: 18),

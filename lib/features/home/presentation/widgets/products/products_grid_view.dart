@@ -7,33 +7,29 @@ class ProductsGridView extends StatelessWidget {
   const ProductsGridView({
     super.key,
     required this.products,
-    required this.height,
     this.isLoading = false,
+    this.isFromHomeView = false,
   });
 
   final List<ProductModel> products;
-  final double height;
   final bool isLoading;
+  final bool isFromHomeView;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Skeletonizer(
-        containersColor: Colors.grey[50],
-        enabled: isLoading,
-        child: GridView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
-            childAspectRatio: 0.48,
-          ),
-          itemCount: 4,
-          itemBuilder: (context, index) =>
-              ProductCard(product: products[index]),
+    return Skeletonizer(
+      containersColor: Colors.grey[50],
+      enabled: isLoading,
+      child: GridView.builder(
+        physics: isFromHomeView ? const NeverScrollableScrollPhysics() : null,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+          childAspectRatio: 0.48,
         ),
+        itemCount: products.length,
+        itemBuilder: (context, index) => ProductCard(product: products[index]),
       ),
     );
   }

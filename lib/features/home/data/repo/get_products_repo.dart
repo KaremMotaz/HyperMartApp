@@ -2,7 +2,6 @@ import 'package:hyper_mart_app/features/home/data/local_data_source/products_loc
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_request_body.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import '../../../../core/helpers/constants.dart';
-import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/services/cache_helper.dart';
@@ -35,7 +34,6 @@ class GetProductsRepo {
       // Try to get data from cache first
       final GetProductsResponse? cached = await productsLocalDataSource
           .getAllProducts();
-      Logger.log('cached: $cached');
       if (cached != null && cached.items.isNotEmpty) {
         return ApiResult.success(cached);
       }
@@ -56,7 +54,6 @@ class GetProductsRepo {
 
       return ApiResult.success(response);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
