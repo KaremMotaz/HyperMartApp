@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/features/home/presentation/views/cart_view.dart';
 import 'package:hyper_mart_app/features/home/presentation/views/products_view.dart';
 import '../../features/home/presentation/views/categories_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
@@ -97,6 +98,12 @@ abstract class AppRouter {
           path: Routes.productsView,
           builder: (context, state) {
             return const ProductsView();
+          },
+        ),
+        GoRoute(
+          path: Routes.cartView,
+          builder: (context, state) {
+            return const CartView();
           },
         ),
         GoRoute(

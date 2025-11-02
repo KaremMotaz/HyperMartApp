@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../../../../core/theming/app_assets.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_cart_section.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_image.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_name.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_price_and_rating.dart';
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
-import '../../../../../core/widgets/app_text_button.dart';
 import '../../../data/models/Products/get_products_response.dart';
 import 'discount_widget.dart';
 
@@ -26,128 +26,20 @@ class ProductCard extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge,
       child: Stack(
-        clipBehavior: Clip.hardEdge,
         children: [
           Column(
             children: [
-              SizedBox(
-                height: 195,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: AppColors.grey,
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        product.coverPictureUrl.isNotEmpty
-                            ? product.coverPictureUrl
-                            : AppAssets.dummyImage,
-                        scale: 2,
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 11, top: 11),
-                      child: SvgPicture.asset(
-                        isLoved
-                            ? AppAssets.heartFullIcon
-                            : AppAssets.heartOutlineIcon,
-                        width: 20,
-                        height: 20,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              ProductImage(product: product, isLoved: isLoved),
               const SizedBox(height: 18),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  product.name,
-                  style: AppStyles.regular14,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
+              ProductName(product: product),
               const SizedBox(height: 9),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("₹ ${product.price}", style: AppStyles.medium14),
-                    Row(
-                      children: [
-                        Text(
-                          "${product.rating}",
-                          style: AppStyles.extraBold12.copyWith(
-                            color: AppColors.orange,
-                          ),
-                        ),
-                        const SizedBox(width: 6),
-                        SvgPicture.asset(AppAssets.starIcon),
-                      ],
-                    ),
-                  ],
-                ),
+              ProductPriceAndRating(product: product),
+              const SizedBox(height: 18),
+              ProductCartSection(
+                numberOfItems: numberOfItems,
+                isAddedToCart: true,
               ),
               const SizedBox(height: 18),
-              isAddedToCart
-                  ? Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          AppTextButton(
-                            buttonText: "-",
-                            onPressed: () {},
-                            buttonWidth: 45,
-                            buttonHeight: 45,
-                            horizontalPadding: 0,
-                            verticalPadding: 0,
-                            backgroundColor: AppColors.red,
-                            borderColor: AppColors.red,
-                            textStyle: AppStyles.extraBold22.copyWith(
-                              color: AppColors.white,
-                            ),
-                          ),
-                          Text(
-                            "$numberOfItems",
-                            style: AppStyles.bold14.copyWith(
-                              color: AppColors.black,
-                            ),
-                          ),
-                          AppTextButton(
-                            buttonText: "+",
-                            onPressed: () {},
-                            buttonWidth: 45,
-                            buttonHeight: 45,
-                            horizontalPadding: 0,
-                            verticalPadding: 0,
-                            backgroundColor: AppColors.turquoise,
-                            borderColor: AppColors.turquoise,
-                            textStyle: AppStyles.extraBold22.copyWith(
-                              color: AppColors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: AppTextButton(
-                        buttonText: "Add to cart",
-                        onPressed: () {},
-                        buttonWidth: double.infinity,
-                        backgroundColor: AppColors.white,
-                        borderColor: AppColors.orange,
-                        textStyle: AppStyles.semiBold15.copyWith(
-                          color: AppColors.orange,
-                        ),
-                      ),
-                    ),
             ],
           ),
           product.discountPercentage > 0

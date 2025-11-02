@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theming/app_assets.dart';
 import '../../../../core/theming/app_colors.dart';
-import 'custom_cart_widget.dart';
+import '../../../home/presentation/widgets/cart/custom_cart_widget.dart';
 import 'nav_widget.dart';
 
 class HomeNavBar extends StatelessWidget {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/routing/routes.dart';
 
-import '../../../../core/theming/app_assets.dart';
-import '../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
 
 class CustomCartWidget extends StatelessWidget {
   const CustomCartWidget({super.key});
@@ -14,7 +16,9 @@ class CustomCartWidget extends StatelessWidget {
       right: 0,
       bottom: 60,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          context.push(Routes.cartView);
+        },
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: AppColors.white, width: 5),
@@ -41,6 +45,7 @@ class CustomCartWidget extends StatelessWidget {
                     BlendMode.srcIn,
                   ),
                 ),
+                
                 Transform.translate(
                   offset: const Offset(10, -8),
                   child: Center(
