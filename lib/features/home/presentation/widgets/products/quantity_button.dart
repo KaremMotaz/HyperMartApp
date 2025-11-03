@@ -9,19 +9,21 @@ class QuantityButton extends StatelessWidget {
     required this.text,
     required this.color,
     required this.onPressed,
+    this.size,
   });
 
   final String text;
   final Color color;
   final VoidCallback onPressed;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
     return AppTextButton(
       buttonText: text,
       onPressed: onPressed,
-      buttonWidth: 45,
-      buttonHeight: 45,
+      buttonWidth: size ?? 45,
+      buttonHeight: size ?? 45,
       horizontalPadding: 0,
       verticalPadding: 0,
       backgroundColor: color,

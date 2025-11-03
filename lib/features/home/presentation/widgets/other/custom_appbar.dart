@@ -3,9 +3,14 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/theming/app_styles.dart';
 
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title});
+  const CustomAppbar({
+    super.key,
+    required this.title,
+    this.backButtonBorderColor = Colors.grey,
+  });
 
   final String title;
+  final Color? backButtonBorderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class CustomAppbar extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.grey),
+              border: Border.all(color: backButtonBorderColor ?? Colors.grey),
             ),
             child: const Icon(Icons.arrow_back, color: Colors.black, size: 26),
           ),

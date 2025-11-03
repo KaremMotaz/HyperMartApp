@@ -13,12 +13,22 @@ class CartControllers extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        QuantityButton(text: "-", color: AppColors.red, onPressed: () {}),
+        QuantityButton(
+          text: "-",
+          color: AppColors.red,
+          size: 34,
+          onPressed: () {},
+        ),
         Text(
           "$numberOfItems",
           style: AppStyles.bold14.copyWith(color: AppColors.black),
         ),
-        QuantityButton(text: "+", color: AppColors.turquoise, onPressed: () {}),
+        QuantityButton(
+          text: "+",
+          color: AppColors.turquoise,
+          size: 34,
+          onPressed: () {},
+        ),
       ],
     );
   }

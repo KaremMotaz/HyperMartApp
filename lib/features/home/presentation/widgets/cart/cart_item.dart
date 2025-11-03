@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_item_data.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/theming/app_styles.dart';
 import '../../../data/models/cart/get_cart_items_response.dart';
 import 'cart_controllers.dart';
 
@@ -12,57 +13,37 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 130,
       width: double.infinity,
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.lightGrey,
-              borderRadius: BorderRadius.circular(16),
-              image: DecorationImage(
-                image: NetworkImage(
-                  cartItem.productCoverUrl.isNotEmpty
-                      ? cartItem.productCoverUrl
-                      : AppAssets.dummyImage,
-                  scale: 1.5,
-                ),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          const SizedBox(width: 10),
+          CartItemData(cartItem: cartItem),
+          const Spacer(),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  cartItem.productName,
-                  style: AppStyles.regular14,
-                  overflow: TextOverflow.ellipsis,
+              InkWell(
+                onTap: () {},
+                child: SvgPicture.asset(
+                  AppAssets.trashIcon,
+                  width: 23,
+                  height: 23,
                 ),
               ),
-              const SizedBox(height: 5),
-              Text(
-                "\$ ${cartItem.basePricePerUnit}",
-                style: AppStyles.medium14,
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xffefefef),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const CartControllers(numberOfItems: 0),
               ),
-              const SizedBox(height: 5),
             ],
-          ),
-          const SizedBox(width: 10),
-          Container(
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(
-              color: AppColors.lightGrey,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: const CartControllers(numberOfItems: 0),
           ),
         ],
       ),

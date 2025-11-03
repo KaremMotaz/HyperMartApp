@@ -19,11 +19,9 @@ class CartItemsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           getCartItemsLoading: () {
-            return Expanded(
-              child: CartViewBody(
-                cartItems: CartItemModel.dummyCartItems,
-                isLoading: true,
-              ),
+            return CartViewBody(
+              cartItems: CartItemModel.dummyCartItems,
+              isLoading: true,
             );
           },
           getCartItemsSuccess: (getCartItemsResponse) {
@@ -31,9 +29,7 @@ class CartItemsBlocBuilder extends StatelessWidget {
             if (getCartItemsResponse.cartItems.isEmpty) {
               return const EmptyCartWidget();
             }
-            return Expanded(
-              child: CartViewBody(cartItems: getCartItemsResponse.cartItems),
-            );
+            return CartViewBody(cartItems: getCartItemsResponse.cartItems);
           },
           getCartItemsFailure: (apiErrorModel) {
             return ErrorBody(

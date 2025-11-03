@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/app_colors.dart';
 import '../../data/repos/add_cart_item_repo.dart';
 import '../../data/repos/apply_coupon_repo.dart';
 import '../../data/repos/decrement_cart_item_repo.dart';
@@ -18,7 +17,7 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grey,
+      backgroundColor: const Color(0xffefefef),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -26,18 +25,23 @@ class CartView extends StatelessWidget {
             children: [
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                child: CustomAppbar(title: "My Cart"),
+                child: CustomAppbar(
+                  title: "My Cart",
+                  backButtonBorderColor: Colors.white,
+                ),
               ),
-              BlocProvider(
-                create: (context) => CartCubit(
-                  getCartItemsRepo: getIt.get<GetCartItemsRepo>(),
-                  addCartItemRepo: getIt.get<AddCartItemRepo>(),
-                  decrementCartItemRepo: getIt.get<DecrementCartItemRepo>(),
-                  deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
-                  updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
-                  applyCouponRepo: getIt.get<ApplyCouponRepo>(),
-                )..getCartItems(),
-                child: const CartItemsBlocBuilder(),
+              Expanded(
+                child: BlocProvider(
+                  create: (context) => CartCubit(
+                    getCartItemsRepo: getIt.get<GetCartItemsRepo>(),
+                    addCartItemRepo: getIt.get<AddCartItemRepo>(),
+                    decrementCartItemRepo: getIt.get<DecrementCartItemRepo>(),
+                    deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
+                    updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
+                    applyCouponRepo: getIt.get<ApplyCouponRepo>(),
+                  )..getCartItems(),
+                  child: const CartItemsBlocBuilder(),
+                ),
               ),
             ],
           ),

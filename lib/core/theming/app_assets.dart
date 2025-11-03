@@ -52,4 +52,5 @@ class AppAssets {
       "http://edenchristianacademy.co.nz/wp-content/uploads/2013/11/dummy-image-square.jpg";
 
   static const String emptyCart = 'assets/images/empty_cart.png';
+  static const String trashIcon = 'assets/svgs/trash.svg';
 }

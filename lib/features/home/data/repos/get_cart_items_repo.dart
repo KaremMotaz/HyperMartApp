@@ -16,23 +16,28 @@ class GetCartItemsRepo {
 
   Future<ApiResult<GetCartItemsResponse>> getCartItems() async {
     try {
-      // Try to get data from cache first
-      final GetCartItemsResponse? cached = await cartItemsLocalDataSource
-          .getCartItems();
-      Logger.log(cached?.cartItems.toString() ?? [].toString());
+      // // Try to get data from cache first
+      // final GetCartItemsResponse? cached = await cartItemsLocalDataSource
+      //     .getCartItems();
+      // Logger.log(cached?.cartItems.toString() ?? [].toString());
 
-      if (cached != null) {
-        return ApiResult.success(cached);
-      }
+      // if (cached != null) {
+      //   return ApiResult.success(cached);
+      // }
 
-      // No data in cache, fetch from remote
-      final GetCartItemsResponse response = await homeService.getCartItems();
-      Logger.log(response.cartItems.toString());
+      // // No data in cache, fetch from remote
+      // final GetCartItemsResponse response = await homeService.getCartItems();
+      // Logger.log(response.cartItems.toString());
 
-      // Cache the data
-      await cartItemsLocalDataSource.cacheCartItems(data: response);
+      // // Cache the data
+      // await cartItemsLocalDataSource.cacheCartItems(data: response);
 
-      return ApiResult.success(response);
+      List<CartItemModel> fakeCartItems = CartItemModel.fakeCartItems;
+      final GetCartItemsResponse responsefake = GetCartItemsResponse(
+        cartId: "edsss",
+        cartItems: fakeCartItems,
+      );
+      return ApiResult.success(responsefake);
     } catch (error) {
       Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
