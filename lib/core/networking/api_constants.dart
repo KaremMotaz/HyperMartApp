@@ -1,6 +1,7 @@
 class ApiConstants {
   static const apiBaseUrl = "https://accessories-eshop.runasp.net/api/";
 
+  // Auth
   static const login = "auth/login";
   static const register = "auth/register";
   static const verifyEmail = "auth/verify-email";
@@ -13,13 +14,21 @@ class ApiConstants {
   static const refreshToken = "auth/refresh-token";
   static const getUserData = "auth/me";
 
+  // Categories
   static const getCategories = "categories";
   static const addCategory = "categories";
   static const deleteCategory = "categories/{id}";
   static const getCategoryById = "categories/{id}";
   static const updateCategory = "categories/{id}";
 
+  // Products
   static const getProducts = "products";
+
+  // Cart
   static const getCartItems = "cart";
   static const addCartItem = "cart/items";
+  static const decrementCartItem = "cart/items/decrement";
+  static const deleteCartItem = "cart/items/{Id}";
+  static const updateCartItem = "cart/items/{Id}";
+  static const applyCoupon = "cart/apply-coupon";
 }
