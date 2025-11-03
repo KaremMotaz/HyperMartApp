@@ -3,7 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/services/get_it_service.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/features/home/data/repos/add_cart_item_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/apply_coupon_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/decrement_cart_item_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/delete_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/update_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_items_cubit/cart_items_cubit.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_items_bloc_builder.dart';
 import '../widgets/other/custom_appbar.dart';
@@ -28,6 +32,10 @@ class CartView extends StatelessWidget {
                 create: (context) => CartItemsCubit(
                   getCartItemsRepo: getIt.get<GetCartItemsRepo>(),
                   addCartItemRepo: getIt.get<AddCartItemRepo>(),
+                  decrementCartItemRepo: getIt.get<DecrementCartItemRepo>(),
+                  deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
+                  updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
+                  applyCouponRepo: getIt.get<ApplyCouponRepo>(),
                 )..getCartItems(),
                 child: const CartItemsBlocBuilder(),
               ),

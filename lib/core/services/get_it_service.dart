@@ -5,8 +5,12 @@ import 'package:hyper_mart_app/features/home/data/local_data_source/products_loc
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
 import 'package:hyper_mart_app/features/home/data/repos/add_cart_item_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/apply_coupon_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/decrement_cart_item_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/delete_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_products_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/update_cart_item_repo.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/home/data/models/categories/get_categories_response.dart';
@@ -91,5 +95,17 @@ Future<void> setupGetIt() async {
 
   getIt.registerLazySingleton<AddCartItemRepo>(
     () => AddCartItemRepo(homeService: getIt<HomeService>()),
+  );
+  getIt.registerLazySingleton<DecrementCartItemRepo>(
+    () => DecrementCartItemRepo(homeService: getIt<HomeService>()),
+  );
+  getIt.registerLazySingleton<DeleteCartItemRepo>(
+    () => DeleteCartItemRepo(homeService: getIt<HomeService>()),
+  );
+  getIt.registerLazySingleton<UpdateCartItemRepo>(
+    () => UpdateCartItemRepo(homeService: getIt<HomeService>()),
+  );
+  getIt.registerLazySingleton<ApplyCouponRepo>(
+    () => ApplyCouponRepo(homeService: getIt<HomeService>()),
   );
 }

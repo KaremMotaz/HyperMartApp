@@ -9,7 +9,7 @@ class UpdateCartItemRepo {
 
   UpdateCartItemRepo({required this.homeService});
 
-  Future<ApiResult<UpdateCartItemResponse>> addCartItem({
+  Future<ApiResult<UpdateCartItemResponse>> updateCartItem({
     required UpdateCartItemRequestBody body,
   }) async {
     try {

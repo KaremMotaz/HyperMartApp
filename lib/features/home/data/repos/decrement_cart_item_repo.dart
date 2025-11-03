@@ -9,7 +9,7 @@ class DecrementCartItemRepo {
 
   DecrementCartItemRepo({required this.homeService});
 
-  Future<ApiResult<DecrementCartItemResponse>> addCartItem({
+  Future<ApiResult<DecrementCartItemResponse>> decrementCartItem({
     required DecrementCartItemRequestBody body,
   }) async {
     try {
