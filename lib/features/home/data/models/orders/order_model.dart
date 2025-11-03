@@ -1,4 +1,4 @@
-import '../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_assets.dart';
 
 class OrderModel {
   final String id;

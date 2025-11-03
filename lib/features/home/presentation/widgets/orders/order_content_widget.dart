@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../data/models/order_model.dart';
+import '../../../data/models/orders/order_model.dart';
 
 class OrderContentWidget extends StatelessWidget {
   const OrderContentWidget({super.key, required this.lastOrder});

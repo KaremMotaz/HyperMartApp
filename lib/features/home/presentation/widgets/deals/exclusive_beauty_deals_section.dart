@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/models/beauty_deals_model.dart';
+import '../../../data/models/deals/beauty_deals_model.dart';
 import 'brand_deal_card.dart';
 import '../other/section_header.dart';
 

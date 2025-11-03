@@ -1,12 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hyper_mart_app/features/home/data/local_data_source/cart_items_local_data_source.dart';
 import 'package:hyper_mart_app/features/home/data/local_data_source/products_local_data_source.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/data/repo/get_products_repo.dart';
+import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
+import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/get_products_repo.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/home/data/models/categories/get_categories_response.dart';
-import '../../features/home/data/repo/get_categories_repo.dart';
+import '../../features/home/data/repos/get_categories_repo.dart';
 import '../../features/home/data/local_data_source/categories_local_data_source.dart';
 import '../../features/home/data/services/home_service.dart';
 import '../networking/api_service.dart';
@@ -64,6 +67,24 @@ Future<void> setupGetIt() async {
     () => GetProductsRepo(
       homeService: getIt<HomeService>(),
       productsLocalDataSource: getIt<ProductsLocalDataSource>(),
+    ),
+  );
+
+  // Cart
+  getIt.registerLazySingleton<LocalCacheService<GetCartItemsResponse>>(
+    () => LocalCacheService<GetCartItemsResponse>(),
+  );
+
+  getIt.registerLazySingleton<CartItemsLocalDataSource>(
+    () => CartItemsLocalDataSource(
+      cache: getIt<LocalCacheService<GetCartItemsResponse>>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<GetCartItemsRepo>(
+    () => GetCartItemsRepo(
+      homeService: getIt<HomeService>(),
+      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
     ),
   );
 }

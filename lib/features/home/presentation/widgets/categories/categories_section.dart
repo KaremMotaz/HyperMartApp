@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/services/get_it_service.dart';
 import '../../../manager/categories_cubit/categories_cubit.dart';
-import '../../../data/repo/get_categories_repo.dart';
+import '../../../data/repos/get_categories_repo.dart';
 import 'categories_body.dart';
 
 class CategoriesSection extends StatelessWidget {

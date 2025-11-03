@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../data/models/beauty_deals_model.dart';
+import '../../../data/models/deals/beauty_deals_model.dart';
 
 class BrandDealCard extends StatelessWidget {
   const BrandDealCard({super.key, required this.beautyDeal});

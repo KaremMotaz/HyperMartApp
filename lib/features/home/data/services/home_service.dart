@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_request_body.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../../../core/networking/api_constants.dart';
@@ -43,4 +44,7 @@ abstract class HomeService {
   Future<GetProductsResponse> getProducts({
     @Body() required GetProductsRequestBody body,
   });
+
+  @GET(ApiConstants.getCartItems)
+  Future<GetCartItemsResponse> getCartItems();
 }

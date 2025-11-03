@@ -23,7 +23,7 @@ class ProductsBlocBuilder extends StatelessWidget {
               child: ProductsGridView(
                 products: ProductModel.dummyProducts,
                 isLoading: true,
-                isFromHomeView: true,
+                isScrollable: true,
               ),
             );
           },
@@ -35,7 +35,7 @@ class ProductsBlocBuilder extends StatelessWidget {
               height: 690,
               child: ProductsGridView(
                 products: limitedProducts,
-                isFromHomeView: true,
+                isScrollable: true,
               ),
             );
           },

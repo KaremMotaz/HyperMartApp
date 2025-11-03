@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/core/services/get_it_service.dart';
-import 'package:hyper_mart_app/features/home/data/repo/get_products_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/get_products_repo.dart';
 import 'package:hyper_mart_app/features/home/manager/products_cubit/products_cubit.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/products_bloc_builder.dart';
 import '../other/section_header.dart';

@@ -9,7 +9,7 @@ import '../../data/models/categories/get_categories_response.dart';
 import '../../data/models/categories/get_category_by_id_response.dart';
 import '../../data/models/categories/update_category_request.dart';
 import '../../data/models/categories/update_category_response.dart';
-import '../../data/repo/get_categories_repo.dart';
+import '../../data/repos/get_categories_repo.dart';
 
 part 'categories_cubit.freezed.dart';
 part 'categories_state.dart';

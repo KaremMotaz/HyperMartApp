@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_text_button.dart';
-import '../../../data/models/order_model.dart';
+import '../../../data/models/orders/order_model.dart';
 import 'offer_container.dart';
 import 'order_content_widget.dart';
 

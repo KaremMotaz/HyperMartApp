@@ -18,6 +18,7 @@ class ApiConstants {
   static const deleteCategory = "categories/{id}";
   static const getCategoryById = "categories/{id}";
   static const updateCategory = "categories/{id}";
-  
+
   static const getProducts = "products";
+  static const getCartItems = "cart";
 }

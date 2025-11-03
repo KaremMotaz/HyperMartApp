@@ -8,12 +8,12 @@ class ProductsGridView extends StatelessWidget {
     super.key,
     required this.products,
     this.isLoading = false,
-    this.isFromHomeView = false,
+    this.isScrollable = false,
   });
 
   final List<ProductModel> products;
   final bool isLoading;
-  final bool isFromHomeView;
+  final bool isScrollable;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ProductsGridView extends StatelessWidget {
       containersColor: Colors.grey[50],
       enabled: isLoading,
       child: GridView.builder(
-        physics: isFromHomeView ? const NeverScrollableScrollPhysics() : null,
+        physics: isScrollable ? const NeverScrollableScrollPhysics() : null,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 20,
