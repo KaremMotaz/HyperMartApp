@@ -6,16 +6,16 @@ part of 'update_category_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UpdateCategoryRequest _$UpdateCategoryRequestFromJson(
+UpdateCategoryRequestBody _$UpdateCategoryRequestBodyFromJson(
   Map<String, dynamic> json,
-) => UpdateCategoryRequest(
+) => UpdateCategoryRequestBody(
   newName: json['newName'] as String,
   newDescription: json['newDescription'] as String,
   newCoverPictureUrl: json['newCoverPictureUrl'] as String,
 );
 
-Map<String, dynamic> _$UpdateCategoryRequestToJson(
-  UpdateCategoryRequest instance,
+Map<String, dynamic> _$UpdateCategoryRequestBodyToJson(
+  UpdateCategoryRequestBody instance,
 ) => <String, dynamic>{
   'newName': instance.newName,
   'newDescription': instance.newDescription,

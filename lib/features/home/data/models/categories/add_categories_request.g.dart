@@ -6,16 +6,18 @@ part of 'add_categories_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AddCategoryRequest _$AddCategoryRequestFromJson(Map<String, dynamic> json) =>
-    AddCategoryRequest(
-      name: json['name'] as String,
-      description: json['description'] as String,
-      coverPictureUrl: json['coverPictureUrl'] as String,
-    );
+AddCategoryRequestBody _$AddCategoryRequestBodyFromJson(
+  Map<String, dynamic> json,
+) => AddCategoryRequestBody(
+  name: json['name'] as String,
+  description: json['description'] as String,
+  coverPictureUrl: json['coverPictureUrl'] as String,
+);
 
-Map<String, dynamic> _$AddCategoryRequestToJson(AddCategoryRequest instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'description': instance.description,
-      'coverPictureUrl': instance.coverPictureUrl,
-    };
+Map<String, dynamic> _$AddCategoryRequestBodyToJson(
+  AddCategoryRequestBody instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'description': instance.description,
+  'coverPictureUrl': instance.coverPictureUrl,
+};

@@ -62,7 +62,7 @@ class GetCategoriesRepo {
   }
 
   Future<ApiResult<AddCategoryResponse>> addCategory({
-    required AddCategoryRequest body,
+    required AddCategoryRequestBody body,
   }) async {
     try {
       final AddCategoryResponse response = await homeService.addCategory(
@@ -97,7 +97,7 @@ class GetCategoriesRepo {
 
   Future<ApiResult<UpdateCategoryResponse>> updateCategory({
     required String id,
-    required UpdateCategoryRequest body,
+    required UpdateCategoryRequestBody body,
   }) async {
     try {
       final UpdateCategoryResponse response = await homeService.updateCategory(

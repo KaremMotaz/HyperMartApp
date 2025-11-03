@@ -39,7 +39,7 @@ class CategoriesCubit extends Cubit<CategoriesState> {
     );
   }
 
-  Future<void> addCategory({required AddCategoryRequest body}) async {
+  Future<void> addCategory({required AddCategoryRequestBody body}) async {
     emit(const CategoriesState.categoriesAddLoading());
 
     final ApiResult<AddCategoryResponse> result = await categoriesRepo
@@ -96,7 +96,7 @@ class CategoriesCubit extends Cubit<CategoriesState> {
 
   Future<void> updateCategory({
     required String id,
-    required UpdateCategoryRequest body,
+    required UpdateCategoryRequestBody body,
   }) async {
     emit(const CategoriesState.categoriesUpdateLoading());
 

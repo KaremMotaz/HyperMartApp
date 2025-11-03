@@ -27,7 +27,7 @@ class AllProductsView extends StatelessWidget {
                   BlocButton<CategoriesCubit, CategoriesState>(
                     onPressed: () {
                       context.read<CategoriesCubit>().addCategory(
-                        body: AddCategoryRequest(
+                        body: AddCategoryRequestBody(
                           name: "Furniture",
                           description: "This is a furniture category",
                           coverPictureUrl:

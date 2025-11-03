@@ -4,6 +4,7 @@ import 'package:hyper_mart_app/features/home/data/local_data_source/cart_items_l
 import 'package:hyper_mart_app/features/home/data/local_data_source/products_local_data_source.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
+import 'package:hyper_mart_app/features/home/data/repos/add_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_products_repo.dart';
 
@@ -86,5 +87,9 @@ Future<void> setupGetIt() async {
       homeService: getIt<HomeService>(),
       cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
     ),
+  );
+
+  getIt.registerLazySingleton<AddCartItemRepo>(
+    () => AddCartItemRepo(homeService: getIt<HomeService>()),
   );
 }

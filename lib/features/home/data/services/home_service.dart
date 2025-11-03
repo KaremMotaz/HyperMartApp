@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_request_body.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import 'package:hyper_mart_app/features/home/data/models/cart/add_cart_item_request_body.dart';
+import 'package:hyper_mart_app/features/home/data/models/cart/add_cart_item_response.dart';
 import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -23,7 +25,7 @@ abstract class HomeService {
 
   @POST(ApiConstants.addCategory)
   Future<AddCategoryResponse> addCategory({
-    @Body() required AddCategoryRequest body,
+    @Body() required AddCategoryRequestBody body,
   });
 
   @DELETE(ApiConstants.deleteCategory)
@@ -36,7 +38,7 @@ abstract class HomeService {
 
   @PUT(ApiConstants.updateCategory)
   Future<UpdateCategoryResponse> updateCategory({
-    @Body() required UpdateCategoryRequest body,
+    @Body() required UpdateCategoryRequestBody body,
     @Path('id') required String id,
   });
 
@@ -47,4 +49,9 @@ abstract class HomeService {
 
   @GET(ApiConstants.getCartItems)
   Future<GetCartItemsResponse> getCartItems();
+
+  @POST(ApiConstants.addCartItem)
+  Future<AddCartItemResponse> addCartItem({
+    @Body() required AddCartItemRequestBody body,
+  });
 }

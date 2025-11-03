@@ -21,4 +21,5 @@ class ApiConstants {
 
   static const getProducts = "products";
   static const getCartItems = "cart";
+  static const addCartItem = "cart/items";
 }

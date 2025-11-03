@@ -55,13 +55,15 @@ extension CartItemsStatePatterns on CartItemsState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult Function( GetCartItemsFailure value)?  getCartItemsFailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult Function( AddCartItemSuccess value)?  addCartItemSuccess,TResult Function( AddCartItemFailure value)?  addCartItemFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading(_that);case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that);case _:
+return getCartItemsFailure(_that);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that);case _:
   return orElse();
 
 }
@@ -79,13 +81,15 @@ return getCartItemsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( GetCartItemsLoading value)  getCartItemsLoading,required TResult Function( GetCartItemsSuccess value)  getCartItemsSuccess,required TResult Function( GetCartItemsFailure value)  getCartItemsFailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( GetCartItemsLoading value)  getCartItemsLoading,required TResult Function( GetCartItemsSuccess value)  getCartItemsSuccess,required TResult Function( GetCartItemsFailure value)  getCartItemsFailure,required TResult Function( AddCartItemSuccess value)  addCartItemSuccess,required TResult Function( AddCartItemFailure value)  addCartItemFailure,}){
 final _that = this;
 switch (_that) {
 case GetCartItemsLoading():
 return getCartItemsLoading(_that);case GetCartItemsSuccess():
 return getCartItemsSuccess(_that);case GetCartItemsFailure():
-return getCartItemsFailure(_that);case _:
+return getCartItemsFailure(_that);case AddCartItemSuccess():
+return addCartItemSuccess(_that);case AddCartItemFailure():
+return addCartItemFailure(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -102,13 +106,15 @@ return getCartItemsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult? Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult? Function( GetCartItemsFailure value)?  getCartItemsFailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult? Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult? Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult? Function( AddCartItemSuccess value)?  addCartItemSuccess,TResult? Function( AddCartItemFailure value)?  addCartItemFailure,}){
 final _that = this;
 switch (_that) {
 case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading(_that);case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that);case _:
+return getCartItemsFailure(_that);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that);case _:
   return null;
 
 }
@@ -125,12 +131,14 @@ return getCartItemsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getCartItemsLoading,TResult Function( GetCartItemsResponse getProductsResponse)?  getCartItemsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getCartItemsLoading,TResult Function( GetCartItemsResponse getProductsResponse)?  getCartItemsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult Function( AddCartItemResponse getProductsResponse)?  addCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading();case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that.getProductsResponse);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that.apiErrorModel);case _:
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that.getProductsResponse);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that.apiErrorModel);case _:
   return orElse();
 
 }
@@ -148,12 +156,14 @@ return getCartItemsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getCartItemsLoading,required TResult Function( GetCartItemsResponse getProductsResponse)  getCartItemsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getCartItemsFailure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getCartItemsLoading,required TResult Function( GetCartItemsResponse getProductsResponse)  getCartItemsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getCartItemsFailure,required TResult Function( AddCartItemResponse getProductsResponse)  addCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  addCartItemFailure,}) {final _that = this;
 switch (_that) {
 case GetCartItemsLoading():
 return getCartItemsLoading();case GetCartItemsSuccess():
 return getCartItemsSuccess(_that.getProductsResponse);case GetCartItemsFailure():
-return getCartItemsFailure(_that.apiErrorModel);case _:
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemSuccess():
+return addCartItemSuccess(_that.getProductsResponse);case AddCartItemFailure():
+return addCartItemFailure(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -170,12 +180,14 @@ return getCartItemsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getCartItemsLoading,TResult? Function( GetCartItemsResponse getProductsResponse)?  getCartItemsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getCartItemsLoading,TResult? Function( GetCartItemsResponse getProductsResponse)?  getCartItemsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult? Function( AddCartItemResponse getProductsResponse)?  addCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,}) {final _that = this;
 switch (_that) {
 case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading();case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that.getProductsResponse);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that.apiErrorModel);case _:
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that.getProductsResponse);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that.apiErrorModel);case _:
   return null;
 
 }
@@ -339,6 +351,138 @@ class _$GetCartItemsFailureCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(GetCartItemsFailure(
+apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+as ApiErrorModel,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AddCartItemSuccess implements CartItemsState {
+  const AddCartItemSuccess({required this.getProductsResponse});
+  
+
+ final  AddCartItemResponse getProductsResponse;
+
+/// Create a copy of CartItemsState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddCartItemSuccessCopyWith<AddCartItemSuccess> get copyWith => _$AddCartItemSuccessCopyWithImpl<AddCartItemSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddCartItemSuccess&&(identical(other.getProductsResponse, getProductsResponse) || other.getProductsResponse == getProductsResponse));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,getProductsResponse);
+
+@override
+String toString() {
+  return 'CartItemsState.addCartItemSuccess(getProductsResponse: $getProductsResponse)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AddCartItemSuccessCopyWith<$Res> implements $CartItemsStateCopyWith<$Res> {
+  factory $AddCartItemSuccessCopyWith(AddCartItemSuccess value, $Res Function(AddCartItemSuccess) _then) = _$AddCartItemSuccessCopyWithImpl;
+@useResult
+$Res call({
+ AddCartItemResponse getProductsResponse
+});
+
+
+
+
+}
+/// @nodoc
+class _$AddCartItemSuccessCopyWithImpl<$Res>
+    implements $AddCartItemSuccessCopyWith<$Res> {
+  _$AddCartItemSuccessCopyWithImpl(this._self, this._then);
+
+  final AddCartItemSuccess _self;
+  final $Res Function(AddCartItemSuccess) _then;
+
+/// Create a copy of CartItemsState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? getProductsResponse = null,}) {
+  return _then(AddCartItemSuccess(
+getProductsResponse: null == getProductsResponse ? _self.getProductsResponse : getProductsResponse // ignore: cast_nullable_to_non_nullable
+as AddCartItemResponse,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AddCartItemFailure implements CartItemsState {
+  const AddCartItemFailure({required this.apiErrorModel});
+  
+
+ final  ApiErrorModel apiErrorModel;
+
+/// Create a copy of CartItemsState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddCartItemFailureCopyWith<AddCartItemFailure> get copyWith => _$AddCartItemFailureCopyWithImpl<AddCartItemFailure>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
+
+@override
+String toString() {
+  return 'CartItemsState.addCartItemFailure(apiErrorModel: $apiErrorModel)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AddCartItemFailureCopyWith<$Res> implements $CartItemsStateCopyWith<$Res> {
+  factory $AddCartItemFailureCopyWith(AddCartItemFailure value, $Res Function(AddCartItemFailure) _then) = _$AddCartItemFailureCopyWithImpl;
+@useResult
+$Res call({
+ ApiErrorModel apiErrorModel
+});
+
+
+
+
+}
+/// @nodoc
+class _$AddCartItemFailureCopyWithImpl<$Res>
+    implements $AddCartItemFailureCopyWith<$Res> {
+  _$AddCartItemFailureCopyWithImpl(this._self, this._then);
+
+  final AddCartItemFailure _self;
+  final $Res Function(AddCartItemFailure) _then;
+
+/// Create a copy of CartItemsState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
+  return _then(AddCartItemFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));

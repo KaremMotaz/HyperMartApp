@@ -50,7 +50,7 @@ class _HomeService implements HomeService {
 
   @override
   Future<AddCategoryResponse> addCategory({
-    required AddCategoryRequest body,
+    required AddCategoryRequestBody body,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -126,7 +126,7 @@ class _HomeService implements HomeService {
 
   @override
   Future<UpdateCategoryResponse> updateCategory({
-    required UpdateCategoryRequest body,
+    required UpdateCategoryRequestBody body,
     required String id,
   }) async {
     final _extra = <String, dynamic>{};
@@ -205,6 +205,36 @@ class _HomeService implements HomeService {
     late GetCartItemsResponse _value;
     try {
       _value = GetCartItemsResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AddCartItemResponse> addCartItem({
+    required AddCartItemRequestBody body,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<AddCartItemResponse>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'cart/items',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AddCartItemResponse _value;
+    try {
+      _value = AddCartItemResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

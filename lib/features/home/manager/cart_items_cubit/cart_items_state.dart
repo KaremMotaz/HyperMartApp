@@ -11,4 +11,12 @@ class CartItemsState with _$CartItemsState {
   const factory CartItemsState.getCartItemsFailure({
     required ApiErrorModel apiErrorModel,
   }) = GetCartItemsFailure;
+
+  const factory CartItemsState.addCartItemSuccess({
+    required AddCartItemResponse getProductsResponse,
+  }) = AddCartItemSuccess;
+
+  const factory CartItemsState.addCartItemFailure({
+    required ApiErrorModel apiErrorModel,
+  }) = AddCartItemFailure;
 }
