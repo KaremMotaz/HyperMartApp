@@ -1,4 +1,4 @@
-import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
+import '../models/cart/get_cart_items_response.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/services/local_cache_service.dart';
 

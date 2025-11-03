@@ -1,6 +1,6 @@
-import 'package:hyper_mart_app/features/home/data/local_data_source/products_local_data_source.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_request_body.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import '../local_data_source/products_local_data_source.dart';
+import '../models/Products/get_products_request_body.dart';
+import '../models/Products/get_products_response.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';

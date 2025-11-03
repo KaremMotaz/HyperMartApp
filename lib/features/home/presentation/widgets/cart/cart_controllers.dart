@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/quantity_button.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../products/quantity_button.dart';
 
 class CartControllers extends StatelessWidget {
   const CartControllers({super.key, required this.numberOfItems});

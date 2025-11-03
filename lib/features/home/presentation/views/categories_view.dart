@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/services/get_it_service.dart';
-import '../../manager/categories_cubit/categories_cubit.dart';
 import '../../data/repos/get_categories_repo.dart';
+import '../../manager/categories_cubit/categories_cubit.dart';
 import '../widgets/categories/all_categories_bloc_builder.dart';
 import '../widgets/other/custom_appbar.dart';
 

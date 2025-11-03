@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/categories/categories_section.dart';
 import '../widgets/appbar/custom_appbar.dart';
-import '../widgets/other/custom_text_field.dart';
+import '../widgets/brands/top_brands_section.dart';
+import '../widgets/categories/categories_section.dart';
 import '../widgets/deals/exclusive_beauty_deals_section.dart';
+import '../widgets/offers/week_offers.dart';
+import '../widgets/orders/previous_order_section.dart';
+import '../widgets/other/custom_text_field.dart';
 import '../widgets/other/location_widget.dart';
 import '../widgets/products/products_section.dart';
-import '../widgets/orders/previous_order_section.dart';
-import '../widgets/brands/top_brands_section.dart';
-import '../widgets/offers/week_offers.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

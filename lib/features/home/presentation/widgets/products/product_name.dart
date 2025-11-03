@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../data/models/Products/get_products_response.dart';
 
 class ProductName extends StatelessWidget {
   const ProductName({super.key, required this.product});

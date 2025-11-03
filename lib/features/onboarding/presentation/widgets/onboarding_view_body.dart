@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import '../widgets/page_view_item.dart';
 import 'custom_dots_indicator.dart';
 import 'onboarding_app_bar.dart';
-import 'onboarding_next_button.dart';
 import 'onboarding_back_button.dart';
-import '../widgets/page_view_item.dart';
+import 'onboarding_next_button.dart';
 import 'onboarding_page_view.dart';
 
 class OnboardingViewBody extends StatelessWidget {

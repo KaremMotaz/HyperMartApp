@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../data/models/Products/get_products_response.dart';
 
 class ProductPriceAndRating extends StatelessWidget {
   const ProductPriceAndRating({super.key, required this.product});

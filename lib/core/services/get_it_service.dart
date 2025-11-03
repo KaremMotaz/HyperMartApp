@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hyper_mart_app/features/home/data/local_data_source/cart_items_local_data_source.dart';
-import 'package:hyper_mart_app/features/home/data/local_data_source/products_local_data_source.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
-import 'package:hyper_mart_app/features/home/data/repos/add_cart_item_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/apply_coupon_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/decrement_cart_item_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/delete_cart_item_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/get_products_repo.dart';
-import 'package:hyper_mart_app/features/home/data/repos/update_cart_item_repo.dart';
+import '../../features/home/data/local_data_source/cart_items_local_data_source.dart';
+import '../../features/home/data/local_data_source/products_local_data_source.dart';
+import '../../features/home/data/models/Products/get_products_response.dart';
+import '../../features/home/data/models/cart/get_cart_items_response.dart';
+import '../../features/home/data/repos/add_cart_item_repo.dart';
+import '../../features/home/data/repos/apply_coupon_repo.dart';
+import '../../features/home/data/repos/decrement_cart_item_repo.dart';
+import '../../features/home/data/repos/delete_cart_item_repo.dart';
+import '../../features/home/data/repos/get_cart_items_repo.dart';
+import '../../features/home/data/repos/get_products_repo.dart';
+import '../../features/home/data/repos/update_cart_item_repo.dart';
 
 import '../../features/auth/data/repos/auth_repo.dart';
 import '../../features/home/data/models/categories/get_categories_response.dart';

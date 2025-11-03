@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_card.dart';
+import '../../../data/models/Products/get_products_response.dart';
+import 'product_card.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ProductsGridView extends StatelessWidget {

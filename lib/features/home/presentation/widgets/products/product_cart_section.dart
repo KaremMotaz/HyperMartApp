@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_controllers.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/widgets/app_text_button.dart';
+import '../cart/cart_controllers.dart';
 
 class ProductCartSection extends StatelessWidget {
   const ProductCartSection({

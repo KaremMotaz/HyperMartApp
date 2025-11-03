@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class EmptyCartWidget extends StatelessWidget {
   const EmptyCartWidget({super.key});

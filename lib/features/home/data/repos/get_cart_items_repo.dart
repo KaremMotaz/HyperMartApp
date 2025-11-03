@@ -1,5 +1,5 @@
-import 'package:hyper_mart_app/features/home/data/local_data_source/cart_items_local_data_source.dart';
-import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
+import '../local_data_source/cart_items_local_data_source.dart';
+import '../models/cart/get_cart_items_response.dart';
 import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';

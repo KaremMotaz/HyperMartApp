@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+
 import 'get_cart_items_response.dart';
 
 class GetCartItemsResponseAdapter extends TypeAdapter<GetCartItemsResponse> {

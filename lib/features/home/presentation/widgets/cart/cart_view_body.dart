@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_item.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../data/models/cart/get_cart_items_response.dart';
+import 'cart_item.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class CartViewBody extends StatelessWidget {

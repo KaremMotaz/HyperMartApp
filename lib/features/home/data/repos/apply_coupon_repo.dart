@@ -1,5 +1,5 @@
-import 'package:hyper_mart_app/features/home/data/models/cart/apply_coupon_request_body.dart';
-import 'package:hyper_mart_app/features/home/data/models/cart/apply_coupon_response.dart';
+import '../models/cart/apply_coupon_request_body.dart';
+import '../models/cart/apply_coupon_response.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../services/home_service.dart';

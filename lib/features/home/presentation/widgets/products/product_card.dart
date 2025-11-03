@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_cart_section.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_image.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_name.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_price_and_rating.dart';
+import 'product_cart_section.dart';
+import 'product_image.dart';
+import 'product_name.dart';
+import 'product_price_and_rating.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../data/models/Products/get_products_response.dart';
 import 'discount_widget.dart';

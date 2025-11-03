@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../../core/routing/routes.dart';
-import 'categories_list_view.dart';
-import '../other/section_header.dart';
 import '../../../../../core/widgets/error_body.dart';
 import '../../../data/models/categories/get_categories_response.dart';
 import '../../../manager/categories_cubit/categories_cubit.dart';
+import '../other/section_header.dart';
+import 'categories_list_view.dart';
 
 class CategoriesBody extends StatelessWidget {
   const CategoriesBody({super.key});

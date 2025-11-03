@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/favourite_widget.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../data/models/Products/get_products_response.dart';
+import 'favourite_widget.dart';
 
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key, required this.product, required this.isLoved});

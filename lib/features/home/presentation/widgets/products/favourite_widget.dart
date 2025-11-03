@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
+import '../../../../../core/theming/app_assets.dart';
 
 class FavouriteWidget extends StatelessWidget {
   const FavouriteWidget({super.key, required this.isLoved});

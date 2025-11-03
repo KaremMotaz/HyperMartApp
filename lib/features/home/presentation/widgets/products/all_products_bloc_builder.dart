@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/manager/products_cubit/products_cubit.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/products/products_grid_view.dart';
+import '../../../data/models/Products/get_products_response.dart';
+import '../../../manager/products_cubit/products_cubit.dart';
+import 'products_grid_view.dart';
 import '../../../../../core/widgets/error_body.dart';
 
 class AllProductsBlocBuilder extends StatelessWidget {

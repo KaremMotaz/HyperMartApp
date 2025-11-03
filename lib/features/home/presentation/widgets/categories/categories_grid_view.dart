@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
+
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../data/models/categories/get_categories_response.dart';
 import 'category_item.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class CategoriesGridView extends StatelessWidget {
   const CategoriesGridView({
