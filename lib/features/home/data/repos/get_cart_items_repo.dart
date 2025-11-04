@@ -31,12 +31,6 @@ class GetCartItemsRepo {
 
       // Cache the data
       await cartItemsLocalDataSource.cacheCartItems(data: response);
-
-      // List<CartItemModel> fakeCartItems = CartItemModel.fakeCartItems;
-      // final GetCartItemsResponse responsefake = GetCartItemsResponse(
-      //   cartId: "edsss",
-      //   cartItems: fakeCartItems,
-      // );
       return ApiResult.success(response);
     } catch (error) {
       Logger.log(error.toString());

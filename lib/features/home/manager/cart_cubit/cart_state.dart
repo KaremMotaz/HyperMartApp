@@ -23,7 +23,7 @@ class CartState with _$CartState {
   }) = AddCartItemFailure;
 
   // Decrement Cart Item
-  const factory CartState.decrementCartItemLoading() =
+  const factory CartState.decrementCartItemLoading({required String itemId}) =
       DecrementCartItemLoading;
   const factory CartState.decrementCartItemSuccess({
     required DecrementCartItemResponse response,
@@ -40,7 +40,8 @@ class CartState with _$CartState {
   }) = DeleteCartItemFailure;
 
   // Update Cart Item
-  const factory CartState.updateCartItemLoading() = UpdateCartItemLoading;
+  const factory CartState.updateCartItemLoading({required String itemId}) =
+      UpdateCartItemLoading;
   const factory CartState.updateCartItemSuccess({
     required UpdateCartItemResponse response,
   }) = UpdateCartItemSuccess;

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hyper_mart_app/core/theming/app_assets.dart';
+import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_controllers_bloc_builder.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_item_data.dart';
 import '../../../../../core/theming/app_colors.dart';
@@ -22,7 +26,31 @@ class CartItem extends StatelessWidget {
         children: [
           CartItemData(cartItem: cartItem),
           const Spacer(),
-          CartControllersBlocBuilder(cartItem: cartItem),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: () {
+                  context.read<CartCubit>().deleteCartItem(
+                    itemId: cartItem.itemId,
+                  );
+                },
+                child: SvgPicture.asset(
+                  AppAssets.trashIcon,
+                  width: 23,
+                  height: 23,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xffefefef),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: CartControllersBlocBuilder(cartItem: cartItem),
+              ),
+            ],
+          ),
         ],
       ),
     );

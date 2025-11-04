@@ -19,9 +19,6 @@ class ProductCartSection extends StatelessWidget {
           if (state is AddCartItemSuccess) {
             successSnackBar(context: context, message: state.response.message);
           }
-          if (state is DecrementCartItemSuccess) {
-            successSnackBar(context: context, message: state.response.message);
-          }
         },
         builder: (context, state) {
           return state.maybeWhen(
@@ -29,18 +26,24 @@ class ProductCartSection extends StatelessWidget {
               return response.quantity > 0
                   ? CartControllers(
                       quantity: response.quantity,
-                      productId: response.productId!,
+                      itemId: response.id!,
                     )
                   : Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: AddToCartButton(product: product),
                     );
             },
+            updateCartItemSuccess: (response) {
+              return CartControllers(
+                quantity: response.quantity,
+                itemId: response.id,
+              );
+            },
             decrementCartItemSuccess: (response) {
               return response.quantity > 0
                   ? CartControllers(
                       quantity: response.quantity,
-                      productId: response.productId!,
+                      itemId: response.itemId!,
                     )
                   : Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),

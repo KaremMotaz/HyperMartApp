@@ -9,11 +9,11 @@ class CartControllers extends StatelessWidget {
   const CartControllers({
     super.key,
     required this.quantity,
-    required this.productId,
+    required this.itemId,
   });
 
   final int quantity;
-  final String productId;
+  final String itemId;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,14 @@ class CartControllers extends StatelessWidget {
           color: AppColors.red,
           size: 34,
           onPressed: () {
-            context.read<CartCubit>().decrementCartItem(
-              productId: productId,
-              quantity: quantity,
-            );
+            if (quantity == 0) {
+              context.read<CartCubit>().deleteCartItem(itemId: itemId);
+            } else {
+              context.read<CartCubit>().decrementCartItem(itemId: itemId);
+            }
           },
+          isLoading:
+              context.watch<CartCubit>().state is DecrementCartItemLoading,
         ),
         Text(
           "$quantity",
@@ -40,8 +43,12 @@ class CartControllers extends StatelessWidget {
           color: AppColors.turquoise,
           size: 34,
           onPressed: () {
-            context.read<CartCubit>().addCartItem(productId: productId);
+            context.read<CartCubit>().updateCartItem(
+              itemId: itemId,
+              quantity: quantity + 1,
+            );
           },
+          isLoading: context.watch<CartCubit>().state is UpdateCartItemLoading,
         ),
       ],
     );

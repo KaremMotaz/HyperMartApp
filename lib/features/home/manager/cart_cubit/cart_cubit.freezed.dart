@@ -173,7 +173,7 @@ return applyCouponFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCartItemsLoading,TResult Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult Function()?  addCartItemLoading,TResult Function( AddCartItemResponse response)?  addCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult Function()?  decrementCartItemLoading,TResult Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult Function()?  deleteCartItemLoading,TResult Function()?  deleteCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult Function()?  updateCartItemLoading,TResult Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult Function()?  applyCouponLoading,TResult Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCartItemsLoading,TResult Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult Function()?  addCartItemLoading,TResult Function( AddCartItemResponse response)?  addCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult Function( String itemId)?  decrementCartItemLoading,TResult Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult Function()?  deleteCartItemLoading,TResult Function()?  deleteCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult Function( String itemId)?  updateCartItemLoading,TResult Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult Function()?  applyCouponLoading,TResult Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial();case GetCartItemsLoading() when getCartItemsLoading != null:
@@ -183,13 +183,13 @@ return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading() when a
 return addCartItemLoading();case AddCartItemSuccess() when addCartItemSuccess != null:
 return addCartItemSuccess(_that.response);case AddCartItemFailure() when addCartItemFailure != null:
 return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading();case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemLoading(_that.itemId);case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
 return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure() when decrementCartItemFailure != null:
 return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading() when deleteCartItemLoading != null:
 return deleteCartItemLoading();case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
 return deleteCartItemSuccess();case DeleteCartItemFailure() when deleteCartItemFailure != null:
 return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading();case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemLoading(_that.itemId);case UpdateCartItemSuccess() when updateCartItemSuccess != null:
 return updateCartItemSuccess(_that.response);case UpdateCartItemFailure() when updateCartItemFailure != null:
 return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading() when applyCouponLoading != null:
 return applyCouponLoading();case ApplyCouponSuccess() when applyCouponSuccess != null:
@@ -212,7 +212,7 @@ return applyCouponFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCartItemsLoading,required TResult Function( GetCartItemsResponse cartResponse)  getCartItemsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getCartItemsFailure,required TResult Function()  addCartItemLoading,required TResult Function( AddCartItemResponse response)  addCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  addCartItemFailure,required TResult Function()  decrementCartItemLoading,required TResult Function( DecrementCartItemResponse response)  decrementCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  decrementCartItemFailure,required TResult Function()  deleteCartItemLoading,required TResult Function()  deleteCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  deleteCartItemFailure,required TResult Function()  updateCartItemLoading,required TResult Function( UpdateCartItemResponse response)  updateCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  updateCartItemFailure,required TResult Function()  applyCouponLoading,required TResult Function( ApplyCouponResponse response)  applyCouponSuccess,required TResult Function( ApiErrorModel apiErrorModel)  applyCouponFailure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCartItemsLoading,required TResult Function( GetCartItemsResponse cartResponse)  getCartItemsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getCartItemsFailure,required TResult Function()  addCartItemLoading,required TResult Function( AddCartItemResponse response)  addCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  addCartItemFailure,required TResult Function( String itemId)  decrementCartItemLoading,required TResult Function( DecrementCartItemResponse response)  decrementCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  decrementCartItemFailure,required TResult Function()  deleteCartItemLoading,required TResult Function()  deleteCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  deleteCartItemFailure,required TResult Function( String itemId)  updateCartItemLoading,required TResult Function( UpdateCartItemResponse response)  updateCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  updateCartItemFailure,required TResult Function()  applyCouponLoading,required TResult Function( ApplyCouponResponse response)  applyCouponSuccess,required TResult Function( ApiErrorModel apiErrorModel)  applyCouponFailure,}) {final _that = this;
 switch (_that) {
 case Initial():
 return initial();case GetCartItemsLoading():
@@ -222,13 +222,13 @@ return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading():
 return addCartItemLoading();case AddCartItemSuccess():
 return addCartItemSuccess(_that.response);case AddCartItemFailure():
 return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading():
-return decrementCartItemLoading();case DecrementCartItemSuccess():
+return decrementCartItemLoading(_that.itemId);case DecrementCartItemSuccess():
 return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure():
 return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading():
 return deleteCartItemLoading();case DeleteCartItemSuccess():
 return deleteCartItemSuccess();case DeleteCartItemFailure():
 return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading():
-return updateCartItemLoading();case UpdateCartItemSuccess():
+return updateCartItemLoading(_that.itemId);case UpdateCartItemSuccess():
 return updateCartItemSuccess(_that.response);case UpdateCartItemFailure():
 return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading():
 return applyCouponLoading();case ApplyCouponSuccess():
@@ -250,7 +250,7 @@ return applyCouponFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCartItemsLoading,TResult? Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult? Function()?  addCartItemLoading,TResult? Function( AddCartItemResponse response)?  addCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult? Function()?  decrementCartItemLoading,TResult? Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult? Function()?  deleteCartItemLoading,TResult? Function()?  deleteCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult? Function()?  updateCartItemLoading,TResult? Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult? Function()?  applyCouponLoading,TResult? Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCartItemsLoading,TResult? Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult? Function()?  addCartItemLoading,TResult? Function( AddCartItemResponse response)?  addCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult? Function( String itemId)?  decrementCartItemLoading,TResult? Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult? Function()?  deleteCartItemLoading,TResult? Function()?  deleteCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult? Function( String itemId)?  updateCartItemLoading,TResult? Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult? Function()?  applyCouponLoading,TResult? Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial();case GetCartItemsLoading() when getCartItemsLoading != null:
@@ -260,13 +260,13 @@ return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading() when a
 return addCartItemLoading();case AddCartItemSuccess() when addCartItemSuccess != null:
 return addCartItemSuccess(_that.response);case AddCartItemFailure() when addCartItemFailure != null:
 return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading();case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemLoading(_that.itemId);case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
 return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure() when decrementCartItemFailure != null:
 return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading() when deleteCartItemLoading != null:
 return deleteCartItemLoading();case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
 return deleteCartItemSuccess();case DeleteCartItemFailure() when deleteCartItemFailure != null:
 return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading();case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemLoading(_that.itemId);case UpdateCartItemSuccess() when updateCartItemSuccess != null:
 return updateCartItemSuccess(_that.response);case UpdateCartItemFailure() when updateCartItemFailure != null:
 return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading() when applyCouponLoading != null:
 return applyCouponLoading();case ApplyCouponSuccess() when applyCouponSuccess != null:
@@ -643,33 +643,67 @@ as ApiErrorModel,
 
 
 class DecrementCartItemLoading implements CartState {
-  const DecrementCartItemLoading();
+  const DecrementCartItemLoading({required this.itemId});
   
 
+ final  String itemId;
 
-
+/// Create a copy of CartState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DecrementCartItemLoadingCopyWith<DecrementCartItemLoading> get copyWith => _$DecrementCartItemLoadingCopyWithImpl<DecrementCartItemLoading>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecrementCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecrementCartItemLoading&&(identical(other.itemId, itemId) || other.itemId == itemId));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,itemId);
 
 @override
 String toString() {
-  return 'CartState.decrementCartItemLoading()';
+  return 'CartState.decrementCartItemLoading(itemId: $itemId)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class $DecrementCartItemLoadingCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $DecrementCartItemLoadingCopyWith(DecrementCartItemLoading value, $Res Function(DecrementCartItemLoading) _then) = _$DecrementCartItemLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String itemId
+});
 
 
+
+
+}
+/// @nodoc
+class _$DecrementCartItemLoadingCopyWithImpl<$Res>
+    implements $DecrementCartItemLoadingCopyWith<$Res> {
+  _$DecrementCartItemLoadingCopyWithImpl(this._self, this._then);
+
+  final DecrementCartItemLoading _self;
+  final $Res Function(DecrementCartItemLoading) _then;
+
+/// Create a copy of CartState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? itemId = null,}) {
+  return _then(DecrementCartItemLoading(
+itemId: null == itemId ? _self.itemId : itemId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
 
 /// @nodoc
 
@@ -937,33 +971,67 @@ as ApiErrorModel,
 
 
 class UpdateCartItemLoading implements CartState {
-  const UpdateCartItemLoading();
+  const UpdateCartItemLoading({required this.itemId});
   
 
+ final  String itemId;
 
-
+/// Create a copy of CartState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UpdateCartItemLoadingCopyWith<UpdateCartItemLoading> get copyWith => _$UpdateCartItemLoadingCopyWithImpl<UpdateCartItemLoading>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCartItemLoading&&(identical(other.itemId, itemId) || other.itemId == itemId));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,itemId);
 
 @override
 String toString() {
-  return 'CartState.updateCartItemLoading()';
+  return 'CartState.updateCartItemLoading(itemId: $itemId)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class $UpdateCartItemLoadingCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $UpdateCartItemLoadingCopyWith(UpdateCartItemLoading value, $Res Function(UpdateCartItemLoading) _then) = _$UpdateCartItemLoadingCopyWithImpl;
+@useResult
+$Res call({
+ String itemId
+});
 
 
+
+
+}
+/// @nodoc
+class _$UpdateCartItemLoadingCopyWithImpl<$Res>
+    implements $UpdateCartItemLoadingCopyWith<$Res> {
+  _$UpdateCartItemLoadingCopyWithImpl(this._self, this._then);
+
+  final UpdateCartItemLoading _self;
+  final $Res Function(UpdateCartItemLoading) _then;
+
+/// Create a copy of CartState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? itemId = null,}) {
+  return _then(UpdateCartItemLoading(
+itemId: null == itemId ? _self.itemId : itemId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
 
 /// @nodoc
 
