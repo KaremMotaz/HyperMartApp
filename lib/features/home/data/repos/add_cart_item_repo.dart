@@ -1,3 +1,5 @@
+import 'package:hyper_mart_app/features/home/data/local_data_source/cart_items_local_data_source.dart';
+
 import '../models/cart/add_cart_item_request_body.dart';
 import '../models/cart/add_cart_item_response.dart';
 import '../../../../core/networking/api_error_handler.dart';
@@ -6,8 +8,12 @@ import '../services/home_service.dart';
 
 class AddCartItemRepo {
   final HomeService homeService;
+  final CartItemsLocalDataSource cartItemsLocalDataSource;
 
-  AddCartItemRepo({required this.homeService});
+  AddCartItemRepo({
+    required this.homeService,
+    required this.cartItemsLocalDataSource,
+  });
 
   Future<ApiResult<AddCartItemResponse>> addCartItem({
     required AddCartItemRequestBody body,
@@ -16,6 +22,7 @@ class AddCartItemRepo {
       final AddCartItemResponse response = await homeService.addCartItem(
         body: body,
       );
+      await cartItemsLocalDataSource.clearAllkCartItems();
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

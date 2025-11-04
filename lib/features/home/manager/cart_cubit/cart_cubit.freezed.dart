@@ -55,28 +55,28 @@ extension CartStatePatterns on CartState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult Function( _AddCartItemLoading value)?  addCartItemLoading,TResult Function( _AddCartItemSuccess value)?  addCartItemSuccess,TResult Function( _AddCartItemFailure value)?  addCartItemFailure,TResult Function( _DecrementCartItemLoading value)?  decrementCartItemLoading,TResult Function( _DecrementCartItemSuccess value)?  decrementCartItemSuccess,TResult Function( _DecrementCartItemFailure value)?  decrementCartItemFailure,TResult Function( _DeleteCartItemLoading value)?  deleteCartItemLoading,TResult Function( _DeleteCartItemSuccess value)?  deleteCartItemSuccess,TResult Function( _DeleteCartItemFailure value)?  deleteCartItemFailure,TResult Function( _UpdateCartItemLoading value)?  updateCartItemLoading,TResult Function( _UpdateCartItemSuccess value)?  updateCartItemSuccess,TResult Function( _UpdateCartItemFailure value)?  updateCartItemFailure,TResult Function( _ApplyCouponLoading value)?  applyCouponLoading,TResult Function( _ApplyCouponSuccess value)?  applyCouponSuccess,TResult Function( _ApplyCouponFailure value)?  applyCouponFailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial value)?  initial,TResult Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult Function( AddCartItemLoading value)?  addCartItemLoading,TResult Function( AddCartItemSuccess value)?  addCartItemSuccess,TResult Function( AddCartItemFailure value)?  addCartItemFailure,TResult Function( DecrementCartItemLoading value)?  decrementCartItemLoading,TResult Function( DecrementCartItemSuccess value)?  decrementCartItemSuccess,TResult Function( DecrementCartItemFailure value)?  decrementCartItemFailure,TResult Function( DeleteCartItemLoading value)?  deleteCartItemLoading,TResult Function( DeleteCartItemSuccess value)?  deleteCartItemSuccess,TResult Function( DeleteCartItemFailure value)?  deleteCartItemFailure,TResult Function( UpdateCartItemLoading value)?  updateCartItemLoading,TResult Function( UpdateCartItemSuccess value)?  updateCartItemSuccess,TResult Function( UpdateCartItemFailure value)?  updateCartItemFailure,TResult Function( ApplyCouponLoading value)?  applyCouponLoading,TResult Function( ApplyCouponSuccess value)?  applyCouponSuccess,TResult Function( ApplyCouponFailure value)?  applyCouponFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial(_that);case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading(_that);case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that);case _AddCartItemLoading() when addCartItemLoading != null:
-return addCartItemLoading(_that);case _AddCartItemSuccess() when addCartItemSuccess != null:
-return addCartItemSuccess(_that);case _AddCartItemFailure() when addCartItemFailure != null:
-return addCartItemFailure(_that);case _DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading(_that);case _DecrementCartItemSuccess() when decrementCartItemSuccess != null:
-return decrementCartItemSuccess(_that);case _DecrementCartItemFailure() when decrementCartItemFailure != null:
-return decrementCartItemFailure(_that);case _DeleteCartItemLoading() when deleteCartItemLoading != null:
-return deleteCartItemLoading(_that);case _DeleteCartItemSuccess() when deleteCartItemSuccess != null:
-return deleteCartItemSuccess(_that);case _DeleteCartItemFailure() when deleteCartItemFailure != null:
-return deleteCartItemFailure(_that);case _UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading(_that);case _UpdateCartItemSuccess() when updateCartItemSuccess != null:
-return updateCartItemSuccess(_that);case _UpdateCartItemFailure() when updateCartItemFailure != null:
-return updateCartItemFailure(_that);case _ApplyCouponLoading() when applyCouponLoading != null:
-return applyCouponLoading(_that);case _ApplyCouponSuccess() when applyCouponSuccess != null:
-return applyCouponSuccess(_that);case _ApplyCouponFailure() when applyCouponFailure != null:
+return getCartItemsFailure(_that);case AddCartItemLoading() when addCartItemLoading != null:
+return addCartItemLoading(_that);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that);case DecrementCartItemLoading() when decrementCartItemLoading != null:
+return decrementCartItemLoading(_that);case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemSuccess(_that);case DecrementCartItemFailure() when decrementCartItemFailure != null:
+return decrementCartItemFailure(_that);case DeleteCartItemLoading() when deleteCartItemLoading != null:
+return deleteCartItemLoading(_that);case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
+return deleteCartItemSuccess(_that);case DeleteCartItemFailure() when deleteCartItemFailure != null:
+return deleteCartItemFailure(_that);case UpdateCartItemLoading() when updateCartItemLoading != null:
+return updateCartItemLoading(_that);case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemSuccess(_that);case UpdateCartItemFailure() when updateCartItemFailure != null:
+return updateCartItemFailure(_that);case ApplyCouponLoading() when applyCouponLoading != null:
+return applyCouponLoading(_that);case ApplyCouponSuccess() when applyCouponSuccess != null:
+return applyCouponSuccess(_that);case ApplyCouponFailure() when applyCouponFailure != null:
 return applyCouponFailure(_that);case _:
   return orElse();
 
@@ -95,28 +95,28 @@ return applyCouponFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( GetCartItemsLoading value)  getCartItemsLoading,required TResult Function( GetCartItemsSuccess value)  getCartItemsSuccess,required TResult Function( GetCartItemsFailure value)  getCartItemsFailure,required TResult Function( _AddCartItemLoading value)  addCartItemLoading,required TResult Function( _AddCartItemSuccess value)  addCartItemSuccess,required TResult Function( _AddCartItemFailure value)  addCartItemFailure,required TResult Function( _DecrementCartItemLoading value)  decrementCartItemLoading,required TResult Function( _DecrementCartItemSuccess value)  decrementCartItemSuccess,required TResult Function( _DecrementCartItemFailure value)  decrementCartItemFailure,required TResult Function( _DeleteCartItemLoading value)  deleteCartItemLoading,required TResult Function( _DeleteCartItemSuccess value)  deleteCartItemSuccess,required TResult Function( _DeleteCartItemFailure value)  deleteCartItemFailure,required TResult Function( _UpdateCartItemLoading value)  updateCartItemLoading,required TResult Function( _UpdateCartItemSuccess value)  updateCartItemSuccess,required TResult Function( _UpdateCartItemFailure value)  updateCartItemFailure,required TResult Function( _ApplyCouponLoading value)  applyCouponLoading,required TResult Function( _ApplyCouponSuccess value)  applyCouponSuccess,required TResult Function( _ApplyCouponFailure value)  applyCouponFailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial value)  initial,required TResult Function( GetCartItemsLoading value)  getCartItemsLoading,required TResult Function( GetCartItemsSuccess value)  getCartItemsSuccess,required TResult Function( GetCartItemsFailure value)  getCartItemsFailure,required TResult Function( AddCartItemLoading value)  addCartItemLoading,required TResult Function( AddCartItemSuccess value)  addCartItemSuccess,required TResult Function( AddCartItemFailure value)  addCartItemFailure,required TResult Function( DecrementCartItemLoading value)  decrementCartItemLoading,required TResult Function( DecrementCartItemSuccess value)  decrementCartItemSuccess,required TResult Function( DecrementCartItemFailure value)  decrementCartItemFailure,required TResult Function( DeleteCartItemLoading value)  deleteCartItemLoading,required TResult Function( DeleteCartItemSuccess value)  deleteCartItemSuccess,required TResult Function( DeleteCartItemFailure value)  deleteCartItemFailure,required TResult Function( UpdateCartItemLoading value)  updateCartItemLoading,required TResult Function( UpdateCartItemSuccess value)  updateCartItemSuccess,required TResult Function( UpdateCartItemFailure value)  updateCartItemFailure,required TResult Function( ApplyCouponLoading value)  applyCouponLoading,required TResult Function( ApplyCouponSuccess value)  applyCouponSuccess,required TResult Function( ApplyCouponFailure value)  applyCouponFailure,}){
 final _that = this;
 switch (_that) {
-case _Initial():
+case Initial():
 return initial(_that);case GetCartItemsLoading():
 return getCartItemsLoading(_that);case GetCartItemsSuccess():
 return getCartItemsSuccess(_that);case GetCartItemsFailure():
-return getCartItemsFailure(_that);case _AddCartItemLoading():
-return addCartItemLoading(_that);case _AddCartItemSuccess():
-return addCartItemSuccess(_that);case _AddCartItemFailure():
-return addCartItemFailure(_that);case _DecrementCartItemLoading():
-return decrementCartItemLoading(_that);case _DecrementCartItemSuccess():
-return decrementCartItemSuccess(_that);case _DecrementCartItemFailure():
-return decrementCartItemFailure(_that);case _DeleteCartItemLoading():
-return deleteCartItemLoading(_that);case _DeleteCartItemSuccess():
-return deleteCartItemSuccess(_that);case _DeleteCartItemFailure():
-return deleteCartItemFailure(_that);case _UpdateCartItemLoading():
-return updateCartItemLoading(_that);case _UpdateCartItemSuccess():
-return updateCartItemSuccess(_that);case _UpdateCartItemFailure():
-return updateCartItemFailure(_that);case _ApplyCouponLoading():
-return applyCouponLoading(_that);case _ApplyCouponSuccess():
-return applyCouponSuccess(_that);case _ApplyCouponFailure():
+return getCartItemsFailure(_that);case AddCartItemLoading():
+return addCartItemLoading(_that);case AddCartItemSuccess():
+return addCartItemSuccess(_that);case AddCartItemFailure():
+return addCartItemFailure(_that);case DecrementCartItemLoading():
+return decrementCartItemLoading(_that);case DecrementCartItemSuccess():
+return decrementCartItemSuccess(_that);case DecrementCartItemFailure():
+return decrementCartItemFailure(_that);case DeleteCartItemLoading():
+return deleteCartItemLoading(_that);case DeleteCartItemSuccess():
+return deleteCartItemSuccess(_that);case DeleteCartItemFailure():
+return deleteCartItemFailure(_that);case UpdateCartItemLoading():
+return updateCartItemLoading(_that);case UpdateCartItemSuccess():
+return updateCartItemSuccess(_that);case UpdateCartItemFailure():
+return updateCartItemFailure(_that);case ApplyCouponLoading():
+return applyCouponLoading(_that);case ApplyCouponSuccess():
+return applyCouponSuccess(_that);case ApplyCouponFailure():
 return applyCouponFailure(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -134,28 +134,28 @@ return applyCouponFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult? Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult? Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult? Function( _AddCartItemLoading value)?  addCartItemLoading,TResult? Function( _AddCartItemSuccess value)?  addCartItemSuccess,TResult? Function( _AddCartItemFailure value)?  addCartItemFailure,TResult? Function( _DecrementCartItemLoading value)?  decrementCartItemLoading,TResult? Function( _DecrementCartItemSuccess value)?  decrementCartItemSuccess,TResult? Function( _DecrementCartItemFailure value)?  decrementCartItemFailure,TResult? Function( _DeleteCartItemLoading value)?  deleteCartItemLoading,TResult? Function( _DeleteCartItemSuccess value)?  deleteCartItemSuccess,TResult? Function( _DeleteCartItemFailure value)?  deleteCartItemFailure,TResult? Function( _UpdateCartItemLoading value)?  updateCartItemLoading,TResult? Function( _UpdateCartItemSuccess value)?  updateCartItemSuccess,TResult? Function( _UpdateCartItemFailure value)?  updateCartItemFailure,TResult? Function( _ApplyCouponLoading value)?  applyCouponLoading,TResult? Function( _ApplyCouponSuccess value)?  applyCouponSuccess,TResult? Function( _ApplyCouponFailure value)?  applyCouponFailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial value)?  initial,TResult? Function( GetCartItemsLoading value)?  getCartItemsLoading,TResult? Function( GetCartItemsSuccess value)?  getCartItemsSuccess,TResult? Function( GetCartItemsFailure value)?  getCartItemsFailure,TResult? Function( AddCartItemLoading value)?  addCartItemLoading,TResult? Function( AddCartItemSuccess value)?  addCartItemSuccess,TResult? Function( AddCartItemFailure value)?  addCartItemFailure,TResult? Function( DecrementCartItemLoading value)?  decrementCartItemLoading,TResult? Function( DecrementCartItemSuccess value)?  decrementCartItemSuccess,TResult? Function( DecrementCartItemFailure value)?  decrementCartItemFailure,TResult? Function( DeleteCartItemLoading value)?  deleteCartItemLoading,TResult? Function( DeleteCartItemSuccess value)?  deleteCartItemSuccess,TResult? Function( DeleteCartItemFailure value)?  deleteCartItemFailure,TResult? Function( UpdateCartItemLoading value)?  updateCartItemLoading,TResult? Function( UpdateCartItemSuccess value)?  updateCartItemSuccess,TResult? Function( UpdateCartItemFailure value)?  updateCartItemFailure,TResult? Function( ApplyCouponLoading value)?  applyCouponLoading,TResult? Function( ApplyCouponSuccess value)?  applyCouponSuccess,TResult? Function( ApplyCouponFailure value)?  applyCouponFailure,}){
 final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial(_that);case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading(_that);case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that);case _AddCartItemLoading() when addCartItemLoading != null:
-return addCartItemLoading(_that);case _AddCartItemSuccess() when addCartItemSuccess != null:
-return addCartItemSuccess(_that);case _AddCartItemFailure() when addCartItemFailure != null:
-return addCartItemFailure(_that);case _DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading(_that);case _DecrementCartItemSuccess() when decrementCartItemSuccess != null:
-return decrementCartItemSuccess(_that);case _DecrementCartItemFailure() when decrementCartItemFailure != null:
-return decrementCartItemFailure(_that);case _DeleteCartItemLoading() when deleteCartItemLoading != null:
-return deleteCartItemLoading(_that);case _DeleteCartItemSuccess() when deleteCartItemSuccess != null:
-return deleteCartItemSuccess(_that);case _DeleteCartItemFailure() when deleteCartItemFailure != null:
-return deleteCartItemFailure(_that);case _UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading(_that);case _UpdateCartItemSuccess() when updateCartItemSuccess != null:
-return updateCartItemSuccess(_that);case _UpdateCartItemFailure() when updateCartItemFailure != null:
-return updateCartItemFailure(_that);case _ApplyCouponLoading() when applyCouponLoading != null:
-return applyCouponLoading(_that);case _ApplyCouponSuccess() when applyCouponSuccess != null:
-return applyCouponSuccess(_that);case _ApplyCouponFailure() when applyCouponFailure != null:
+return getCartItemsFailure(_that);case AddCartItemLoading() when addCartItemLoading != null:
+return addCartItemLoading(_that);case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that);case DecrementCartItemLoading() when decrementCartItemLoading != null:
+return decrementCartItemLoading(_that);case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemSuccess(_that);case DecrementCartItemFailure() when decrementCartItemFailure != null:
+return decrementCartItemFailure(_that);case DeleteCartItemLoading() when deleteCartItemLoading != null:
+return deleteCartItemLoading(_that);case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
+return deleteCartItemSuccess(_that);case DeleteCartItemFailure() when deleteCartItemFailure != null:
+return deleteCartItemFailure(_that);case UpdateCartItemLoading() when updateCartItemLoading != null:
+return updateCartItemLoading(_that);case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemSuccess(_that);case UpdateCartItemFailure() when updateCartItemFailure != null:
+return updateCartItemFailure(_that);case ApplyCouponLoading() when applyCouponLoading != null:
+return applyCouponLoading(_that);case ApplyCouponSuccess() when applyCouponSuccess != null:
+return applyCouponSuccess(_that);case ApplyCouponFailure() when applyCouponFailure != null:
 return applyCouponFailure(_that);case _:
   return null;
 
@@ -175,25 +175,25 @@ return applyCouponFailure(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  getCartItemsLoading,TResult Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult Function()?  addCartItemLoading,TResult Function( AddCartItemResponse response)?  addCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult Function()?  decrementCartItemLoading,TResult Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult Function()?  deleteCartItemLoading,TResult Function()?  deleteCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult Function()?  updateCartItemLoading,TResult Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult Function()?  applyCouponLoading,TResult Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial();case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading();case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that.cartResponse);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that.apiErrorModel);case _AddCartItemLoading() when addCartItemLoading != null:
-return addCartItemLoading();case _AddCartItemSuccess() when addCartItemSuccess != null:
-return addCartItemSuccess(_that.response);case _AddCartItemFailure() when addCartItemFailure != null:
-return addCartItemFailure(_that.apiErrorModel);case _DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading();case _DecrementCartItemSuccess() when decrementCartItemSuccess != null:
-return decrementCartItemSuccess(_that.response);case _DecrementCartItemFailure() when decrementCartItemFailure != null:
-return decrementCartItemFailure(_that.apiErrorModel);case _DeleteCartItemLoading() when deleteCartItemLoading != null:
-return deleteCartItemLoading();case _DeleteCartItemSuccess() when deleteCartItemSuccess != null:
-return deleteCartItemSuccess();case _DeleteCartItemFailure() when deleteCartItemFailure != null:
-return deleteCartItemFailure(_that.apiErrorModel);case _UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading();case _UpdateCartItemSuccess() when updateCartItemSuccess != null:
-return updateCartItemSuccess(_that.response);case _UpdateCartItemFailure() when updateCartItemFailure != null:
-return updateCartItemFailure(_that.apiErrorModel);case _ApplyCouponLoading() when applyCouponLoading != null:
-return applyCouponLoading();case _ApplyCouponSuccess() when applyCouponSuccess != null:
-return applyCouponSuccess(_that.response);case _ApplyCouponFailure() when applyCouponFailure != null:
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading() when addCartItemLoading != null:
+return addCartItemLoading();case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that.response);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading() when decrementCartItemLoading != null:
+return decrementCartItemLoading();case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure() when decrementCartItemFailure != null:
+return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading() when deleteCartItemLoading != null:
+return deleteCartItemLoading();case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
+return deleteCartItemSuccess();case DeleteCartItemFailure() when deleteCartItemFailure != null:
+return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading() when updateCartItemLoading != null:
+return updateCartItemLoading();case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemSuccess(_that.response);case UpdateCartItemFailure() when updateCartItemFailure != null:
+return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading() when applyCouponLoading != null:
+return applyCouponLoading();case ApplyCouponSuccess() when applyCouponSuccess != null:
+return applyCouponSuccess(_that.response);case ApplyCouponFailure() when applyCouponFailure != null:
 return applyCouponFailure(_that.apiErrorModel);case _:
   return orElse();
 
@@ -214,25 +214,25 @@ return applyCouponFailure(_that.apiErrorModel);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  getCartItemsLoading,required TResult Function( GetCartItemsResponse cartResponse)  getCartItemsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getCartItemsFailure,required TResult Function()  addCartItemLoading,required TResult Function( AddCartItemResponse response)  addCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  addCartItemFailure,required TResult Function()  decrementCartItemLoading,required TResult Function( DecrementCartItemResponse response)  decrementCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  decrementCartItemFailure,required TResult Function()  deleteCartItemLoading,required TResult Function()  deleteCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  deleteCartItemFailure,required TResult Function()  updateCartItemLoading,required TResult Function( UpdateCartItemResponse response)  updateCartItemSuccess,required TResult Function( ApiErrorModel apiErrorModel)  updateCartItemFailure,required TResult Function()  applyCouponLoading,required TResult Function( ApplyCouponResponse response)  applyCouponSuccess,required TResult Function( ApiErrorModel apiErrorModel)  applyCouponFailure,}) {final _that = this;
 switch (_that) {
-case _Initial():
+case Initial():
 return initial();case GetCartItemsLoading():
 return getCartItemsLoading();case GetCartItemsSuccess():
 return getCartItemsSuccess(_that.cartResponse);case GetCartItemsFailure():
-return getCartItemsFailure(_that.apiErrorModel);case _AddCartItemLoading():
-return addCartItemLoading();case _AddCartItemSuccess():
-return addCartItemSuccess(_that.response);case _AddCartItemFailure():
-return addCartItemFailure(_that.apiErrorModel);case _DecrementCartItemLoading():
-return decrementCartItemLoading();case _DecrementCartItemSuccess():
-return decrementCartItemSuccess(_that.response);case _DecrementCartItemFailure():
-return decrementCartItemFailure(_that.apiErrorModel);case _DeleteCartItemLoading():
-return deleteCartItemLoading();case _DeleteCartItemSuccess():
-return deleteCartItemSuccess();case _DeleteCartItemFailure():
-return deleteCartItemFailure(_that.apiErrorModel);case _UpdateCartItemLoading():
-return updateCartItemLoading();case _UpdateCartItemSuccess():
-return updateCartItemSuccess(_that.response);case _UpdateCartItemFailure():
-return updateCartItemFailure(_that.apiErrorModel);case _ApplyCouponLoading():
-return applyCouponLoading();case _ApplyCouponSuccess():
-return applyCouponSuccess(_that.response);case _ApplyCouponFailure():
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading():
+return addCartItemLoading();case AddCartItemSuccess():
+return addCartItemSuccess(_that.response);case AddCartItemFailure():
+return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading():
+return decrementCartItemLoading();case DecrementCartItemSuccess():
+return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure():
+return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading():
+return deleteCartItemLoading();case DeleteCartItemSuccess():
+return deleteCartItemSuccess();case DeleteCartItemFailure():
+return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading():
+return updateCartItemLoading();case UpdateCartItemSuccess():
+return updateCartItemSuccess(_that.response);case UpdateCartItemFailure():
+return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading():
+return applyCouponLoading();case ApplyCouponSuccess():
+return applyCouponSuccess(_that.response);case ApplyCouponFailure():
 return applyCouponFailure(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
@@ -252,25 +252,25 @@ return applyCouponFailure(_that.apiErrorModel);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  getCartItemsLoading,TResult? Function( GetCartItemsResponse cartResponse)?  getCartItemsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getCartItemsFailure,TResult? Function()?  addCartItemLoading,TResult? Function( AddCartItemResponse response)?  addCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  addCartItemFailure,TResult? Function()?  decrementCartItemLoading,TResult? Function( DecrementCartItemResponse response)?  decrementCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  decrementCartItemFailure,TResult? Function()?  deleteCartItemLoading,TResult? Function()?  deleteCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  deleteCartItemFailure,TResult? Function()?  updateCartItemLoading,TResult? Function( UpdateCartItemResponse response)?  updateCartItemSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  updateCartItemFailure,TResult? Function()?  applyCouponLoading,TResult? Function( ApplyCouponResponse response)?  applyCouponSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  applyCouponFailure,}) {final _that = this;
 switch (_that) {
-case _Initial() when initial != null:
+case Initial() when initial != null:
 return initial();case GetCartItemsLoading() when getCartItemsLoading != null:
 return getCartItemsLoading();case GetCartItemsSuccess() when getCartItemsSuccess != null:
 return getCartItemsSuccess(_that.cartResponse);case GetCartItemsFailure() when getCartItemsFailure != null:
-return getCartItemsFailure(_that.apiErrorModel);case _AddCartItemLoading() when addCartItemLoading != null:
-return addCartItemLoading();case _AddCartItemSuccess() when addCartItemSuccess != null:
-return addCartItemSuccess(_that.response);case _AddCartItemFailure() when addCartItemFailure != null:
-return addCartItemFailure(_that.apiErrorModel);case _DecrementCartItemLoading() when decrementCartItemLoading != null:
-return decrementCartItemLoading();case _DecrementCartItemSuccess() when decrementCartItemSuccess != null:
-return decrementCartItemSuccess(_that.response);case _DecrementCartItemFailure() when decrementCartItemFailure != null:
-return decrementCartItemFailure(_that.apiErrorModel);case _DeleteCartItemLoading() when deleteCartItemLoading != null:
-return deleteCartItemLoading();case _DeleteCartItemSuccess() when deleteCartItemSuccess != null:
-return deleteCartItemSuccess();case _DeleteCartItemFailure() when deleteCartItemFailure != null:
-return deleteCartItemFailure(_that.apiErrorModel);case _UpdateCartItemLoading() when updateCartItemLoading != null:
-return updateCartItemLoading();case _UpdateCartItemSuccess() when updateCartItemSuccess != null:
-return updateCartItemSuccess(_that.response);case _UpdateCartItemFailure() when updateCartItemFailure != null:
-return updateCartItemFailure(_that.apiErrorModel);case _ApplyCouponLoading() when applyCouponLoading != null:
-return applyCouponLoading();case _ApplyCouponSuccess() when applyCouponSuccess != null:
-return applyCouponSuccess(_that.response);case _ApplyCouponFailure() when applyCouponFailure != null:
+return getCartItemsFailure(_that.apiErrorModel);case AddCartItemLoading() when addCartItemLoading != null:
+return addCartItemLoading();case AddCartItemSuccess() when addCartItemSuccess != null:
+return addCartItemSuccess(_that.response);case AddCartItemFailure() when addCartItemFailure != null:
+return addCartItemFailure(_that.apiErrorModel);case DecrementCartItemLoading() when decrementCartItemLoading != null:
+return decrementCartItemLoading();case DecrementCartItemSuccess() when decrementCartItemSuccess != null:
+return decrementCartItemSuccess(_that.response);case DecrementCartItemFailure() when decrementCartItemFailure != null:
+return decrementCartItemFailure(_that.apiErrorModel);case DeleteCartItemLoading() when deleteCartItemLoading != null:
+return deleteCartItemLoading();case DeleteCartItemSuccess() when deleteCartItemSuccess != null:
+return deleteCartItemSuccess();case DeleteCartItemFailure() when deleteCartItemFailure != null:
+return deleteCartItemFailure(_that.apiErrorModel);case UpdateCartItemLoading() when updateCartItemLoading != null:
+return updateCartItemLoading();case UpdateCartItemSuccess() when updateCartItemSuccess != null:
+return updateCartItemSuccess(_that.response);case UpdateCartItemFailure() when updateCartItemFailure != null:
+return updateCartItemFailure(_that.apiErrorModel);case ApplyCouponLoading() when applyCouponLoading != null:
+return applyCouponLoading();case ApplyCouponSuccess() when applyCouponSuccess != null:
+return applyCouponSuccess(_that.response);case ApplyCouponFailure() when applyCouponFailure != null:
 return applyCouponFailure(_that.apiErrorModel);case _:
   return null;
 
@@ -282,8 +282,8 @@ return applyCouponFailure(_that.apiErrorModel);case _:
 /// @nodoc
 
 
-class _Initial implements CartState {
-  const _Initial();
+class Initial implements CartState {
+  const Initial();
   
 
 
@@ -293,7 +293,7 @@ class _Initial implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Initial);
 }
 
 
@@ -478,8 +478,8 @@ as ApiErrorModel,
 /// @nodoc
 
 
-class _AddCartItemLoading implements CartState {
-  const _AddCartItemLoading();
+class AddCartItemLoading implements CartState {
+  const AddCartItemLoading();
   
 
 
@@ -489,7 +489,7 @@ class _AddCartItemLoading implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddCartItemLoading);
 }
 
 
@@ -510,8 +510,8 @@ String toString() {
 /// @nodoc
 
 
-class _AddCartItemSuccess implements CartState {
-  const _AddCartItemSuccess({required this.response});
+class AddCartItemSuccess implements CartState {
+  const AddCartItemSuccess({required this.response});
   
 
  final  AddCartItemResponse response;
@@ -520,13 +520,13 @@ class _AddCartItemSuccess implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AddCartItemSuccessCopyWith<_AddCartItemSuccess> get copyWith => __$AddCartItemSuccessCopyWithImpl<_AddCartItemSuccess>(this, _$identity);
+$AddCartItemSuccessCopyWith<AddCartItemSuccess> get copyWith => _$AddCartItemSuccessCopyWithImpl<AddCartItemSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddCartItemSuccess&&(identical(other.response, response) || other.response == response));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddCartItemSuccess&&(identical(other.response, response) || other.response == response));
 }
 
 
@@ -542,8 +542,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$AddCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$AddCartItemSuccessCopyWith(_AddCartItemSuccess value, $Res Function(_AddCartItemSuccess) _then) = __$AddCartItemSuccessCopyWithImpl;
+abstract mixin class $AddCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $AddCartItemSuccessCopyWith(AddCartItemSuccess value, $Res Function(AddCartItemSuccess) _then) = _$AddCartItemSuccessCopyWithImpl;
 @useResult
 $Res call({
  AddCartItemResponse response
@@ -554,17 +554,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AddCartItemSuccessCopyWithImpl<$Res>
-    implements _$AddCartItemSuccessCopyWith<$Res> {
-  __$AddCartItemSuccessCopyWithImpl(this._self, this._then);
+class _$AddCartItemSuccessCopyWithImpl<$Res>
+    implements $AddCartItemSuccessCopyWith<$Res> {
+  _$AddCartItemSuccessCopyWithImpl(this._self, this._then);
 
-  final _AddCartItemSuccess _self;
-  final $Res Function(_AddCartItemSuccess) _then;
+  final AddCartItemSuccess _self;
+  final $Res Function(AddCartItemSuccess) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
-  return _then(_AddCartItemSuccess(
+  return _then(AddCartItemSuccess(
 response: null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
 as AddCartItemResponse,
   ));
@@ -576,8 +576,8 @@ as AddCartItemResponse,
 /// @nodoc
 
 
-class _AddCartItemFailure implements CartState {
-  const _AddCartItemFailure({required this.apiErrorModel});
+class AddCartItemFailure implements CartState {
+  const AddCartItemFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -586,13 +586,13 @@ class _AddCartItemFailure implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AddCartItemFailureCopyWith<_AddCartItemFailure> get copyWith => __$AddCartItemFailureCopyWithImpl<_AddCartItemFailure>(this, _$identity);
+$AddCartItemFailureCopyWith<AddCartItemFailure> get copyWith => _$AddCartItemFailureCopyWithImpl<AddCartItemFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -608,8 +608,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$AddCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$AddCartItemFailureCopyWith(_AddCartItemFailure value, $Res Function(_AddCartItemFailure) _then) = __$AddCartItemFailureCopyWithImpl;
+abstract mixin class $AddCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $AddCartItemFailureCopyWith(AddCartItemFailure value, $Res Function(AddCartItemFailure) _then) = _$AddCartItemFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -620,17 +620,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AddCartItemFailureCopyWithImpl<$Res>
-    implements _$AddCartItemFailureCopyWith<$Res> {
-  __$AddCartItemFailureCopyWithImpl(this._self, this._then);
+class _$AddCartItemFailureCopyWithImpl<$Res>
+    implements $AddCartItemFailureCopyWith<$Res> {
+  _$AddCartItemFailureCopyWithImpl(this._self, this._then);
 
-  final _AddCartItemFailure _self;
-  final $Res Function(_AddCartItemFailure) _then;
+  final AddCartItemFailure _self;
+  final $Res Function(AddCartItemFailure) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_AddCartItemFailure(
+  return _then(AddCartItemFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
@@ -642,8 +642,8 @@ as ApiErrorModel,
 /// @nodoc
 
 
-class _DecrementCartItemLoading implements CartState {
-  const _DecrementCartItemLoading();
+class DecrementCartItemLoading implements CartState {
+  const DecrementCartItemLoading();
   
 
 
@@ -653,7 +653,7 @@ class _DecrementCartItemLoading implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecrementCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecrementCartItemLoading);
 }
 
 
@@ -674,8 +674,8 @@ String toString() {
 /// @nodoc
 
 
-class _DecrementCartItemSuccess implements CartState {
-  const _DecrementCartItemSuccess({required this.response});
+class DecrementCartItemSuccess implements CartState {
+  const DecrementCartItemSuccess({required this.response});
   
 
  final  DecrementCartItemResponse response;
@@ -684,13 +684,13 @@ class _DecrementCartItemSuccess implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DecrementCartItemSuccessCopyWith<_DecrementCartItemSuccess> get copyWith => __$DecrementCartItemSuccessCopyWithImpl<_DecrementCartItemSuccess>(this, _$identity);
+$DecrementCartItemSuccessCopyWith<DecrementCartItemSuccess> get copyWith => _$DecrementCartItemSuccessCopyWithImpl<DecrementCartItemSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecrementCartItemSuccess&&(identical(other.response, response) || other.response == response));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecrementCartItemSuccess&&(identical(other.response, response) || other.response == response));
 }
 
 
@@ -706,8 +706,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$DecrementCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$DecrementCartItemSuccessCopyWith(_DecrementCartItemSuccess value, $Res Function(_DecrementCartItemSuccess) _then) = __$DecrementCartItemSuccessCopyWithImpl;
+abstract mixin class $DecrementCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $DecrementCartItemSuccessCopyWith(DecrementCartItemSuccess value, $Res Function(DecrementCartItemSuccess) _then) = _$DecrementCartItemSuccessCopyWithImpl;
 @useResult
 $Res call({
  DecrementCartItemResponse response
@@ -718,17 +718,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$DecrementCartItemSuccessCopyWithImpl<$Res>
-    implements _$DecrementCartItemSuccessCopyWith<$Res> {
-  __$DecrementCartItemSuccessCopyWithImpl(this._self, this._then);
+class _$DecrementCartItemSuccessCopyWithImpl<$Res>
+    implements $DecrementCartItemSuccessCopyWith<$Res> {
+  _$DecrementCartItemSuccessCopyWithImpl(this._self, this._then);
 
-  final _DecrementCartItemSuccess _self;
-  final $Res Function(_DecrementCartItemSuccess) _then;
+  final DecrementCartItemSuccess _self;
+  final $Res Function(DecrementCartItemSuccess) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
-  return _then(_DecrementCartItemSuccess(
+  return _then(DecrementCartItemSuccess(
 response: null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
 as DecrementCartItemResponse,
   ));
@@ -740,8 +740,8 @@ as DecrementCartItemResponse,
 /// @nodoc
 
 
-class _DecrementCartItemFailure implements CartState {
-  const _DecrementCartItemFailure({required this.apiErrorModel});
+class DecrementCartItemFailure implements CartState {
+  const DecrementCartItemFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -750,13 +750,13 @@ class _DecrementCartItemFailure implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DecrementCartItemFailureCopyWith<_DecrementCartItemFailure> get copyWith => __$DecrementCartItemFailureCopyWithImpl<_DecrementCartItemFailure>(this, _$identity);
+$DecrementCartItemFailureCopyWith<DecrementCartItemFailure> get copyWith => _$DecrementCartItemFailureCopyWithImpl<DecrementCartItemFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecrementCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecrementCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -772,8 +772,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$DecrementCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$DecrementCartItemFailureCopyWith(_DecrementCartItemFailure value, $Res Function(_DecrementCartItemFailure) _then) = __$DecrementCartItemFailureCopyWithImpl;
+abstract mixin class $DecrementCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $DecrementCartItemFailureCopyWith(DecrementCartItemFailure value, $Res Function(DecrementCartItemFailure) _then) = _$DecrementCartItemFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -784,17 +784,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$DecrementCartItemFailureCopyWithImpl<$Res>
-    implements _$DecrementCartItemFailureCopyWith<$Res> {
-  __$DecrementCartItemFailureCopyWithImpl(this._self, this._then);
+class _$DecrementCartItemFailureCopyWithImpl<$Res>
+    implements $DecrementCartItemFailureCopyWith<$Res> {
+  _$DecrementCartItemFailureCopyWithImpl(this._self, this._then);
 
-  final _DecrementCartItemFailure _self;
-  final $Res Function(_DecrementCartItemFailure) _then;
+  final DecrementCartItemFailure _self;
+  final $Res Function(DecrementCartItemFailure) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_DecrementCartItemFailure(
+  return _then(DecrementCartItemFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
@@ -806,8 +806,8 @@ as ApiErrorModel,
 /// @nodoc
 
 
-class _DeleteCartItemLoading implements CartState {
-  const _DeleteCartItemLoading();
+class DeleteCartItemLoading implements CartState {
+  const DeleteCartItemLoading();
   
 
 
@@ -817,7 +817,7 @@ class _DeleteCartItemLoading implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteCartItemLoading);
 }
 
 
@@ -838,8 +838,8 @@ String toString() {
 /// @nodoc
 
 
-class _DeleteCartItemSuccess implements CartState {
-  const _DeleteCartItemSuccess();
+class DeleteCartItemSuccess implements CartState {
+  const DeleteCartItemSuccess();
   
 
 
@@ -849,7 +849,7 @@ class _DeleteCartItemSuccess implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteCartItemSuccess);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteCartItemSuccess);
 }
 
 
@@ -870,8 +870,8 @@ String toString() {
 /// @nodoc
 
 
-class _DeleteCartItemFailure implements CartState {
-  const _DeleteCartItemFailure({required this.apiErrorModel});
+class DeleteCartItemFailure implements CartState {
+  const DeleteCartItemFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -880,13 +880,13 @@ class _DeleteCartItemFailure implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$DeleteCartItemFailureCopyWith<_DeleteCartItemFailure> get copyWith => __$DeleteCartItemFailureCopyWithImpl<_DeleteCartItemFailure>(this, _$identity);
+$DeleteCartItemFailureCopyWith<DeleteCartItemFailure> get copyWith => _$DeleteCartItemFailureCopyWithImpl<DeleteCartItemFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -902,8 +902,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$DeleteCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$DeleteCartItemFailureCopyWith(_DeleteCartItemFailure value, $Res Function(_DeleteCartItemFailure) _then) = __$DeleteCartItemFailureCopyWithImpl;
+abstract mixin class $DeleteCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $DeleteCartItemFailureCopyWith(DeleteCartItemFailure value, $Res Function(DeleteCartItemFailure) _then) = _$DeleteCartItemFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -914,17 +914,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$DeleteCartItemFailureCopyWithImpl<$Res>
-    implements _$DeleteCartItemFailureCopyWith<$Res> {
-  __$DeleteCartItemFailureCopyWithImpl(this._self, this._then);
+class _$DeleteCartItemFailureCopyWithImpl<$Res>
+    implements $DeleteCartItemFailureCopyWith<$Res> {
+  _$DeleteCartItemFailureCopyWithImpl(this._self, this._then);
 
-  final _DeleteCartItemFailure _self;
-  final $Res Function(_DeleteCartItemFailure) _then;
+  final DeleteCartItemFailure _self;
+  final $Res Function(DeleteCartItemFailure) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_DeleteCartItemFailure(
+  return _then(DeleteCartItemFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
@@ -936,8 +936,8 @@ as ApiErrorModel,
 /// @nodoc
 
 
-class _UpdateCartItemLoading implements CartState {
-  const _UpdateCartItemLoading();
+class UpdateCartItemLoading implements CartState {
+  const UpdateCartItemLoading();
   
 
 
@@ -947,7 +947,7 @@ class _UpdateCartItemLoading implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateCartItemLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCartItemLoading);
 }
 
 
@@ -968,8 +968,8 @@ String toString() {
 /// @nodoc
 
 
-class _UpdateCartItemSuccess implements CartState {
-  const _UpdateCartItemSuccess({required this.response});
+class UpdateCartItemSuccess implements CartState {
+  const UpdateCartItemSuccess({required this.response});
   
 
  final  UpdateCartItemResponse response;
@@ -978,13 +978,13 @@ class _UpdateCartItemSuccess implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$UpdateCartItemSuccessCopyWith<_UpdateCartItemSuccess> get copyWith => __$UpdateCartItemSuccessCopyWithImpl<_UpdateCartItemSuccess>(this, _$identity);
+$UpdateCartItemSuccessCopyWith<UpdateCartItemSuccess> get copyWith => _$UpdateCartItemSuccessCopyWithImpl<UpdateCartItemSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateCartItemSuccess&&(identical(other.response, response) || other.response == response));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCartItemSuccess&&(identical(other.response, response) || other.response == response));
 }
 
 
@@ -1000,8 +1000,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$UpdateCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$UpdateCartItemSuccessCopyWith(_UpdateCartItemSuccess value, $Res Function(_UpdateCartItemSuccess) _then) = __$UpdateCartItemSuccessCopyWithImpl;
+abstract mixin class $UpdateCartItemSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $UpdateCartItemSuccessCopyWith(UpdateCartItemSuccess value, $Res Function(UpdateCartItemSuccess) _then) = _$UpdateCartItemSuccessCopyWithImpl;
 @useResult
 $Res call({
  UpdateCartItemResponse response
@@ -1012,17 +1012,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$UpdateCartItemSuccessCopyWithImpl<$Res>
-    implements _$UpdateCartItemSuccessCopyWith<$Res> {
-  __$UpdateCartItemSuccessCopyWithImpl(this._self, this._then);
+class _$UpdateCartItemSuccessCopyWithImpl<$Res>
+    implements $UpdateCartItemSuccessCopyWith<$Res> {
+  _$UpdateCartItemSuccessCopyWithImpl(this._self, this._then);
 
-  final _UpdateCartItemSuccess _self;
-  final $Res Function(_UpdateCartItemSuccess) _then;
+  final UpdateCartItemSuccess _self;
+  final $Res Function(UpdateCartItemSuccess) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
-  return _then(_UpdateCartItemSuccess(
+  return _then(UpdateCartItemSuccess(
 response: null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
 as UpdateCartItemResponse,
   ));
@@ -1034,8 +1034,8 @@ as UpdateCartItemResponse,
 /// @nodoc
 
 
-class _UpdateCartItemFailure implements CartState {
-  const _UpdateCartItemFailure({required this.apiErrorModel});
+class UpdateCartItemFailure implements CartState {
+  const UpdateCartItemFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -1044,13 +1044,13 @@ class _UpdateCartItemFailure implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$UpdateCartItemFailureCopyWith<_UpdateCartItemFailure> get copyWith => __$UpdateCartItemFailureCopyWithImpl<_UpdateCartItemFailure>(this, _$identity);
+$UpdateCartItemFailureCopyWith<UpdateCartItemFailure> get copyWith => _$UpdateCartItemFailureCopyWithImpl<UpdateCartItemFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateCartItemFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -1066,8 +1066,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$UpdateCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$UpdateCartItemFailureCopyWith(_UpdateCartItemFailure value, $Res Function(_UpdateCartItemFailure) _then) = __$UpdateCartItemFailureCopyWithImpl;
+abstract mixin class $UpdateCartItemFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $UpdateCartItemFailureCopyWith(UpdateCartItemFailure value, $Res Function(UpdateCartItemFailure) _then) = _$UpdateCartItemFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -1078,17 +1078,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$UpdateCartItemFailureCopyWithImpl<$Res>
-    implements _$UpdateCartItemFailureCopyWith<$Res> {
-  __$UpdateCartItemFailureCopyWithImpl(this._self, this._then);
+class _$UpdateCartItemFailureCopyWithImpl<$Res>
+    implements $UpdateCartItemFailureCopyWith<$Res> {
+  _$UpdateCartItemFailureCopyWithImpl(this._self, this._then);
 
-  final _UpdateCartItemFailure _self;
-  final $Res Function(_UpdateCartItemFailure) _then;
+  final UpdateCartItemFailure _self;
+  final $Res Function(UpdateCartItemFailure) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_UpdateCartItemFailure(
+  return _then(UpdateCartItemFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
@@ -1100,8 +1100,8 @@ as ApiErrorModel,
 /// @nodoc
 
 
-class _ApplyCouponLoading implements CartState {
-  const _ApplyCouponLoading();
+class ApplyCouponLoading implements CartState {
+  const ApplyCouponLoading();
   
 
 
@@ -1111,7 +1111,7 @@ class _ApplyCouponLoading implements CartState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApplyCouponLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyCouponLoading);
 }
 
 
@@ -1132,8 +1132,8 @@ String toString() {
 /// @nodoc
 
 
-class _ApplyCouponSuccess implements CartState {
-  const _ApplyCouponSuccess({required this.response});
+class ApplyCouponSuccess implements CartState {
+  const ApplyCouponSuccess({required this.response});
   
 
  final  ApplyCouponResponse response;
@@ -1142,13 +1142,13 @@ class _ApplyCouponSuccess implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ApplyCouponSuccessCopyWith<_ApplyCouponSuccess> get copyWith => __$ApplyCouponSuccessCopyWithImpl<_ApplyCouponSuccess>(this, _$identity);
+$ApplyCouponSuccessCopyWith<ApplyCouponSuccess> get copyWith => _$ApplyCouponSuccessCopyWithImpl<ApplyCouponSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApplyCouponSuccess&&(identical(other.response, response) || other.response == response));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyCouponSuccess&&(identical(other.response, response) || other.response == response));
 }
 
 
@@ -1164,8 +1164,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$ApplyCouponSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$ApplyCouponSuccessCopyWith(_ApplyCouponSuccess value, $Res Function(_ApplyCouponSuccess) _then) = __$ApplyCouponSuccessCopyWithImpl;
+abstract mixin class $ApplyCouponSuccessCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $ApplyCouponSuccessCopyWith(ApplyCouponSuccess value, $Res Function(ApplyCouponSuccess) _then) = _$ApplyCouponSuccessCopyWithImpl;
 @useResult
 $Res call({
  ApplyCouponResponse response
@@ -1176,17 +1176,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ApplyCouponSuccessCopyWithImpl<$Res>
-    implements _$ApplyCouponSuccessCopyWith<$Res> {
-  __$ApplyCouponSuccessCopyWithImpl(this._self, this._then);
+class _$ApplyCouponSuccessCopyWithImpl<$Res>
+    implements $ApplyCouponSuccessCopyWith<$Res> {
+  _$ApplyCouponSuccessCopyWithImpl(this._self, this._then);
 
-  final _ApplyCouponSuccess _self;
-  final $Res Function(_ApplyCouponSuccess) _then;
+  final ApplyCouponSuccess _self;
+  final $Res Function(ApplyCouponSuccess) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
-  return _then(_ApplyCouponSuccess(
+  return _then(ApplyCouponSuccess(
 response: null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
 as ApplyCouponResponse,
   ));
@@ -1198,8 +1198,8 @@ as ApplyCouponResponse,
 /// @nodoc
 
 
-class _ApplyCouponFailure implements CartState {
-  const _ApplyCouponFailure({required this.apiErrorModel});
+class ApplyCouponFailure implements CartState {
+  const ApplyCouponFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -1208,13 +1208,13 @@ class _ApplyCouponFailure implements CartState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$ApplyCouponFailureCopyWith<_ApplyCouponFailure> get copyWith => __$ApplyCouponFailureCopyWithImpl<_ApplyCouponFailure>(this, _$identity);
+$ApplyCouponFailureCopyWith<ApplyCouponFailure> get copyWith => _$ApplyCouponFailureCopyWithImpl<ApplyCouponFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApplyCouponFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyCouponFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -1230,8 +1230,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$ApplyCouponFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
-  factory _$ApplyCouponFailureCopyWith(_ApplyCouponFailure value, $Res Function(_ApplyCouponFailure) _then) = __$ApplyCouponFailureCopyWithImpl;
+abstract mixin class $ApplyCouponFailureCopyWith<$Res> implements $CartStateCopyWith<$Res> {
+  factory $ApplyCouponFailureCopyWith(ApplyCouponFailure value, $Res Function(ApplyCouponFailure) _then) = _$ApplyCouponFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -1242,17 +1242,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$ApplyCouponFailureCopyWithImpl<$Res>
-    implements _$ApplyCouponFailureCopyWith<$Res> {
-  __$ApplyCouponFailureCopyWithImpl(this._self, this._then);
+class _$ApplyCouponFailureCopyWithImpl<$Res>
+    implements $ApplyCouponFailureCopyWith<$Res> {
+  _$ApplyCouponFailureCopyWithImpl(this._self, this._then);
 
-  final _ApplyCouponFailure _self;
-  final $Res Function(_ApplyCouponFailure) _then;
+  final ApplyCouponFailure _self;
+  final $Res Function(ApplyCouponFailure) _then;
 
 /// Create a copy of CartState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_ApplyCouponFailure(
+  return _then(ApplyCouponFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));

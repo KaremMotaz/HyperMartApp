@@ -15,7 +15,8 @@ class CartItemsBlocBuilder extends StatelessWidget {
       buildWhen: (previous, current) =>
           current is GetCartItemsLoading ||
           current is GetCartItemsSuccess ||
-          current is GetCartItemsFailure,
+          current is GetCartItemsFailure ||
+          current is DeleteCartItemSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           getCartItemsLoading: () {
@@ -36,6 +37,14 @@ class CartItemsBlocBuilder extends StatelessWidget {
               message: apiErrorModel.message,
               details: apiErrorModel.details ?? [],
             );
+          },
+          deleteCartItemSuccess: () {
+            final cartItems = context.read<CartCubit>().currentCartItems;
+
+            if (cartItems.isEmpty) {
+              return const EmptyCartWidget();
+            }
+            return CartViewBody(cartItems: cartItems);
           },
           orElse: () {
             return const SizedBox.shrink();

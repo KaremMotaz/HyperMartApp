@@ -38,6 +38,7 @@ class CartCubit extends Cubit<CartState> {
   final DeleteCartItemRepo deleteCartItemRepo;
   final UpdateCartItemRepo updateCartItemRepo;
   final ApplyCouponRepo applyCouponRepo;
+  List<CartItemModel> currentCartItems = [];
 
   Future<void> getCartItems() async {
     emit(const CartState.getCartItemsLoading());
@@ -46,6 +47,7 @@ class CartCubit extends Cubit<CartState> {
 
     result.when(
       success: (getCartItemsResponse) {
+        currentCartItems = getCartItemsResponse.cartItems;
         emit(CartState.getCartItemsSuccess(cartResponse: getCartItemsResponse));
       },
       failure: (apiErrorModel) {
@@ -72,9 +74,11 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> decrementCartItem({required String productId}) async {
+  Future<void> decrementCartItem({
+    required String productId,
+    required int quantity,
+  }) async {
     emit(const CartState.decrementCartItemLoading());
-
     final ApiResult<DecrementCartItemResponse> result =
         await decrementCartItemRepo.decrementCartItem(
           body: DecrementCartItemRequestBody(itemId: productId, quantity: 1),
@@ -94,15 +98,16 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> deleteCartItem({required String productId}) async {
+  Future<void> deleteCartItem({required String itemId}) async {
     emit(const CartState.deleteCartItemLoading());
 
     final ApiResult<void> result = await deleteCartItemRepo.deleteCartItem(
-      body: DeleteCartItemRequestBody(id: productId),
+      body: DeleteCartItemRequestBody(id: itemId),
     );
 
     result.when(
       success: (addCartItemResponse) {
+        currentCartItems.removeWhere((item) => item.itemId == itemId);
         emit(const CartState.deleteCartItemSuccess());
       },
       failure: (apiErrorModel) {
@@ -111,12 +116,15 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> updateCartItem({required String productId}) async {
+  Future<void> updateCartItem({
+    required String productId,
+    required int quantity,
+  }) async {
     emit(const CartState.updateCartItemLoading());
 
     final ApiResult<UpdateCartItemResponse> result = await updateCartItemRepo
         .updateCartItem(
-          body: UpdateCartItemRequestBody(id: productId, quantity: 1),
+          body: UpdateCartItemRequestBody(id: productId, quantity: quantity),
         );
 
     result.when(
@@ -129,11 +137,11 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> applyCoupon() async {
+  Future<void> applyCoupon({required String couponCode}) async {
     emit(const CartState.applyCouponLoading());
 
     final ApiResult<ApplyCouponResponse> result = await applyCouponRepo
-        .applyCoupon(body: ApplyCouponRequestBody(couponCode: ""));
+        .applyCoupon(body: ApplyCouponRequestBody(couponCode: couponCode));
 
     result.when(
       success: (applyCouponResponse) {

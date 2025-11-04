@@ -76,13 +76,13 @@ abstract class HomeService {
 
   @DELETE(ApiConstants.deleteCartItem)
   Future<void> deleteCartItem({
-    @Path('id') required String id,
+    @Path('Id') required String id,
     @Body() required DeleteCartItemRequestBody body,
   });
 
   @PUT(ApiConstants.updateCartItem)
   Future<UpdateCartItemResponse> updateCartItem({
     @Body() required UpdateCartItemRequestBody body,
-    @Path('id') required String id,
+    @Path('Id') required String id,
   });
 }

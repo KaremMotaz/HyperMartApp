@@ -69,10 +69,7 @@ Future<void> setupGetIt() async {
   );
 
   getIt.registerLazySingleton<GetProductsRepo>(
-    () => GetProductsRepo(
-      homeService: getIt<HomeService>(),
-      productsLocalDataSource: getIt<ProductsLocalDataSource>(),
-    ),
+    () => GetProductsRepo(homeService: getIt<HomeService>()),
   );
 
   // Cart
@@ -94,13 +91,19 @@ Future<void> setupGetIt() async {
   );
 
   getIt.registerLazySingleton<AddCartItemRepo>(
-    () => AddCartItemRepo(homeService: getIt<HomeService>()),
+    () => AddCartItemRepo(
+      homeService: getIt<HomeService>(),
+      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
+    ),
   );
   getIt.registerLazySingleton<DecrementCartItemRepo>(
     () => DecrementCartItemRepo(homeService: getIt<HomeService>()),
   );
   getIt.registerLazySingleton<DeleteCartItemRepo>(
-    () => DeleteCartItemRepo(homeService: getIt<HomeService>()),
+    () => DeleteCartItemRepo(
+      homeService: getIt<HomeService>(),
+      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
+    ),
   );
   getIt.registerLazySingleton<UpdateCartItemRepo>(
     () => UpdateCartItemRepo(homeService: getIt<HomeService>()),

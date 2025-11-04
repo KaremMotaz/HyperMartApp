@@ -316,7 +316,7 @@ class _HomeService implements HomeService {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'cart/items/{Id}',
+            'cart/items/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -339,7 +339,7 @@ class _HomeService implements HomeService {
       Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'cart/items/{Id}',
+            'cart/items/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

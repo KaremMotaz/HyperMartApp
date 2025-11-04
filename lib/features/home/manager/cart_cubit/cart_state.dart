@@ -2,7 +2,7 @@ part of 'cart_cubit.dart';
 
 @freezed
 class CartState with _$CartState {
-  const factory CartState.initial() = _Initial;
+  const factory CartState.initial() = Initial;
 
   // Get Cart Items
   const factory CartState.getCartItemsLoading() = GetCartItemsLoading;
@@ -14,46 +14,46 @@ class CartState with _$CartState {
   }) = GetCartItemsFailure;
 
   // Add Cart Item
-  const factory CartState.addCartItemLoading() = _AddCartItemLoading;
+  const factory CartState.addCartItemLoading() = AddCartItemLoading;
   const factory CartState.addCartItemSuccess({
     required AddCartItemResponse response,
-  }) = _AddCartItemSuccess;
+  }) = AddCartItemSuccess;
   const factory CartState.addCartItemFailure({
     required ApiErrorModel apiErrorModel,
-  }) = _AddCartItemFailure;
+  }) = AddCartItemFailure;
 
   // Decrement Cart Item
   const factory CartState.decrementCartItemLoading() =
-      _DecrementCartItemLoading;
+      DecrementCartItemLoading;
   const factory CartState.decrementCartItemSuccess({
     required DecrementCartItemResponse response,
-  }) = _DecrementCartItemSuccess;
+  }) = DecrementCartItemSuccess;
   const factory CartState.decrementCartItemFailure({
     required ApiErrorModel apiErrorModel,
-  }) = _DecrementCartItemFailure;
+  }) = DecrementCartItemFailure;
 
   // Delete Cart Item
-  const factory CartState.deleteCartItemLoading() = _DeleteCartItemLoading;
-  const factory CartState.deleteCartItemSuccess() = _DeleteCartItemSuccess;
+  const factory CartState.deleteCartItemLoading() = DeleteCartItemLoading;
+  const factory CartState.deleteCartItemSuccess() = DeleteCartItemSuccess;
   const factory CartState.deleteCartItemFailure({
     required ApiErrorModel apiErrorModel,
-  }) = _DeleteCartItemFailure;
+  }) = DeleteCartItemFailure;
 
   // Update Cart Item
-  const factory CartState.updateCartItemLoading() = _UpdateCartItemLoading;
+  const factory CartState.updateCartItemLoading() = UpdateCartItemLoading;
   const factory CartState.updateCartItemSuccess({
     required UpdateCartItemResponse response,
-  }) = _UpdateCartItemSuccess;
+  }) = UpdateCartItemSuccess;
   const factory CartState.updateCartItemFailure({
     required ApiErrorModel apiErrorModel,
-  }) = _UpdateCartItemFailure;
+  }) = UpdateCartItemFailure;
 
   // Apply Coupon
-  const factory CartState.applyCouponLoading() = _ApplyCouponLoading;
+  const factory CartState.applyCouponLoading() = ApplyCouponLoading;
   const factory CartState.applyCouponSuccess({
     required ApplyCouponResponse response,
-  }) = _ApplyCouponSuccess;
+  }) = ApplyCouponSuccess;
   const factory CartState.applyCouponFailure({
     required ApiErrorModel apiErrorModel,
-  }) = _ApplyCouponFailure;
+  }) = ApplyCouponFailure;
 }
