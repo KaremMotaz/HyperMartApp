@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../data/models/cart/get_cart_items_response.dart';
 import '../../../manager/cart_cubit/cart_cubit.dart';
 import 'cart_view_body.dart';
 import 'empty_cart_widget.dart';
@@ -13,7 +12,6 @@ class CartItemsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit, CartState>(
       buildWhen: (previous, current) =>
-          current is GetCartItemsLoading ||
           current is GetCartItemsSuccess ||
           current is GetCartItemsFailure ||
           current is DeleteCartItemSuccess ||
@@ -21,14 +19,7 @@ class CartItemsBlocBuilder extends StatelessWidget {
           current is UpdateCartItemSuccess,
       builder: (context, state) {
         return state.maybeWhen(
-          getCartItemsLoading: () {
-            return CartViewBody(
-              cartItems: CartItemModel.dummyCartItems,
-              isLoading: true,
-            );
-          },
           getCartItemsSuccess: (getCartItemsResponse) {
-            // if cart is empty
             if (getCartItemsResponse.cartItems.isEmpty) {
               return const EmptyCartWidget();
             }
@@ -40,16 +31,12 @@ class CartItemsBlocBuilder extends StatelessWidget {
               details: apiErrorModel.details ?? [],
             );
           },
-          deleteCartItemSuccess: () {
+          orElse: () {
             final cartItems = context.read<CartCubit>().currentCartItems;
-
             if (cartItems.isEmpty) {
               return const EmptyCartWidget();
             }
             return CartViewBody(cartItems: cartItems);
-          },
-          orElse: () {
-            return const SizedBox.shrink();
           },
         );
       },

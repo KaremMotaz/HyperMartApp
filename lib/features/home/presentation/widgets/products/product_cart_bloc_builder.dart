@@ -17,10 +17,6 @@ class ProductCartBlocBuilder extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: BlocListener<CartCubit, CartState>(
         listener: (context, state) {
-          if (state is AddCartItemSuccess &&
-              state.response.productId == product.id) {
-            successSnackBar(context: context, message: state.response.message);
-          }
           if (state is AddCartItemFailure) {
             errorSnackBar(
               context: context,
