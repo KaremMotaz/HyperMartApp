@@ -19,17 +19,9 @@ class AppAssets {
   static const String searchIcon = 'assets/svgs/search.svg';
   static const String weekOfferImage = 'assets/images/vegetables_fruits.png';
   static const String maskOfferImage = 'assets/images/mask_group.png';
-  static const String groceriesIcon = 'assets/svgs/groceries.svg';
-  static const String appliancesIcon = 'assets/svgs/appliances.svg';
-  static const String fashionIcon = 'assets/svgs/fashion.svg';
-  static const String furnitureIcon = 'assets/svgs/furniture.svg';
   static const String item1 = 'assets/images/item1.png';
   static const String item2 = 'assets/images/item2.png';
   static const String item3 = 'assets/images/item3.png';
-  static const String strawberryImage = 'assets/images/strawberry.png';
-  static const String chipsImage = 'assets/images/chips.png';
-  static const String chairImage = 'assets/images/chair.png';
-  static const String washingMachineImage = 'assets/images/washing_machine.png';
   static const String heartOutlineIcon = 'assets/svgs/heart_outline.svg';
   static const String heartFullIcon = 'assets/svgs/heart_full.svg';
   static const String starIcon = 'assets/svgs/star.svg';
