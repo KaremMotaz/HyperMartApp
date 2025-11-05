@@ -4,7 +4,5 @@ const String kRememberMe = "rememberMe";
 const String kHasSeenOnboarding = "hasSeenOnboarding";
 const String kCashedDataBox = "cashed_data_box";
 const String kCategories = "categories";
-const String kProducts = "products";
-const String kCartItems = "cartItems";
 const String kLastFetchCategories = "last_fetch_categories";
 const String kLastFetchProducts = "last_fetch_products";

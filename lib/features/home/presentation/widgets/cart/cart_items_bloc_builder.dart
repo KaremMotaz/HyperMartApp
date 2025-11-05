@@ -16,7 +16,9 @@ class CartItemsBlocBuilder extends StatelessWidget {
           current is GetCartItemsLoading ||
           current is GetCartItemsSuccess ||
           current is GetCartItemsFailure ||
-          current is DeleteCartItemSuccess,
+          current is DeleteCartItemSuccess ||
+          current is AddCartItemSuccess ||
+          current is UpdateCartItemSuccess,
       builder: (context, state) {
         return state.maybeWhen(
           getCartItemsLoading: () {

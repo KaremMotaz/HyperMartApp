@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
 import '../../features/home/presentation/views/cart_view.dart';
 import '../../features/home/presentation/views/products_view.dart';
 import '../../features/home/presentation/views/categories_view.dart';
@@ -97,13 +98,21 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.productsView,
           builder: (context, state) {
-            return const ProductsView();
+            final cartCubit = state.extra as CartCubit;
+            return BlocProvider.value(
+              value: cartCubit,
+              child: const ProductsView(),
+            );
           },
         ),
         GoRoute(
           path: Routes.cartView,
           builder: (context, state) {
-            return const CartView();
+            final cartCubit = state.extra as CartCubit;
+            return BlocProvider.value(
+              value: cartCubit,
+              child: const CartView(),
+            );
           },
         ),
         GoRoute(

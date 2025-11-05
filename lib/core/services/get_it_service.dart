@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import '../../features/home/data/local_data_source/cart_items_local_data_source.dart';
-import '../../features/home/data/local_data_source/products_local_data_source.dart';
 import '../../features/home/data/models/Products/get_products_response.dart';
 import '../../features/home/data/models/cart/get_cart_items_response.dart';
 import '../../features/home/data/repos/add_cart_item_repo.dart';
@@ -62,12 +60,6 @@ Future<void> setupGetIt() async {
     () => LocalCacheService<GetProductsResponse>(),
   );
 
-  getIt.registerLazySingleton<ProductsLocalDataSource>(
-    () => ProductsLocalDataSource(
-      cache: getIt<LocalCacheService<GetProductsResponse>>(),
-    ),
-  );
-
   getIt.registerLazySingleton<GetProductsRepo>(
     () => GetProductsRepo(homeService: getIt<HomeService>()),
   );
@@ -77,42 +69,21 @@ Future<void> setupGetIt() async {
     () => LocalCacheService<GetCartItemsResponse>(),
   );
 
-  getIt.registerLazySingleton<CartItemsLocalDataSource>(
-    () => CartItemsLocalDataSource(
-      cache: getIt<LocalCacheService<GetCartItemsResponse>>(),
-    ),
-  );
-
   getIt.registerLazySingleton<GetCartItemsRepo>(
-    () => GetCartItemsRepo(
-      homeService: getIt<HomeService>(),
-      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
-    ),
+    () => GetCartItemsRepo(homeService: getIt<HomeService>()),
   );
 
   getIt.registerLazySingleton<AddCartItemRepo>(
-    () => AddCartItemRepo(
-      homeService: getIt<HomeService>(),
-      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
-    ),
+    () => AddCartItemRepo(homeService: getIt<HomeService>()),
   );
   getIt.registerLazySingleton<DecrementCartItemRepo>(
-    () => DecrementCartItemRepo(
-      homeService: getIt<HomeService>(),
-      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
-    ),
+    () => DecrementCartItemRepo(homeService: getIt<HomeService>()),
   );
   getIt.registerLazySingleton<DeleteCartItemRepo>(
-    () => DeleteCartItemRepo(
-      homeService: getIt<HomeService>(),
-      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
-    ),
+    () => DeleteCartItemRepo(homeService: getIt<HomeService>()),
   );
   getIt.registerLazySingleton<UpdateCartItemRepo>(
-    () => UpdateCartItemRepo(
-      homeService: getIt<HomeService>(),
-      cartItemsLocalDataSource: getIt<CartItemsLocalDataSource>(),
-    ),
+    () => UpdateCartItemRepo(homeService: getIt<HomeService>()),
   );
   getIt.registerLazySingleton<ApplyCouponRepo>(
     () => ApplyCouponRepo(homeService: getIt<HomeService>()),

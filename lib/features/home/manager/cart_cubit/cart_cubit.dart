@@ -68,7 +68,8 @@ class CartCubit extends Cubit<CartState> {
         );
 
     result.when(
-      success: (addCartItemResponse) {
+      success: (addCartItemResponse) async {
+        await getCartItems();
         emit(CartState.addCartItemSuccess(response: addCartItemResponse));
       },
       failure: (apiErrorModel) {
@@ -86,7 +87,9 @@ class CartCubit extends Cubit<CartState> {
         );
 
     result.when(
-      success: (decrementCartItemResponse) {
+      success: (decrementCartItemResponse) async {
+        await getCartItems();
+
         emit(
           CartState.decrementCartItemSuccess(
             response: decrementCartItemResponse,
@@ -130,7 +133,9 @@ class CartCubit extends Cubit<CartState> {
         );
 
     result.when(
-      success: (updateCartItemResponse) {
+      success: (updateCartItemResponse) async {
+        await getCartItems();
+
         emit(CartState.updateCartItemSuccess(response: updateCartItemResponse));
       },
       failure: (apiErrorModel) {

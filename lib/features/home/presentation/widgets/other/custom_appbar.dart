@@ -17,7 +17,7 @@ class CustomAppbar extends StatelessWidget {
     return Row(
       children: [
         InkWell(
-          onTap: () => context.pop(true),
+          onTap: () => context.pop(),
           child: Container(
             padding: const EdgeInsets.all(6),
             decoration: BoxDecoration(

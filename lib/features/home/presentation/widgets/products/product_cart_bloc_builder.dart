@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/functions/build_snack_bar.dart';
-import 'package:hyper_mart_app/core/helpers/logger.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:hyper_mart_app/features/home/data/models/cart/get_cart_items_response.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
@@ -18,7 +17,8 @@ class ProductCartBlocBuilder extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: BlocListener<CartCubit, CartState>(
         listener: (context, state) {
-          if (state is AddCartItemSuccess) {
+          if (state is AddCartItemSuccess &&
+              state.response.productId == product.id) {
             successSnackBar(context: context, message: state.response.message);
           }
           if (state is AddCartItemFailure) {
@@ -42,16 +42,26 @@ class ProductCartBlocBuilder extends StatelessWidget {
         },
         child: BlocConsumer<CartCubit, CartState>(
           listener: (context, state) {},
-          buildWhen: (previous, current) =>
-              current is AddCartItemSuccess ||
-              current is UpdateCartItemSuccess ||
-              current is DecrementCartItemSuccess ||
-              current is GetCartItemsSuccess,
+          buildWhen: (previous, current) {
+            if (current is AddCartItemSuccess) {
+              return current.response.productId == product.id;
+            }
+            if (current is UpdateCartItemSuccess) {
+              return current.response.productId == product.id;
+            }
+            if (current is DecrementCartItemSuccess) {
+              return current.response.productId == product.id;
+            }
+            if (current is GetCartItemsSuccess) {
+              return true;
+            }
+            return false;
+          },
+
           builder: (context, state) {
             final List<CartItemModel> currentCartItems = context
                 .read<CartCubit>()
                 .currentCartItems;
-            Logger.log("From Here $currentCartItems");
             CartItemModel? existingCartItem;
             try {
               existingCartItem = currentCartItems.firstWhere(
@@ -73,15 +83,10 @@ class ProductCartBlocBuilder extends StatelessWidget {
                 }
               },
               addCartItemSuccess: (response) {
-                return response.quantity > 0
-                    ? CartControllers(
-                        quantity: response.quantity,
-                        itemId: response.id!,
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: AddToCartButton(product: product),
-                      );
+                return CartControllers(
+                  quantity: response.quantity,
+                  itemId: response.id!,
+                );
               },
               updateCartItemSuccess: (response) {
                 return CartControllers(
