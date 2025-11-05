@@ -16,7 +16,7 @@ class ProductCartBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: BlocConsumer<CartCubit, CartState>(
+      child: BlocListener<CartCubit, CartState>(
         listener: (context, state) {
           if (state is AddCartItemSuccess) {
             successSnackBar(context: context, message: state.response.message);
@@ -40,69 +40,72 @@ class ProductCartBlocBuilder extends StatelessWidget {
             );
           }
         },
-        buildWhen: (previous, current) =>
-            current is AddCartItemSuccess ||
-            current is UpdateCartItemSuccess ||
-            current is DecrementCartItemSuccess ||
-            current is GetCartItemsSuccess,
-        builder: (context, state) {
-          final List<CartItemModel> currentCartItems = context
-              .read<CartCubit>()
-              .currentCartItems;
-          Logger.log("From Here $currentCartItems");
-          CartItemModel? existingCartItem;
-          try {
-            existingCartItem = currentCartItems.firstWhere(
-              (item) => item.productId == product.id,
-            );
-          } on StateError {
-            // not found
-            existingCartItem = null;
-          }
-          return state.maybeWhen(
-            getCartItemsSuccess: (cartResponse) {
-              if (existingCartItem != null) {
-                return CartControllers(
-                  quantity: existingCartItem.quantity,
-                  itemId: existingCartItem.itemId,
-                );
-              } else {
-                return AddToCartButton(product: product);
-              }
-            },
-            addCartItemSuccess: (response) {
-              return response.quantity > 0
-                  ? CartControllers(
-                      quantity: response.quantity,
-                      itemId: response.id!,
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: AddToCartButton(product: product),
-                    );
-            },
-            updateCartItemSuccess: (response) {
-              return CartControllers(
-                quantity: response.quantity,
-                itemId: response.id,
+        child: BlocConsumer<CartCubit, CartState>(
+          listener: (context, state) {},
+          buildWhen: (previous, current) =>
+              current is AddCartItemSuccess ||
+              current is UpdateCartItemSuccess ||
+              current is DecrementCartItemSuccess ||
+              current is GetCartItemsSuccess,
+          builder: (context, state) {
+            final List<CartItemModel> currentCartItems = context
+                .read<CartCubit>()
+                .currentCartItems;
+            Logger.log("From Here $currentCartItems");
+            CartItemModel? existingCartItem;
+            try {
+              existingCartItem = currentCartItems.firstWhere(
+                (item) => item.productId == product.id,
               );
-            },
-            decrementCartItemSuccess: (response) {
-              return response.quantity > 0
-                  ? CartControllers(
-                      quantity: response.quantity,
-                      itemId: response.itemId!,
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: AddToCartButton(product: product),
-                    );
-            },
-            orElse: () {
-              return const SizedBox.shrink();
-            },
-          );
-        },
+            } on StateError {
+              // not found
+              existingCartItem = null;
+            }
+            return state.maybeWhen(
+              getCartItemsSuccess: (cartResponse) {
+                if (existingCartItem != null) {
+                  return CartControllers(
+                    quantity: existingCartItem.quantity,
+                    itemId: existingCartItem.itemId,
+                  );
+                } else {
+                  return AddToCartButton(product: product);
+                }
+              },
+              addCartItemSuccess: (response) {
+                return response.quantity > 0
+                    ? CartControllers(
+                        quantity: response.quantity,
+                        itemId: response.id!,
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: AddToCartButton(product: product),
+                      );
+              },
+              updateCartItemSuccess: (response) {
+                return CartControllers(
+                  quantity: response.quantity,
+                  itemId: response.id,
+                );
+              },
+              decrementCartItemSuccess: (response) {
+                return response.quantity > 0
+                    ? CartControllers(
+                        quantity: response.quantity,
+                        itemId: response.itemId!,
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: AddToCartButton(product: product),
+                      );
+              },
+              orElse: () {
+                return const SizedBox.shrink();
+              },
+            );
+          },
+        ),
       ),
     );
   }

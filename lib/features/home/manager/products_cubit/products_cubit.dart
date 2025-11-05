@@ -5,8 +5,8 @@ import '../../data/models/Products/get_products_response.dart';
 import '../../data/repos/get_products_repo.dart';
 import '../../../../core/networking/api_result.dart';
 
-part 'products_cubit.freezed.dart'; 
-part 'products_state.dart'; 
+part 'products_cubit.freezed.dart';
+part 'products_state.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit({required this.getProductsRepo})
@@ -15,19 +15,24 @@ class ProductsCubit extends Cubit<ProductsState> {
   final GetProductsRepo getProductsRepo;
 
   Future<void> getProducts() async {
-    final ApiResult<GetProductsResponse> result = await getProductsRepo
-        .getProducts();
+    final result = await getProductsRepo.getProducts();
+
+    if (isClosed) return;
 
     result.when(
       success: (getProductsResponse) {
-        emit(
-          ProductsState.getProductsSuccess(
-            getProductsResponse: getProductsResponse,
-          ),
-        );
+        if (!isClosed) {
+          emit(
+            ProductsState.getProductsSuccess(
+              getProductsResponse: getProductsResponse,
+            ),
+          );
+        }
       },
       failure: (apiErrorModel) {
-        emit(ProductsState.getProductsFailure(apiErrorModel: apiErrorModel));
+        if (!isClosed) {
+          emit(ProductsState.getProductsFailure(apiErrorModel: apiErrorModel));
+        }
       },
     );
   }
