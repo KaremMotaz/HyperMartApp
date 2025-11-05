@@ -32,7 +32,8 @@ class CartControllers extends StatelessWidget {
             }
           },
           isLoading:
-              context.watch<CartCubit>().state is DecrementCartItemLoading,
+              context.watch<CartCubit>().state is DecrementCartItemLoading &&
+              itemId == context.watch<CartCubit>().loadingItemId,
         ),
         Text(
           "$quantity",
@@ -48,7 +49,9 @@ class CartControllers extends StatelessWidget {
               quantity: quantity + 1,
             );
           },
-          isLoading: context.watch<CartCubit>().state is UpdateCartItemLoading,
+          isLoading:
+              context.watch<CartCubit>().state is UpdateCartItemLoading &&
+              itemId == context.watch<CartCubit>().loadingItemId,
         ),
       ],
     );

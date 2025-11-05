@@ -17,16 +17,8 @@ class CartControllersBlocBuilder extends StatelessWidget {
             current.response.id == cartItem.itemId) {
           return true;
         }
-        if (current is UpdateCartItemLoading &&
-            current.itemId == cartItem.itemId) {
-          return true;
-        }
         if (current is DecrementCartItemSuccess &&
             current.response.itemId == cartItem.itemId) {
-          return true;
-        }
-        if (current is DecrementCartItemLoading &&
-            current.itemId == cartItem.itemId) {
           return true;
         }
         return false;

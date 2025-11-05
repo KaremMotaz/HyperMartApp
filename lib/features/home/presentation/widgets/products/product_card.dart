@@ -8,7 +8,7 @@ import 'package:hyper_mart_app/features/home/data/repos/delete_cart_item_repo.da
 import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/update_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
-import 'product_cart_section.dart';
+import 'product_cart_bloc_builder.dart';
 import 'product_image.dart';
 import 'product_name.dart';
 import 'product_price_and_rating.dart';
@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
                   updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
                   applyCouponRepo: getIt.get<ApplyCouponRepo>(),
                 ),
-                child: ProductCartSection(product: product),
+                child: ProductCartBlocBuilder(product: product),
               ),
               const SizedBox(height: 18),
             ],
