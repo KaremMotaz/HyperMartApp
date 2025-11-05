@@ -49,7 +49,7 @@ class ProductCard extends StatelessWidget {
                   deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
                   updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
                   applyCouponRepo: getIt.get<ApplyCouponRepo>(),
-                ),
+                )..getCartItems(),
                 child: ProductCartBlocBuilder(product: product),
               ),
               const SizedBox(height: 18),
