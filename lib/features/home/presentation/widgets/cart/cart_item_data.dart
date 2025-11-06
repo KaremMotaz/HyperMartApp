@@ -26,13 +26,13 @@ class CartItemData extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                "${cartItem.weightInGrams}g",
+                "${cartItem.weightInGrams} g",
                 style: AppStyles.regular14,
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 10),
               Text(
-                "\$${cartItem.basePricePerUnit}",
+                "\$${cartItem.totalPrice}",
                 style: AppStyles.semiBold20,
               ),
               const SizedBox(height: 5),

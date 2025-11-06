@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
+import 'package:hyper_mart_app/features/home/presentation/views/checkout_view.dart';
 import '../../features/home/presentation/views/cart_view.dart';
 import '../../features/home/presentation/views/products_view.dart';
 import '../../features/home/presentation/views/categories_view.dart';
@@ -112,6 +113,16 @@ abstract class AppRouter {
             return BlocProvider.value(
               value: cartCubit,
               child: const CartView(),
+            );
+          },
+        ),
+        GoRoute(
+          path: Routes.checkoutView,
+          builder: (context, state) {
+            final cartCubit = state.extra as CartCubit;
+            return BlocProvider.value(
+              value: cartCubit,
+              child: const CheckoutView(),
             );
           },
         ),

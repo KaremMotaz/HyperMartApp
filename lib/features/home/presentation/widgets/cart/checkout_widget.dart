@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
-import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_form_field.dart';
+import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/cart/apply_coupons_widget.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/checkout_data.dart';
 
 class CheckoutWidget extends StatelessWidget {
@@ -26,32 +29,39 @@ class CheckoutWidget extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            AppTextFormField(
-              hintText: "Enter Discount Code",
-              backgroundColor: const Color(0xfff6f6f6),
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(8),
-                child: AppTextButton(
-                  onPressed: () {},
-                  buttonText: "Apply",
-                  buttonHeight: 30,
-                  textStyle: AppStyles.medium14.copyWith(
-                    color: AppColors.black,
-                  ),
-                  backgroundColor: AppColors.white,
-                ),
-              ),
-              validator: (value) => null,
+            const ApplyCouponsWidget(),
+            const SizedBox(height: 20),
+            CheckoutData(
+              data: "Sub total",
+              value: context
+                  .watch<CartCubit>()
+                  .cartEntity
+                  .calculateTotalBasePrice(),
+            ),
+            const SizedBox(height: 10),
+            CheckoutData(
+              data: "Discount",
+              value: context
+                  .watch<CartCubit>()
+                  .cartEntity
+                  .calculateDiscountPrice(),
+            ),
+            Divider(height: 30, color: Colors.grey.shade400),
+            CheckoutData(
+              data: "total",
+              value: context
+                  .watch<CartCubit>()
+                  .cartEntity
+                  .calculateTotalPrice(),
             ),
             const SizedBox(height: 20),
-            const CheckoutData(data: "Sub total", value: 225.00),
-            const SizedBox(height: 10),
-            const CheckoutData(data: "Descount", value: 25),
-            Divider(height: 30, color: Colors.grey.shade400),
-            const CheckoutData(data: "total", value: 200.00),
-            const SizedBox(height: 20),
             AppTextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push(
+                  Routes.checkoutView,
+                  extra: context.read<CartCubit>(),
+                );
+              },
               buttonWidth: double.infinity,
               buttonText: "Checkout",
               borderRadius: 20,

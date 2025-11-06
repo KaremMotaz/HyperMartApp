@@ -57,6 +57,7 @@ class ProductCartBlocBuilder extends StatelessWidget {
           builder: (context, state) {
             final List<CartItemModel> currentCartItems = context
                 .read<CartCubit>()
+                .cartEntity
                 .currentCartItems;
             CartItemModel? existingCartItem;
             try {

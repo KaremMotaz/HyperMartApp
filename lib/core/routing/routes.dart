@@ -15,4 +15,5 @@ class Routes {
   static const String productsView = '/productsView';
   static const String cartView = '/cartView';
   // static const String cartView = '/';
+  static const String checkoutView = '/checkoutView';
 }

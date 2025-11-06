@@ -32,7 +32,10 @@ class CartItemsBlocBuilder extends StatelessWidget {
             );
           },
           orElse: () {
-            final cartItems = context.read<CartCubit>().currentCartItems;
+            final cartItems = context
+                .read<CartCubit>()
+                .cartEntity
+                .currentCartItems;
             if (cartItems.isEmpty) {
               return const EmptyCartWidget();
             }

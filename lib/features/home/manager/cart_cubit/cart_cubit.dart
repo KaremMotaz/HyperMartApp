@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hyper_mart_app/features/home/domain/cart_entity.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../data/models/cart/add_cart_item_request_body.dart';
 import '../../data/models/cart/add_cart_item_response.dart';
@@ -38,10 +39,15 @@ class CartCubit extends Cubit<CartState> {
   final DeleteCartItemRepo deleteCartItemRepo;
   final UpdateCartItemRepo updateCartItemRepo;
   final ApplyCouponRepo applyCouponRepo;
-  List<CartItemModel> currentCartItems = [];
+
+  CartEntity cartEntity = CartEntity(currentCartItems: []);
   String? _loadingItemId;
 
   String? get loadingItemId => _loadingItemId;
+
+  void setCartItems({required List<CartItemModel> items}) {
+    cartEntity = CartEntity(currentCartItems: items);
+  }
 
   Future<void> getCartItems() async {
     emit(const CartState.getCartItemsLoading());
@@ -50,7 +56,7 @@ class CartCubit extends Cubit<CartState> {
 
     result.when(
       success: (getCartItemsResponse) {
-        currentCartItems = getCartItemsResponse.cartItems;
+        setCartItems(items: getCartItemsResponse.cartItems);
         emit(CartState.getCartItemsSuccess(cartResponse: getCartItemsResponse));
       },
       failure: (apiErrorModel) {
@@ -111,7 +117,12 @@ class CartCubit extends Cubit<CartState> {
 
     result.when(
       success: (addCartItemResponse) {
-        currentCartItems.removeWhere((item) => item.itemId == itemId);
+        
+        final updatedItems = List<CartItemModel>.from(
+          cartEntity.currentCartItems,
+        )..removeWhere((item) => item.itemId == itemId);
+        setCartItems(items: updatedItems);
+
         emit(const CartState.deleteCartItemSuccess());
       },
       failure: (apiErrorModel) {

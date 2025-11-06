@@ -14,8 +14,8 @@ class CustomCartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
-        final cartCubit = context.read<CartCubit>();
-        final cartItemsCount = cartCubit.currentCartItems.length;
+        final CartCubit cartCubit = context.read<CartCubit>();
+        final int cartItemsCount = cartCubit.cartEntity.currentCartItems.length;
 
         return Positioned(
           left: 0,
@@ -58,8 +58,10 @@ class CustomCartWidget extends StatelessWidget {
                           width: 15,
                           height: 15,
                           decoration: BoxDecoration(
-                            border:
-                                Border.all(color: AppColors.white, width: 2),
+                            border: Border.all(
+                              color: AppColors.white,
+                              width: 2,
+                            ),
                             color: AppColors.red,
                             shape: BoxShape.circle,
                           ),
@@ -75,4 +77,3 @@ class CustomCartWidget extends StatelessWidget {
     );
   }
 }
-
