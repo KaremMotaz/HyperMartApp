@@ -31,6 +31,13 @@ class CartEntity {
     }
     return totalPrice;
   }
+  double calculateTotalPriceAfterCoupon() {
+    double totalPrice = 0;
+    for (var cartItem in currentCartItems) {
+      totalPrice += cartItem.totalPrice;
+    }
+    return totalPrice;
+  }
 
   CartItemModel? getCartItem({required String productId}) {
     for (var carItem in currentCartItems) {

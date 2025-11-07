@@ -46,14 +46,44 @@ class CheckoutWidget extends StatelessWidget {
                   .cartEntity
                   .calculateDiscountPrice(),
             ),
-            Divider(height: 30, color: Colors.grey.shade400),
-            CheckoutData(
-              data: "total",
-              value: context
-                  .watch<CartCubit>()
-                  .cartEntity
-                  .calculateTotalPrice(),
+            BlocBuilder<CartCubit, CartState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  applyCouponSuccess: (applyCouponSuccessResponse) {
+                    return Column(
+                      children: [
+                        CheckoutData(
+                          data: "Additional Discount",
+                          value: applyCouponSuccessResponse.discountAmount
+                              .toDouble(),
+                        ),
+                        Divider(height: 30, color: Colors.grey.shade400),
+                        CheckoutData(
+                          data: "total",
+                          value: applyCouponSuccessResponse.finalTotal
+                              .toDouble(),
+                        ),
+                      ],
+                    );
+                  },
+                  orElse: () {
+                    return Column(
+                      children: [
+                        Divider(height: 30, color: Colors.grey.shade400),
+                        CheckoutData(
+                          data: "total",
+                          value: context
+                              .watch<CartCubit>()
+                              .cartEntity
+                              .calculateTotalPrice(),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             ),
+
             const SizedBox(height: 20),
             AppTextButton(
               onPressed: () {

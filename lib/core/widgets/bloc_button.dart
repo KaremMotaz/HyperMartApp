@@ -17,6 +17,8 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
   final double? verticalPadding;
   final double? borderRadius;
   final Color? borderColor;
+  final Color? indicatorColor;
+  final double? indicatorSize;
 
   const BlocButton({
     super.key,
@@ -30,6 +32,8 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
     this.verticalPadding,
     this.borderRadius,
     this.borderColor,
+    this.indicatorColor = AppColors.white,
+    this.indicatorSize,
   });
 
   @override
@@ -48,7 +52,10 @@ class BlocButton<C extends StateStreamable<S>, S> extends StatelessWidget {
             borderRadius: borderRadius,
             borderColor: borderColor,
             child: loading
-                ? const CustomCircularProgressIndicator()
+                ? CustomCircularProgressIndicator(
+                    color: indicatorColor,
+                    size: indicatorSize,
+                  )
                 : Text(
                     label,
                     style:
