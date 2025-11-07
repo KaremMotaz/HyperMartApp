@@ -7,28 +7,26 @@ class EmptyCartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
-            child: Image.asset(AppAssets.emptyCart),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 60),
+          child: Image.asset(AppAssets.emptyCart),
+        ),
+        Transform.translate(
+          offset: const Offset(0, -15),
+          child: const Column(
+            children: [
+              Text("Your cart is empty", style: AppStyles.bold22),
+              Text(
+                "Add Something to make me happy",
+                style: AppStyles.regular14,
+              ),
+            ],
           ),
-          Transform.translate(
-            offset: const Offset(0, -15),
-            child: const Column(
-              children: [
-                Text("Your cart is empty", style: AppStyles.bold22),
-                Text(
-                  "Add Something to make me happy",
-                  style: AppStyles.regular14,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

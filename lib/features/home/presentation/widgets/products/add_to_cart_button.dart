@@ -15,8 +15,8 @@ class AddToCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isLoading =
-        context.watch<CartCubit>().state is AddCartItemLoading &&
-        context.watch<CartCubit>().loadingItemId == product.id;
+        context.read<CartCubit>().state is AddCartItemLoading &&
+        context.read<CartCubit>().loadingItemId == product.id;
     return IgnorePointer(
       ignoring: isLoading,
       child: AppTextButton(

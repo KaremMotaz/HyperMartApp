@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hyper_mart_app/core/theming/app_assets.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_controllers_bloc_builder.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_controllers.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/cart/cart_item_data.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../data/models/cart/get_cart_items_response.dart';
@@ -47,7 +47,7 @@ class CartItem extends StatelessWidget {
                   color: const Color(0xffefefef),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: CartControllersBlocBuilder(cartItem: cartItem),
+                child: CartControllers(cartItem: cartItem),
               ),
             ],
           ),

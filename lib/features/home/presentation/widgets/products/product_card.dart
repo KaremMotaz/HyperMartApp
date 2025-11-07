@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'product_cart_bloc_builder.dart';
+import 'product_cart_bloc_consumer.dart';
 import 'product_image.dart';
 import 'product_name.dart';
 import 'product_price_and_rating.dart';
@@ -32,7 +32,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(height: 9),
               ProductPriceAndRating(product: product),
               const SizedBox(height: 18),
-              ProductCartBlocBuilder(product: product),
+              ProductCartBlocConsumer(product: product),
               const SizedBox(height: 18),
             ],
           ),

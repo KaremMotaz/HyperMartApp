@@ -5,14 +5,6 @@ class CartEntity {
 
   CartEntity({required this.currentCartItems});
 
-  addCartItem({required CartItemModel cartItemModel}) {
-    currentCartItems.add(cartItemModel);
-  }
-
-  removeCarItem({required CartItemModel cartItemModel}) {
-    currentCartItems.remove(cartItemModel);
-  }
-
   double calculateTotalBasePrice() {
     double totalPrice = 0;
     for (var cartItem in currentCartItems) {
@@ -40,21 +32,12 @@ class CartEntity {
     return totalPrice;
   }
 
-  bool isExis({required String productId}) {
+  CartItemModel? getCartItem({required String productId}) {
     for (var carItem in currentCartItems) {
       if (carItem.productId == productId) {
-        return true;
+        return carItem;
       }
     }
-    return false;
+    return null;
   }
-
-  // CartItemModel getCartItem({required String productId}) {
-  //   for (var carItem in currentCartItems) {
-  //     if (carItem.productId == productId) {
-  //       return carItem;
-  //     }
-  //   }
-  //   return CartItemModel(productEntity: product, quanitty: 1);
-  // }
 }
