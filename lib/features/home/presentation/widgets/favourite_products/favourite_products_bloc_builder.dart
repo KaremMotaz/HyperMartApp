@@ -28,9 +28,12 @@ class FavouriteProductsBlocBuilder extends StatelessWidget {
               details: [cacheErrorModel.suggestion],
             );
           },
+          deleteSuccess: () {
+            return const EmptyFavouriteProductsWidget();
+          },
           orElse: () {
             final favouriteProducts = context
-                .read<FavouriteProductsCubit>()
+                .watch<FavouriteProductsCubit>()
                 .favouriteProducts;
             if (favouriteProducts.isEmpty) {
               return const EmptyFavouriteProductsWidget();

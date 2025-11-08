@@ -13,7 +13,7 @@ class FavouriteProductsCubit extends Cubit<FavouriteProductsState> {
     : super(const FavouriteProductsState.initial());
 
   final FavouriteProductsRepo favouriteProductsRepo;
-  List<ProductModel?> favouriteProducts = [];
+  List<ProductModel> favouriteProducts = [];
 
   Future<void> getAllFavouriteProducts() async {
     final CacheResult<List<ProductModel>?> result = await favouriteProductsRepo
@@ -116,6 +116,9 @@ class FavouriteProductsCubit extends Cubit<FavouriteProductsState> {
   }
 
   Future<void> removeAllFavouriteProducts() async {
+    favouriteProducts.clear();
+    emit(const FavouriteProductsState.deleteSuccess());
+
     final CacheResult<void> result = await favouriteProductsRepo
         .removeAllFavouriteProducts();
 
@@ -125,7 +128,11 @@ class FavouriteProductsCubit extends Cubit<FavouriteProductsState> {
       success: (response) async {
         // Reload the updated favourite products list
         await getAllFavouriteProducts();
+        if (!isClosed) {
+          emit(const FavouriteProductsState.deleteSuccess());
+        }
       },
+      
       failure: (apiErrorModel) {
         if (!isClosed) {
           emit(FavouriteProductsState.failure(cacheErrorModel: apiErrorModel));

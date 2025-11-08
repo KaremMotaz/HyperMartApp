@@ -13,14 +13,12 @@ class FavouriteProductsGridView extends StatelessWidget {
       itemCount: favouriteProducts.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 1.1,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+        childAspectRatio: 0.52,
       ),
       itemBuilder: (context, index) {
-        return SizedBox(
-          height: 300,
-          child: ProductCard(product: favouriteProducts[index]!));
+        return ProductCard(product: favouriteProducts[index]!);
       },
     );
   }

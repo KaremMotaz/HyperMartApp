@@ -12,6 +12,7 @@ class FavouriteProductsState with _$FavouriteProductsState {
   const factory FavouriteProductsState.success({
     required List<ProductModel> favouriteProducts,
   }) = Success;
+  const factory FavouriteProductsState.deleteSuccess() = DeleteSuccess;
 
   /// Failure: returns the error
   const factory FavouriteProductsState.failure({

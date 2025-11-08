@@ -1,21 +1,10 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class LocalCacheService<T> {
-  Future<Box<T>> _openBoxIfNeeded(String boxName) async {
-    if (!Hive.isBoxOpen(boxName)) {
-      return await Hive.openBox<T>(boxName);
-    }
-    return Hive.box<T>(boxName);
-  }
+  Box<T> getBox(String boxName) => Hive.box<T>(boxName);
 
   Future<T?> getData({required String key, required String boxName}) async {
-    final box = await _openBoxIfNeeded(boxName);
-    return box.get(key);
-  }
-
-  Future<List<T>> getBoxValues({required String boxName}) async {
-    final box = await _openBoxIfNeeded(boxName);
-    return box.values.toList();
+    return getBox(boxName).get(key);
   }
 
   Future<void> saveData({
@@ -23,22 +12,22 @@ class LocalCacheService<T> {
     required String boxName,
     required T data,
   }) async {
-    final box = await _openBoxIfNeeded(boxName);
-    await box.put(key, data);
+    await getBox(boxName).put(key, data);
   }
 
   Future<void> clear({required String key, required String boxName}) async {
-    final box = await _openBoxIfNeeded(boxName);
-    await box.delete(key);
+    await getBox(boxName).delete(key);
   }
 
   Future<void> clearAll({required String boxName}) async {
-    final box = await _openBoxIfNeeded(boxName);
-    await box.clear();
+    await getBox(boxName).clear();
   }
 
-  Future<bool> isContains({required String boxName, required String key}) async {
-    final box = await _openBoxIfNeeded(boxName);
-    return box.containsKey(key);
+  bool isContains({required String boxName, required String key}) {
+    return getBox(boxName).containsKey(key);
+  }
+
+  List<T> getBoxValues({required String boxName}) {
+    return getBox(boxName).values.toList();
   }
 }

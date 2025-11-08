@@ -8,14 +8,14 @@ class FavouriteProductsLocalDataSource {
   FavouriteProductsLocalDataSource({required this.cache});
 
   Future<List<ProductModel>?> getAllFavouriteProducts() async {
-    final List<ProductModel> data = await cache.getBoxValues(
+    final List<ProductModel> data = cache.getBoxValues(
       boxName: kFavouriteProductsBox,
     );
     return data;
   }
 
   Future<bool> isFavouriteProduct({required String productId}) async {
-    return await cache.isContains(
+    return cache.isContains(
       boxName: kFavouriteProductsBox,
       key: productId,
     );

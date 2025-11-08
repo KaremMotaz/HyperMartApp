@@ -1,4 +1,5 @@
 import '../../../../core/helpers/constants.dart';
+import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/services/cache_helper.dart';
@@ -57,6 +58,7 @@ class GetCategoriesRepo {
 
       return ApiResult.success(response);
     } catch (error) {
+      Logger.log("From getCategories : $error");
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

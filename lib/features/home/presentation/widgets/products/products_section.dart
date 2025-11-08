@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
+import 'package:hyper_mart_app/features/home/manager/favourite_products_cubit/favourite_products_cubit.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/services/get_it_service.dart';
 import '../../../data/repos/get_products_repo.dart';
@@ -24,7 +25,15 @@ class ProductsSection extends StatelessWidget {
             title: 'Popular Deals',
             onTap: () {
               final cartCubit = context.read<CartCubit>();
-              context.push(Routes.productsView, extra: cartCubit);
+              final favouriteProductsCubit = context
+                  .read<FavouriteProductsCubit>();
+              context.push(
+                Routes.productsView,
+                extra: {
+                  'cartCubit': cartCubit,
+                  'favouriteCubit': favouriteProductsCubit,
+                },
+              );
             },
           ),
           const SizedBox(height: 20),

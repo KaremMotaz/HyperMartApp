@@ -55,13 +55,14 @@ extension FavouriteProductsStatePatterns on FavouriteProductsState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial value)?  initial,TResult Function( Loading value)?  loading,TResult Function( Success value)?  success,TResult Function( Failure value)?  failure,TResult Function( IsFavourite value)?  isFavourite,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Initial value)?  initial,TResult Function( Loading value)?  loading,TResult Function( Success value)?  success,TResult Function( DeleteSuccess value)?  deleteSuccess,TResult Function( Failure value)?  failure,TResult Function( IsFavourite value)?  isFavourite,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial(_that);case Loading() when loading != null:
 return loading(_that);case Success() when success != null:
-return success(_that);case Failure() when failure != null:
+return success(_that);case DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess(_that);case Failure() when failure != null:
 return failure(_that);case IsFavourite() when isFavourite != null:
 return isFavourite(_that);case _:
   return orElse();
@@ -81,13 +82,14 @@ return isFavourite(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial value)  initial,required TResult Function( Loading value)  loading,required TResult Function( Success value)  success,required TResult Function( Failure value)  failure,required TResult Function( IsFavourite value)  isFavourite,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Initial value)  initial,required TResult Function( Loading value)  loading,required TResult Function( Success value)  success,required TResult Function( DeleteSuccess value)  deleteSuccess,required TResult Function( Failure value)  failure,required TResult Function( IsFavourite value)  isFavourite,}){
 final _that = this;
 switch (_that) {
 case Initial():
 return initial(_that);case Loading():
 return loading(_that);case Success():
-return success(_that);case Failure():
+return success(_that);case DeleteSuccess():
+return deleteSuccess(_that);case Failure():
 return failure(_that);case IsFavourite():
 return isFavourite(_that);case _:
   throw StateError('Unexpected subclass');
@@ -106,13 +108,14 @@ return isFavourite(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial value)?  initial,TResult? Function( Loading value)?  loading,TResult? Function( Success value)?  success,TResult? Function( Failure value)?  failure,TResult? Function( IsFavourite value)?  isFavourite,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Initial value)?  initial,TResult? Function( Loading value)?  loading,TResult? Function( Success value)?  success,TResult? Function( DeleteSuccess value)?  deleteSuccess,TResult? Function( Failure value)?  failure,TResult? Function( IsFavourite value)?  isFavourite,}){
 final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial(_that);case Loading() when loading != null:
 return loading(_that);case Success() when success != null:
-return success(_that);case Failure() when failure != null:
+return success(_that);case DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess(_that);case Failure() when failure != null:
 return failure(_that);case IsFavourite() when isFavourite != null:
 return isFavourite(_that);case _:
   return null;
@@ -131,12 +134,13 @@ return isFavourite(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<ProductModel> favouriteProducts)?  success,TResult Function( CacheErrorModel cacheErrorModel)?  failure,TResult Function( bool isFavourite)?  isFavourite,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( List<ProductModel> favouriteProducts)?  success,TResult Function()?  deleteSuccess,TResult Function( CacheErrorModel cacheErrorModel)?  failure,TResult Function( bool isFavourite)?  isFavourite,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
-return success(_that.favouriteProducts);case Failure() when failure != null:
+return success(_that.favouriteProducts);case DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess();case Failure() when failure != null:
 return failure(_that.cacheErrorModel);case IsFavourite() when isFavourite != null:
 return isFavourite(_that.isFavourite);case _:
   return orElse();
@@ -156,12 +160,13 @@ return isFavourite(_that.isFavourite);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<ProductModel> favouriteProducts)  success,required TResult Function( CacheErrorModel cacheErrorModel)  failure,required TResult Function( bool isFavourite)  isFavourite,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( List<ProductModel> favouriteProducts)  success,required TResult Function()  deleteSuccess,required TResult Function( CacheErrorModel cacheErrorModel)  failure,required TResult Function( bool isFavourite)  isFavourite,}) {final _that = this;
 switch (_that) {
 case Initial():
 return initial();case Loading():
 return loading();case Success():
-return success(_that.favouriteProducts);case Failure():
+return success(_that.favouriteProducts);case DeleteSuccess():
+return deleteSuccess();case Failure():
 return failure(_that.cacheErrorModel);case IsFavourite():
 return isFavourite(_that.isFavourite);case _:
   throw StateError('Unexpected subclass');
@@ -180,12 +185,13 @@ return isFavourite(_that.isFavourite);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<ProductModel> favouriteProducts)?  success,TResult? Function( CacheErrorModel cacheErrorModel)?  failure,TResult? Function( bool isFavourite)?  isFavourite,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( List<ProductModel> favouriteProducts)?  success,TResult? Function()?  deleteSuccess,TResult? Function( CacheErrorModel cacheErrorModel)?  failure,TResult? Function( bool isFavourite)?  isFavourite,}) {final _that = this;
 switch (_that) {
 case Initial() when initial != null:
 return initial();case Loading() when loading != null:
 return loading();case Success() when success != null:
-return success(_that.favouriteProducts);case Failure() when failure != null:
+return success(_that.favouriteProducts);case DeleteSuccess() when deleteSuccess != null:
+return deleteSuccess();case Failure() when failure != null:
 return failure(_that.cacheErrorModel);case IsFavourite() when isFavourite != null:
 return isFavourite(_that.isFavourite);case _:
   return null;
@@ -330,6 +336,38 @@ as List<ProductModel>,
 
 
 }
+
+/// @nodoc
+
+
+class DeleteSuccess implements FavouriteProductsState {
+  const DeleteSuccess();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteSuccess);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'FavouriteProductsState.deleteSuccess()';
+}
+
+
+}
+
+
+
 
 /// @nodoc
 
