@@ -22,7 +22,7 @@ class CheckoutWidget extends StatelessWidget {
 
         final bool couponApplied = state is ApplyCouponSuccess;
 
-        final double targetSize = couponApplied ? 0.48 : 0.45;
+        final double targetSize = couponApplied ? 0.5 : 0.45;
 
         return TweenAnimationBuilder<double>(
           tween: Tween(begin: 0.45, end: targetSize),

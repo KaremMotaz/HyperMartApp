@@ -18,7 +18,10 @@ class CheckoutTotalSection extends StatelessWidget {
     return Column(
       children: [
         if (title != null && discount != null)
-          CheckoutData(data: title!, value: discount!),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: CheckoutData(data: title!, value: discount!),
+          ),
         Divider(height: 30, color: Colors.grey.shade400),
         CheckoutData(data: "total", value: total),
       ],
