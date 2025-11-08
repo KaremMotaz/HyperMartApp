@@ -12,32 +12,15 @@ class GetProductsResponseAdapter extends TypeAdapter<GetProductsResponse> {
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
 
-    return GetProductsResponse(
-      items: (fields[0] as List).cast<ProductModel>(),
-      page: fields[1] as int,
-      pageSize: fields[2] as int,
-      totalCount: fields[3] as int,
-      hasNextPage: fields[4] as bool,
-      hasPreviousPage: fields[5] as bool,
-    );
+    return GetProductsResponse(items: (fields[0] as List).cast<ProductModel>());
   }
 
   @override
   void write(BinaryWriter writer, GetProductsResponse obj) {
     writer
-      ..writeByte(6)
-      ..writeByte(0)
-      ..write(obj.items)
       ..writeByte(1)
-      ..write(obj.page)
-      ..writeByte(2)
-      ..write(obj.pageSize)
-      ..writeByte(3)
-      ..write(obj.totalCount)
-      ..writeByte(4)
-      ..write(obj.hasNextPage)
-      ..writeByte(5)
-      ..write(obj.hasPreviousPage);
+      ..writeByte(0)
+      ..write(obj.items);
   }
 }
 
@@ -60,8 +43,7 @@ class ProductModelAdapter extends TypeAdapter<ProductModel> {
       arabicName: fields[4] as String,
       arabicDescription: fields[5] as String,
       coverPictureUrl: fields[6] as String,
-      productPictures:
-          (fields[7] as List?)?.cast<String>(),
+      productPictures: (fields[7] as List?)?.cast<String>(),
       price: fields[8] as double,
       stock: fields[9] as int,
       weight: fields[10] as double,

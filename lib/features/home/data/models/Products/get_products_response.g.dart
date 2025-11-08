@@ -11,23 +11,11 @@ GetProductsResponse _$GetProductsResponseFromJson(Map<String, dynamic> json) =>
       items: (json['items'] as List<dynamic>)
           .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      page: (json['page'] as num).toInt(),
-      pageSize: (json['pageSize'] as num).toInt(),
-      totalCount: (json['totalCount'] as num).toInt(),
-      hasNextPage: json['hasNextPage'] as bool,
-      hasPreviousPage: json['hasPreviousPage'] as bool,
     );
 
 Map<String, dynamic> _$GetProductsResponseToJson(
   GetProductsResponse instance,
-) => <String, dynamic>{
-  'items': instance.items.map((e) => e.toJson()).toList(),
-  'page': instance.page,
-  'pageSize': instance.pageSize,
-  'totalCount': instance.totalCount,
-  'hasNextPage': instance.hasNextPage,
-  'hasPreviousPage': instance.hasPreviousPage,
-};
+) => <String, dynamic>{'items': instance.items.map((e) => e.toJson()).toList()};
 
 ProductModel _$ProductModelFromJson(Map<String, dynamic> json) => ProductModel(
   id: json['id'] as String,

@@ -11,8 +11,6 @@ class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
   final ProductModel product;
 
-  final bool isLoved = false;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +24,7 @@ class ProductCard extends StatelessWidget {
         children: [
           Column(
             children: [
-              ProductImage(product: product, isLoved: isLoved),
+              ProductImage(product: product),
               const SizedBox(height: 18),
               ProductName(product: product),
               const SizedBox(height: 9),

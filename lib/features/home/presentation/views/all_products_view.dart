@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/widgets/bloc_button.dart';
-import '../../../home/data/models/categories/add_categories_request.dart';
-import '../../../home/data/repos/get_categories_repo.dart';
-import '../../../home/manager/categories_cubit/categories_cubit.dart';
+import '../../data/models/categories/add_categories_request.dart';
+import '../../data/repos/get_categories_repo.dart';
+import '../../manager/categories_cubit/categories_cubit.dart';
 
 class AllProductsView extends StatelessWidget {
   const AllProductsView({super.key});

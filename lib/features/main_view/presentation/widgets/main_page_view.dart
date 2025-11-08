@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../home/presentation/views/home_view.dart';
 import '../../../settings/presentation/views/settings_view.dart';
-import '../views/all_products_view.dart';
-import '../views/favourite_view.dart';
+import '../../../home/presentation/views/all_products_view.dart';
+import '../../../home/presentation/views/favourite_view.dart';
 
 class MainPageView extends StatelessWidget {
   final PageController controller;

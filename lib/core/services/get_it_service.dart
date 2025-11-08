@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hyper_mart_app/features/home/data/local_data_source/favourite_products_local_data_source.dart';
+import 'package:hyper_mart_app/features/home/data/repos/favourite_products_repo.dart';
 import '../../features/home/data/models/Products/get_products_response.dart';
 import '../../features/home/data/models/cart/get_cart_items_response.dart';
 import '../../features/home/data/repos/add_cart_item_repo.dart';
@@ -87,5 +89,23 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<ApplyCouponRepo>(
     () => ApplyCouponRepo(homeService: getIt<HomeService>()),
+  );
+
+  // Favourite Products
+  getIt.registerLazySingleton<LocalCacheService<ProductModel>>(
+    () => LocalCacheService<ProductModel>(),
+  );
+
+  getIt.registerLazySingleton<FavouriteProductsLocalDataSource>(
+    () => FavouriteProductsLocalDataSource(
+      cache: getIt<LocalCacheService<ProductModel>>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<FavouriteProductsRepo>(
+    () => FavouriteProductsRepo(
+      favouriteProductsLocalDataSource:
+          getIt<FavouriteProductsLocalDataSource>(),
+    ),
   );
 }

@@ -5,9 +5,11 @@ import 'package:hyper_mart_app/features/home/data/repos/add_cart_item_repo.dart'
 import 'package:hyper_mart_app/features/home/data/repos/apply_coupon_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/decrement_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/delete_cart_item_repo.dart';
+import 'package:hyper_mart_app/features/home/data/repos/favourite_products_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_cart_items_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/update_cart_item_repo.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
+import 'package:hyper_mart_app/features/home/manager/favourite_products_cubit/favourite_products_cubit.dart';
 
 import 'logic/home_navigation_controller.dart';
 import 'presentation/widgets/home_nav_bar.dart';
@@ -31,15 +33,24 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CartCubit(
-        getCartItemsRepo: getIt.get<GetCartItemsRepo>(),
-        addCartItemRepo: getIt.get<AddCartItemRepo>(),
-        decrementCartItemRepo: getIt.get<DecrementCartItemRepo>(),
-        deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
-        updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
-        applyCouponRepo: getIt.get<ApplyCouponRepo>(),
-      )..getCartItems(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CartCubit(
+            getCartItemsRepo: getIt.get<GetCartItemsRepo>(),
+            addCartItemRepo: getIt.get<AddCartItemRepo>(),
+            decrementCartItemRepo: getIt.get<DecrementCartItemRepo>(),
+            deleteCartItemRepo: getIt.get<DeleteCartItemRepo>(),
+            updateCartItemRepo: getIt.get<UpdateCartItemRepo>(),
+            applyCouponRepo: getIt.get<ApplyCouponRepo>(),
+          )..getCartItems(),
+        ),
+        BlocProvider(
+          create: (context) => FavouriteProductsCubit(
+            favouriteProductsRepo: getIt.get<FavouriteProductsRepo>(),
+          )..getAllFavouriteProducts(),
+        ),
+      ],
       child: Scaffold(
         bottomNavigationBar: HomeNavBar(
           selectedIndex: controller.selectedIndex,

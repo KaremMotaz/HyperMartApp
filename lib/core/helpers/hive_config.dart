@@ -1,3 +1,5 @@
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+
 import '../../features/home/data/models/Products/get_products_response_adapter.dart';
 import '../../features/home/data/models/cart/get_cart_items_response_adapter.dart';
 
@@ -24,5 +26,6 @@ class HiveConfig {
     Hive.registerAdapter(GetCartItemsResponseAdapter());
 
     await Hive.openBox(kCashedDataBox);
+    await Hive.openBox<ProductModel>(kFavouriteProductsBox);
   }
 }

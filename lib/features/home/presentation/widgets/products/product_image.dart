@@ -5,10 +5,9 @@ import 'package:hyper_mart_app/features/home/data/models/Products/get_products_r
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/favourite_widget.dart';
 
 class ProductImage extends StatelessWidget {
-  const ProductImage({super.key, required this.product, required this.isLoved});
+  const ProductImage({super.key, required this.product});
 
   final ProductModel product;
-  final bool isLoved;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class ProductImage extends StatelessWidget {
       height: 170,
       padding: const EdgeInsets.symmetric(vertical: 10),
       backgroundColor: AppColors.grey,
-      child: FavouriteWidget(isLoved: isLoved),
+      child: FavouriteWidget(productModel: product),
     );
   }
 }

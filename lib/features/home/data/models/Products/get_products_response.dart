@@ -5,20 +5,8 @@ part 'get_products_response.g.dart';
 @JsonSerializable(explicitToJson: true)
 class GetProductsResponse {
   final List<ProductModel> items;
-  final int page;
-  final int pageSize;
-  final int totalCount;
-  final bool hasNextPage;
-  final bool hasPreviousPage;
 
-  GetProductsResponse({
-    required this.items,
-    required this.page,
-    required this.pageSize,
-    required this.totalCount,
-    required this.hasNextPage,
-    required this.hasPreviousPage,
-  });
+  GetProductsResponse({required this.items});
 
   factory GetProductsResponse.fromJson(Map<String, dynamic> json) =>
       _$GetProductsResponseFromJson(json);
