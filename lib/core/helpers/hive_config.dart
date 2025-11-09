@@ -26,7 +26,7 @@ class HiveConfig {
     Hive.registerAdapter(CartItemModelAdapter());
     Hive.registerAdapter(GetCartItemsResponseAdapter());
 
-    await Hive.openBox<GetCategoriesResponse>(kCashedDataBox);
+    await Hive.openBox<GetCategoriesResponse>(kCategoriesBox);
     await Hive.openBox<ProductModel>(kFavouriteProductsBox);
   }
 }

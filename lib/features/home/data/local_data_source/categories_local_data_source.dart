@@ -11,7 +11,7 @@ class CategoriesLocalDataSource {
     try {
       final GetCategoriesResponse? data = await cache.getData(
         key: kCategories,
-        boxName: kCashedDataBox,
+        boxName: kCategoriesBox,
       );
       return data;
     } catch (e) {
@@ -21,10 +21,10 @@ class CategoriesLocalDataSource {
   }
 
   Future<void> cacheAllCategories({required GetCategoriesResponse data}) async {
-    await cache.saveData(key: kCategories, boxName: kCashedDataBox, data: data);
+    await cache.saveData(key: kCategories, boxName: kCategoriesBox, data: data);
   }
 
   Future<void> clearAllCategories() async {
-    await cache.clear(key: kCategories, boxName: kCashedDataBox);
+    await cache.clear(key: kCategories, boxName: kCategoriesBox);
   }
 }
