@@ -10,7 +10,7 @@ class CartEntity {
     for (var cartItem in currentCartItems) {
       totalPrice += cartItem.basePricePerUnit * cartItem.quantity;
     }
-    return totalPrice;
+    return double.parse(totalPrice.toStringAsFixed(2));
   }
 
   double calculateDiscountPrice() {
@@ -21,7 +21,7 @@ class CartEntity {
           cartItem.basePricePerUnit *
           cartItem.quantity;
     }
-    return totalDiscountPrice;
+    return double.parse(totalDiscountPrice.toStringAsFixed(2));
   }
 
   double calculateTotalPrice() {
@@ -29,14 +29,15 @@ class CartEntity {
     for (var cartItem in currentCartItems) {
       totalPrice += cartItem.totalPrice;
     }
-    return totalPrice;
+    return double.parse(totalPrice.toStringAsFixed(2));
   }
+
   double calculateTotalPriceAfterCoupon() {
     double totalPrice = 0;
     for (var cartItem in currentCartItems) {
       totalPrice += cartItem.totalPrice;
     }
-    return totalPrice;
+    return double.parse(totalPrice.toStringAsFixed(2));
   }
 
   CartItemModel? getCartItem({required String productId}) {

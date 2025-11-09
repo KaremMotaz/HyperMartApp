@@ -61,17 +61,32 @@ The app provides product browsing, smart search, cart.
 ### Home Screen  
 ![Home Screen](assets/hyper_mart_app_presentation/6.png) 
 
+### All Categories Screen 
+![All Categories Screen](assets/hyper_mart_app_presentation/7.png)  
+
+### All Products Screen 
+![All Products Screen](assets/hyper_mart_app_presentation/8.png)  
+
+### Product Detail Screen 
+![Product Detail Screen](assets/hyper_mart_app_presentation/9.png)  
+
+### Cart Screen 
+![Cart Screen](assets/hyper_mart_app_presentation/10.png)  
+
+### Favourite Product Screen 
+![Favourite Product Screen](assets/hyper_mart_app_presentation/11.png)  
+
 ### Settings Screens 
-![Settings Screens](assets/hyper_mart_app_presentation/7.png)  
+![Settings Screens](assets/hyper_mart_app_presentation/12.png)  
 
 ### Profile Screen
-![Profile Screen](assets/hyper_mart_app_presentation/8.png)  
+![Profile Screen](assets/hyper_mart_app_presentation/13.png)  
 
 ### Contact Us  
-![Contact Us](assets/hyper_mart_app_presentation/9.png) 
+![Contact Us](assets/hyper_mart_app_presentation/14.png) 
 
 ### Thank You  
-![Thank You](assets/hyper_mart_app_presentation/10.png) 
+![Thank You](assets/hyper_mart_app_presentation/15.png) 
 
 ---
 
