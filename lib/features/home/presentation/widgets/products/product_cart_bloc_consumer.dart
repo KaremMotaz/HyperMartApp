@@ -11,17 +11,17 @@ class ProductCartBlocConsumer extends StatelessWidget {
   const ProductCartBlocConsumer({
     super.key,
     required this.product,
-    this.addToCartButtonPadding,
-    this.controllerPadding,
+    this.buttonWidth,
+    this.cartControllersWidth,
   });
   final ProductModel product;
-  final double? addToCartButtonPadding;
-  final double? controllerPadding;
+  final double? buttonWidth;
+  final double? cartControllersWidth;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: buttonWidth != null ? 0 : 10),
       child: BlocConsumer<CartCubit, CartState>(
         listener: (context, state) {
           if (state is AddCartItemFailure) {
@@ -50,18 +50,11 @@ class ProductCartBlocConsumer extends StatelessWidget {
               .getCartItem(productId: product.id);
 
           return currentCartItem != null
-              ? Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: controllerPadding ?? 0,
-                  ),
+              ? SizedBox(
+                  width: cartControllersWidth,
                   child: CartControllers(cartItem: currentCartItem),
                 )
-              : Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: addToCartButtonPadding ?? 10,
-                  ),
-                  child: AddToCartButton(product: product),
-                );
+              : AddToCartButton(product: product, buttonWidth: buttonWidth);
         },
       ),
     );

@@ -21,7 +21,7 @@ class DetailInfo extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.grey),
+        border: Border.all(color: Colors.grey.shade300, width: 1),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

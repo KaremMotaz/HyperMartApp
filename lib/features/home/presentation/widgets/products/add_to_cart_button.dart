@@ -8,9 +8,10 @@ import 'package:hyper_mart_app/features/home/data/models/Products/get_products_r
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
 
 class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({super.key, required this.product});
+  const AddToCartButton({super.key, required this.product, this.buttonWidth});
 
   final ProductModel product;
+  final double? buttonWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class AddToCartButton extends StatelessWidget {
           context.read<CartCubit>().addCartItem(productId: product.id);
         },
         buttonHeight: 45,
-        buttonWidth: double.infinity,
+        buttonWidth: buttonWidth ?? double.infinity,
         backgroundColor: AppColors.white,
         borderColor: AppColors.orange,
         textStyle: AppStyles.semiBold15.copyWith(color: AppColors.orange),
