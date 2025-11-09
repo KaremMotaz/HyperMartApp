@@ -40,7 +40,10 @@ class _NetworkImageWithFallbackState extends State<NetworkImageWithFallback> {
       width: widget.width,
       padding: widget.padding,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(widget.borderRadius),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(widget.borderRadius),
+          bottomRight: Radius.circular(widget.borderRadius),
+        ),
         color: widget.backgroundColor ?? AppColors.grey,
         image: DecorationImage(
           image: _hasError

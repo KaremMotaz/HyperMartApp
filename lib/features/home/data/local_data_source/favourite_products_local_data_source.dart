@@ -15,10 +15,7 @@ class FavouriteProductsLocalDataSource {
   }
 
   Future<bool> isFavouriteProduct({required String productId}) async {
-    return cache.isContains(
-      boxName: kFavouriteProductsBox,
-      key: productId,
-    );
+    return cache.isContains(boxName: kFavouriteProductsBox, key: productId);
   }
 
   Future<void> addToFavouriteProducts({required ProductModel data}) async {

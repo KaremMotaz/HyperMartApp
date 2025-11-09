@@ -132,7 +132,7 @@ class FavouriteProductsCubit extends Cubit<FavouriteProductsState> {
           emit(const FavouriteProductsState.deleteSuccess());
         }
       },
-      
+
       failure: (apiErrorModel) {
         if (!isClosed) {
           emit(FavouriteProductsState.failure(cacheErrorModel: apiErrorModel));

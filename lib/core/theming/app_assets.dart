@@ -47,4 +47,8 @@ class AppAssets {
   static const String emptyFavorites = 'assets/images/empty_favorites.png';
   static const String trashIcon = 'assets/svgs/trash.svg';
   static const String dummyAssetImage = 'assets/images/dummy_asset_image.jpg';
+  static const String weight = 'assets/svgs/weight.svg';
+  static const String color = 'assets/svgs/color.svg';
+  static const String reviews = 'assets/svgs/reviews.svg';
+  static const String quantity = 'assets/svgs/quantity.svg';
 }

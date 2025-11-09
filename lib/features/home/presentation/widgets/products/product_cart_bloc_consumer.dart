@@ -8,8 +8,15 @@ import 'package:hyper_mart_app/features/home/presentation/widgets/products/add_t
 import '../cart/cart_controllers.dart';
 
 class ProductCartBlocConsumer extends StatelessWidget {
-  const ProductCartBlocConsumer({super.key, required this.product});
+  const ProductCartBlocConsumer({
+    super.key,
+    required this.product,
+    this.addToCartButtonPadding,
+    this.controllerPadding,
+  });
   final ProductModel product;
+  final double? addToCartButtonPadding;
+  final double? controllerPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +50,16 @@ class ProductCartBlocConsumer extends StatelessWidget {
               .getCartItem(productId: product.id);
 
           return currentCartItem != null
-              ? CartControllers(cartItem: currentCartItem)
+              ? Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: controllerPadding ?? 0,
+                  ),
+                  child: CartControllers(cartItem: currentCartItem),
+                )
               : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: addToCartButtonPadding ?? 10,
+                  ),
                   child: AddToCartButton(product: product),
                 );
         },
