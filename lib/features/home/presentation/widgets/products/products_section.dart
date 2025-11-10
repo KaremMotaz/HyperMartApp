@@ -22,7 +22,7 @@ class ProductsSection extends StatelessWidget {
       child: Column(
         children: [
           SectionHeader(
-            title: 'Popular Deals',
+            title: 'Popular Products',
             onTap: () {
               final cartCubit = context.read<CartCubit>();
               final favouriteProductsCubit = context

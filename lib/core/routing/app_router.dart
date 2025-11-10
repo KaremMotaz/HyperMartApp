@@ -5,8 +5,9 @@ import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart'
 import 'package:hyper_mart_app/features/home/manager/favourite_products_cubit/favourite_products_cubit.dart';
 import 'package:hyper_mart_app/features/home/presentation/views/checkout_view.dart';
 import 'package:hyper_mart_app/features/home/presentation/views/product_detail_view.dart';
+import 'package:hyper_mart_app/features/home/presentation/views/product_reviews_view.dart';
 import '../../features/home/presentation/views/cart_view.dart';
-import '../../features/home/presentation/views/products_view.dart';
+import '../../features/home/presentation/views/all_products_view.dart';
 import '../../features/home/presentation/views/categories_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 
@@ -112,7 +113,7 @@ abstract class AppRouter {
                 BlocProvider.value(value: cartCubit),
                 BlocProvider.value(value: favouriteCubit),
               ],
-              child: const ProductsView(),
+              child: const AllProductsView(),
             );
           },
         ),
@@ -131,6 +132,14 @@ abstract class AppRouter {
               ],
               child: ProductDetailView(product: product),
             );
+          },
+        ),
+        GoRoute(
+          path: Routes.productReviewsView,
+          builder: (context, state) {
+            // final extra = state.extra as Map<String, dynamic>;
+            // final product = extra['product'] as ProductModel;
+            return const ProductReviewsView();
           },
         ),
         GoRoute(

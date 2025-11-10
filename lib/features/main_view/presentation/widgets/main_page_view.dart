@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../home/presentation/views/home_view.dart';
 import '../../../settings/presentation/views/settings_view.dart';
-import '../../../home/presentation/views/all_products_view.dart';
+import '../../../home/presentation/views/unknown_view.dart';
 import '../../../home/presentation/views/favourite_view.dart';
 
 class MainPageView extends StatelessWidget {
@@ -22,7 +22,7 @@ class MainPageView extends StatelessWidget {
       onPageChanged: onPageChanged,
       children: const [
         HomeView(),
-        AllProductsView(),
+        UnknownView(),
         FavouriteView(),
         SettingsView(),
       ],

@@ -49,7 +49,10 @@ class ProductCard extends StatelessWidget {
                   height: 170,
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   backgroundColor: AppColors.grey,
-                  child: FavouriteWidget(productModel: product),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: FavouriteWidget(productModel: product),
+                  ),
                 ),
                 const SizedBox(height: 18),
                 Padding(

@@ -24,7 +24,7 @@ class AddToCartButton extends StatelessWidget {
         onPressed: () {
           context.read<CartCubit>().addCartItem(productId: product.id);
         },
-        buttonHeight: 45,
+        buttonHeight: 48,
         buttonWidth: buttonWidth ?? double.infinity,
         backgroundColor: AppColors.white,
         borderColor: AppColors.orange,

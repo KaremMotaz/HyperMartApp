@@ -18,6 +18,7 @@ class AppColors {
   static const Color darkergrey = Color(0xff989898);
   static const Color brandGrey = Color(0xffDCDCDC);
   static const Color formFieldGrey = Color(0x69CECACA);
+  static const Color appGrey = Color(0xff9796A1);
   static const Color mainGrey = Color(0xff9E9E9E);
   static const Color mainGreyShade600 = Color(0xFF757575);
   static const Color transparent = Color(0x00FFFFFF);
