@@ -121,11 +121,17 @@ abstract class AppStyles {
     fontWeight: FontWeightHelper.extraBold,
     fontFamily: "Lato",
   );
+  static const TextStyle semiBold11 = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: "Lato",
+  );
   static const TextStyle bold10 = TextStyle(
     fontSize: 10,
     fontWeight: FontWeightHelper.bold,
     fontFamily: "Lato",
   );
+
   static const TextStyle regular10 = TextStyle(
     fontSize: 10,
     fontWeight: FontWeightHelper.regular,

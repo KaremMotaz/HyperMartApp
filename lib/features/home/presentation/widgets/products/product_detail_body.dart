@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/core/routing/routes.dart';
-import 'package:hyper_mart_app/core/theming/app_assets.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/other/product_rating.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/detail_info_grid_view.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/favourite_widget.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_cart_bloc_consumer.dart';
@@ -46,9 +45,7 @@ class ProductDetailBody extends StatelessWidget {
                 const SizedBox(height: 12),
                 Row(
                   children: [
-                    SvgPicture.asset(AppAssets.starIcon, width: 19, height: 19),
-                    const SizedBox(width: 9),
-                    Text("${product.rating}", style: AppStyles.semiBold16),
+                    ProductRating(productRating: product.rating),
                     const SizedBox(width: 9),
                     Text(
                       "(+${product.reviewsCount})",
@@ -99,3 +96,5 @@ class ProductDetailBody extends StatelessWidget {
     );
   }
 }
+
+
