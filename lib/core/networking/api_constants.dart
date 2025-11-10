@@ -31,4 +31,8 @@ class ApiConstants {
   static const deleteCartItem = "cart/items/{Id}";
   static const updateCartItem = "cart/items/{Id}";
   static const applyCoupon = "cart/apply-coupon";
+
+  // Reviews
+  static const getReviews = "reviews/{productId}";
+  static const addReview = "reviews/{productId}";
 }

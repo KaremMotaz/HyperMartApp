@@ -1,4 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:hyper_mart_app/features/home/data/models/Reviews/add_review_request_body.dart';
+import 'package:hyper_mart_app/features/home/data/models/Reviews/add_review_response.dart';
+import 'package:hyper_mart_app/features/home/data/models/Reviews/get_reviews_request_body.dart';
+import 'package:hyper_mart_app/features/home/data/models/Reviews/get_reviews_response.dart';
 import '../models/Products/get_products_request_body.dart';
 import '../models/Products/get_products_response.dart';
 import '../models/cart/add_cart_item_request_body.dart';
@@ -84,5 +88,17 @@ abstract class HomeService {
   Future<UpdateCartItemResponse> updateCartItem({
     @Body() required UpdateCartItemRequestBody body,
     @Path('Id') required String id,
+  });
+
+  @GET(ApiConstants.getReviews)
+  Future<GetReviewsResponse> getReviews({
+    @Body() required GetReviewsRequestBody body,
+    @Path('productId') required String productId,
+  });
+
+  @POST(ApiConstants.addReview)
+  Future<AddReviewResponse> addReview({
+    @Body() required AddReviewRequestBody body,
+    @Path('productId') required String productId,
   });
 }
