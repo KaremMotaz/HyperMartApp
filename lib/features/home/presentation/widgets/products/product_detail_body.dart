@@ -4,7 +4,7 @@ import 'package:hyper_mart_app/core/routing/routes.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/other/product_rating.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/shared_widgets/product_rating.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/detail_info_grid_view.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/favourite_widget.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/products/product_cart_bloc_consumer.dart';

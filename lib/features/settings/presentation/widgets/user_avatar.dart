@@ -22,7 +22,7 @@ class UserAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     if (imageUrl != null && imageUrl!.isNotEmpty && imageUrl != "null") {
       return CircleAvatar(
-        backgroundColor: AppColors.lighterGray,
+        backgroundColor: AppColors.lighterGrey,
         radius: radius,
         child: ClipOval(
           child: CachedNetworkImage(

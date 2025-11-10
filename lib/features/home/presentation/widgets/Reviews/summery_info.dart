@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/other/product_rating.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/shared_widgets/product_rating.dart';
 
 class SummeryInfo extends StatelessWidget {
   const SummeryInfo({super.key});

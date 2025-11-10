@@ -8,7 +8,7 @@ import '../../../../../core/services/get_it_service.dart';
 import '../../../data/repos/get_products_repo.dart';
 import '../../../manager/products_cubit/products_cubit.dart';
 import 'products_bloc_builder.dart';
-import '../other/section_header.dart';
+import '../shared_widgets/section_header.dart';
 
 class ProductsSection extends StatelessWidget {
   const ProductsSection({super.key});

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../data/models/deals/beauty_deals_model.dart';
 import 'brand_deal_card.dart';
-import '../other/section_header.dart';
+import '../shared_widgets/section_header.dart';
 
 class ExclusiveBeautyDealsSection extends StatelessWidget {
   const ExclusiveBeautyDealsSection({super.key});

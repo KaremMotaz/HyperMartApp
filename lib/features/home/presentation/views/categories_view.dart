@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../data/repos/get_categories_repo.dart';
 import '../../manager/categories_cubit/categories_cubit.dart';
 import '../widgets/categories/all_categories_bloc_builder.dart';
-import '../widgets/other/custom_appbar.dart';
+import '../widgets/shared_widgets/custom_appbar.dart';
 
 class CategoriesView extends StatelessWidget {
   const CategoriesView({super.key});

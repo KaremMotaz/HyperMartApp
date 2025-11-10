@@ -51,4 +51,5 @@ class AppAssets {
   static const String color = 'assets/svgs/color.svg';
   static const String reviews = 'assets/svgs/reviews.svg';
   static const String quantity = 'assets/svgs/quantity.svg';
+  static const String starFill = 'assets/svgs/star_fill.svg';
 }

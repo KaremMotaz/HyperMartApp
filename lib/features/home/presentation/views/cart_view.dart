@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/cart/cart_items_bloc_builder.dart';
-import '../widgets/other/custom_appbar.dart';
+import '../widgets/shared_widgets/custom_appbar.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});

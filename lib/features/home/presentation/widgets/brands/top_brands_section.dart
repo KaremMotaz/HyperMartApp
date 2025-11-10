@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theming/app_assets.dart';
-import '../other/section_header.dart';
+import '../shared_widgets/section_header.dart';
 import 'brand_item.dart';
 
 class TopBrandsSection extends StatelessWidget {

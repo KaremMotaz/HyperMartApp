@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/other/custom_appbar.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/shared_widgets/custom_appbar.dart';
 
 class CheckoutView extends StatelessWidget {
   const CheckoutView({super.key});
