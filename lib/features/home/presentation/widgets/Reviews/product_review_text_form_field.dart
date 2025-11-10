@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/theming/app_assets.dart';
 import 'package:hyper_mart_app/core/theming/app_colors.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_form_field.dart';
+import 'package:hyper_mart_app/features/home/data/models/Reviews/add_review_request_body.dart';
+import 'package:hyper_mart_app/features/home/manager/add_review_cubit/add_review_cubit.dart';
 
 class ProductReviewTextFormField extends StatefulWidget {
-  const ProductReviewTextFormField({super.key});
+  const ProductReviewTextFormField({super.key, required this.productId});
+  final String productId;
 
   @override
   State<ProductReviewTextFormField> createState() =>
@@ -40,7 +44,7 @@ class _ProductReviewTextFormFieldState
         ),
         suffixIcon: IconButton(
           onPressed: () {
-            if (formKey.currentState!.validate()) {}
+            validateThenAddReview(context);
           },
           icon: const Icon(
             Icons.send_rounded,
@@ -56,5 +60,17 @@ class _ProductReviewTextFormFieldState
         },
       ),
     );
+  }
+
+  void validateThenAddReview(BuildContext context) {
+    if (formKey.currentState!.validate()) {
+      context.read<AddReviewCubit>().addReview(
+        addReviewRequestBody: AddReviewRequestBody(
+          productId: widget.productId,
+          comment: productReviewcontroller.text,
+          rating: 3,
+        ),
+      );
+    }
   }
 }
