@@ -6,9 +6,15 @@ import 'package:hyper_mart_app/core/theming/app_assets.dart';
 import 'package:hyper_mart_app/features/home/manager/add_review_cubit/add_review_cubit.dart';
 
 class CustomRating extends StatelessWidget {
-  const CustomRating({super.key, required this.isEditable, this.userRating});
+  const CustomRating({
+    super.key,
+    required this.isEditable,
+    this.userRating,
+    this.itemSize,
+  });
   final bool isEditable;
   final double? userRating;
+  final double? itemSize;
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +29,12 @@ class CustomRating extends StatelessWidget {
             minRating: 1,
             unratedColor: const Color(0xffffecb0),
             direction: Axis.horizontal,
-            allowHalfRating: false,
+            allowHalfRating: false, 
             itemCount: 5,
-            itemSize: 40,
+            itemSize: itemSize ?? 40,
             itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
             itemBuilder: (context, _) {
-              return SvgPicture.asset(
-                AppAssets.starFill,
-                // colorFilter: const ColorFilter.mode(
-                //   Colors.amber,
-                //   BlendMode.srcIn,
-                // ),
-              );
+              return SvgPicture.asset(AppAssets.starFill);
             },
             onRatingUpdate: (value) {
               if (isEditable) {

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/reviews_chart_item.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/summery_info.dart';
 
 class ProductReviewsChart extends StatelessWidget {
-  const ProductReviewsChart({super.key});
+  const ProductReviewsChart({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +15,8 @@ class ProductReviewsChart extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        SummeryInfo(product: product),
+        const SizedBox(width: 26),
         Column(
           children: [
             ...List.generate(5, (i) {
@@ -25,8 +29,6 @@ class ProductReviewsChart extends StatelessWidget {
             }),
           ],
         ),
-        const SizedBox(width: 26),
-        const SummeryInfo(),
       ],
     );
   }

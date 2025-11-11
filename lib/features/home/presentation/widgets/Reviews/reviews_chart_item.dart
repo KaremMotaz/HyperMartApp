@@ -19,7 +19,7 @@ class ReviewsChartItem extends StatelessWidget {
         Text('$star', style: AppStyles.semiBold15),
         const SizedBox(width: 10),
         SizedBox(
-          width: screenWidth * 0.53,
+          width: screenWidth * 0.42,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: LinearProgressIndicator(

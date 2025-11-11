@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/shared_widgets/product_rating.dart';
+import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/custom_rating.dart';
 
 class SummeryInfo extends StatelessWidget {
-  const SummeryInfo({super.key});
+  const SummeryInfo({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ProductRating(productRating: 2.5),
-        SizedBox(height: 20),
-        Text("%88", style: AppStyles.semiBold15),
-        SizedBox(height: 8),
-        Text("Recommended", style: AppStyles.semiBold15),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Transform.translate(
+              offset: const Offset(0, 10),
+              child: const Text("4.3", style: AppStyles.extraBold40),
+            ),
+            const Text("/5", style: AppStyles.semiBold16),
+          ],
+        ),
+        const SizedBox(height: 10),
+        const CustomRating(isEditable: false, itemSize: 22, userRating: 4),
+        const SizedBox(height: 10),
+        Text(
+          product.reviewsCount == 1
+              ? "${product.reviewsCount} rating"
+              : "${product.reviewsCount}  ratings",
+          style: AppStyles.semiBold18,
+        ),
       ],
     );
   }

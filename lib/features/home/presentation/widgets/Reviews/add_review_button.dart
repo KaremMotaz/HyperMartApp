@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/services/get_it_service.dart';
+import 'package:hyper_mart_app/core/theming/app_colors.dart';
+import 'package:hyper_mart_app/core/theming/app_styles.dart';
 import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
 import 'package:hyper_mart_app/features/home/data/repos/add_review_repo.dart';
@@ -44,6 +46,7 @@ class AddReviewButton extends StatelessWidget {
           },
         );
       },
+      textStyle: AppStyles.semiBold18.copyWith(color: AppColors.white),
       buttonText: "Add Review",
     );
   }

@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'font_weight_helper.dart';
 
 abstract class AppStyles {
+  static const TextStyle extraBold40 = TextStyle(
+    fontSize: 40,
+    fontWeight: FontWeightHelper.extraBold,
+    fontFamily: "Lato",
+  );
   static const TextStyle extraBold22 = TextStyle(
     fontSize: 22,
     fontWeight: FontWeightHelper.extraBold,
