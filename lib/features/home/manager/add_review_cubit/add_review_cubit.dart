@@ -14,6 +14,10 @@ class AddReviewCubit extends Cubit<AddReviewState> {
     : super(const AddReviewState.addReviewinitial());
   final AddReviewRepo addReviewRepo;
 
+  int userRating = 0;
+
+  void setUserRating({required int rating}) => userRating = rating;
+
   Future<void> addReview({
     required AddReviewRequestBody addReviewRequestBody,
   }) async {

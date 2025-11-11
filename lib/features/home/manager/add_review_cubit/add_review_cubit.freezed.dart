@@ -55,11 +55,11 @@ extension AddReviewStatePatterns on AddReviewState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _AddReviewinitial value)?  addReviewinitial,TResult Function( AddReviewsLoading value)?  addReviewLoading,TResult Function( AddReviewSuccess value)?  addReviewSuccess,TResult Function( AddReviewFailure value)?  addReviewFailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _AddReviewinitial value)?  addReviewinitial,TResult Function( AddReviewLoading value)?  addReviewLoading,TResult Function( AddReviewSuccess value)?  addReviewSuccess,TResult Function( AddReviewFailure value)?  addReviewFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _AddReviewinitial() when addReviewinitial != null:
-return addReviewinitial(_that);case AddReviewsLoading() when addReviewLoading != null:
+return addReviewinitial(_that);case AddReviewLoading() when addReviewLoading != null:
 return addReviewLoading(_that);case AddReviewSuccess() when addReviewSuccess != null:
 return addReviewSuccess(_that);case AddReviewFailure() when addReviewFailure != null:
 return addReviewFailure(_that);case _:
@@ -80,11 +80,11 @@ return addReviewFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _AddReviewinitial value)  addReviewinitial,required TResult Function( AddReviewsLoading value)  addReviewLoading,required TResult Function( AddReviewSuccess value)  addReviewSuccess,required TResult Function( AddReviewFailure value)  addReviewFailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _AddReviewinitial value)  addReviewinitial,required TResult Function( AddReviewLoading value)  addReviewLoading,required TResult Function( AddReviewSuccess value)  addReviewSuccess,required TResult Function( AddReviewFailure value)  addReviewFailure,}){
 final _that = this;
 switch (_that) {
 case _AddReviewinitial():
-return addReviewinitial(_that);case AddReviewsLoading():
+return addReviewinitial(_that);case AddReviewLoading():
 return addReviewLoading(_that);case AddReviewSuccess():
 return addReviewSuccess(_that);case AddReviewFailure():
 return addReviewFailure(_that);case _:
@@ -104,11 +104,11 @@ return addReviewFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _AddReviewinitial value)?  addReviewinitial,TResult? Function( AddReviewsLoading value)?  addReviewLoading,TResult? Function( AddReviewSuccess value)?  addReviewSuccess,TResult? Function( AddReviewFailure value)?  addReviewFailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _AddReviewinitial value)?  addReviewinitial,TResult? Function( AddReviewLoading value)?  addReviewLoading,TResult? Function( AddReviewSuccess value)?  addReviewSuccess,TResult? Function( AddReviewFailure value)?  addReviewFailure,}){
 final _that = this;
 switch (_that) {
 case _AddReviewinitial() when addReviewinitial != null:
-return addReviewinitial(_that);case AddReviewsLoading() when addReviewLoading != null:
+return addReviewinitial(_that);case AddReviewLoading() when addReviewLoading != null:
 return addReviewLoading(_that);case AddReviewSuccess() when addReviewSuccess != null:
 return addReviewSuccess(_that);case AddReviewFailure() when addReviewFailure != null:
 return addReviewFailure(_that);case _:
@@ -131,7 +131,7 @@ return addReviewFailure(_that);case _:
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  addReviewinitial,TResult Function()?  addReviewLoading,TResult Function( AddReviewResponse addReviewResponse)?  addReviewSuccess,TResult Function( ApiErrorModel apiErrorModel)?  addReviewFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AddReviewinitial() when addReviewinitial != null:
-return addReviewinitial();case AddReviewsLoading() when addReviewLoading != null:
+return addReviewinitial();case AddReviewLoading() when addReviewLoading != null:
 return addReviewLoading();case AddReviewSuccess() when addReviewSuccess != null:
 return addReviewSuccess(_that.addReviewResponse);case AddReviewFailure() when addReviewFailure != null:
 return addReviewFailure(_that.apiErrorModel);case _:
@@ -155,7 +155,7 @@ return addReviewFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  addReviewinitial,required TResult Function()  addReviewLoading,required TResult Function( AddReviewResponse addReviewResponse)  addReviewSuccess,required TResult Function( ApiErrorModel apiErrorModel)  addReviewFailure,}) {final _that = this;
 switch (_that) {
 case _AddReviewinitial():
-return addReviewinitial();case AddReviewsLoading():
+return addReviewinitial();case AddReviewLoading():
 return addReviewLoading();case AddReviewSuccess():
 return addReviewSuccess(_that.addReviewResponse);case AddReviewFailure():
 return addReviewFailure(_that.apiErrorModel);case _:
@@ -178,7 +178,7 @@ return addReviewFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  addReviewinitial,TResult? Function()?  addReviewLoading,TResult? Function( AddReviewResponse addReviewResponse)?  addReviewSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  addReviewFailure,}) {final _that = this;
 switch (_that) {
 case _AddReviewinitial() when addReviewinitial != null:
-return addReviewinitial();case AddReviewsLoading() when addReviewLoading != null:
+return addReviewinitial();case AddReviewLoading() when addReviewLoading != null:
 return addReviewLoading();case AddReviewSuccess() when addReviewSuccess != null:
 return addReviewSuccess(_that.addReviewResponse);case AddReviewFailure() when addReviewFailure != null:
 return addReviewFailure(_that.apiErrorModel);case _:
@@ -224,8 +224,8 @@ String toString() {
 /// @nodoc
 
 
-class AddReviewsLoading implements AddReviewState {
-  const AddReviewsLoading();
+class AddReviewLoading implements AddReviewState {
+  const AddReviewLoading();
   
 
 
@@ -235,7 +235,7 @@ class AddReviewsLoading implements AddReviewState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddReviewsLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddReviewLoading);
 }
 
 

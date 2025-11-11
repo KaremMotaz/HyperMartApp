@@ -1,11 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/data/repos/add_review_repo.dart';
 import 'package:hyper_mart_app/features/home/data/repos/get_reviews_repo.dart';
-import 'package:hyper_mart_app/features/home/manager/add_review_cubit/add_review_cubit.dart';
 import 'package:hyper_mart_app/features/home/manager/cart_cubit/cart_cubit.dart';
-import 'package:hyper_mart_app/features/home/manager/cubit/review_sheet_cubit.dart';
 import 'package:hyper_mart_app/features/home/manager/favourite_products_cubit/favourite_products_cubit.dart';
 import 'package:hyper_mart_app/features/home/manager/get_reviews_cubit/get_reviews_cubit.dart';
 import 'package:hyper_mart_app/features/home/presentation/views/checkout_view.dart';
@@ -144,19 +141,10 @@ abstract class AppRouter {
           builder: (context, state) {
             final extra = state.extra as Map<String, dynamic>;
             final product = extra['product'] as ProductModel;
-            return MultiBlocProvider(
-              providers: [
-                BlocProvider(
-                  create: (context) => GetReviewsCubit(
-                    getReviewsRepo: getIt.get<GetReviewsRepo>(),
-                  )..getReviews(productId: product.id),
-                ),
-                BlocProvider(
-                  create: (context) =>
-                      AddReviewCubit(addReviewRepo: getIt.get<AddReviewRepo>()),
-                ),
-                BlocProvider(create: (context) => ReviewSheetCubit()),
-              ],
+            return BlocProvider(
+              create: (context) =>
+                  GetReviewsCubit(getReviewsRepo: getIt.get<GetReviewsRepo>())
+                    ..getReviews(productId: product.id),
               child: ProductReviewsView(product: product),
             );
           },

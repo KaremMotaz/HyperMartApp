@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hyper_mart_app/core/theming/app_assets.dart';
-import 'package:hyper_mart_app/features/home/manager/cubit/review_sheet_cubit.dart';
+import 'package:hyper_mart_app/features/home/manager/add_review_cubit/add_review_cubit.dart';
 
 class CustomRating extends StatelessWidget {
   const CustomRating({super.key, required this.isEditable, this.userRating});
@@ -29,16 +29,16 @@ class CustomRating extends StatelessWidget {
             itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
             itemBuilder: (context, _) {
               return SvgPicture.asset(
-                AppAssets.reviews,
-                colorFilter: const ColorFilter.mode(
-                  Colors.amber,
-                  BlendMode.srcIn,
-                ),
+                AppAssets.starFill,
+                // colorFilter: const ColorFilter.mode(
+                //   Colors.amber,
+                //   BlendMode.srcIn,
+                // ),
               );
             },
             onRatingUpdate: (value) {
               if (isEditable) {
-                context.read<ReviewSheetCubit>().setUserRating(
+                context.read<AddReviewCubit>().setUserRating(
                   rating: value.toInt(),
                 );
               }

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_mart_app/core/theming/app_styles.dart';
-import 'package:hyper_mart_app/core/widgets/app_text_button.dart';
 import 'package:hyper_mart_app/features/home/data/models/Products/get_products_response.dart';
-import 'package:hyper_mart_app/features/home/manager/cubit/review_sheet_cubit.dart';
+import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/add_review_button.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/product_reviews_chart.dart';
-import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/review_sheet.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/Reviews/user_review_item.dart';
 import 'package:hyper_mart_app/features/home/presentation/widgets/shared_widgets/custom_appbar.dart';
 
@@ -47,25 +44,12 @@ class ProductReviewsView extends StatelessWidget {
                 ],
               ),
             ),
-            ReviewSheet(productId: product.id),
-            BlocSelector<ReviewSheetCubit, double, bool>(
-              selector: (state) => state > 0,
-              builder: (context, isOpen) {
-                if (isOpen) {
-                  return const SizedBox.shrink();
-                }
-                return Positioned(
-                  bottom: 5,
-                  left: 30,
-                  right: 30,
-                  child: AppTextButton(
-                    onPressed: () {
-                      context.read<ReviewSheetCubit>().openSheet();
-                    },
-                    buttonText: "Add Review",
-                  ),
-                );
-              },
+
+            Positioned(
+              bottom: 5,
+              left: 30,
+              right: 30,
+              child: AddReviewButton(product: product),
             ),
           ],
         ),
